@@ -16,7 +16,7 @@ minimal_mistakes_skin: "default" # "air", "aqua", "contrast", "dark", "dirt", "n
 
 # Site Settings
 locale: "en-US"
-title: "Site Title"
+title: "공부하며 기록하기"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "LIME"
@@ -105,9 +105,10 @@ analytics:
 author:
   name: "LIME"
   avatar: "https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "Web **Front-end** Developer."
-  location: "Somewhere"
-  email:
+  bio: "**공부하고 기록하는** 블로그 입니다."
+  location: "Ulsan, South Korea"
+  email: "ilimes1307@gmail.com"
+  github: "https://github.com/ilimes"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
