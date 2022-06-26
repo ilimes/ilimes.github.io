@@ -108,7 +108,7 @@ author:
   bio: "**공부하고 기록하는** 블로그 입니다."
   location: "Ulsan, South Korea"
   email: "ilimes1307@gmail.com"
-  github: "https://github.com/ilimes"
+  github: "ilimes"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
