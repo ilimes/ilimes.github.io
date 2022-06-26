@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-26T21:44:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부하며 기록하기 : Today I Learned 📖</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">github.io 블로그 첫 포스팅입니다</title><link href="http://localhost:4000/post/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅입니다" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/post</id><content type="html" xml:base="http://localhost:4000/post/"><![CDATA[<p>마크다운 문법으로 글을 작성할 수 있습니다.<br />
+<a href="https://ilimes.github.io/post2/" title="마크다운 설명 글 바로가기">마크다운 설명 글 보기</a></p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><summary type="html"><![CDATA[github.io 에서 글을 처음 작성해보았습니다 😊]]></summary></entry><entry><title type="html">마크다운(Markdown) 문법</title><link href="http://localhost:4000/post2/" rel="alternate" type="text/html" title="마크다운(Markdown) 문법" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/post2</id><content type="html" xml:base="http://localhost:4000/post2/"><![CDATA[<h2 id="마크다운markdown-이란">마크다운(Markdown) 이란?</h2>
+
+<blockquote>
+  <p>텍스트 기반의 마크업 언어로 GitHub에서 README 파일을 편집할 때 많이 쓰인다. 가독성이 좋고 간단해서 배우기 쉽다.</p>
+</blockquote>
+
+<h2 id="제목">제목</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 제목 1단계
+
+## 제목 2단계
+
+### 제목 3단계
+
+#### 제목 4단계
+
+##### 제목 5단계
+
+###### 제목 6단계
+</code></pre></div></div>
+
+<h1 id="제목-1단계">제목 1단계</h1>
+
+<h2 id="제목-2단계">제목 2단계</h2>
+
+<h3 id="제목-3단계">제목 3단계</h3>
+
+<h4 id="제목-4단계">제목 4단계</h4>
+
+<h5 id="제목-5단계">제목 5단계</h5>
+
+<h6 id="제목-6단계">제목 6단계</h6>
+
+<h2 id="강조">강조</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**볼드체**
+_이탤릭체_
+~~취소선~~
+&lt;u&gt;밑줄&lt;/u&gt;
+</code></pre></div></div>
+
+<p><strong>볼드체</strong><br />
+<em>이탤릭체</em><br />
+<del>취소선</del><br />
+<u>밑줄</u></p>
+
+<h2 id="리스트">리스트</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. 첫번째 리스트
+1. 두번째 리스트
+1. 세번째 리스트
+
++ 순서 없는 리스트
+  - 그 다음 리스트
+    * 그 다음 리스트
+      + 그 다음 리스트
+</code></pre></div></div>
+
+<ol>
+  <li>첫번째 리스트</li>
+  <li>두번째 리스트</li>
+  <li>세번째 리스트</li>
+</ol>
+
+<ul>
+  <li>순서 없는 리스트
+    <ul>
+      <li>그 다음 리스트
+        <ul>
+          <li>그 다음 리스트
+            <ul>
+              <li>그 다음 리스트</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="인용">인용</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; 첫번째 인용부분
+&gt;
+&gt; &gt; 두번째 인용부분
+&gt; &gt;
+&gt; &gt; &gt; 세번째 인용부분
+</code></pre></div></div>
+
+<blockquote>
+  <p>첫번째 인용부분</p>
+
+  <blockquote>
+    <p>두번째 인용부분</p>
+
+    <blockquote>
+      <p>세번째 인용부분</p>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<h2 id="줄바꿈">줄바꿈</h2>
+
+<p>문장 끝에 공백 두 칸 넣기,<br />
+또는 줄을 바꾼 뒤 #적기</p>
+
+<h2 id="링크">링크</h2>
+
+<h3 id="1-url-이름-직접-지정">1. URL 이름 직접 지정</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[LIME'S TIL](https://ilimes.github.io "설명 부분")
+</code></pre></div></div>
+
+<p><a href="https://ilimes.github.io" title="설명 부분">LIME’S TIL</a></p>
+
+<h3 id="2-url-주소로-바로-연결">2. URL 주소로 바로 연결</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;https://ilimes.github.io/&gt;
+</code></pre></div></div>
+
+<p><a href="https://ilimes.github.io/">https://ilimes.github.io/</a></p>
+
+<h2 id="표-만들기">표 만들기</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 항목1 | 항목2  |  항목3   |
+| :---: | :----: | :------: |
+|  표   |  표표  |  표표표  |
+| 표표  | 표표표 | 표표표표 |
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">항목1</th>
+      <th style="text-align: center">항목2</th>
+      <th style="text-align: center">항목3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">표</td>
+      <td style="text-align: center">표표</td>
+      <td style="text-align: center">표표표</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">표표</td>
+      <td style="text-align: center">표표표</td>
+      <td style="text-align: center">표표표표</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="이미지-삽입">이미지 삽입</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png)
+</code></pre></div></div>
+
+<p><img src="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" alt="" /></p>
+
+<h2 id="코드-인용">코드 인용</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+```
+function test() {
+
+console.log("test!!!");
+
+}
+```
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function test() {
+  console.log("test!!!");
+}
+</code></pre></div></div>
+
+<p>아래와 같이 해당 언어에 맞게 syntax highlighter 적용도 가능.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+```javascript
+function test() {
+
+console.log("test!!!");
+
+}```
+
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">test!!!</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Markdown" /><category term="Jekyll" /><summary type="html"><![CDATA[마크다운(Markdown) 문법에 관한 글]]></summary></entry></feed>
