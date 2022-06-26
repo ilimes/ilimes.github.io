@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Home"
-    url: https://ilimes.github.io"
+    url: "https://ilimes.github.io"
   - title: "Sitemap"
     url: /sitemap/
   # - title: "About"
