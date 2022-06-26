@@ -1,0 +1,37 @@
+I"U
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post3/">리액트 Hooks : useState()</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.27
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>
+                    
+                    
+                    <a href="/tags/#hooks" class="page__taxonomy-item-tag" rel="tag">Hooks</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#react" class="page__taxonomy-item-tag" rel="tag">react</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#setstate" class="page__taxonomy-item-tag" rel="tag">setState</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#usestate" class="page__taxonomy-item-tag" rel="tag">useState</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET

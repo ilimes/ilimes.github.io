@@ -19,6 +19,9 @@
 <loc>http://localhost:4000/categories/blog</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/react</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>
