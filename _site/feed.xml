@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-26T23:53:52+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부하며 기록하기 : Today I Learned 📖</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">github.io 블로그 첫 포스팅입니다</title><link href="http://localhost:4000/blog/post/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅입니다" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post</id><content type="html" xml:base="http://localhost:4000/blog/post/"><![CDATA[<p>마크다운 문법으로 글을 작성할 수 있습니다.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-06-27T00:24:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부하며 기록하기 : Today I Learned 📖</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">리액트 Hooks : useState()</title><link href="http://localhost:4000/react/post3/" rel="alternate" type="text/html" title="리액트 Hooks : useState()" /><published>2022-06-27T00:00:00+09:00</published><updated>2022-06-27T00:00:00+09:00</updated><id>http://localhost:4000/react/post3</id><content type="html" xml:base="http://localhost:4000/react/post3/"><![CDATA[<h2 id="상태state란-무엇인가">상태(state)란 무엇인가?</h2>
+
+<blockquote>
+  <p>리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다.</p>
+</blockquote>
+
+<h2 id="usestate-함수-사용법">useState() 함수 사용법</h2>
+
+<p>Counter.js</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>useState를 사용하기 위해서는 가장 먼저 위와 같이 리액트 패키지에서 useState 함수를 불러와야 한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>useState 함수를 호출하면 위처럼 배열을 반환하게 된다.<br />
+첫 번째 원소는 현재 상태 값을 저장하는 변수이고, 두 번째 원소는 상태 값을 바꿔주는 setter 함수다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>상태 값 저장 변수가 아니라 setter 함수를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="useState" /><category term="Hooks" /><category term="react" /><category term="setState" /><summary type="html"><![CDATA[useState를 통해서 동적 상태관리하기]]></summary></entry><entry><title type="html">github.io 블로그 첫 포스팅입니다</title><link href="http://localhost:4000/blog/post/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅입니다" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post</id><content type="html" xml:base="http://localhost:4000/blog/post/"><![CDATA[<p>마크다운 문법으로 글을 작성할 수 있습니다.<br />
 <a href="https://ilimes.github.io/blog/post2/" title="마크다운 설명 글 바로가기">마크다운 설명 글 보기</a></p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />

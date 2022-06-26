@@ -10,4 +10,10 @@ var store = [{
         "tags": ["Blog","Markdown","Jekyll"],
         "url": "/blog/post2/",
         "teaser": null
+      },{
+        "title": "리액트 Hooks : useState()",
+        "excerpt":"상태(state)란 무엇인가? 리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다. useState() 함수 사용법 Counter.js import React, { useState } from \"react\"; function Counter() { const [number, setNumber] =...","categories": ["React"],
+        "tags": ["useState","Hooks","react","setState"],
+        "url": "/react/post3/",
+        "teaser": null
       }]
