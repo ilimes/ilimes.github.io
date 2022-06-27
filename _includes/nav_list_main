@@ -34,16 +34,24 @@
         <span class="nav__sub-title">Node.js</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/algorithm" class="">알고리즘 구현 ({{category[1].size}})</a></li>
+                    {% if category[0] == "NodeJs" %}
+                        <li><a href="/categories/nodeJs" class="">Node.js ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
         <span class="nav__sub-title">Pigma</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Algorithm" %}
-                        <li><a href="/categories/algorithm" class="">알고리즘 구현 ({{category[1].size}})</a></li>
+                    {% if category[0] == "Pigma" %}
+                        <li><a href="/categories/pigma" class="">Pigma ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">웹 개발</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Web" %}
+                        <li><a href="/categories/web" class="">웹 개발 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
