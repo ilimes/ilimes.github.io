@@ -47,11 +47,11 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">Pigma</span>
+        <span class="nav__sub-title">Figma</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Pigma" %}
-                        <li><a href="/categories/pigma" class="">Pigma ({{category[1].size}})</a></li>
+                    {% if category[0] == "Figma" %}
+                        <li><a href="/categories/figma" class="">Figma ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

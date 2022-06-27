@@ -1,7 +1,7 @@
 ---
-title: "Pigma"
+title: "Figma"
 layout: archive
-permalink: categories/pigma
+permalink: categories/figma
 author_profile: true
 sidebar_main: true
 ---
