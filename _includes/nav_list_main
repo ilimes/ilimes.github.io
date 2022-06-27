@@ -39,6 +39,14 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+        <span class="nav__sub-title">JavaScript</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "JavaScript" %}
+                        <li><a href="/categories/javaScript" class="">JavaScript ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">Pigma</span>
             <ul>
                 {% for category in site.categories %}
@@ -52,6 +60,14 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Web" %}
                         <li><a href="/categories/web" class="">웹 개발 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "CodingTest" %}
+                        <li><a href="/categories/codingTest" class="">코딩 테스트 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
