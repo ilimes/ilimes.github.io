@@ -1,4 +1,4 @@
-I"�<h2 id="상태state란-무엇인가">상태(state)란 무엇인가?</h2>
+I"8<h2 id="상태state란-무엇인가">상태(state)란 무엇인가?</h2>
 
 <blockquote>
   <p>리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다.</p>
@@ -51,7 +51,7 @@
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>상태 값 저장 변수가 아니라 setter 함수를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
+<p>상태 값 저장 변수가 아니라 <code class="language-plaintext highlighter-rouge">setter</code> 함수(setNumber)를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />

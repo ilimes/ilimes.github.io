@@ -1,0 +1,69 @@
+I"%<h2 id="ant-design이란">Ant Design이란?</h2>
+
+<p>Ant Design은 알리바바 그룹에서 개발한 UI 라이브러리로 리액트와 타입스크립트(Typescript)를 기반으로 제작되었으며 Layout, Button, Grid, Card 등 다양한 컴포넌트를 지원합니다.</p>
+
+<h2 id="ant-design을-사용하게-된-계기">Ant Design을 사용하게 된 계기</h2>
+
+<p>스프링으로 웹 개발을 하면서 인기 높은 CSS 프레임워크인 부트스트랩을 사용했던 적이 있습니다. 개인적으로 부트스트랩을 사용해보니 커스터마이징도 쉽고 개발 속도도 빨라져서 굉장히 편리하다고 느꼈는데요. 최근 회사에 입사하여 리액트로 개발을 하게 되면서 리액트에도 편하게 개발을 도와주는 Ant Design이 있다는 것을 알게 되었습니다. 많은 부분이 컴포넌트로 구현이 되어 있고 admin 페이지를 만들기 좋은 라이브러리다보니 실제로 회사에서 Antd를 사용하는 경우가 꽤나 많다고 합니다.</p>
+
+<h2 id="ant-design의-장점">Ant Design의 장점</h2>
+
+<p>디자인이 깔끔하고 예쁘다.<br />
+엄청나게 많은 컴포넌트들을 제공한다.<br />
+빠르게 완성도 높은 admin 페이지를 제작할 수 있다.</p>
+
+<h2 id="ant-design의-단점">Ant Design의 단점</h2>
+
+<p>커스터마이징이 어렵다.<br />
+많은 것을 제공하므로 용량이 크다.</p>
+
+<h2 id="설치-방법">설치 방법</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">antd</span>
+</code></pre></div></div>
+
+<p><img width="739" alt="1" src="https://user-images.githubusercontent.com/95404736/175957425-2868ad78-6eed-499c-9f18-4217ebf97045.png" /></p>
+
+<h2 id="사용-방법">사용 방법</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">antd/dist/antd.css</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>npm으로 설치가 완료되면 <code class="language-plaintext highlighter-rouge">index.js</code>에 위와 같이 스타일을 import 하고 손쉽게 사용 가능합니다.</p>
+
+<h2 id="툴팁-띄워보기">툴팁 띄워보기</h2>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Tooltip</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">FilterOutlined</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@ant-design/icons</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
+      <span class="p">&lt;&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"Menu"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">Tooltip</span> <span class="na">placement</span><span class="p">=</span><span class="s">"top"</span> <span class="na">title</span><span class="p">=</span><span class="s">"툴팁!!"</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nc">Button</span> <span class="na">shape</span><span class="p">=</span><span class="s">"round"</span> <span class="na">icon</span><span class="p">=</span><span class="si">{</span><span class="p">&lt;</span><span class="nc">FilterOutlined</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+          <span class="p">&lt;/</span><span class="nc">Tooltip</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;/&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><img width="74" alt="2" src="https://user-images.githubusercontent.com/95404736/175968267-3ca1c031-1275-43bb-b9d1-7fd0732fb118.png" /></p>
+
+<h3 id="ant-design-공식-홈페이지">Ant Design 공식 홈페이지</h3>
+
+<p><a href="https://ant.design/">https://ant.design/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

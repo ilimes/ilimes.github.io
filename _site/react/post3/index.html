@@ -282,7 +282,7 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> 3 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> 8 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -298,6 +298,10 @@
                 
                     
                 
+                    
+                
+                    
+                
             </ul>
         <span class="nav__sub-title">React</span>
             <ul>
@@ -305,7 +309,11 @@
                     
                 
                     
-                        <li><a href="/categories/react" class="">react (1)</a></li>
+                        <li><a href="/categories/react" class="">react (3)</a></li>
+                    
+                
+                    
+                
                     
                 
             </ul>
@@ -316,9 +324,57 @@
                 
                     
                 
+                    
+                
+                    
+                
             </ul>
-        <span class="nav__sub-title">Pigma</span>
+        <span class="nav__sub-title">JavaScript</span>
             <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/javaScript" class="">JavaScript (2)</a></li>
+                    
+                
+            </ul>
+        <span class="nav__sub-title">Figma</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">웹 개발</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/web" class="">웹 개발 (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                
+                    
+                
+                    
                 
                     
                 
@@ -391,7 +447,7 @@
 
 <p>Counter.js</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -404,29 +460,29 @@
   <span class="p">};</span>
 
   <span class="k">return</span> <span class="p">(</span>
-    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
-      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">number</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onIncrease</span><span class="p">}</span><span class="o">&gt;+</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onDecrease</span><span class="p">}</span><span class="o">&gt;-</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
-</span>  <span class="p">);</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onIncrease</span><span class="si">}</span><span class="p">&gt;</span>+1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onDecrease</span><span class="si">}</span><span class="p">&gt;</span>-1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
 </code></pre></div></div>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 </code></pre></div></div>
 
 <p>useState를 사용하기 위해서는 가장 먼저 위와 같이 리액트 패키지에서 useState 함수를 불러와야 한다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>useState 함수를 호출하면 위처럼 배열을 반환하게 된다.<br />
 첫 번째 원소는 현재 상태 값을 저장하는 변수이고, 두 번째 원소는 상태 값을 바꿔주는 setter 함수다.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -434,7 +490,7 @@
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>상태 값 저장 변수가 아니라 setter 함수를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
+<p>상태 값 저장 변수가 아니라 <code class="language-plaintext highlighter-rouge">setter</code> 함수(setNumber)를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
@@ -510,7 +566,8 @@
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/web/post4/" class="pagination--pager" title="리액트에서 UI 라이브러리 앤트 디자인(Ant Design) 사용하기
+">Next</a>
     
   </nav>
 
@@ -534,7 +591,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/post2/" rel="permalink">마크다운(Markdown) 문법
+        <a href="/react/post8/" rel="permalink">리액트에서 styled-components로 스타일링 하기
 </a>
       
     </h2>
@@ -559,7 +616,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">마크다운(Markdown) 문법에 관한 글
+    <p class="archive__item-excerpt" itemprop="description">React styled-components 사용법
 </p>
   </article>
 </div>
@@ -574,7 +631,7 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/post/" rel="permalink">github.io 블로그 첫 포스팅입니다
+        <a href="/react/post7/" rel="permalink">리액트 이벤트 핸들링
 </a>
       
     </h2>
@@ -592,14 +649,94 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          less than 1 minute read
+          1 minute read
         
       </span>
     
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">github.io 에서 글을 처음 작성해보았습니다 😊
+    <p class="archive__item-excerpt" itemprop="description">React에서 이벤트 다루기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/post6/" rel="permalink">자바스크립트 Promise 이해하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바스크립트 Promise
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/post5/" rel="permalink">자바스크립트 프로토타입(prototype) 이해하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자바스크립트 프로토타입(prototype)
 </p>
   </article>
 </div>

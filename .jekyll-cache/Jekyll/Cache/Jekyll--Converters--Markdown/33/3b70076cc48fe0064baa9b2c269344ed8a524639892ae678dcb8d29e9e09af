@@ -1,9 +1,9 @@
-I"U
+I"'
 <div class="list__item">
     <article class="archive-item">
         <div>
             <span>
-              <a href="/react/post3/">리액트 Hooks : useState()</a>
+              <a href="/web/post4/">리액트에서 UI 라이브러리 앤트 디자인(Ant Design) 사용하기</a>
             </span>
             <small> 
               <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.27
@@ -11,10 +11,14 @@
 <!--page__taxonomy.html에서 가져 옴-->
         
         <span class="page__taxonomy">
-            <span itemprop="keywords"><a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>
+            <span itemprop="keywords"><a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>
                     
                     
-                    <a href="/tags/#hooks" class="page__taxonomy-item-tag" rel="tag">Hooks</a><span class="sep"> </span>
+                    <a href="/tags/#antdesign" class="page__taxonomy-item-tag" rel="tag">antdesign</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#design" class="page__taxonomy-item-tag" rel="tag">design</a><span class="sep"> </span>
                 
                     
                     
@@ -22,11 +26,11 @@
                 
                     
                     
-                    <a href="/tags/#setstate" class="page__taxonomy-item-tag" rel="tag">setState</a><span class="sep"> </span>
+                    <a href="/tags/#ui" class="page__taxonomy-item-tag" rel="tag">ui</a><span class="sep"> </span>
                 
                     
                     
-                    <a href="/tags/#usestate" class="page__taxonomy-item-tag" rel="tag">useState</a>
+                    <a href="/tags/#web" class="page__taxonomy-item-tag" rel="tag">web</a>
                 
             </span>
         </span>
