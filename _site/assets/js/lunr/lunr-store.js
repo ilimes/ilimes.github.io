@@ -52,4 +52,10 @@ var store = [{
         "tags": ["pm2","Node.js"],
         "url": "/nodejs/post9/",
         "teaser": null
+      },{
+        "title": "Git 기본 CLI 명령어 정리",
+        "excerpt":"Git 이란? Git이란 형상 관리 도구중 하나로 버전 관리, 백업, 협업 등을 할 수 있는 강력한 도구입니다. Git은 중앙 서버에서 소스코드와 히스토리를 저장하던 SVN과는 달리 소스코드를 여러 개발 PC에 분산 저장하여 관리하는 시스템이라 SVN보다 속도가 더욱 빠르기도 하여 SVN을 사용하던 기존 개발 조직에서도 계속 Git으로 갈아타고 있는 추세입니다. CLI란? CLI란...","categories": ["Git"],
+        "tags": ["cli","git","github"],
+        "url": "/git/post10/",
+        "teaser": null
       }]
