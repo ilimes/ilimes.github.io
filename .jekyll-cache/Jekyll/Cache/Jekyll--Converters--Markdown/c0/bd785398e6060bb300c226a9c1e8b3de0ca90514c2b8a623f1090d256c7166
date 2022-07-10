@@ -1,0 +1,41 @@
+I"�<h2 id="pm2란">pm2란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">pm2</code>란 Node.js 운영을 효율적이게 할 수 있게 하는 프로세스 관리도구입니다. 기본적으로 싱글스레드 기반이라 멀티스레딩이 불가능한 Node.js에서 멀티스레딩과 비슷하게 내부적으로 서버를 Fork해서 사용할 수 있도록 클러스터링(Clustering) 이라는 것을</p>
+
+<h2 id="pm2-설치-방법">pm2 설치 방법</h2>
+
+<p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
+</code></pre></div></div>
+
+<p>그럼 설치가 완료되고 pm2를 사용할 수 있습니다.</p>
+
+<h2 id="pm2-명령어">pm2 명령어</h2>
+
+<ul>
+  <li>프로세스 실행</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
+</code></pre></div></div>
+
+<ul>
+  <li>실행중인 파일 리스트 보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 list
+</code></pre></div></div>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 리액트에서 styled-components로 스타일링 하는 방법에 대해 공부했습니다. AntD를 사용하다보면 앞으로 가끔씩 커스텀 스타일링을 하게 될 경우가 생길 듯 한데 오늘 공부한 내용을 잘 활용하면 좋을 것 같습니다 :)</p>
+
+<h3 id="참고-사이트">참고 사이트</h3>
+
+<p><a href="https://pm2.keymetrics.io/">https://pm2.keymetrics.io/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

@@ -1,0 +1,41 @@
+I"<h2 id="pm2란">pm2란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">pm2</code>란 Node.js 운영을 효율적이게 할 수 있게 하는 프로세스 관리도구입니다. 기본적으로 싱글스레드 기반이라 멀티스레딩이 불가능한 Node.js에서 멀티스레딩과 비슷하게 내부적으로 서버를 Fork해서 사용할 수 있도록 클러스터라는 기능을 제공하기도 하고</p>
+
+<h2 id="pm2-설치-방법">pm2 설치 방법</h2>
+
+<p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
+</code></pre></div></div>
+
+<p>설치 할 때 뒤에 <code class="language-plaintext highlighter-rouge">-g</code>라는 옵션을 붙이는 이유는 pm2 명령어를 어떤 디렉토리에서든 사용할 수 있도록 하기 위함입니다.</p>
+
+<h2 id="pm2-명령어">pm2 명령어</h2>
+
+<ul>
+  <li>프로세스 실행</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
+</code></pre></div></div>
+
+<ul>
+  <li>실행중인 파일 리스트 보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 list
+</code></pre></div></div>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 pm2</p>
+
+<h3 id="참고-사이트">참고 사이트</h3>
+
+<p><a href="https://pm2.keymetrics.io/">https://pm2.keymetrics.io/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

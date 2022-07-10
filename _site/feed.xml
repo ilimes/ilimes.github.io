@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-09T21:26:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부하며 기록하기 : Today I Learned 📖</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">리액트에서 styled-components로 스타일링 하기</title><link href="http://localhost:4000/react/post8/" rel="alternate" type="text/html" title="리액트에서 styled-components로 스타일링 하기" /><published>2022-07-06T00:00:00+09:00</published><updated>2022-07-06T00:00:00+09:00</updated><id>http://localhost:4000/react/post8</id><content type="html" xml:base="http://localhost:4000/react/post8/"><![CDATA[<h2 id="styled-components란">styled-components란?</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-07-10T14:46:50+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">공부하며 기록하기 : Today I Learned 📖</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Node.js 프로세스 관리도구 pm2</title><link href="http://localhost:4000/nodejs/post9/" rel="alternate" type="text/html" title="Node.js 프로세스 관리도구 pm2" /><published>2022-07-10T00:00:00+09:00</published><updated>2022-07-10T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post9</id><content type="html" xml:base="http://localhost:4000/nodejs/post9/"><![CDATA[<h2 id="pm2란">pm2란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">pm2</code>란 Node.js 운영을 효율적이게 할 수 있게 하는 프로세스 관리도구인데요. 기본적으로 싱글스레드 기반이라 멀티스레딩이 불가능한 Node.js에서 멀티스레딩과 비슷하게 내부적으로 서버를 Fork해서 사용할 수 있도록 클러스터라는 기능을 제공하기도 하고 프로세스가 죽었을 때의 처리 등 직접 하나씩 하게 된다면 귀찮은 온갖 일들을 몽땅 관리해주는 강력한 도구입니다.</p>
+
+<h2 id="pm2-설치-방법">pm2 설치 방법</h2>
+
+<p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
+</code></pre></div></div>
+
+<p>설치 할 때 뒤에 <code class="language-plaintext highlighter-rouge">-g</code>라는 옵션을 붙이는 이유는 pm2 명령어를 어떤 디렉토리에서든 사용할 수 있도록 하기 위함입니다.</p>
+
+<h2 id="pm2-명령어">pm2 명령어</h2>
+
+<ul>
+  <li>프로세스 실행</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
+</code></pre></div></div>
+
+<ul>
+  <li>실행중인 파일 리스트 보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 list
+</code></pre></div></div>
+
+<ul>
+  <li>상세 정보 보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 show 파일명
+</code></pre></div></div>
+
+<ul>
+  <li>프로세스 종료</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 stop 실행중인 파일 명.js
+</code></pre></div></div>
+
+<ul>
+  <li>pm2 데몬 자체를 꺼버리기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 kill
+</code></pre></div></div>
+
+<p>(위에서 <code class="language-plaintext highlighter-rouge">stop</code>이라는 명령어를 사용하면 프로세스는 중지되지만 pm2가 여전히 관리하고 있는 상태가 됩니다. 데몬 자체를 꺼버리기 위해서는 <code class="language-plaintext highlighter-rouge">kill</code>명령어를 입력해야합니다.)</p>
+
+<ul>
+  <li>프로세스 재시작</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 restart 실행중인 파일 명.js
+</code></pre></div></div>
+
+<ul>
+  <li>모니터링</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 monit
+</code></pre></div></div>
+
+<p>(모니터링 상태에서는 pm2로 관리되는 프로세스별 상태를 볼 수 있고 실시간으로 로그를 확인하는 것이 가능합니다. 모니터링 상태에서 빠져나오기 위해서는 키보드의 <code class="language-plaintext highlighter-rouge">q</code>키를 누르면 됩니다.)</p>
+
+<ul>
+  <li>자동 재시작 설정</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 실행하고자 하는 파일 명.js --watch
+</code></pre></div></div>
+
+<p>(위와 같이 watch 옵션을 추가하게 되면 pm2에서 파일 변경을 파악하고 자동 재시작을 해줍니다. node는 내용을 변경하고 나면 서버를 껐다가 다시 켜줘야만 변경사항이 반영되는데 자동 재시작을 해주기 때문에 굉장히 편리합니다.)</p>
+
+<ul>
+  <li>로그 보기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 log
+</code></pre></div></div>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>이번 포스팅에서는 pm2에 대해서 공부한 내용들을 간단하게 정리해보았고,
+기본적인 pm2 명령어들도 살펴보았습니다.</p>
+
+<h3 id="참고-사이트">참고 사이트</h3>
+
+<p><a href="https://pm2.keymetrics.io/">https://pm2.keymetrics.io/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="pm2" /><category term="Node.js" /><summary type="html"><![CDATA[Node.js 운영을 효율적이게 하는 프로세스 관리도구]]></summary></entry><entry><title type="html">리액트에서 styled-components로 스타일링 하기</title><link href="http://localhost:4000/react/post8/" rel="alternate" type="text/html" title="리액트에서 styled-components로 스타일링 하기" /><published>2022-07-06T00:00:00+09:00</published><updated>2022-07-06T00:00:00+09:00</updated><id>http://localhost:4000/react/post8</id><content type="html" xml:base="http://localhost:4000/react/post8/"><![CDATA[<h2 id="styled-components란">styled-components란?</h2>
 
 <p>styled-component는 리액트에서 사용하는 대표적인 CSS-in-JS 라이브러리 입니다. 스타일을 자바스크립트 파일에 내장시켜 사용할 수 있으며 CSS 커스텀 컴포넌트를 만들어서 쉽게 재사용할 수 있습니다.</p>
 
@@ -488,12 +583,7 @@ input 박스에 위와 같이 입력하면</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="react" /><category term="ui" /><category term="web" /><category term="antdesign" /><category term="design" /><summary type="html"><![CDATA[React UI 라이브러리 Ant Design]]></summary></entry><entry><title type="html">github.io 블로그 첫 포스팅입니다</title><link href="http://localhost:4000/blog/post/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅입니다" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post</id><content type="html" xml:base="http://localhost:4000/blog/post/"><![CDATA[<p>마크다운 문법으로 글을 작성할 수 있습니다.<br />
-<a href="https://ilimes.github.io/blog/post2/" title="마크다운 설명 글 바로가기">마크다운 설명 글 보기</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Blog" /><summary type="html"><![CDATA[github.io 에서 글을 처음 작성해보았습니다 😊]]></summary></entry><entry><title type="html">마크다운(Markdown) 문법</title><link href="http://localhost:4000/blog/post2/" rel="alternate" type="text/html" title="마크다운(Markdown) 문법" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post2</id><content type="html" xml:base="http://localhost:4000/blog/post2/"><![CDATA[<h2 id="마크다운markdown-이란">마크다운(Markdown) 이란?</h2>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="react" /><category term="ui" /><category term="web" /><category term="antdesign" /><category term="design" /><summary type="html"><![CDATA[React UI 라이브러리 Ant Design]]></summary></entry><entry><title type="html">마크다운(Markdown) 문법</title><link href="http://localhost:4000/blog/post2/" rel="alternate" type="text/html" title="마크다운(Markdown) 문법" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post2</id><content type="html" xml:base="http://localhost:4000/blog/post2/"><![CDATA[<h2 id="마크다운markdown-이란">마크다운(Markdown) 이란?</h2>
 
 <blockquote>
   <p>텍스트 기반의 마크업 언어로 GitHub에서 README 파일을 편집할 때 많이 쓰인다. 가독성이 좋고 간단해서 배우기 쉽다.</p>
@@ -688,4 +778,9 @@ console.log("test!!!");
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Blog" /><category term="Markdown" /><category term="Jekyll" /><summary type="html"><![CDATA[마크다운(Markdown) 문법에 관한 글]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Blog" /><category term="Markdown" /><category term="Jekyll" /><summary type="html"><![CDATA[마크다운(Markdown) 문법에 관한 글]]></summary></entry><entry><title type="html">github.io 블로그 첫 포스팅입니다</title><link href="http://localhost:4000/blog/post/" rel="alternate" type="text/html" title="github.io 블로그 첫 포스팅입니다" /><published>2022-06-26T00:00:00+09:00</published><updated>2022-06-26T00:00:00+09:00</updated><id>http://localhost:4000/blog/post</id><content type="html" xml:base="http://localhost:4000/blog/post/"><![CDATA[<p>마크다운 문법으로 글을 작성할 수 있습니다.<br />
+<a href="https://ilimes.github.io/blog/post2/" title="마크다운 설명 글 바로가기">마크다운 설명 글 보기</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Blog" /><summary type="html"><![CDATA[github.io 에서 글을 처음 작성해보았습니다 😊]]></summary></entry></feed>

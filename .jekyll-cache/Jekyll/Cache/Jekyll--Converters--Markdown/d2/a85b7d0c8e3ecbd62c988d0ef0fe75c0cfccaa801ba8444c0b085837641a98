@@ -1,0 +1,97 @@
+I"�<h2 id="pm2란">pm2란?</h2>
+
+<p>pm2란</p>
+
+<h2 id="pm2-설치-방법">pm2 설치 방법</h2>
+
+<p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
+</code></pre></div></div>
+
+<p>그럼 설치가 완료되고 pm2를 사용할 수 있습니다.</p>
+
+<h2 id="pm2-명령어">pm2 명령어</h2>
+
+<p>프로세스 실행</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
+</code></pre></div></div>
+
+<p>위와 같이 고정된 blue 색상을 주는 MyStyle 컴포넌트를 만들어주도록 하겠습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">MyStyle</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>해당 컴포넌트를 사용하면 아래와 같은 실행결과를 얻을 수 있습니다.</p>
+
+<ul>
+  <li>실행 결과<br />
+<img src="https://user-images.githubusercontent.com/95404736/177561605-f41b5eb0-afff-4353-aa7f-e2e0296ac044.png" alt="image" /></li>
+</ul>
+
+<p>이렇게 고정적인 스타일링을 하는 것은 좋은 예가 아닙니다. 이렇게 만들게 되면 색을 바꾸고 싶을 때 마다 새로운 컴포넌트를 계속 만들어줘야 합니다.</p>
+
+<p>그래서 좀 더 효율적으로 컴포넌트를 만들기 위해서는 props를 잘 활용해야 하는데요. props를 활용한 예는 아래와 같습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyStyle</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+  color: </span><span class="p">${(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">myColor</span><span class="p">}</span><span class="s2">;
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">MyStyle</span> <span class="na">myColor</span><span class="p">=</span><span class="s">"red"</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>실행 결과<br />
+<img src="https://user-images.githubusercontent.com/95404736/177562898-889181a8-85c1-4dc5-b21e-0046e010ac38.png" alt="image" /></li>
+</ul>
+
+<h2 id="styled-components를-사용해서-antd-스위치-스타일-바꿔보기">styled-components를 사용해서 AntD 스위치 스타일 바꿔보기</h2>
+
+<p>직접 만든 컴포넌트 뿐만 아니라 AntD와 styled-components를 함께 사용할 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">antd/dist/antd.css</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">StyledSwitch</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">(</span><span class="nx">Switch</span><span class="p">)</span><span class="s2">`
+  &amp;[aria-checked="true"] {
+    background: green;
+  }
+  &amp;[aria-checked="false"] {
+    background: red;
+  }
+`</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 코드에서 &amp;은 부모 선택자입니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">StyledSwitch</span> <span class="na">checkedChildren</span><span class="p">=</span><span class="s">"ON"</span> <span class="na">unCheckedChildren</span><span class="p">=</span><span class="s">"OFF"</span> <span class="na">defaultChecked</span> <span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>스위치 ON 일 때<br />
+<img src="https://user-images.githubusercontent.com/95404736/177559148-366341b3-f62f-4496-b499-77361ed403b3.png" alt="image" /></p>
+  </li>
+  <li>
+    <p>스위치 OFF 일 때<br />
+<img src="https://user-images.githubusercontent.com/95404736/177559214-2a2f587c-d72f-4b8d-9bd0-4afe93de5e97.png" alt="image" /></p>
+  </li>
+</ul>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 리액트에서 styled-components로 스타일링 하는 방법에 대해 공부했습니다. AntD를 사용하다보면 앞으로 가끔씩 커스텀 스타일링을 하게 될 경우가 생길 듯 한데 오늘 공부한 내용을 잘 활용하면 좋을 것 같습니다 :)</p>
+
+<h3 id="참고-사이트">참고 사이트</h3>
+
+<p><a href="https://pm2.keymetrics.io/">https://pm2.keymetrics.io/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

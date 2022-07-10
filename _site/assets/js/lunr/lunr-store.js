@@ -46,4 +46,10 @@ var store = [{
         "tags": ["리액트","react","style","css","styled","component"],
         "url": "/react/post8/",
         "teaser": null
+      },{
+        "title": "Node.js 프로세스 관리도구 pm2",
+        "excerpt":"pm2란? pm2란 Node.js 운영을 효율적이게 할 수 있게 하는 프로세스 관리도구인데요. 기본적으로 싱글스레드 기반이라 멀티스레딩이 불가능한 Node.js에서 멀티스레딩과 비슷하게 내부적으로 서버를 Fork해서 사용할 수 있도록 클러스터라는 기능을 제공하기도 하고 프로세스가 죽었을 때의 처리 등 직접 하나씩 하게 된다면 귀찮은 온갖 일들을 몽땅 관리해주는 강력한 도구입니다. pm2 설치 방법 아래 명령어를...","categories": ["NodeJs"],
+        "tags": ["pm2","Node.js"],
+        "url": "/nodejs/post9/",
+        "teaser": null
       }]
