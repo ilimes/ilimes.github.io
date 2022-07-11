@@ -58,4 +58,10 @@ var store = [{
         "tags": ["cli","git","github"],
         "url": "/git/post10/",
         "teaser": null
+      },{
+        "title": "Node.js-Express",
+        "excerpt":"Express란? Express란 Node.js 기반 웹 프레임워크로, 간단하게 서버 쪽 웹 어플리케이션을 쉽게 구현할 수 있도록 도와주는 프레임워크라고 할 수 있습니다. Express 설치하기 npm install express Express를 설치하기 위해서는 위와 같이 npm 명령어를 사용하면 간단하게 설치할 수 있습니다. npm 명령어를 사용하기 이전에 Node.js와 npm init 실행이 반드시 선행되어야 합니다. Express 5가지...","categories": ["NodeJs"],
+        "tags": ["express","NodeJs","Node.js"],
+        "url": "/nodejs/post11/",
+        "teaser": null
       }]
