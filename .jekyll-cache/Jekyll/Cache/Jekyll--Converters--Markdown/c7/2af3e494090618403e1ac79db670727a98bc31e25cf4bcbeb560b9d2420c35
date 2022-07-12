@@ -1,0 +1,57 @@
+I"<p>회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다.</p>
+
+<h2 id="mac에서-mariadb-설치하기">Mac에서 MariaDB 설치하기</h2>
+
+<p><a href="https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25">https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25</a><br />
+위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mariadb
+</code></pre></div></div>
+
+<p>homebrew가 설치되어 있지 않다면 우선적으로 설치를 해주시고, homebrew 설치가 완료되었다면 터미널에 위 명령어를 입력하시면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arch -arm64 brew install mariadb
+</code></pre></div></div>
+
+<p>저같은 경우는 M1 Mac을 사용중이라 위 명령어를 입력하여 설치를 진행하였습니다.</p>
+
+<h2 id="homebrew로-mariadb-시작하기">homebrew로 MariaDB 시작하기</h2>
+
+<p>일반적인 설치를 한 경우에는 db 서버를 시작하는 명령어가 <code class="language-plaintext highlighter-rouge">mysql.server.start</code> 인데 homebrew로 MariaDB를 설치 한 경우에는 아래와 같이 조금 다른 명령어로 서비스를 시작할 수 있습니다.</p>
+
+<ul>
+  <li>DB 서비스 시작</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mariadb
+</code></pre></div></div>
+
+<ul>
+  <li>DB 서비스 중지</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services stop mariadb
+</code></pre></div></div>
+
+<ul>
+  <li>DB 서비스 상태 확인</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services list
+</code></pre></div></div>
+
+<h2 id="gui-툴-설치하기">GUI 툴 설치하기</h2>
+
+<p>회사 컴퓨터는 윈도우 환경이라 HeidiSQL을 사용할 수 있었지만 Mac에서는 아쉽게도 HeidiSQL을 사용할 수 없더라고요. 그래서 대안으로 사용할 수 있는 툴을 찾아보았는데요. 꽤나 평이 좋은 툴인 Sequel Pro 를 발견하였습니다.</p>
+
+<p><a href="https://sequelpro.com/">https://sequelpro.com/</a><br />
+설치 방법은 아주 간단합니다. 위 링크에 접속하여 DOWNLOAD 버튼을 누르면 손쉽게 dmg 파일을 다운로드 받을 수 있습니다.
+<br /><br />
+<img width="992" alt="image" src="https://user-images.githubusercontent.com/95404736/178505172-1f35a13c-79a2-4662-84b3-85583837cd7c.png" /><br />
+<br />
+프로그램을 실행하면 위와 같은 화면이 뜨게되는데 원하는대로 Name, Host, Username, Password 등을 입력하면 됩니다. Name은 나에게 보여지는 이름이라 아무렇게나 적어도 되고 저같은 경우에는 로컬에서 접속할거라 Host에 127.0.0.1 을 입력해주었습니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

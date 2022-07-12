@@ -1,0 +1,869 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Mac에서 MariaDB 및 GUI 툴 설치하기 - 공부하며 기록하기 : Today I Learned 📖</title>
+<meta name="description" content="homebrew로 mariaDB를 설치하고 GUI툴인 sequel pro까지 설치하기">
+
+
+  <meta name="author" content="LIME">
+  
+  <meta property="article:author" content="LIME">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="공부하며 기록하기 : Today I Learned 📖">
+<meta property="og:title" content="Mac에서 MariaDB 및 GUI 툴 설치하기">
+<meta property="og:url" content="http://localhost:4000/web/post12/">
+
+
+  <meta property="og:description" content="homebrew로 mariaDB를 설치하고 GUI툴인 sequel pro까지 설치하기">
+
+
+
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-07-12T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/web/post12/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "LIME",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="공부하며 기록하기 : Today I Learned 📖 Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          공부하며 기록하기 : Today I Learned 📖
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://ilimes.github.io">Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tag</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" alt="LIME" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">LIME</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:ilimes1307@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="ilimes1307@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ilimes" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+      <!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> 12 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+        <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+        <span class="nav__sub-title">Blog</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/blog" class="">Blog (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">React</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">Node.js</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/nodeJs" class="">Node.js (2)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">JavaScript</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/javaScript" class="">JavaScript (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">Figma</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">웹 개발</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/web" class="">웹 개발 (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (1)</a></li>
+                    
+                
+            </ul>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+  
+
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Mac에서 MariaDB 및 GUI 툴 설치하기">
+    <meta itemprop="description" content="homebrew로 mariaDB를 설치하고 GUI툴인 sequel pro까지 설치하기">
+    <meta itemprop="datePublished" content="2022-07-12T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/web/post12/" class="u-url" itemprop="url">Mac에서 MariaDB 및 GUI 툴 설치하기
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#mac에서-mariadb-설치하기">Mac에서 MariaDB 설치하기</a></li><li><a href="#homebrew로-mariadb-시작하기">homebrew로 MariaDB 시작하기</a></li><li><a href="#gui-툴-설치하기">GUI 툴 설치하기</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다.</p>
+
+<h2 id="mac에서-mariadb-설치하기">Mac에서 MariaDB 설치하기</h2>
+
+<p><a href="https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25">https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25</a><br />
+위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mariadb
+</code></pre></div></div>
+
+<p>homebrew가 설치되어 있지 않다면 우선적으로 설치를 해주시고, homebrew 설치가 완료되었다면 터미널에 위 명령어를 입력하시면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arch -arm64 brew install mariadb
+</code></pre></div></div>
+
+<p>저같은 경우는 M1 Mac을 사용중이라 위 명령어를 입력하여 설치를 진행하였습니다.</p>
+
+<h2 id="homebrew로-mariadb-시작하기">homebrew로 MariaDB 시작하기</h2>
+
+<p>일반적인 설치를 한 경우에는 db 서버를 시작하는 명령어가 <code class="language-plaintext highlighter-rouge">mysql.server.start</code> 인데 homebrew로 MariaDB를 설치 한 경우에는 아래와 같이 조금 다른 명령어로 서비스를 시작할 수 있습니다.</p>
+
+<ul>
+  <li>DB 서비스 시작</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mariadb
+</code></pre></div></div>
+
+<ul>
+  <li>DB 서비스 중지</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services stop mariadb
+</code></pre></div></div>
+
+<ul>
+  <li>DB 서비스 상태 확인</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services list
+</code></pre></div></div>
+
+<h2 id="gui-툴-설치하기">GUI 툴 설치하기</h2>
+
+<p>회사 컴퓨터는 윈도우 환경이라 HeidiSQL을 사용할 수 있었지만 Mac에서는 아쉽게도 HeidiSQL을 사용할 수 없더라고요. 그래서 대안으로 사용할 수 있는 툴을 찾아보았는데요. 꽤나 평이 좋은 툴인 Sequel Pro 를 발견하였습니다.</p>
+
+<p><a href="https://sequelpro.com/">https://sequelpro.com/</a><br />
+설치 방법은 아주 간단합니다. 위 링크에 접속하여 DOWNLOAD 버튼을 누르면 손쉽게 dmg 파일을 다운로드 받을 수 있습니다.
+<br /><br />
+<img width="992" alt="image" src="https://user-images.githubusercontent.com/95404736/178505172-1f35a13c-79a2-4662-84b3-85583837cd7c.png" /><br />
+<br />
+프로그램을 실행하면 위와 같은 화면이 뜨게되는데 원하는대로 Name, Host, Username, Password 등을 입력하면 됩니다. Name은 나에게 보여지는 이름이라 아무렇게나 적어도 되구요. 저같은 경우는 로컬에서 접속할거라 Host에 127.0.0.1 을 입력해주었습니다.</p>
+
+<p>이렇게 PC에 MariaDB를 설치하고 GUI 툴까지 설치를 완료하였습니다. 앞으로 집에서도 DB 공부를 열심히 해봐야겠습니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#db" class="page__taxonomy-item p-category" rel="tag">db</a><span class="sep">, </span>
+    
+      <a href="/tags/#mariadb" class="page__taxonomy-item p-category" rel="tag">MariaDB</a><span class="sep">, </span>
+    
+      <a href="/tags/#sequelpro" class="page__taxonomy-item p-category" rel="tag">SequelPro</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#web" class="page__taxonomy-item p-category" rel="tag">Web</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-07-12T00:00:00+09:00">July 12, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Mac%EC%97%90%EC%84%9C+MariaDB+%EB%B0%8F+GUI+%ED%88%B4+%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fweb%2Fpost12%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fweb%2Fpost12%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fweb%2Fpost12%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/nodejs/post11/" class="pagination--pager" title="Node.js-Express
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nodejs/post11/" rel="permalink">Node.js-Express
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Node.js 기반 웹 프레임워크 Express에 대해 공부하기 + 간단한 사용
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/post10/" rel="permalink">Git 기본 CLI 명령어 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Git에서 사용하는 기본적인 명령어를 정리해보았습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/nodejs/post9/" rel="permalink">Node.js 프로세스 관리도구 pm2
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Node.js 운영을 효율적이게 하는 프로세스 관리도구
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/post8/" rel="permalink">리액트에서 styled-components로 스타일링 하기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">React styled-components 사용법
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 LIME. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "http://localhost:4000/web/post12/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/web/post12"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ilimes-github-io.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

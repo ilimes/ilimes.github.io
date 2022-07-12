@@ -64,4 +64,10 @@ var store = [{
         "tags": ["express","NodeJs","Node.js"],
         "url": "/nodejs/post11/",
         "teaser": null
+      },{
+        "title": "Mac에서 MariaDB 및 GUI 툴 설치하기",
+        "excerpt":"회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다. Mac에서 MariaDB 설치하기 https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25 위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다. brew install mariadb homebrew가 설치되어 있지 않다면...","categories": ["Web"],
+        "tags": ["MariaDB","SequelPro","db"],
+        "url": "/web/post12/",
+        "teaser": null
       }]
