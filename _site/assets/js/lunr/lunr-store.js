@@ -70,4 +70,16 @@ var store = [{
         "tags": ["MariaDB","SequelPro","db"],
         "url": "/web/post12/",
         "teaser": null
+      },{
+        "title": "Axios 알아보기(특징, 설치방법 문법 등)",
+        "excerpt":"Axios란? 공식 문서에도 적혀있듯이 Axios는 Node.js와 브라우저를 위한 Promise 기반 HTTP 클라이언트 입니다. JavaScript에서 클라이언트와 서버 간 데이터를 주고받기 위해서 사용하는 비동기 HTTP 통신 방법 중에서는 Axios 뿐만 아니라 Ajax, Fetch 등이 있는데요. 제가 앞서 사용해보았던 Ajax는 보통 jQuery를 사용하여 보다 쉽게 요청을 처리 할 수 있지만 Promise 기반의 통신...","categories": ["NodeJs"],
+        "tags": ["axios","Node.js","NodeJS","AJAX","Promise","비동기"],
+        "url": "/nodejs/post13/",
+        "teaser": null
+      },{
+        "title": "리액트 Hooks : useMemo()",
+        "excerpt":"Memoization 이란? Memoization은 프로그래밍 기법 중 하나로 기존에 수행한 연산의 결과값을 메모리에 저장해놓고 필요할 때 재사용하여 계산의 반복수행을 하지 않는 것입니다. 이런 기법을 사용하게 되면 중복 연산을 피할 수 있기 때문에 프로그램 실행 속도가 빨라지게 됩니다. useMemo() 란? 리액트에서 함수형 컴포넌트는 렌더링 -&gt; Component 함수 호출 -&gt; 모든 내부 변수...","categories": ["React"],
+        "tags": ["useMemo","react","Hooks","리액트","Memoization"],
+        "url": "/react/post14/",
+        "teaser": null
       }]
