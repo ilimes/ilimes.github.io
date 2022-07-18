@@ -1,0 +1,141 @@
+I"xA<h2 id="postman이란">POSTMAN이란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>은 API 개발을 보다 빠르고 쉽게 구현할 수 있도록 도와주며, 개발된 API를 테스트하여 문서화 또는 공유할 수 있게 해줍니다.</p>
+
+<h2 id="postman을-사용하는-이유">POSTMAN을 사용하는 이유</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>을 사용하는 이유는 프론트엔드를 배제하고, 서버 프로그램이 들어온 API 요청에 대해서 제대로 동작하는지 확인하기 위함입니다. RESTful API 를 구현하다보면 특정 url에 파라미터나 헤더 등을 담아서 request를 보내는 테스트르 진행하게 되는데, 이게 계속 반복되다보면 짜증이 날 수도 있습니다.</p>
+
+<h2 id="restful-api의-개념">RESTful API의 개념</h2>
+
+<p><code class="language-plaintext highlighter-rouge">RESTful API</code>란 HTTP URI(Uniform Resource Identifier)을 통하여 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통하여 해당 자원에 대한 CRUD를 적용하는 것을 의미합니다.</p>
+
+<h2 id="usememo-사용-방법">useMemo 사용 방법</h2>
+
+<ul>
+  <li>import</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>리액트에서 useMemo를 사용하기 위해서는 가장 먼저 위와 같이 react에서 useMemo를 import 해야합니다.</p>
+
+<ul>
+  <li>기본 형태</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 첫 번째 인자 콜백함수</span>
+<span class="c1">// 두 번째 인자 의존성배열</span>
+<span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span><span class="p">();</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">b</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p>useMemo의 기본 형태는 위와 같습니다.<br />
+첫 번째 인자로는 콜백함수를, 두 번째로 인자로는 의존성배열을 받는데요. 두 번째 인자로 들어가는 배열 요소 값이 업데이트 될 때만 콜백함수를 다시 호출해서 연산하고, 값이 업데이트 되지 않으면 이전에 연산했던 값을 재사용하게 됩니다.</p>
+
+<ul>
+  <li>useMemo를 사용하지 않았을 때</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Practice</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">list</span><span class="p">,</span> <span class="nx">setList</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">calculate</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">계산중 입니다!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+  <span class="p">};</span>
+  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">onInsert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nextList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">number</span><span class="p">));</span>
+    <span class="nx">setList</span><span class="p">(</span><span class="nx">nextList</span><span class="p">);</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onInsert</span><span class="si">}</span><span class="p">&gt;</span>등록<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">))</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>합계 :<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="si">{</span><span class="nx">calculate</span><span class="p">()</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Practice</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위 코드는 useMemo를 사용하지 않고 만든 코드입니다. 이런 경우에는 최초, 글자 입력 시, 버튼 클릭 시에 모두 “계산중 입니다!” 라는 메시지가 콘솔에 찍히게 됩니다.</p>
+
+<ul>
+  <li>useMemo를 사용했을 때</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Practice</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">list</span><span class="p">,</span> <span class="nx">setList</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">calculate</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">계산중 입니다!</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">list</span><span class="p">]);</span>
+
+  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="kd">const</span> <span class="nx">onInsert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nextList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">number</span><span class="p">));</span>
+    <span class="nx">setList</span><span class="p">(</span><span class="nx">nextList</span><span class="p">);</span>
+    <span class="nx">setNumber</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onInsert</span><span class="si">}</span><span class="p">&gt;</span>등록<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+        <span class="si">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">))</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>합계 :<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="si">{</span><span class="nx">calculate</span><span class="si">}</span>
+        <span class="si">{</span><span class="cm">/* 여기서 calculate는 useMemo를 사용했기 때문에 값을 반환합니다 */</span><span class="si">}</span>
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Practice</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>위와 같이 useMemo를 사용한 경우에는 list가 업데이트 될 때만 렌더링하게 됩니다.</p>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 리액트 Hooks 중에서 <code class="language-plaintext highlighter-rouge">useMemo</code>에 대해 공부했습니다. <code class="language-plaintext highlighter-rouge">useMemo</code>를 남용하면 메모리가 낭비되기도 하고, 평소 사용환경에서는 <code class="language-plaintext highlighter-rouge">useEffect</code>를 사용하여 비동기로 처리하는 경우가 많을 듯 하지만 <code class="language-plaintext highlighter-rouge">useMemo</code>는 알아놓으면 좋은 Hooks인 것 같습니다. 다음 번에는 <code class="language-plaintext highlighter-rouge">useMemo</code>와 유사한 <code class="language-plaintext highlighter-rouge">useCallback</code>에 대해 공부해보고 차이점은 무엇인지 알아봐야겠습니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

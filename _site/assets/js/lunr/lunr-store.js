@@ -82,4 +82,10 @@ var store = [{
         "tags": ["useMemo","react","Hooks","리액트","Memoization"],
         "url": "/react/post14/",
         "teaser": null
+      },{
+        "title": "POSTMAN이란?",
+        "excerpt":"POSTMAN이란? POSTMAN은 API 개발을 보다 빠르고 쉽게 구현할 수 있도록 도와주며, 개발된 API를 테스트하여 문서화 또는 공유할 수 있게 해줍니다. POSTMAN을 사용하는 이유 POSTMAN을 사용하는 이유는 프론트엔드를 배제하고, 서버 프로그램이 들어온 API 요청에 대해서 제대로 동작하는지 확인하기 위함입니다. RESTful API 를 구현하다보면 특정 url에 파라미터나 헤더 등을 담아서 request를 보내는...","categories": ["Web"],
+        "tags": ["API","postman","포스트맨","개발","restapi"],
+        "url": "/web/post15/",
+        "teaser": null
       }]
