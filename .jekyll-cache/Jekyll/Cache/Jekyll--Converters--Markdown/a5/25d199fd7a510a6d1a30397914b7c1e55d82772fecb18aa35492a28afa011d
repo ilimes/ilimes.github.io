@@ -1,0 +1,36 @@
+I"�<h2 id="mongodb란">MongoDB란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">MongoDB</code>란 데이터를 저장하는 데이터베이스 시스템의 한 종류로, 전통적인 테이블-관계 기반의 RDBMS가 아닌 도큐먼트 지향 NoSQL 데이터베이스 시스템입니다.</p>
+
+<h2 id="mongodb의-특징">MongoDB의 특징</h2>
+
+<h3 id="동적-스키마">동적 스키마</h3>
+
+<p><code class="language-plaintext highlighter-rouge">MongoDB</code>는 테이블 구조가 고정되어 있는 형태(정적 스키마)가 아니라 JSON 형태의 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그것을 Binary JSON(JavaScript Object Notaion)이라고 부르며, 줄여서 <code class="language-plaintext highlighter-rouge">BSON</code> 이라고 부르기도 합니다.</p>
+
+<h2 id="mongodb의-특징-1">MongoDB의 특징</h2>
+
+<p><code class="language-plaintext highlighter-rouge">RESTful API</code>란 HTTP URI(Uniform Resource Identifier)을 통하여 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통하여 해당 자원에 대한 CRUD를 적용하는 것을 의미합니다.</p>
+
+<h2 id="mongodb의-단점">MongoDB의 단점</h2>
+
+<p><a href="https://www.postman.com/">https://www.postman.com/</a></p>
+
+<p>POSTMAN을 설치하기 위해서는 위 주소로 이동하여 해당 운영체제에 맞는 버튼을 클릭하면 됩니다. 꽤나 간단하게 설치가 완료됩니다. 계정을 보유하고 있는 경우에는 요청 히스토리, 테스트 환경 등이 저장되어 있으니 그대로 사용할 수 있습니다.</p>
+
+<h2 id="mongodb는-언제-쓰는-것이-좋을까">MongoDB는 언제 쓰는 것이 좋을까?</h2>
+
+<ul>
+  <li>툴이 꽤나 가볍다</li>
+  <li>협업 시 팀원이 만든 url을 확인할 때 편하다</li>
+  <li>RESTful API를 표현할 수 있다.</li>
+</ul>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 MongoDB의 특징, 장단점 등 관련 정보를 공부하였습니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

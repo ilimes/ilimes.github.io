@@ -61,6 +61,10 @@
 <lastmod>2022-07-18T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/mongodb/post16/</loc>
+<lastmod>2022-07-26T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -77,6 +81,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/javaScript</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/mongoDB</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/nodeJs</loc>
@@ -98,5 +105,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page3/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page4/</loc>
 </url>
 </urlset>

@@ -88,4 +88,10 @@ var store = [{
         "tags": ["API","postman","포스트맨","개발","restapi"],
         "url": "/web/post15/",
         "teaser": null
+      },{
+        "title": "MongoDB란?",
+        "excerpt":"MongoDB란? MongoDB란 데이터를 저장하는 데이터베이스 시스템의 한 종류로, 전통적인 테이블-관계 기반의 RDBMS가 아닌 도큐먼트 지향 NoSQL 데이터베이스 시스템입니다. MongoDB의 특징 동적 스키마 MongoDB는 테이블 구조가 고정되어 있는 형태(정적 스키마)가 아니라 JSON 형태의 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그것을 Binary JSON(JavaScript Object Notaion)이라고 부르며, 줄여서 BSON 이라고 부르기도 합니다. 키-값의 집합...","categories": ["MongoDB"],
+        "tags": ["backend","mongoDB","몽고디비","디비","noSQL"],
+        "url": "/mongodb/post16/",
+        "teaser": null
       }]

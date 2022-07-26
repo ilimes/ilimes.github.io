@@ -1,0 +1,38 @@
+I"�	<h2 id="postman이란">POSTMAN이란?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>은 API 개발을 보다 빠르고 쉽게 구현할 수 있도록 도와주며, 개발된 API를 테스트하여 문서화 또는 공유할 수 있게 해줍니다.</p>
+
+<h2 id="postman을-사용하는-이유">POSTMAN을 사용하는 이유</h2>
+
+<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>을 사용하는 이유는 프론트엔드를 배제하고, 서버 프로그램이 들어온 API 요청에 대해서 제대로 동작하는지 확인하기 위함입니다. RESTful API 를 구현하다보면 특정 url에 파라미터나 헤더 등을 담아서 request를 보내는 테스트를 진행하게 되는데, 엄청나게 많이 반복되다보면 짜증이 날 수도 있습니다.</p>
+
+<h2 id="restful-api의-개념">RESTful API의 개념</h2>
+
+<p><code class="language-plaintext highlighter-rouge">RESTful API</code>란 HTTP URI(Uniform Resource Identifier)을 통하여 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통하여 해당 자원에 대한 CRUD를 적용하는 것을 의미합니다.</p>
+
+<h2 id="postman-설치하기">POSTMAN 설치하기</h2>
+
+<p><a href="https://www.postman.com/">https://www.postman.com/</a></p>
+
+<p>POSTMAN을 설치하기 위해서는 위 주소로 이동하여 해당 운영체제에 맞는 버튼을 클릭하면 됩니다. 꽤나 간단하게 설치가 완료됩니다. 계정을 보유하고 있는 경우에는 요청 히스토리, 테스트 환경 등이 저장되어 있으니 그대로 사용할 수 있습니다.</p>
+
+<h2 id="postman-장점">POSTMAN 장점</h2>
+
+<ul>
+  <li>툴이 꽤나 가볍다</li>
+  <li>협업 시 팀원이 만든 url을 확인할 때 편하다</li>
+  <li>RESTful API를 표현할 수 있다.</li>
+</ul>
+
+<h3 id="참고-사이트">참고 사이트</h3>
+
+<p><a href="https://incheol-jung.gitbook.io/docs/q-and-a/infra/2018-01-03-how-to-use-postman">https://incheol-jung.gitbook.io/docs/q-and-a/infra/2018-01-03-how-to-use-postman</a></p>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>Postman을 사용하여 API 테스트를 할 수 있다는 것을 알게되었고, 번거로움을 해소해주는 아주 유용한 개발 툴이라는 생각을 하게 되었습니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

@@ -1,0 +1,41 @@
+I"/
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/mongodb/post16/">MongoDB란?</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.26
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#mongodb" class="page__taxonomy-item-category" rel="tag">MongoDB</a>
+                    
+                    
+                    <a href="/tags/#backend" class="page__taxonomy-item-tag" rel="tag">backend</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#mongodb" class="page__taxonomy-item-tag" rel="tag">mongoDB</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#nosql" class="page__taxonomy-item-tag" rel="tag">noSQL</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#%EB%94%94%EB%B9%84" class="page__taxonomy-item-tag" rel="tag">디비</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84" class="page__taxonomy-item-tag" rel="tag">몽고디비</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET
