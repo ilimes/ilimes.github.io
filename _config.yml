@@ -283,3 +283,8 @@ defaults:
       share: true
       related: true
       sidebar_main: true
+
+dark_theme_toggle: true
+
+after_footer_scripts:
+  - /assets/js/custom/dark-theme.js

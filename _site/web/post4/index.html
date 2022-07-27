@@ -85,6 +85,10 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
 <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
 
@@ -131,6 +135,16 @@
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
+        
+        <!-- 다크 모드 토글 버튼 -->
+        
+        <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+        <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+            <span class="visually-hidden">Toggle menu</span>
+            <div class="navicon"></div>
+        </button>
       </nav>
     </div>
   </div>
@@ -710,7 +724,7 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">JSON과 같은 문서를 사용하여 대량의 데이터를 저장하는 NoSQL 데이터베이스 MongoDB
+    <p class="archive__item-excerpt" itemprop="description">JSON과 같은 문서를 사용하여 대량의 데이터를 읽기 좋은 NoSQL 데이터베이스 MongoDB
 </p>
   </article>
 </div>
@@ -846,6 +860,10 @@
 
     
 
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+    </aside>
+
     <div id="footer" class="page__footer">
       <footer>
         <!-- start custom footer snippets -->
@@ -912,6 +930,10 @@
   
 
 
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
 
 
 
