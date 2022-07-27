@@ -1,0 +1,79 @@
+I"<p>피그마로 작업 할 때 조금이라도 작업 효율을 높이고 싶다면 단축키를 활용하는 것이 좋습니다. 요즘 피그마 작업을 하면서 단축키를 활용하려고 하는데 자주 사용하지 않으면 자꾸만 까먹게 되더라고요. 이번 포스팅은 제가 다시 보기 위해서 작성하게 된 피그마 단축키 모음입니다 😊</p>
+
+<h2 id="전체-피그마-단축키-보는-법">전체 피그마 단축키 보는 법</h2>
+
+<p><code class="language-plaintext highlighter-rouge">ctrl</code> + <code class="language-plaintext highlighter-rouge">shift</code> + <code class="language-plaintext highlighter-rouge">?</code></p>
+
+<h2 id="모양-변형">모양 변형</h2>
+
+<p><code class="language-plaintext highlighter-rouge">MongoDB</code>란 데이터를 저장하는 데이터베이스 시스템의 한 종류로, 전통적인 테이블-관계 기반의 RDBMS가 아닌 도큐먼트 지향 NoSQL 데이터베이스 시스템입니다.</p>
+
+<p><img width="580" alt="image" src="https://user-images.githubusercontent.com/95404736/181020729-0b97ae8d-31e8-4ef0-843e-ba05d84a30a0.png" /></p>
+
+<h2 id="mongodb의-특징">MongoDB의 특징</h2>
+
+<ul>
+  <li>
+    <h3 id="동적-스키마">동적 스키마</h3>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">MongoDB</code>는 테이블 구조가 고정되어 있는 형태(정적 스키마)가 아니라 JSON 형태의 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그것을 Binary JSON(JavaScript Object Notaion)이라고 부르며, 줄여서 <code class="language-plaintext highlighter-rouge">BSON</code> 이라고 부르기도 합니다.</p>
+
+<ul>
+  <li>
+    <h3 id="키-값의-집합-문서">키-값의 집합 문서</h3>
+  </li>
+</ul>
+
+<p>앞서 작성한 특징과 비슷한데, 몽고 DB의 문서는 키-값의 집합으로 되어 있기 때문에 자바스크립트의 객체 코드와도 비슷한 형태로 되어 있습니다. 그래서 들어가는 데이터에 따라서 구조가 변경됩니다.</p>
+
+<h2 id="mongodb의-장점">MongoDB의 장점</h2>
+
+<ul>
+  <li>
+    <h3 id="퍼포먼스가-뛰어납니다">퍼포먼스가 뛰어납니다.</h3>
+
+    <ul>
+      <li>기본적으로 읽기 및 쓰기 성능이 뛰어나기 때문에 많은 트래픽을 감당할 때 사용해도 퍼포먼스가 뛰어납니다. 실제로 RDB보다 수십배는 빠른 성능을 발휘한다고 합니다.</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="개발이-편리합니다">개발이 편리합니다.</h3>
+    <ul>
+      <li>JSON 형태로 저장이 가능하기 때문에 직관적입니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mongodb의-단점">MongoDB의 단점</h2>
+
+<ul>
+  <li>
+    <h3 id="조인이-없습니다">조인이 없습니다.</h3>
+
+    <ul>
+      <li>조인이 없기 때문에 데이터 구조화를 할 필요가 있습니다. <code class="language-plaintext highlighter-rouge">(MongoDB 3.2 버전 부터 보조적인 JOIN 기능으로 $lookup을 지원하기는 합니다.)</code> 외래키의 개념이 없으며 데이터 구조의 동적인 특성 때문에 몽고 DB의 데이터 모델링은 <code class="language-plaintext highlighter-rouge">역정규화(Denormalization)</code>로 흐르곤 합니다.</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="메모리에-의존적입니다">메모리에 의존적입니다.</h3>
+
+    <ul>
+      <li>데이터 갱신 시 바로 디스크에 쓰는 것이 아니라 논리적으로 메모리에 쓰고나서 일정 주기에 따라서 비동기식으로 쓰기 때문에 메모리에 의존적이며 때로는 데이터가 유실 될 가능성이 존재하기도 합니다. 메모리에 의존적이기 때문에 메모리 크기가 성능을 좌우합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mongodb는-언제-쓰는-것이-좋을까">MongoDB는 언제 쓰는 것이 좋을까?</h2>
+
+<p>Humongous(거대한) Database를 줄인 MongoDB라는 이름에서도 알 수 있듯이 MongoDB는 방대한 데이터 읽기가 필요한 경우에 사용하기 적합합니다. 로그성 데이터를 저장하는 경우, null 필드가 많이 존재하는 경우, 압도적인 퍼포먼스가 필요한 경우 등에 사용하기 좋습니다.</p>
+
+<h2 id="today-i-learned">Today I Learned</h2>
+
+<p>오늘은 MongoDB의 특징, 장단점 등 관련 정보를 공부하였습니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

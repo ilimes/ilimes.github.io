@@ -94,4 +94,10 @@ var store = [{
         "tags": ["backend","mongoDB","몽고디비","디비","noSQL"],
         "url": "/mongodb/post16/",
         "teaser": null
+      },{
+        "title": "작업 효율을 높여주는 피그마(figma) 단축키 모음",
+        "excerpt":"피그마로 작업 할 때 조금이라도 작업 효율을 높이고 싶다면 단축키를 활용하는 것이 좋습니다. 요즘 피그마 작업을 하면서 단축키를 활용하려고 하는데 자주 사용하지 않으면 자꾸만 까먹게 되더라고요. 이번 포스팅은 제가 다시 보기 위해서 작성하게 된 피그마 단축키 모음입니다 😊 전체 피그마 단축키 보는 법 Ctrl + Shift + ? 그리드 레이아웃...","categories": ["Figma"],
+        "tags": ["피그마","figma","디자인","피그마단축키","design"],
+        "url": "/figma/post17/",
+        "teaser": null
       }]

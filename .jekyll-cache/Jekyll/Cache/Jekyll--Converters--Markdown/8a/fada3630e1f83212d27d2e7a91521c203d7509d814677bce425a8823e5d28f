@@ -1,0 +1,45 @@
+I"�<p>피그마로 작업 할 때 조금이라도 작업 효율을 높이고 싶다면 단축키를 활용하는 것이 좋습니다. 요즘 피그마 작업을 하면서 단축키를 활용하려고 하는데 자주 사용하지 않으면 자꾸만 까먹게 되더라고요. 이번 포스팅은 제가 다시 보기 위해서 작성하게 된 피그마 단축키 모음입니다 😊</p>
+
+<h3 id="전체-피그마-단축키-보는-법">전체 피그마 단축키 보는 법</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">?</code></li>
+</ul>
+
+<h3 id="그리드">그리드</h3>
+
+<ul>
+  <li>레이아웃 그리드 보기 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">4</code></li>
+</ul>
+
+<h3 id="컴포넌트">컴포넌트</h3>
+
+<ul>
+  <li>컴포넌트 생성 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">K</code></li>
+  <li>인스턴스 분리 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">B</code></li>
+  <li>오토레이아웃 생성 : <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">A</code></li>
+  <li>오토레이아웃 제거 : <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">A</code></li>
+  <li>컴포넌트 찾기/삽입 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">B</code></li>
+  <li>컴포넌트명 한번에 수정 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">R</code></li>
+  <li>만들어 놓은 객체 컴포넌트화 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">G</code></li>
+</ul>
+
+<h3 id="모양-변형">모양 변형</h3>
+
+<ul>
+  <li>가로로 뒤집기 : <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">V</code></li>
+  <li>세로로 뒤집기 : <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">H</code></li>
+  <li>아웃라인 스트로크 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Shift</code> + <code class="language-plaintext highlighter-rouge">O</code></li>
+</ul>
+
+<h3 id="레이어">레이어</h3>
+
+<ul>
+  <li>전체화면에서 레이어 선택 : <code class="language-plaintext highlighter-rouge">Ctrl</code> + <code class="language-plaintext highlighter-rouge">Alt</code> 누른 상태에서 객체 클릭</li>
+  <li>모든 레이어 닫기 : <code class="language-plaintext highlighter-rouge">Alt</code> + <code class="language-plaintext highlighter-rouge">L</code></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET
