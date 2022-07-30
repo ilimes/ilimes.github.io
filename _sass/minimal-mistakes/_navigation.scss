@@ -89,7 +89,7 @@
 
       &.current,
       &.current.disabled {
-        color: #fff;
+        color: $nav-title-color;
         background: $primary-color;
       }
 
