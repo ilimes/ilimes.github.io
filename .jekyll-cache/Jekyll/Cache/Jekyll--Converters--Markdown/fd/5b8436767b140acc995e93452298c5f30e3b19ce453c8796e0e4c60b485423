@@ -1,0 +1,23 @@
+I"�<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
+
+<p><a href="https://ilimes.github.io/mongodb/post16/">https://ilimes.github.io/mongodb/post16/</a><br />
+위 링크를 참고해주세요 :)</p>
+
+<h3 id="mongodb-설치하기">MongoDB 설치하기</h3>
+
+<ul>
+  <li>설치환경 : MacOS(M1)</li>
+</ul>
+
+<p>먼저 터미널에 아래의 명령어를 입력해주세요.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap mongodb/brew
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew insrtall mongodb-community
+</code></pre></div></div>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

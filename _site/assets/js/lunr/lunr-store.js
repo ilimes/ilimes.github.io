@@ -100,4 +100,10 @@ var store = [{
         "tags": ["피그마","figma","디자인","피그마단축키","design"],
         "url": "/figma/post17/",
         "teaser": null
+      },{
+        "title": "MacOS에서 MongoDB, compass 설치하기",
+        "excerpt":"몽고디비(MongoDB)란? https://ilimes.github.io/mongodb/post16/ 위 링크를 참고해주세요 :) MongoDB 설치하기 설치환경 : MacOS(M1), Homebrew를 통해 설치(만약 Homebrew 설치가 되어있지 않은 경우에는 먼저 Homebrew부터 설치해주세요.) 1) 먼저 터미널에 아래의 명령어를 입력해주세요. brew tap mongodb/brew brew install mongodb-community (arm맥에서 설치하시는 경우 brew install 앞에 arch -arm64를 붙이면 됩니다.) 2) MongoDB 실행 및 정지 명령어...","categories": ["MongoDB"],
+        "tags": ["몽고디비","mongoDB","MongoDB","데이터베이스","mac"],
+        "url": "/mongodb/post18/",
+        "teaser": null
       }]

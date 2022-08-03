@@ -1,0 +1,106 @@
+I"�<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
+
+<p><a href="https://ilimes.github.io/mongodb/post16/">https://ilimes.github.io/mongodb/post16/</a><br />
+위 링크를 참고해주세요 :)</p>
+
+<h3 id="mongodb-설치하기">MongoDB 설치하기</h3>
+
+<ul>
+  <li>설치환경 : MacOS(M1), Homebrew를 통해 설치(만약 Homebrew 설치가 되어있지 않은 경우에는 먼저 Homebrew부터 설치해주세요.)</li>
+</ul>
+
+<p><br />
+<strong>1) 먼저 터미널에 아래의 명령어를 입력해주세요.</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap mongodb/brew
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mongodb-community
+</code></pre></div></div>
+
+<p>(arm맥에서 설치하시는 경우 brew install 앞에 arch -arm64를 붙이면 됩니다.)</p>
+
+<p><br />
+<strong>2) MongoDB 실행 및 정지 명령어</strong></p>
+
+<p>▼ 실행</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mongodb-community
+</code></pre></div></div>
+
+<p>▼ 정지</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services stop mongodb-community
+</code></pre></div></div>
+
+<p>정상적으로 설치 및 실행이 완료되었다면 <code class="language-plaintext highlighter-rouge">http://localhost:27017/</code> 와 같이 몽고디비 기본 포트 주소로 접속하였을 때 아래와 같은 메시지가 나타나게 됩니다.</p>
+
+<p><img width="667" alt="image" src="https://user-images.githubusercontent.com/95404736/182624997-f387e09f-a18c-4071-8b4b-285593741fcc.png" /></p>
+
+<h3 id="rdb-논리적-구조-vs-mongodb-비교">RDB 논리적 구조 vs MongoDB 비교</h3>
+
+<p>RDB와 MongoDB에서의 용어를 비교하는 경우 아래와 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table</td>
+      <td>Collection</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Field</td>
+    </tr>
+    <tr>
+      <td>Primary Key</td>
+      <td>Object_Id Field</td>
+    </tr>
+    <tr>
+      <td>Relationship</td>
+      <td>Embedded &amp; Link</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="테스트-하기">테스트 하기</h3>
+
+<p>몽고디비를 CLI 기반으로 간단하게 테스트해보도록 하겠습니다. 컬렉션 생성 및 삭제를 해보면서 테스트를 진행해보겠습니다.</p>
+
+<p>일단 가장 먼저 몽고디비가 실행된 상태로 <code class="language-plaintext highlighter-rouge">mongo</code>를 터미널에서 입력해줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zsh: command not found: mongo
+</code></pre></div></div>
+
+<p>이 과정에서 저는 위와 같은 에러를 마주하게 되었는데요.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mongodb-community-shell
+</code></pre></div></div>
+
+<p>만약 저와 같은 에러가 뜨신다면 위 명령어를 입력하여 간단하게 해결할 수 있습니다.</p>
+
+<h3 id="mongodb-gui-clientcompass-설치하기">MongoDB GUI Client(compass) 설치하기</h3>
+
+<p><a href="https://www.mongodb.com/try/download/compass">https://www.mongodb.com/try/download/compass</a></p>
+
+<p>위 사이트에서 MacOS 전용 설치파일을 다운로드 받을 수 있습니다.</p>
+
+<h3 id="참고사이트">참고사이트</h3>
+
+<ul>
+  <li><a href="https://zzang9ha.tistory.com/361">https://zzang9ha.tistory.com/361</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET
