@@ -1,4 +1,136 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-07T13:37:10+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">MacOS에서 MongoDB, compass 설치하기</title><link href="http://localhost:4000/mongodb/post18/" rel="alternate" type="text/html" title="MacOS에서 MongoDB, compass 설치하기" /><published>2022-08-03T00:00:00+09:00</published><updated>2022-08-03T00:00:00+09:00</updated><id>http://localhost:4000/mongodb/post18</id><content type="html" xml:base="http://localhost:4000/mongodb/post18/"><![CDATA[<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-14T23:39:25+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> :[포트번호]
+</code></pre></div></div>
+
+<p>ex)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :3000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+node      13736 lime   31u  IPv4 0x35b417c98f796509      0t0  TCP localhost:hbci-&gt;localhost:62414 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="kill-하기">kill 하기</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span>
+</code></pre></div></div>
+
+<p>ex)</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> 13736
+</code></pre></div></div>
+
+<p>위와 같이 해당 포트번호 PID 를 찾은 후 kill 명령어로 포트를 간단하게 죽일 수 있습니다.</p>
+
+<h3 id="참고사이트">참고사이트</h3>
+
+<ul>
+  <li><a href="https://stackoverflow.com/questions/3855127/find-and-kill-process-locking-port-3000-on-mac">https://stackoverflow.com/questions/3855127/find-and-kill-process-locking-port-3000-on-mac</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
+
+<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div></div>
+
+<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
+
+<h3 id="해결하기">해결하기</h3>
+
+<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
+
+<ul>
+  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
+</ul>
+
+<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
+
+<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
+
+<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
+
+<p>시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 <a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes" title="sequelize DataTypes :)">여기</a>를 클릭해서 DataTypes를 참고해주시기 바랍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sequelize.STRING                      // VARCHAR(255)
+Sequelize.STRING(1234)                // VARCHAR(1234)
+Sequelize.STRING.BINARY               // VARCHAR BINARY
+Sequelize.TEXT                        // TEXT
+Sequelize.TEXT('tiny')                // TINYTEXT
+Sequelize.CITEXT                      // CITEXT      PostgreSQL and SQLite only.
+
+Sequelize.INTEGER                     // INTEGER
+Sequelize.BIGINT                      // BIGINT
+Sequelize.BIGINT(11)                  // BIGINT(11)
+
+Sequelize.FLOAT                       // FLOAT
+Sequelize.FLOAT(11)                   // FLOAT(11)
+Sequelize.FLOAT(11, 10)               // FLOAT(11,10)
+
+Sequelize.REAL                        // REAL        PostgreSQL only.
+Sequelize.REAL(11)                    // REAL(11)    PostgreSQL only.
+Sequelize.REAL(11, 12)                // REAL(11,12) PostgreSQL only.
+
+Sequelize.DOUBLE                      // DOUBLE
+Sequelize.DOUBLE(11)                  // DOUBLE(11)
+Sequelize.DOUBLE(11, 10)              // DOUBLE(11,10)
+
+Sequelize.DECIMAL                     // DECIMAL
+Sequelize.DECIMAL(10, 2)              // DECIMAL(10,2)
+
+Sequelize.DATE                        // DATETIME for mysql / sqlite, TIMESTAMP WITH TIME ZONE for postgres
+Sequelize.DATE(6)                     // DATETIME(6) for mysql 5.6.4+. Fractional seconds support with up to 6 digits of precision
+Sequelize.DATEONLY                    // DATE without time.
+Sequelize.BOOLEAN                     // TINYINT(1)
+
+Sequelize.ENUM('value 1', 'value 2')  // An ENUM with allowed values 'value 1' and 'value 2'
+Sequelize.ARRAY(Sequelize.TEXT)       // Defines an array. PostgreSQL only.
+Sequelize.ARRAY(Sequelize.ENUM)       // Defines an array of ENUM. PostgreSQL only.
+
+Sequelize.JSON                        // JSON column. PostgreSQL, SQLite and MySQL only.
+Sequelize.JSONB                       // JSONB column. PostgreSQL only.
+
+Sequelize.BLOB                        // BLOB (bytea for PostgreSQL)
+Sequelize.BLOB('tiny')                // TINYBLOB (bytea for PostgreSQL. Other options are medium and long)
+
+Sequelize.UUID                        // UUID datatype for PostgreSQL and SQLite, CHAR(36) BINARY for MySQL (use defaultValue: Sequelize.UUIDV1 or Sequelize.UUIDV4 to make sequelize generate the ids automatically)
+
+Sequelize.CIDR                        // CIDR datatype for PostgreSQL
+Sequelize.INET                        // INET datatype for PostgreSQL
+Sequelize.MACADDR                     // MACADDR datatype for PostgreSQL
+
+Sequelize.RANGE(Sequelize.INTEGER)    // Defines int4range range. PostgreSQL only.
+Sequelize.RANGE(Sequelize.BIGINT)     // Defined int8range range. PostgreSQL only.
+Sequelize.RANGE(Sequelize.DATE)       // Defines tstzrange range. PostgreSQL only.
+Sequelize.RANGE(Sequelize.DATEONLY)   // Defines daterange range. PostgreSQL only.
+Sequelize.RANGE(Sequelize.DECIMAL)    // Defines numrange range. PostgreSQL only.
+
+Sequelize.ARRAY(Sequelize.RANGE(Sequelize.DATE)) // Defines array of tstzrange ranges. PostgreSQL only.
+
+Sequelize.GEOMETRY                    // Spatial column.  PostgreSQL (with PostGIS) or MySQL only.
+Sequelize.GEOMETRY('POINT')           // Spatial column with geometry type. PostgreSQL (with PostGIS) or MySQL only.
+Sequelize.GEOMETRY('POINT', 4326)     // Spatial column with geometry type and SRID.  PostgreSQL (with PostGIS) or MySQL only.
+</code></pre></div></div>
+
+<h3 id="참고사이트">참고사이트</h3>
+
+<ul>
+  <li><a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes">https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Sequelize" /><category term="시퀄라이즈" /><category term="Sequelize" /><category term="백엔드" /><category term="backend" /><summary type="html"><![CDATA[Sequelize 데이터타입 정리]]></summary></entry><entry><title type="html">MacOS에서 MongoDB, compass 설치하기</title><link href="http://localhost:4000/mongodb/post18/" rel="alternate" type="text/html" title="MacOS에서 MongoDB, compass 설치하기" /><published>2022-08-03T00:00:00+09:00</published><updated>2022-08-03T00:00:00+09:00</updated><id>http://localhost:4000/mongodb/post18</id><content type="html" xml:base="http://localhost:4000/mongodb/post18/"><![CDATA[<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
 
 <p><a href="https://ilimes.github.io/mongodb/post16/">https://ilimes.github.io/mongodb/post16/</a><br />
 위 링크를 참고해주세요 :)</p>
@@ -714,314 +846,4 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="MariaDB" /><category term="SequelPro" /><category term="db" /><summary type="html"><![CDATA[homebrew로 mariaDB를 설치하고 GUI툴인 sequel pro까지 설치하기]]></summary></entry><entry><title type="html">Node.js-Express</title><link href="http://localhost:4000/nodejs/post11/" rel="alternate" type="text/html" title="Node.js-Express" /><published>2022-07-11T00:00:00+09:00</published><updated>2022-07-11T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post11</id><content type="html" xml:base="http://localhost:4000/nodejs/post11/"><![CDATA[<h2 id="express란">Express란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Express</code>란 Node.js 기반 웹 프레임워크로, 간단하게 서버 쪽 웹 어플리케이션을 쉽게 구현할 수 있도록 도와주는 프레임워크라고 할 수 있습니다.</p>
-
-<h2 id="express-설치하기">Express 설치하기</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install express
-</code></pre></div></div>
-
-<p>Express를 설치하기 위해서는 위와 같이 npm 명령어를 사용하면 간단하게 설치할 수 있습니다.<br />
-npm 명령어를 사용하기 이전에 Node.js와 npm init 실행이 반드시 선행되어야 합니다.</p>
-
-<h2 id="express-5가지-개념">Express 5가지 개념</h2>
-
-<p><code class="language-plaintext highlighter-rouge">[어플리케이션]</code></p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-</code></pre></div></div>
-
-<ul>
-  <li>위와 같은 익스프레스 인스턴스를 어플리케이션이라고 합니다.</li>
-  <li>listen 함수를 사용하여 서버를 요청 대기 상태로 만들 수 있습니다.</li>
-  <li>라우팅 설정을 할 수 있습니다.</li>
-  <li>서버에 필요한 미들웨어를 어플리케이션에 추가합니다.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">[미들웨어]</code></p>
-
-<ul>
-  <li>함수들의 연속</li>
-  <li>미들웨어 추가 시 use 함수를 사용합니다.</li>
-  <li>미들웨어는 반드시 인자로 req, res, next를 가져야합니다.</li>
-  <li>미들웨어는 보통 <code class="language-plaintext highlighter-rouge">일반 미들웨어</code>와 <code class="language-plaintext highlighter-rouge">에러 미들웨어</code>로 나뉘는데 일반 미들웨어 같은 경우는 인자를 3개 받으며, 에러 미들웨어 같은 경우는 err, req, res, next 로 인자 4개를 가집니다.</li>
-  <li>미들웨어는 본인이 할 일을 다 한 다음에 꼭 next() 함수를 호출해줘야 합니다. 만약 next() 없이 작성을 하게 된다면 다음 요청을 읽지 못해서 계속 대기 상태로 서버가 유지됩니다.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">[라우팅]</code></p>
-
-<ul>
-  <li>요청 url에 대해서 적절한 핸들러 함수로 연결해주는 기능을 라우팅이라고 합니다.</li>
-  <li>어플리케이션의 <code class="language-plaintext highlighter-rouge">get()</code>, <code class="language-plaintext highlighter-rouge">post()</code> 메소드로 구현할 수 있습니다.</li>
-  <li>또한 라우팅을 위한 전용 Router 클래스를 사용할 수도 있습니다.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">[요청객체 -&gt; req]</code></p>
-
-<ul>
-  <li>클라이언트의 요청 정보를 담은 객체를 요청객체라고 합니다. (http 모듈의 request 객체를 래핑)</li>
-  <li>주로 <code class="language-plaintext highlighter-rouge">req.params()</code>, <code class="language-plaintext highlighter-rouge">req.query()</code>, <code class="language-plaintext highlighter-rouge">req.body()</code> 메소드를 사용합니다.</li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">[응답객체 -&gt; res]</code></p>
-
-<ul>
-  <li>클라이언트의 응답 정보를 담은 객체를 응답객체라고 합니다. (http 모듈의 response 객체를 래핑)</li>
-  <li>주로 <code class="language-plaintext highlighter-rouge">res.send()</code>, <code class="language-plaintext highlighter-rouge">res.status()</code>, <code class="language-plaintext highlighter-rouge">res.json()</code> 과 같은 함수를 사용할 수 있는데, <code class="language-plaintext highlighter-rouge">res.send()</code>는 문자열을 응답하는 함수이고 <code class="language-plaintext highlighter-rouge">res.status()</code>는 http 상태 코드를 응답하며, <code class="language-plaintext highlighter-rouge">res.json()</code>은 json 데이터를 응답합니다.</li>
-</ul>
-
-<h2 id="express-사용하기">Express 사용하기</h2>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">express</span><span class="dl">"</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">();</span>
-<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="mi">3000</span><span class="p">;</span>
-
-<span class="c1">// 메인 페이지에 접속했을 때 콜백함수 실행</span>
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World!</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="c1">// hi 페이지에 접속했을 때 콜백함수 실행</span>
-<span class="nx">app</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">"</span><span class="s2">/hi</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="dl">"</span><span class="s2">&lt;h2&gt;Hi!&lt;/h2&gt;</span><span class="dl">"</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Example app listening at http://localhost:</span><span class="p">${</span><span class="nx">port</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="p">});</span>
-</code></pre></div></div>
-
-<ul>
-  <li>위 코드에서 보이는 <code class="language-plaintext highlighter-rouge">get()</code> 메소드는 <code class="language-plaintext highlighter-rouge">라우터</code>라고 하며 어떠한 요청이 들어오면 그것을 처리해주는 역할을 합니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">send()</code> 라는 함수는 클라이언트에 보내는 역할을 하며, html 요소가 인수로 들어갈 수 있습니다.</li>
-</ul>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>오늘은 Node.js 기반 웹 프레임워크 Express가 무엇인지 알게되었고, 간단한 사용 방법을 익혔습니다.
-스프링으로 백엔드 개발을 하다가 자바스크립트로 서버를 공부하니 신기한 것이 정말 많은 것 같네요.
-앞으로 백엔드 작업을 할 때 Express를 많이 사용하게 될 것 같은데, 블로그에 꾸준히 정리하면서 열심히 익혀야겠습니다 😊</p>
-
-<h3 id="참고-사이트">참고 사이트</h3>
-
-<p><a href="https://expressjs.com/">https://expressjs.com/</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="express" /><category term="NodeJs" /><category term="Node.js" /><summary type="html"><![CDATA[Node.js 기반 웹 프레임워크 Express에 대해 공부하기 + 간단한 사용]]></summary></entry><entry><title type="html">Git 기본 CLI 명령어 정리</title><link href="http://localhost:4000/git/post10/" rel="alternate" type="text/html" title="Git 기본 CLI 명령어 정리" /><published>2022-07-11T00:00:00+09:00</published><updated>2022-07-11T00:00:00+09:00</updated><id>http://localhost:4000/git/post10</id><content type="html" xml:base="http://localhost:4000/git/post10/"><![CDATA[<h2 id="git-이란">Git 이란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Git</code>이란 형상 관리 도구중 하나로 버전 관리, 백업, 협업 등을 할 수 있는 강력한 도구입니다. Git은 중앙 서버에서 소스코드와 히스토리를 저장하던 SVN과는 달리 소스코드를 여러 개발 PC에 분산 저장하여 관리하는 시스템이라 SVN보다 속도가 더욱 빠르기도 하여 SVN을 사용하던 기존 개발 조직에서도 계속 Git으로 갈아타고 있는 추세입니다.</p>
-
-<h2 id="cli란">CLI란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">CLI</code>란 Command Line Interface의 약자로 텍스트 터미널을 통해 사용자와 컴퓨터가 상호작용하는 방식을 뜻합니다. 요즘은 GUI가 잘 되어있어서 반드시 CLI 방식으로만 Git을 사용해야만 하는 것은 아니지만 자주 사용하고 익숙해지면 편하고 빠르게 Git을 다룰 수 있어서 대부분의 개발자분들이 CLI방식으로 깃을 사용하고 있습니다.</p>
-
-<h2 id="cli-명령어">CLI 명령어</h2>
-
-<p>[폴더 이동 관련]</p>
-
-<p><code class="language-plaintext highlighter-rouge">cd 폴더 경로</code> : 해당 위치 경로 폴더로 이동 (cd 절대경로 가능)<br />
-<code class="language-plaintext highlighter-rouge">cd ..</code> : 이전 폴더(상위 디렉토리)로 이동<br />
-<code class="language-plaintext highlighter-rouge">cd ~</code> : 홈 디렉토리로 이동<br />
-<code class="language-plaintext highlighter-rouge">dir</code> : 현재 위치 내의 모든 파일을 표시<br />
-<code class="language-plaintext highlighter-rouge">ls</code>: list의 약자로 현재 위치 폴더에 어떤 파일이나 디렉토리가 존재하는지 알려줌</p>
-
-<ul>
-  <li>ls 명령어 옵션
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">-a</code> : 숨김 파일과 디렉토리 모두 표시</li>
-      <li><code class="language-plaintext highlighter-rouge">-l</code> : 파일이나 디렉토리 상세 정보 모두 표시</li>
-      <li><code class="language-plaintext highlighter-rouge">-r</code> : 파일 정렬 순서를 거꾸로 표시</li>
-      <li><code class="language-plaintext highlighter-rouge">-t</code> : 파일의 작성 시간 순서를 내림차순으로 표시</li>
-    </ul>
-  </li>
-</ul>
-
-<p><code class="language-plaintext highlighter-rouge">pwd</code> : 현재 작업 폴더 위치</p>
-
-<p>[파일 생성 및 삭제 관련]</p>
-
-<p>** 파일</p>
-
-<p><code class="language-plaintext highlighter-rouge">touch 파일명</code> : 파일 생성<br />
-<code class="language-plaintext highlighter-rouge">echo 문자열 &gt; 파일명</code> : 새로운 파일 생성하면서 문자열 삽입<br />
-<code class="language-plaintext highlighter-rouge">rm 파일명</code> : 파일 삭제<br />
-<code class="language-plaintext highlighter-rouge">cp 파일명 위치</code> : 파일 복사<br />
-<code class="language-plaintext highlighter-rouge">mv 파일명 변경파일명</code> : 파일명 변경</p>
-
-<p>** 폴더</p>
-
-<p><code class="language-plaintext highlighter-rouge">mkdir 폴더명</code> : 새로운 폴더 생성<br />
-<code class="language-plaintext highlighter-rouge">rm -r 폴더명</code> : 폴더 삭제
-<code class="language-plaintext highlighter-rouge">cp -r 폴더명 위치</code> : 폴더 복사
-<code class="language-plaintext highlighter-rouge">mv 폴더명 변경폴더명</code> : 폴더명 변경</p>
-
-<h2 id="git-기본-명령어">Git 기본 명령어</h2>
-
-<p>[Git 폴더 초기화]</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init //버전 관리를 위한 기본 폴더를 생성하는 명령어
-</code></pre></div></div>
-
-<p>[Git 상태 확인]</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status //현재 상태 출력
-git log //현재 커밋 로그 등을 출력
-</code></pre></div></div>
-
-<p>[Github에 업로드]</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//업로드할 파일 추가
-git add 파일명
-git add .
-
-//커밋
-git commit -m '커밋 메시지'
-
-//최신 커밋 메시지 수정
-git commit --amend
-
-//커밋 복구 (히스토리 유지)
-git revert 원상복구할 커밋아이디
-
-//푸쉬
-git push 저장소명 브랜치명
-git push origin main
-</code></pre></div></div>
-
-<p>[브랜치 관련]</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//저장소 확인
-git remote
-
-//모든 브랜치 확인, 현재 브랜치는 다른 색이 표시됨
-git branch
-
-//새로운 브랜치 생성
-git branch 브랜치명
-
-//브랜치 이동
-git checkout 브랜치명
-
-//해당 브랜치가 합쳐짐
-git merge 합쳐질 브랜치명
-</code></pre></div></div>
-
-<p>[그 외]</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//커밋되기 전의 수정 파일들 숨겨놓기
-git stash
-
-//숨겨놓은 파일 리스트 보기
-git stash -list
-
-//원격 저장소 복제
-git clone 원격 저장소 주소
-</code></pre></div></div>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>이번 포스팅에서는 기본적인 CLI 명령어들을 정리해보았습니다.<br />
-아직까지 익숙하지 않지만 앞으로 계속 사용하다보면 금방 익숙해질 것 같네요 😊</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="cli" /><category term="git" /><category term="github" /><summary type="html"><![CDATA[Git에서 사용하는 기본적인 명령어를 정리해보았습니다.]]></summary></entry><entry><title type="html">Node.js 프로세스 관리도구 pm2</title><link href="http://localhost:4000/nodejs/post9/" rel="alternate" type="text/html" title="Node.js 프로세스 관리도구 pm2" /><published>2022-07-10T00:00:00+09:00</published><updated>2022-07-10T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post9</id><content type="html" xml:base="http://localhost:4000/nodejs/post9/"><![CDATA[<h2 id="pm2란">pm2란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">pm2</code>란 Node.js 운영을 효율적이게 할 수 있게 하는 프로세스 관리도구인데요. 기본적으로 싱글스레드 기반이라 멀티스레딩이 불가능한 Node.js에서 멀티스레딩과 비슷하게 내부적으로 서버를 Fork해서 사용할 수 있도록 클러스터라는 기능을 제공하기도 하고 프로세스가 죽었을 때의 처리 등 직접 하나씩 하게 된다면 귀찮은 온갖 일들을 몽땅 관리해주는 강력한 도구입니다.</p>
-
-<h2 id="pm2-설치-방법">pm2 설치 방법</h2>
-
-<p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
-</code></pre></div></div>
-
-<p>설치 할 때 뒤에 <code class="language-plaintext highlighter-rouge">-g</code>라는 옵션을 붙이는 이유는 pm2 명령어를 어떤 디렉토리에서든 사용할 수 있도록 하기 위함입니다.</p>
-
-<h2 id="pm2-명령어">pm2 명령어</h2>
-
-<ul>
-  <li>프로세스 실행</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
-</code></pre></div></div>
-
-<ul>
-  <li>실행중인 파일 리스트 보기</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 list
-</code></pre></div></div>
-
-<ul>
-  <li>상세 정보 보기</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 show 파일명
-</code></pre></div></div>
-
-<ul>
-  <li>프로세스 종료</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 stop 실행중인 파일 명.js
-</code></pre></div></div>
-
-<ul>
-  <li>pm2 데몬 자체를 꺼버리기</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 kill
-</code></pre></div></div>
-
-<p>(위에서 <code class="language-plaintext highlighter-rouge">stop</code>이라는 명령어를 사용하면 프로세스는 중지되지만 pm2가 여전히 관리하고 있는 상태가 됩니다. 데몬 자체를 꺼버리기 위해서는 <code class="language-plaintext highlighter-rouge">kill</code>명령어를 입력해야합니다.)</p>
-
-<ul>
-  <li>프로세스 재시작</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 restart 실행중인 파일 명.js
-</code></pre></div></div>
-
-<ul>
-  <li>모니터링</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 monit
-</code></pre></div></div>
-
-<p>(모니터링 상태에서는 pm2로 관리되는 프로세스별 상태를 볼 수 있고 실시간으로 로그를 확인하는 것이 가능합니다. 모니터링 상태에서 빠져나오기 위해서는 키보드의 <code class="language-plaintext highlighter-rouge">q</code>키를 누르면 됩니다.)</p>
-
-<ul>
-  <li>자동 재시작 설정</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 실행하고자 하는 파일 명.js --watch
-</code></pre></div></div>
-
-<p>(위와 같이 watch 옵션을 추가하게 되면 pm2에서 파일 변경을 파악하고 자동 재시작을 해줍니다. node는 내용을 변경하고 나면 서버를 껐다가 다시 켜줘야만 변경사항이 반영되는데 자동 재시작을 해주기 때문에 굉장히 편리합니다.)</p>
-
-<ul>
-  <li>로그 보기</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 log
-</code></pre></div></div>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>이번 포스팅에서는 pm2에 대해서 공부한 내용들을 간단하게 정리해보았고,
-기본적인 pm2 명령어들도 살펴보았습니다.</p>
-
-<h3 id="참고-사이트">참고 사이트</h3>
-
-<p><a href="https://pm2.keymetrics.io/">https://pm2.keymetrics.io/</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="pm2" /><category term="Node.js" /><summary type="html"><![CDATA[Node.js 운영을 효율적이게 하는 프로세스 관리도구]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="MariaDB" /><category term="SequelPro" /><category term="db" /><summary type="html"><![CDATA[homebrew로 mariaDB를 설치하고 GUI툴인 sequel pro까지 설치하기]]></summary></entry></feed>

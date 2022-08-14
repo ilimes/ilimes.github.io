@@ -106,4 +106,22 @@ var store = [{
         "tags": ["몽고디비","mongoDB","MongoDB","데이터베이스","mac"],
         "url": "/mongodb/post18/",
         "teaser": null
+      },{
+        "title": "Sequelize - 데이터타입",
+        "excerpt":"Sequelize DataTypes 시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 여기를 클릭해서 DataTypes를 참고해주시기 바랍니다. Sequelize.STRING // VARCHAR(255) Sequelize.STRING(1234) // VARCHAR(1234) Sequelize.STRING.BINARY // VARCHAR BINARY Sequelize.TEXT // TEXT Sequelize.TEXT('tiny') // TINYTEXT Sequelize.CITEXT // CITEXT PostgreSQL and SQLite only. Sequelize.INTEGER // INTEGER Sequelize.BIGINT // BIGINT Sequelize.BIGINT(11) // BIGINT(11) Sequelize.FLOAT //...","categories": ["Sequelize"],
+        "tags": ["시퀄라이즈","Sequelize","백엔드","backend"],
+        "url": "/sequelize/post19/",
+        "teaser": null
+      },{
+        "title": "[Mac] 사용중인 포트 kill 하는법",
+        "excerpt":"사용중 포트 찾기 lsof -i :[포트번호] ex) lime@laim-ui-MacBookAir ~ % lsof -i :3000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME node 13736 lime 31u IPv4 0x35b417c98f796509 0t0 TCP localhost:hbci-&gt;localhost:62414 (ESTABLISHED) kill 하기 kill -9 ex) kill -9 13736 위와 같이 해당 포트번호 PID 를 찾은 후 kill 명령어로...","categories": ["Issue"],
+        "tags": ["port","lsof","kill","mac"],
+        "url": "/issue/post20/",
+        "teaser": null
+      },{
+        "title": "[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법",
+        "excerpt":"문제 5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다. lime@laim-ui-MacBookAir ~ % lsof -i :5000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME ControlCe 10422 lime 29u IPv4 0x35b417c98db2da79 0t0 TCP *:commplex-main (LISTEN) ControlCe 10422 lime 30u IPv6 0x35b417d328e92061 0t0 TCP *:commplex-main (LISTEN)...","categories": ["Issue"],
+        "tags": ["port","AirPlay","5000"],
+        "url": "/issue/post21/",
+        "teaser": null
       }]

@@ -73,6 +73,18 @@
 <lastmod>2022-08-03T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/sequelize/post19/</loc>
+<lastmod>2022-08-09T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/issue/post20/</loc>
+<lastmod>2022-08-14T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/issue/post21/</loc>
+<lastmod>2022-08-14T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/categories/</loc>
 </url>
 <url>
@@ -88,6 +100,9 @@
 <loc>http://localhost:4000/categories/git</loc>
 </url>
 <url>
+<loc>http://localhost:4000/categories/issue</loc>
+</url>
+<url>
 <loc>http://localhost:4000/categories/javaScript</loc>
 </url>
 <url>
@@ -98,6 +113,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/categories/react</loc>
+</url>
+<url>
+<loc>http://localhost:4000/categories/sequelize</loc>
 </url>
 <url>
 <loc>http://localhost:4000/categories/web</loc>
@@ -116,5 +134,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page4/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page5/</loc>
 </url>
 </urlset>
