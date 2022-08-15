@@ -124,10 +124,4 @@ var store = [{
         "tags": ["port","AirPlay","5000"],
         "url": "/issue/post21/",
         "teaser": null
-      },{
-        "title": "Antd Table 컴포넌트 column render",
-        "excerpt":"AntD Table column render AntD를 사용하면서 multi line으로 데이터를 표시하거나, 조건에 맞게 데이터를 표시하는 경우 등 렌더링이 필요한 경우에 render 옵션을 활용하면 쉽게 원하는대로 표현할 수 있습니다. render 옵션 // render 옵션은 Array.map()처럼 작동합니다. render: (text, row, index) =&gt; {}; // text: name의 data [String] // row: 하나의 row data...","categories": ["Web"],
-        "tags": ["웹개발","antd","ant design"],
-        "url": "/web/post22/",
-        "teaser": null
       }]

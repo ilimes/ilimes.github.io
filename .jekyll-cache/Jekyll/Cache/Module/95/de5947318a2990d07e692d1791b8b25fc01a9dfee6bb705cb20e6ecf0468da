@@ -1,4 +1,4 @@
-I"�
+I"R
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -10,11 +10,13 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://ilimes.github.io">Home</a>
+              <a href="https://ilimes.github.io">홈</a>
             </li><li class="masthead__menu-item">
-              <a href="/categories/">Category</a>
+              <a href="/categories/">카테고리</a>
             </li><li class="masthead__menu-item">
-              <a href="/tags/">Tag</a>
+              <a href="/tags/">태그</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">검색</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
