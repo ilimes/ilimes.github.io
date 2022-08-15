@@ -1,4 +1,4 @@
-I"R
+I"V
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -20,7 +20,7 @@
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle menu</span>
+          <span class="visually-hidden">토글 메뉴</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -31,7 +31,7 @@
         <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
         
         <button class="greedy-nav__toggle hidden" type="button">
-            <span class="visually-hidden">Toggle menu</span>
+            <span class="visually-hidden">토글 메뉴</span>
             <div class="navicon"></div>
         </button>
       </nav>
