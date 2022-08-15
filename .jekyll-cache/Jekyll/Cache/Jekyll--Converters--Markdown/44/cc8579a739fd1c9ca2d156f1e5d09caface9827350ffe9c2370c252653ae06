@@ -1,0 +1,67 @@
+I"!<h3 id="antd-table-column-render">AntD Table column render</h3>
+
+<p>AntD를 사용하면서 multi line으로 데이터를 표시하거나, 조건에 맞게 데이터를 표시하는 경우 등 렌더링이 필요한 경우에 render 옵션을 활용하면 쉽게 원하는대로 표현할 수 있습니다.</p>
+
+<h3 id="render-옵션">render 옵션</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// render 옵션은 Array.map()처럼 작동합니다.</span>
+<span class="nx">render</span><span class="p">:</span> <span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{};</span>
+<span class="c1">// text: name의 data [String]</span>
+<span class="c1">// row: 하나의 row data [Object]</span>
+<span class="c1">// index: row index [Number]</span>
+</code></pre></div></div>
+
+<h3 id="사용하기">사용하기</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">월</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataIndex</span><span class="p">:</span> <span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">align</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+    <span class="c1">// render: (text) =&gt; &lt;a&gt;{text}&lt;/a&gt;,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">전력 소비량</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataIndex</span><span class="p">:</span> <span class="dl">"</span><span class="s2">energy1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">energy1</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">align</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">권장 소비량 대비 초과 %</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataIndex</span><span class="p">:</span> <span class="dl">"</span><span class="s2">percent</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">percent</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">align</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">render</span><span class="p">:</span> <span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="c1">// text: name의 data [String]</span>
+      <span class="c1">// row: 하나의 row data [Object]</span>
+      <span class="c1">// index: row index [Number]</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">index</span><span class="p">);</span>
+      <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;&gt;</span>
+          <span class="si">{</span><span class="nx">row</span><span class="p">.</span><span class="nx">percent</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">?</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">style</span><span class="p">=&gt;</span><span class="si">{</span><span class="nx">row</span><span class="p">.</span><span class="nx">percent</span><span class="si">}</span>%<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+          <span class="p">)</span> <span class="p">:</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">h3</span> <span class="na">style</span><span class="p">=&gt;</span><span class="si">{</span><span class="nx">row</span><span class="p">.</span><span class="nx">percent</span><span class="si">}</span>%<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+          <span class="p">)</span><span class="si">}</span>
+        <span class="p">&lt;/&gt;</span>
+      <span class="p">);</span>
+    <span class="p">},</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">전력량 소비 순위</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">dataIndex</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rank</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">rank</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">align</span><span class="p">:</span> <span class="dl">"</span><span class="s2">center</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="결과">결과</h3>
+
+<p><img width="664" alt="image" src="https://user-images.githubusercontent.com/95404736/184610941-2f59da62-1dcd-461d-8da2-e8e66c40addd.png" /></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

@@ -1,4 +1,36 @@
-I"�
+I"�
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/web/post22/">Antd Table 컴포넌트 column render</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.15
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>
+                    
+                    
+                    <a href="/tags/#ant-design" class="page__taxonomy-item-tag" rel="tag">ant design</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#antd" class="page__taxonomy-item-tag" rel="tag">antd</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#%EC%9B%B9%EA%B0%9C%EB%B0%9C" class="page__taxonomy-item-tag" rel="tag">웹개발</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
 <div class="list__item">
     <article class="archive-item">
         <div>
