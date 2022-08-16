@@ -130,4 +130,10 @@ var store = [{
         "tags": ["웹개발","antd","ant design"],
         "url": "/web/post22/",
         "teaser": null
+      },{
+        "title": "Git 커밋 되돌리기 (Reset, Revert)",
+        "excerpt":"Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요? Reset과 Revert의 차이점 Reset: 과거 커밋으로 되돌린다. (이력 남기지 않음) Revert :...","categories": ["Git"],
+        "tags": ["reset","revert","git"],
+        "url": "/git/post23/",
+        "teaser": null
       }]
