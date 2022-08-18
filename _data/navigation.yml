@@ -1,7 +1,7 @@
 # main links
 main:
-  - title: "홈"
-    url: "https://ilimes.github.io"
+  # - title: "홈"
+  #   url: "https://ilimes.github.io"
   - title: "카테고리"
     url: /categories/
   - title: "태그"
