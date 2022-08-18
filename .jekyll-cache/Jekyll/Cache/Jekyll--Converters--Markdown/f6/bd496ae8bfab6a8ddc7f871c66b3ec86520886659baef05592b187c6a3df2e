@@ -1,0 +1,69 @@
+I"�
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/issue/post21/">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.14
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><!-- <span>[<a href="/categories/#issue" class="page__taxonomy-item-category" rel="tag">Issue</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#5000" class="page__taxonomy-item-tag" rel="tag">5000</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#airplay" class="page__taxonomy-item-tag" rel="tag">AirPlay</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#port" class="page__taxonomy-item-tag" rel="tag">port</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/issue/post20/">[Mac] 사용중인 포트 kill 하는법</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.14
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><!-- <span>[<a href="/categories/#issue" class="page__taxonomy-item-category" rel="tag">Issue</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#kill" class="page__taxonomy-item-tag" rel="tag">kill</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#lsof" class="page__taxonomy-item-tag" rel="tag">lsof</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#mac" class="page__taxonomy-item-tag" rel="tag">mac</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px; margin-bottom: 50px;"><a style="color: white;" href="/tags/#port" class="page__taxonomy-item-tag" rel="tag">port</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET

@@ -1,0 +1,105 @@
+I"
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/nodejs/post13/">Axios 알아보기(특징, 설치방법 문법 등)</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.14
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span style="background-color: rgb(21, 12, 12);"><a href="/categories/#nodejs" class="page__taxonomy-item-category" rel="tag">NodeJs</a></span>
+                    
+                    
+                    <a href="/tags/#ajax" class="page__taxonomy-item-tag" rel="tag">AJAX</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#axios" class="page__taxonomy-item-tag" rel="tag">axios</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#node-js" class="page__taxonomy-item-tag" rel="tag">Node.js</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#nodejs" class="page__taxonomy-item-tag" rel="tag">NodeJS</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#promise" class="page__taxonomy-item-tag" rel="tag">Promise</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#%EB%B9%84%EB%8F%99%EA%B8%B0" class="page__taxonomy-item-tag" rel="tag">비동기</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/nodejs/post11/">Node.js-Express</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.11
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span style="background-color: rgb(21, 12, 12);"><a href="/categories/#nodejs" class="page__taxonomy-item-category" rel="tag">NodeJs</a></span>
+                    
+                    
+                    <a href="/tags/#express" class="page__taxonomy-item-tag" rel="tag">express</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#node-js" class="page__taxonomy-item-tag" rel="tag">Node.js</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#nodejs" class="page__taxonomy-item-tag" rel="tag">NodeJs</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/nodejs/post9/">Node.js 프로세스 관리도구 pm2</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.10
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span style="background-color: rgb(21, 12, 12);"><a href="/categories/#nodejs" class="page__taxonomy-item-category" rel="tag">NodeJs</a></span>
+                    
+                    
+                    <a href="/tags/#node-js" class="page__taxonomy-item-tag" rel="tag">Node.js</a><span class="sep"> </span>
+                
+                    
+                    
+                    <a href="/tags/#pm2" class="page__taxonomy-item-tag" rel="tag">pm2</a>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET

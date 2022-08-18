@@ -1,0 +1,161 @@
+I"I!
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post14/">리액트 Hooks : useMemo()</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.17
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span>[<a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>]</span>
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#hooks" class="page__taxonomy-item-tag" rel="tag">Hooks</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#memoization" class="page__taxonomy-item-tag" rel="tag">Memoization</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#react" class="page__taxonomy-item-tag" rel="tag">react</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#usememo" class="page__taxonomy-item-tag" rel="tag">useMemo</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">리액트</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post8/">리액트에서 styled-components로 스타일링 하기</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.06
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span>[<a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>]</span>
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#component" class="page__taxonomy-item-tag" rel="tag">component</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#css" class="page__taxonomy-item-tag" rel="tag">css</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#react" class="page__taxonomy-item-tag" rel="tag">react</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#styled" class="page__taxonomy-item-tag" rel="tag">styled</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#style" class="page__taxonomy-item-tag" rel="tag">style</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">리액트</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post7/">리액트 이벤트 핸들링</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.04
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span>[<a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>]</span>
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#event" class="page__taxonomy-item-tag" rel="tag">event</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#react" class="page__taxonomy-item-tag" rel="tag">react</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">리액트</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#%EC%9D%B4%EB%B2%A4%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">이벤트</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#%EC%9D%B4%EB%B2%A4%ED%8A%B8%ED%95%B8%EB%93%A4%EB%A7%81" class="page__taxonomy-item-tag" rel="tag">이벤트핸들링</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post3/">리액트 Hooks : useState()</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.27
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span>[<a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>]</span>
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#hooks" class="page__taxonomy-item-tag" rel="tag">Hooks</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#react" class="page__taxonomy-item-tag" rel="tag">react</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#setstate" class="page__taxonomy-item-tag" rel="tag">setState</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 3px;"><a style="color: white;" href="/tags/#usestate" class="page__taxonomy-item-tag" rel="tag">useState</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET

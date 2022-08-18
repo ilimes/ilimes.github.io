@@ -1,0 +1,57 @@
+I"	
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/blog/post2/">마크다운(Markdown) 문법</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.26
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span style="background-color: rgb(21, 12, 12);"><a href="/categories/#blog" class="page__taxonomy-item-category" rel="tag">Blog</a></span>
+                    
+                    
+                    <span style="border-radius: 20px; padding: 2px;"><a href="/tags/#blog" class="page__taxonomy-item-tag" rel="tag">Blog</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="border-radius: 20px; padding: 2px;"><a href="/tags/#jekyll" class="page__taxonomy-item-tag" rel="tag">Jekyll</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="border-radius: 20px; padding: 2px;"><a href="/tags/#markdown" class="page__taxonomy-item-tag" rel="tag">Markdown</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/blog/post/">github.io 블로그 첫 포스팅입니다</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.26
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><span style="background-color: rgb(21, 12, 12);"><a href="/categories/#blog" class="page__taxonomy-item-category" rel="tag">Blog</a></span>
+                    
+                    
+                    <span style="border-radius: 20px; padding: 2px;"><a href="/tags/#blog" class="page__taxonomy-item-tag" rel="tag">Blog</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+:ET
