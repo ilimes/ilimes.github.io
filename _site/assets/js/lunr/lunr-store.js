@@ -136,4 +136,10 @@ var store = [{
         "tags": ["reset","revert","git"],
         "url": "/git/post23/",
         "teaser": null
+      },{
+        "title": "jekyll serve 할 때 install missing gem executables with 'bundle install' 오류 해결 방법",
+        "excerpt":"오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :) 문제 상황 bundle exec jekyll serve bundler: command not found: jekyll Install missing gem executables with `bundle install` 해결 방법 $ rm .bundle/config $ gem update --system $ gem update...","categories": ["Blog"],
+        "tags": ["지킬","jekyll","blog"],
+        "url": "/blog/post23/",
+        "teaser": null
       }]

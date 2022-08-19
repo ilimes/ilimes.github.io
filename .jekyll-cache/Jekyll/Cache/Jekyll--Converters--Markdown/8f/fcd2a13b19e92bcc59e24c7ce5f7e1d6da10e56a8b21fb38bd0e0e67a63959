@@ -1,0 +1,20 @@
+I"B<p>오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :)</p>
+
+<h3 id="문제-상황">문제 상황</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+
+bundler: <span class="nb">command </span>not found: jekyll
+Install missing gem executables with <span class="sb">`</span>bundle <span class="nb">install</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="해결-방법">해결 방법</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rm .bundle/config #손상된 번들 제거
+$ gem update --system 
+$ gem update bundler
+$ bundle install
+</code></pre></div></div>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

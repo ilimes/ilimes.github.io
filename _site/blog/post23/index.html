@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>자바스크립트 프로토타입(prototype) 이해하기 - ilimes</title>
-<meta name="description" content="자바스크립트 프로토타입(prototype)">
+<!-- begin _includes/seo.html --><title>jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법 - ilimes</title>
+<meta name="description" content="Reset과 Revert 알고 사용하기">
 
 
   <meta name="author" content="LIME">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="ilimes">
-<meta property="og:title" content="자바스크립트 프로토타입(prototype) 이해하기">
-<meta property="og:url" content="http://localhost:4000/javascript/post5/">
+<meta property="og:title" content="jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법">
+<meta property="og:url" content="http://localhost:4000/blog/post23/">
 
 
-  <meta property="og:description" content="자바스크립트 프로토타입(prototype)">
+  <meta property="og:description" content="Reset과 Revert 알고 사용하기">
 
 
 
@@ -36,7 +36,7 @@
 
 
 
-  <meta property="article:published_time" content="2022-06-28T00:00:00+09:00">
+  <meta property="article:published_time" content="2022-08-19T00:00:00+09:00">
 
 
 
@@ -47,7 +47,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/javascript/post5/">
+<link rel="canonical" href="http://localhost:4000/blog/post23/">
 
 
 
@@ -603,227 +603,19 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="자바스크립트 프로토타입(prototype) 이해하기">
-    <meta itemprop="description" content="자바스크립트 프로토타입(prototype)">
-    <meta itemprop="datePublished" content="2022-06-28T00:00:00+09:00">
+    <meta itemprop="headline" content="jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법">
+    <meta itemprop="description" content="Reset과 Revert 알고 사용하기">
+    <meta itemprop="datePublished" content="2022-08-19T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/javascript/post5/" class="u-url" itemprop="url">자바스크립트 프로토타입(prototype) 이해하기
+            <a href="http://localhost:4000/blog/post23/" class="u-url" itemprop="url">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법
 </a>
           </h1>
           
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-    
-  </p>
-
-
-          <!-- <img style="width: auto; height: auto; margin-right: 5px; margin-bottom: 15px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io/how%20to/HITS/&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=조회수&edge_flat=false"/> -->
-        </header>
-      
-
-      <section class="page__content e-content" itemprop="text">
-        
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
-              <ul class="toc__menu"><li><a href="#prototype이란">prototype이란?</a></li><li><a href="#자바스크립트에서-함수란">자바스크립트에서 함수란?</a></li><li><a href="#constructor-prototype-instance">Constructor, prototype, instance</a></li><li><a href="#__proto__">__proto__</a></li><li><a href="#프로토타입-체인-prototype-chain">프로토타입 체인 (prototype chain)</a></li><li><a href="#today-i-learned">Today I Learned</a><ul><li><a href="#본-포스팅은-아래-사이트를-참고하여-작성하였습니다">본 포스팅은 아래 사이트를 참고하여 작성하였습니다.</a></li></ul></li></ul>
-
-            </nav>
-          </aside>
-        
-        <h2 id="prototype이란">prototype이란?</h2>
-
-<p>prototype(프로토타입)은 한국어로 원형이라는 뜻인데 자바스크립트에서는 프로토타입으로 상속 개념을 제공하고 있습니다. <code class="language-plaintext highlighter-rouge">(자바스크립트에서는 객체간의 관계가 복사가 아니라 연결이 맺어진 것이기 때문에 상속보다는 위임이 좀 더 적절한 표현) </code>자바스크립트는 모든 객체들이 부모객체가 가진 메소드와 속성을 상속받는 것이 가능한데 사실 자바스크립트는 Java나 Python 등과 달리 클래스 개념이 없기 때문에 상속 기능이 없지만 프로토 타입이라는 것을 통해 상속을 흉내내도록 구현하고 있습니다. 그래서 자바스크립트는 프로토타입 기반 언어(prototype-based language)라고 불립니다. ES6 이후에 클래스가 생겨나긴 했지만 그것이 위와 같은 프로토타입 객체지향 모델을 폐지하고 나온 새로운 모델은 아니고 Java와 같은 객체 지향 프로그래밍 언어에서 사용하는 것과 유사하게 사용할 수 있도록 문법을 제공하는 것으로, ES6 이후 나온 클래스 또한 어디까지나 자바스크립트의 함수이며 내부적으로는 프로토타입 모델을 따르고 있습니다.</p>
-
-<h2 id="자바스크립트에서-함수란">자바스크립트에서 함수란?</h2>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">()</span> <span class="p">{}</span>
-</code></pre></div></div>
-
-<p>자바스크립트에서 함수는 곧 객체입니다. 객체는 속성(property)을 가지고 함수 또한 property를 갖습니다. 기본적으로 위와 같이 함수를 정의한다면 <code class="language-plaintext highlighter-rouge">Person 객체</code>와 함께 <code class="language-plaintext highlighter-rouge">Person의 prototype 객체</code>가 함께 생깁니다. 이 때 생성된 객체의 부모 역할을 하는 것은 생성자 Person 자신이 아니라 prototype 객체입니다.</p>
-
-<h2 id="constructor-prototype-instance">Constructor, prototype, instance</h2>
-
-<p>어떤 생성자 함수(Constructor)를 <code class="language-plaintext highlighter-rouge">new</code> 연산자와 함께 호출한다면 Constructor에서 정의된 내용을 바탕으로 새로운 instance가 생성됩니다. 이 때 instance에는 <code class="language-plaintext highlighter-rouge">__proto__</code> 라는 property가 자동으로 부여되고 이 property는 Constructor의 prototype property를 참조하게 됩니다.</p>
-
-<h2 id="__proto__"><code class="language-plaintext highlighter-rouge">__proto__</code></h2>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">아기사자</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">;</span> <span class="c1">// 엄마사자</span>
-<span class="nx">아기사자</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">엄마사자</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true;</span>
-</code></pre></div></div>
-
-<p>모든 객체는 <code class="language-plaintext highlighter-rouge">__proto__</code> 를 통해 자신이 물려받은 [[Prototype]] 값에 접근할 수 있습니다. 즉 참조하는 용도로 쓰이며 상위 객체가 무엇인지 알 수 있는 것입니다. 그런데 [[Prototype]] 내부 슬롯에는 직접 접근이 불가합니다. 이는 프로토타입 체인의 단방향을 지키기 위해서입니다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="kd">const</span> <span class="nx">child</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="c1">//child의 프로토타입을 parent로</span>
-<span class="nx">child</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">;</span>
-<span class="c1">//parent의 프로토타입을 child로</span>
-<span class="nx">parent</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">child</span><span class="p">;</span> <span class="c1">// TypeError:Cyclic__proto__ value</span>
-</code></pre></div></div>
-
-<p>프로토타입 체인이 단방향성을 지켜야 하는 이유는 위와 같이 코드를 짜면 서로가 자신의 프로토타입이 되는 비정상적인 경우가 만들어지기 때문입니다.</p>
-
-<h2 id="프로토타입-체인-prototype-chain">프로토타입 체인 (prototype chain)</h2>
-
-<p>자식은 부모로부터 자신이 물려받은 유전자를 활용할 수 있고, 부모 뿐만 아니라 더 상위 부모의 유전자 까지도 활용할 수 있습니다.</p>
-
-<p>모든 프로토타입 체이닝의 종점은 <code class="language-plaintext highlighter-rouge">Object.prototype</code> 입니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`My name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
-<span class="p">};</span>
-
-<span class="kd">const</span> <span class="nx">me</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">LDK</span><span class="dl">"</span><span class="p">);</span>
-
-<span class="c1">//hasOwnProperty는 Object.prototype의 메소드로</span>
-<span class="c1">//객체가 특정 property를 가지고 있는지 나타내는 Boolean 값을 리턴한다.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">me</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">));</span> <span class="c1">//true</span>
-</code></pre></div></div>
-
-<p>위 예제를 보면 Person 생성자 함수에 의해서 생성된 me라는 객체는 Object.prototype 메소드인 hasOwnProperty를 호출할 수 있다는 것을 알 수 있습니다. 객체는 chain rule(연쇄법칙) 구조로 property나 method를 활용하기 때문에 찾고자 하는게 me에서 없는 경우에는 상위 prototype에서 찾고 거기서 없다면 또 상위 prototype에서 찾고 최종적으로는 Object.prototype에서 찾게 되는 것입니다.</p>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>오늘 이렇게 자바스크립트의 중요한 기본 개념인 프로토타입을 이해하였고 <code class="language-plaintext highlighter-rouge">constructor</code>, <code class="language-plaintext highlighter-rouge">__proto__</code>, <code class="language-plaintext highlighter-rouge">prototype</code>이 어떤 관계를 갖고 있는지 알게되었습니다.</p>
-
-<h3 id="본-포스팅은-아래-사이트를-참고하여-작성하였습니다">본 포스팅은 아래 사이트를 참고하여 작성하였습니다.</h3>
-
-<ul>
-  <li>생활코딩 prototype 강의</li>
-  <li><a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes">https://developer.mozilla.org/ko/docs/Learn/JavaScript/Objects/Object_prototypes</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/tags/#javascript" class="page__taxonomy-item p-category" rel="tag">javaScript</a><span class="sep">, </span>
-    
-      <a href="/tags/#js" class="page__taxonomy-item p-category" rel="tag">js</a><span class="sep">, </span>
-    
-      <a href="/tags/#prototype" class="page__taxonomy-item p-category" rel="tag">prototype</a><span class="sep">, </span>
-    
-      <a href="/tags/#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">자바스크립트</a><span class="sep">, </span>
-    
-      <a href="/tags/#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85" class="page__taxonomy-item p-category" rel="tag">프로토타입</a>
-    
-    </span>
-  </p>
-
-
-
-
-  
-
-
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
-    <span itemprop="keywords">
-    
-      <a href="/categories/#javascript" class="page__taxonomy-item p-category" rel="tag">JavaScript</a>
-    
-    </span>
-  </p>
-
-
-        
-
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-06-28T00:00:00+09:00">June 28, 2022</time></p>
-
-      </footer>
-
-      <section class="page__share">
-  
-    <h4 class="page__share-title">공유하기</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?text=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85%28prototype%29+%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0%20http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fpost5%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fpost5%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fjavascript%2Fpost5%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-
-      
-  <nav class="pagination">
-    
-      <a href="/web/post4/" class="pagination--pager" title="리액트에서 UI 라이브러리 앤트 디자인(Ant Design) 사용하기
-">이전</a>
-    
-    
-      <a href="/javascript/post6/" class="pagination--pager" title="자바스크립트 Promise 이해하기
-">다음</a>
-    
-  </nav>
-
-    </div>
-
-    
-  </article>
-
-  
-  
-    <div class="page__related">
-      <h2 class="page__related-title">참고</h2>
-      <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/blog/post23/" rel="permalink">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법
-</a>
-      
-    </h2>
-    
 
   <p class="page__meta">
     
@@ -844,11 +636,124 @@
   </p>
 
 
-    <p class="archive__item-excerpt" itemprop="description">Reset과 Revert 알고 사용하기
-</p>
-  </article>
-</div>
+          <!-- <img style="width: auto; height: auto; margin-right: 5px; margin-bottom: 15px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io/how%20to/HITS/&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=조회수&edge_flat=false"/> -->
+        </header>
+      
 
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#문제-상황">문제 상황</a></li><li><a href="#해결-방법">해결 방법</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <p>오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :)</p>
+
+<h3 id="문제-상황">문제 상황</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+
+bundler: <span class="nb">command </span>not found: jekyll
+Install missing gem executables with <span class="sb">`</span>bundle <span class="nb">install</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="해결-방법">해결 방법</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rm .bundle/config
+$ gem update --system 
+$ gem update bundler
+$ bundle install
+</code></pre></div></div>
+
+<p>손상된 번들을 제거하고 위와 같은 작업을 하면 오류가 해결됩니다 😆</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#blog" class="page__taxonomy-item p-category" rel="tag">blog</a><span class="sep">, </span>
+    
+      <a href="/tags/#jekyll" class="page__taxonomy-item p-category" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%A7%80%ED%82%AC" class="page__taxonomy-item p-category" rel="tag">지킬</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#blog" class="page__taxonomy-item p-category" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-08-19T00:00:00+09:00">August 19, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=jekyll+serve+%ED%95%A0+%EB%95%8C+install+missing+gem+executables+with+%27bundle+install%27+%EC%98%A4%EB%A5%98+%ED%95%B4%EA%B2%B0+%EB%B0%A9%EB%B2%95%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpost23%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpost23%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fpost23%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/git/post23/" class="pagination--pager" title="Git 커밋 되돌리기 (Reset, Revert)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
         
           
 
@@ -965,6 +870,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">AirPlay 수신모드에게 뺏긴 5000번 포트..
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/issue/post20/" rel="permalink">[Mac] 사용중인 포트 kill 하는법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">포트 죽이기!!
 </p>
   </article>
 </div>

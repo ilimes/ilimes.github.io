@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-18T22:48:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git 커밋 되돌리기 (Reset, Revert)</title><link href="http://localhost:4000/git/post23/" rel="alternate" type="text/html" title="Git 커밋 되돌리기 (Reset, Revert)" /><published>2022-08-16T00:00:00+09:00</published><updated>2022-08-16T00:00:00+09:00</updated><id>http://localhost:4000/git/post23</id><content type="html" xml:base="http://localhost:4000/git/post23/"><![CDATA[<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-19T23:52:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법</title><link href="http://localhost:4000/blog/post23/" rel="alternate" type="text/html" title="jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법" /><published>2022-08-19T00:00:00+09:00</published><updated>2022-08-19T00:00:00+09:00</updated><id>http://localhost:4000/blog/post23</id><content type="html" xml:base="http://localhost:4000/blog/post23/"><![CDATA[<p>오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :)</p>
+
+<h3 id="문제-상황">문제 상황</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+
+bundler: <span class="nb">command </span>not found: jekyll
+Install missing gem executables with <span class="sb">`</span>bundle <span class="nb">install</span><span class="sb">`</span>
+</code></pre></div></div>
+
+<h3 id="해결-방법">해결 방법</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rm .bundle/config
+$ gem update --system 
+$ gem update bundler
+$ bundle install
+</code></pre></div></div>
+
+<p>손상된 번들을 제거하고 위와 같은 작업을 하면 오류가 해결됩니다 😆</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="지킬" /><category term="jekyll" /><category term="blog" /><summary type="html"><![CDATA[Reset과 Revert 알고 사용하기]]></summary></entry><entry><title type="html">Git 커밋 되돌리기 (Reset, Revert)</title><link href="http://localhost:4000/git/post23/" rel="alternate" type="text/html" title="Git 커밋 되돌리기 (Reset, Revert)" /><published>2022-08-16T00:00:00+09:00</published><updated>2022-08-16T00:00:00+09:00</updated><id>http://localhost:4000/git/post23</id><content type="html" xml:base="http://localhost:4000/git/post23/"><![CDATA[<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
 
 <h3 id="reset과-revert의-차이점">Reset과 Revert의 차이점</h3>
 
@@ -116,35 +136,7 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
-
-<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
-COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-</code></pre></div></div>
-
-<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
-
-<h3 id="해결하기">해결하기</h3>
-
-<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
-
-<ul>
-  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
-</ul>
-
-<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
-
-<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
-
-<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> :[포트번호]
 </code></pre></div></div>
@@ -176,7 +168,35 @@ node      13736 lime   31u  IPv4 0x35b417c98f796509      0t0  TCP localhost:hbci
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
+
+<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div></div>
+
+<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
+
+<h3 id="해결하기">해결하기</h3>
+
+<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
+
+<ul>
+  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
+</ul>
+
+<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
+
+<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
+
+<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
 
 <p>시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 <a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes" title="sequelize DataTypes :)">여기</a>를 클릭해서 DataTypes를 참고해주시기 바랍니다.</p>
 
@@ -575,139 +595,4 @@ true
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="API" /><category term="postman" /><category term="포스트맨" /><category term="개발" /><category term="restapi" /><summary type="html"><![CDATA[API 개발을 보다 빠르고 쉽게 구현 할 수 있도록 도와주는 POSTMAN]]></summary></entry><entry><title type="html">리액트 Hooks : useMemo()</title><link href="http://localhost:4000/react/post14/" rel="alternate" type="text/html" title="리액트 Hooks : useMemo()" /><published>2022-07-17T00:00:00+09:00</published><updated>2022-07-17T00:00:00+09:00</updated><id>http://localhost:4000/react/post14</id><content type="html" xml:base="http://localhost:4000/react/post14/"><![CDATA[<h2 id="memoization-이란">Memoization 이란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">Memoization</code>은 프로그래밍 기법 중 하나로 기존에 수행한 연산의 결과값을 메모리에 저장해놓고 필요할 때 재사용하여 계산의 반복수행을 하지 않는 것입니다. 이런 기법을 사용하게 되면 중복 연산을 피할 수 있기 때문에 프로그램 실행 속도가 빨라지게 됩니다.</p>
-
-<h2 id="usememo-란">useMemo() 란?</h2>
-
-<p>리액트에서 함수형 컴포넌트는 <code class="language-plaintext highlighter-rouge">렌더링</code> -&gt; <code class="language-plaintext highlighter-rouge">Component 함수 호출</code> -&gt; <code class="language-plaintext highlighter-rouge">모든 내부 변수 초기화</code>의 순서를 거치게 됩니다. 이 때 무거운 연산을 하는 어떤 함수를 리렌더링이 될 때 마다 반복적으로 호출하게 된다면 효율성이 굉장히 떨어질 수 있는데요. 리액트에서 useMemo를 사용하면 <code class="language-plaintext highlighter-rouge">렌더링</code> -&gt; <code class="language-plaintext highlighter-rouge">Component 함수 호출</code> -&gt; <code class="language-plaintext highlighter-rouge">Memoize된 함수 재사용</code>의 순서를 거치게 됩니다. 이는 처음 계산된 결과값이 메모리에 저장되어서 컴포넌트가 리렌더링 될 때 계산된 결과값을 메모리에서 꺼내와서 재사용할 수 있는 것으로, 불필요한 연산을 없애고 성능을 더욱 최적화 할 수 있게 하는 것입니다. useMemo를 사용하게 되면 Memoization용 메모리가 필요하기 때문에 남용하는 것은 좋지 않습니다.</p>
-
-<h2 id="usememo-사용-방법">useMemo 사용 방법</h2>
-
-<ul>
-  <li>import</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>리액트에서 useMemo를 사용하기 위해서는 가장 먼저 위와 같이 react에서 useMemo를 import 해야합니다.</p>
-
-<ul>
-  <li>기본 형태</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 첫 번째 인자 콜백함수</span>
-<span class="c1">// 두 번째 인자 의존성배열</span>
-<span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span><span class="p">();</span>
-<span class="p">},</span> <span class="p">[</span><span class="nx">b</span><span class="p">]);</span>
-</code></pre></div></div>
-
-<p>useMemo의 기본 형태는 위와 같습니다.<br />
-첫 번째 인자로는 콜백함수를, 두 번째로 인자로는 의존성배열을 받는데요. 두 번째 인자로 들어가는 배열 요소 값이 업데이트 될 때만 콜백함수를 다시 호출해서 연산하고, 값이 업데이트 되지 않으면 이전에 연산했던 값을 재사용하게 됩니다.</p>
-
-<ul>
-  <li>useMemo를 사용하지 않았을 때</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Practice</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">list</span><span class="p">,</span> <span class="nx">setList</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">calculate</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">계산중 입니다!</span><span class="dl">"</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
-  <span class="p">};</span>
-  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">onInsert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">nextList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">number</span><span class="p">));</span>
-    <span class="nx">setList</span><span class="p">(</span><span class="nx">nextList</span><span class="p">);</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onInsert</span><span class="si">}</span><span class="p">&gt;</span>등록<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">))</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>합계 :<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="si">{</span><span class="nx">calculate</span><span class="p">()</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Practice</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>위 코드는 useMemo를 사용하지 않고 만든 코드입니다. 이런 경우에는 최초, 글자 입력 시, 버튼 클릭 시에 모두 “계산중 입니다!” 라는 메시지가 콘솔에 찍히게 됩니다.</p>
-
-<ul>
-  <li>useMemo를 사용했을 때</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span><span class="p">,</span> <span class="nx">useMemo</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Practice</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">list</span><span class="p">,</span> <span class="nx">setList</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([]);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">calculate</span> <span class="o">=</span> <span class="nx">useMemo</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">계산중 입니다!</span><span class="dl">"</span><span class="p">);</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="nx">sum</span><span class="p">;</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">list</span><span class="p">]);</span>
-
-  <span class="kd">const</span> <span class="nx">onChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">onInsert</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">nextList</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">number</span><span class="p">));</span>
-    <span class="nx">setList</span><span class="p">(</span><span class="nx">nextList</span><span class="p">);</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span> <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onInsert</span><span class="si">}</span><span class="p">&gt;</span>등록<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">list</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
-          <span class="p">&lt;</span><span class="nt">li</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">index</span><span class="si">}</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">))</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>합계 :<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> <span class="si">{</span><span class="nx">calculate</span><span class="si">}</span>
-        <span class="si">{</span><span class="cm">/* 여기서 calculate는 useMemo를 사용했기 때문에 값을 반환합니다 */</span><span class="si">}</span>
-      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Practice</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>위와 같이 useMemo를 사용한 경우에는 list가 업데이트 될 때만 렌더링하게 됩니다.</p>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>오늘은 리액트 Hooks 중에서 <code class="language-plaintext highlighter-rouge">useMemo</code>에 대해 공부했습니다. <code class="language-plaintext highlighter-rouge">useMemo</code>를 남용하면 메모리가 낭비되기도 하고, 평소 사용환경에서는 <code class="language-plaintext highlighter-rouge">useEffect</code>를 사용하여 비동기로 처리하는 경우가 많을 듯 하지만 <code class="language-plaintext highlighter-rouge">useMemo</code>는 알아놓으면 좋은 Hooks인 것 같습니다. 다음 번에는 <code class="language-plaintext highlighter-rouge">useMemo</code>와 유사한 <code class="language-plaintext highlighter-rouge">useCallback</code>에 대해 공부해보고 차이점은 무엇인지 알아봐야겠습니다 :)</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="useMemo" /><category term="react" /><category term="Hooks" /><category term="리액트" /><category term="Memoization" /><summary type="html"><![CDATA[성능 최적화를 위한 useMemo 사용법]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="API" /><category term="postman" /><category term="포스트맨" /><category term="개발" /><category term="restapi" /><summary type="html"><![CDATA[API 개발을 보다 빠르고 쉽게 구현 할 수 있도록 도와주는 POSTMAN]]></summary></entry></feed>
