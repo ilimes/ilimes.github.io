@@ -142,4 +142,10 @@ var store = [{
         "tags": ["지킬","jekyll","blog"],
         "url": "/blog/post23/",
         "teaser": null
+      },{
+        "title": "jekyll 실행 시 `require': cannot load such file -- webrick (LoadError) 오류 해결 방법",
+        "excerpt":"문제 상황 ------------------------------------------------ Jekyll 4.2.0 Please append `--trace` to the `serve` command for any additional information or backtrace. ------------------------------------------------ bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다. 해결 방법 $ bundle add webrick 이런 경우에는 bundle add webrick으로 Webrick를 추가하면...","categories": ["Blog"],
+        "tags": ["지킬","jekyll","blog"],
+        "url": "/blog/post24/",
+        "teaser": null
       }]

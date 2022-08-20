@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-19T23:52:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법</title><link href="http://localhost:4000/blog/post23/" rel="alternate" type="text/html" title="jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법" /><published>2022-08-19T00:00:00+09:00</published><updated>2022-08-19T00:00:00+09:00</updated><id>http://localhost:4000/blog/post23</id><content type="html" xml:base="http://localhost:4000/blog/post23/"><![CDATA[<p>오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :)</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-20T12:55:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그 입니다.</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">jekyll 실행 시 `require’: cannot load such file – webrick (LoadError) 오류 해결 방법</title><link href="http://localhost:4000/blog/post24/" rel="alternate" type="text/html" title="jekyll 실행 시 `require’: cannot load such file – webrick (LoadError) 오류 해결 방법" /><published>2022-08-20T00:00:00+09:00</published><updated>2022-08-20T00:00:00+09:00</updated><id>http://localhost:4000/blog/post24</id><content type="html" xml:base="http://localhost:4000/blog/post24/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                    <span class="nt">------------------------------------------------</span>
+      Jekyll 4.2.0   Please append <span class="sb">`</span><span class="nt">--trace</span><span class="sb">`</span> to the <span class="sb">`</span>serve<span class="sb">`</span> <span class="nb">command
+                     </span><span class="k">for </span>any additional information or backtrace.
+                    <span class="nt">------------------------------------------------</span>
+</code></pre></div></div>
+
+<p>bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다.</p>
+
+<h3 id="해결-방법">해결 방법</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle add webrick
+</code></pre></div></div>
+
+<p>이런 경우에는 bundle add webrick으로 Webrick를 추가하면 오류 없이 실행됩니다. 
+위와 같은 오류가 발생하는 이유는 ruby 3.x 버전 부터 webrick이 bundle로 제공되지 않기 때문입니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="지킬" /><category term="jekyll" /><category term="blog" /><summary type="html"><![CDATA[jekyll blog - `require': cannot load such file -- webrick (LoadError)]]></summary></entry><entry><title type="html">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법</title><link href="http://localhost:4000/blog/post23/" rel="alternate" type="text/html" title="jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법" /><published>2022-08-19T00:00:00+09:00</published><updated>2022-08-19T00:00:00+09:00</updated><id>http://localhost:4000/blog/post23</id><content type="html" xml:base="http://localhost:4000/blog/post23/"><![CDATA[<p>오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :)</p>
 
 <h3 id="문제-상황">문제 상황</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
@@ -18,7 +36,7 @@ $ bundle install
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="지킬" /><category term="jekyll" /><category term="blog" /><summary type="html"><![CDATA[Reset과 Revert 알고 사용하기]]></summary></entry><entry><title type="html">Git 커밋 되돌리기 (Reset, Revert)</title><link href="http://localhost:4000/git/post23/" rel="alternate" type="text/html" title="Git 커밋 되돌리기 (Reset, Revert)" /><published>2022-08-16T00:00:00+09:00</published><updated>2022-08-16T00:00:00+09:00</updated><id>http://localhost:4000/git/post23</id><content type="html" xml:base="http://localhost:4000/git/post23/"><![CDATA[<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="지킬" /><category term="jekyll" /><category term="blog" /><summary type="html"><![CDATA[jekyll blog - install missing gem executables with 'bundle install']]></summary></entry><entry><title type="html">Git 커밋 되돌리기 (Reset, Revert)</title><link href="http://localhost:4000/git/post23/" rel="alternate" type="text/html" title="Git 커밋 되돌리기 (Reset, Revert)" /><published>2022-08-16T00:00:00+09:00</published><updated>2022-08-16T00:00:00+09:00</updated><id>http://localhost:4000/git/post23</id><content type="html" xml:base="http://localhost:4000/git/post23/"><![CDATA[<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
 
 <h3 id="reset과-revert의-차이점">Reset과 Revert의 차이점</h3>
 
@@ -136,7 +154,35 @@ $ bundle install
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
+
+<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+</code></pre></div></div>
+
+<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
+
+<h3 id="해결하기">해결하기</h3>
+
+<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
+
+<ul>
+  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
+</ul>
+
+<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
+
+<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
+
+<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> :[포트번호]
 </code></pre></div></div>
@@ -168,35 +214,7 @@ node      13736 lime   31u  IPv4 0x35b417c98f796509      0t0  TCP localhost:hbci
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
-
-<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
-COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-</code></pre></div></div>
-
-<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
-
-<h3 id="해결하기">해결하기</h3>
-
-<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
-
-<ul>
-  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
-</ul>
-
-<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
-
-<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
-
-<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
 
 <p>시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 <a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes" title="sequelize DataTypes :)">여기</a>를 클릭해서 DataTypes를 참고해주시기 바랍니다.</p>
 
@@ -559,40 +577,4 @@ true
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MongoDB" /><category term="backend" /><category term="mongoDB" /><category term="몽고디비" /><category term="디비" /><category term="noSQL" /><summary type="html"><![CDATA[JSON과 같은 문서를 사용하여 대량의 데이터를 읽기 좋은 NoSQL 데이터베이스 MongoDB]]></summary></entry><entry><title type="html">POSTMAN이란?</title><link href="http://localhost:4000/web/post15/" rel="alternate" type="text/html" title="POSTMAN이란?" /><published>2022-07-18T00:00:00+09:00</published><updated>2022-07-18T00:00:00+09:00</updated><id>http://localhost:4000/web/post15</id><content type="html" xml:base="http://localhost:4000/web/post15/"><![CDATA[<h2 id="postman이란">POSTMAN이란?</h2>
-
-<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>은 API 개발을 보다 빠르고 쉽게 구현할 수 있도록 도와주며, 개발된 API를 테스트하여 문서화 또는 공유할 수 있게 해줍니다.</p>
-
-<h2 id="postman을-사용하는-이유">POSTMAN을 사용하는 이유</h2>
-
-<p><code class="language-plaintext highlighter-rouge">POSTMAN</code>을 사용하는 이유는 프론트엔드를 배제하고, 서버 프로그램이 들어온 API 요청에 대해서 제대로 동작하는지 확인하기 위함입니다. RESTful API 를 구현하다보면 특정 url에 파라미터나 헤더 등을 담아서 request를 보내는 테스트를 진행하게 되는데, 엄청나게 많이 반복되다보면 짜증이 날 수도 있습니다.</p>
-
-<h2 id="restful-api의-개념">RESTful API의 개념</h2>
-
-<p><code class="language-plaintext highlighter-rouge">RESTful API</code>란 HTTP URI(Uniform Resource Identifier)을 통하여 자원(Resource)을 명시하고, HTTP Method(POST, GET, PUT, DELETE)를 통하여 해당 자원에 대한 CRUD를 적용하는 것을 의미합니다.</p>
-
-<h2 id="postman-설치하기">POSTMAN 설치하기</h2>
-
-<p><a href="https://www.postman.com/">https://www.postman.com/</a></p>
-
-<p>POSTMAN을 설치하기 위해서는 위 주소로 이동하여 해당 운영체제에 맞는 버튼을 클릭하면 됩니다. 꽤나 간단하게 설치가 완료됩니다. 계정을 보유하고 있는 경우에는 요청 히스토리, 테스트 환경 등이 저장되어 있으니 그대로 사용할 수 있습니다.</p>
-
-<h2 id="postman-장점">POSTMAN 장점</h2>
-
-<ul>
-  <li>툴이 꽤나 가볍다</li>
-  <li>협업 시 팀원이 만든 url을 확인할 때 편하다</li>
-  <li>RESTful API를 표현할 수 있다.</li>
-</ul>
-
-<h3 id="참고-사이트">참고 사이트</h3>
-
-<p><a href="https://incheol-jung.gitbook.io/docs/q-and-a/infra/2018-01-03-how-to-use-postman">https://incheol-jung.gitbook.io/docs/q-and-a/infra/2018-01-03-how-to-use-postman</a></p>
-
-<h2 id="today-i-learned">Today I Learned</h2>
-
-<p>Postman을 사용하여 API 테스트를 할 수 있다는 것을 알게되었고, 번거로움을 해소해주는 아주 유용한 개발 툴이라는 생각을 하게 되었습니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="API" /><category term="postman" /><category term="포스트맨" /><category term="개발" /><category term="restapi" /><summary type="html"><![CDATA[API 개발을 보다 빠르고 쉽게 구현 할 수 있도록 도와주는 POSTMAN]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MongoDB" /><category term="backend" /><category term="mongoDB" /><category term="몽고디비" /><category term="디비" /><category term="noSQL" /><summary type="html"><![CDATA[JSON과 같은 문서를 사용하여 대량의 데이터를 읽기 좋은 NoSQL 데이터베이스 MongoDB]]></summary></entry></feed>
