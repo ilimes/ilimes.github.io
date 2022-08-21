@@ -3,7 +3,7 @@
     <article class="archive-item">
         <div>
             <span>
-              <a href="/blog/post24/">jekyll 실행 시 `require': cannot load such file -- webrick (LoadError) 오류 해결 방법</a>
+              <a href="/blog/post24/">jekyll 실행 시 'require': cannot load such file -- webrick (LoadError) 오류 해결 방법</a>
             </span>
             <small> 
               <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.20

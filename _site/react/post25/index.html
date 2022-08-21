@@ -1,0 +1,1073 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>리액트 Hooks : useRef() - ilimes</title>
+<meta name="description" content="useRef로 DOM 요소에 접근하기">
+
+
+  <meta name="author" content="LIME">
+  
+  <meta property="article:author" content="LIME">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ilimes">
+<meta property="og:title" content="리액트 Hooks : useRef()">
+<meta property="og:url" content="http://localhost:4000/react/post25/">
+
+
+  <meta property="og:description" content="useRef로 DOM 요소에 접근하기">
+
+
+
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-21T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/react/post25/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "LIME",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ilimes Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <style> 
+      ::-webkit-scrollbar{width: 6px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: #818587;}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      {
+          width:12px;height:12px;background:transparent;}
+      } 
+    </style>
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ilimes
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">카테고리</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">태그</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">검색</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+        
+        <!-- 다크 모드 토글 버튼 -->
+        
+        <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+        <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+            <span class="visually-hidden">토글 메뉴</span>
+            <div class="navicon"></div>
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" alt="LIME" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">LIME</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:ilimes1307@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="ilimes1307@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ilimes" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+      <!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> 26 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+        <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+        <span class="nav__sub-title">Blog</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/blog" class="">Blog (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">FrontEnd</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (5)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">BackEnd</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/nodeJs" class="">Node.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/mongoDB" class="">MongoDB (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sequelize" class="">Sequelize (1)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">JavaScript</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/javaScript" class="">JavaScript (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">Figma</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/figma" class="">Figma (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">개발</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/web" class="">웹 개발 (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/issue" class="">문제 해결 (2)</a></li>
+                    
+                
+            </ul>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+  
+    <img style="width: auto; height: auto; margin-right: 5px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=%F0%9F%91%8B&edge_flat=false"/>
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="리액트 Hooks : useRef()">
+    <meta itemprop="description" content="useRef로 DOM 요소에 접근하기">
+    <meta itemprop="datePublished" content="2022-08-21T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/react/post25/" class="u-url" itemprop="url">리액트 Hooks : useRef()
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          <!-- <img style="width: auto; height: auto; margin-right: 5px; margin-bottom: 15px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io/how%20to/HITS/&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=조회수&edge_flat=false"/> -->
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#️-useref-언제-사용할까">✔️ useRef, 언제 사용할까?</a></li><li><a href="#️-useref-사용법">✔️ useRef 사용법</a></li><li><a href="#️-예시">✔️ 예시</a></li><li><a href="#️-변수-관리">✔️ 변수 관리</a><ul><li><a href="#today-i-learned">Today I Learned</a></li><li><a href="#참고사이트">참고사이트</a></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="️-useref-언제-사용할까">✔️ useRef, 언제 사용할까?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">useRef</code>는 크게 <strong>DOM 요소에 접근</strong>하는 경우, <strong>렌더링을 일으키지 않고 값을 변경</strong>시키는 두 가지 경우에 사용합니다.<br />
+<br />
+Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 <code class="language-plaintext highlighter-rouge">getElementById</code> 혹은 <code class="language-plaintext highlighter-rouge">querySelector</code> 같은 함수를 사용하였는데요. 리액트에서는 useRef라는 Hook를 사용하거나, 콜백 함수 혹은 React.createRef(클래스형 컴포넌트) 라는 함수를 사용합니다.</p>
+
+<h3 id="️-useref-사용법">✔️ useRef 사용법</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p>useRef를 사용하기 위해서는 가장 먼저 react에서 useRef를 import 받아야 합니다.</p>
+
+<p>기본 형태는 아래와 같습니다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Ref 객체 생성</span>
+<span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+
+<span class="c1">//current -&gt; DOM 가리킴. 아래의 경우는 &lt;input /&gt; 태그 DOM을 가리킨다.</span>
+<span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+
+<span class="c1">//접근하고 싶은 태그에는 ref 속성을 준다.</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
+  <span class="na">placeholder</span><span class="p">=</span><span class="s">"focus!!"</span>
+  <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span>
+  <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+  <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">nameInput</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="️-예시">✔️ 예시</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Sample</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">nameInput</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+
+  <span class="c1">//포커스 잡기</span>
+  <span class="kd">const</span> <span class="nx">onFocus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
+            <span class="na">placeholder</span><span class="p">=</span><span class="s">"focus!!"</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+            <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">nameInput</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onFocus</span><span class="si">}</span><span class="p">&gt;</span>포커스<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예시는 useRef를 사용하여 포커스 버튼을 눌렀을 때 해당 input에 포커스가 잡히도록 한 것입니다.</p>
+
+<h3 id="️-변수-관리">✔️ 변수 관리</h3>
+
+<p>useState를 사용하여 변수를 상태값으로 관리하게 되면 값이 바뀔 때 마다 컴포넌트가 렌더링 되는데, useRef를 사용하여 변수를 관리한다면 컴포넌트가 리렌더링 되지 않습니다. 또한 상태로 관리하는 경우에는 상태를 바꾸는 함수를 호출한 다음 렌더링 하고 나서 업데이트 된 상태를 조회할 수 있는데, useRef를 사용하는 경우에는 설정 후 바로 조회하는 것이 가능합니다. 더불어 useRef로 만들어진 변수는 React의 전역 저장소에 저장되기 때문에 함수를 다시 호출하더라도 마지막으로 업데이트한 current 값이 유지됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">nextId</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">onCreate</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">nextId</span><span class="p">.</span><span class="nx">current</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>해당 기능이 유용하게 사용되는 경우</p>
+
+<ul>
+  <li>setTimeout, setInterval을 통해 만들어진 id</li>
+  <li>scroll 위치</li>
+  <li>외부 라이브러리를 사용하여 생성된 인스턴스</li>
+</ul>
+
+<h4 id="today-i-learned">Today I Learned</h4>
+
+<p>React에서 특정 DOM을 가리키는 경우에 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용한다는 것과, 어떤 식으로 사용되는지에 대해 알게되었습니다 :)</p>
+
+<h4 id="참고사이트">참고사이트</h4>
+<p><a href="https://react.vlpt.us/basic/10-useRef.html">https://react.vlpt.us/basic/10-useRef.html</a><br />
+<a href="https://ko.reactjs.org/docs/hooks-reference.html#useref">https://ko.reactjs.org/docs/hooks-reference.html#useref</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#hooks" class="page__taxonomy-item p-category" rel="tag">Hooks</a><span class="sep">, </span>
+    
+      <a href="/tags/#useref" class="page__taxonomy-item p-category" rel="tag">useRef</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%A6%AC%EC%95%A1%ED%8A%B8" class="page__taxonomy-item p-category" rel="tag">리액트</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#react" class="page__taxonomy-item p-category" rel="tag">React</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-08-21T00:00:00+09:00">August 21, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%EB%A6%AC%EC%95%A1%ED%8A%B8+Hooks+%3A+useRef%28%29%20http%3A%2F%2Flocalhost%3A4000%2Freact%2Fpost25%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Freact%2Fpost25%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Freact%2Fpost25%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/post24/" class="pagination--pager" title="jekyll 실행 시 ‘require’: cannot load such file – webrick (LoadError) 오류 해결 방법
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/post24/" rel="permalink">jekyll 실행 시 ‘require’: cannot load such file – webrick (LoadError) 오류 해결 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">jekyll blog - ‘require’: cannot load such file – webrick (LoadError)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/post23/" rel="permalink">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">jekyll blog - install missing gem executables with ‘bundle install’
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/git/post23/" rel="permalink">Git 커밋 되돌리기 (Reset, Revert)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Reset과 Revert 알고 사용하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/web/post22/" rel="permalink">Antd Table 컴포넌트 column render
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">앤트디자인 테이블 컴포넌트 사용
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+    </aside>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 LIME. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'ilimes/ilimes.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

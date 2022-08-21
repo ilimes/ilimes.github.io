@@ -1,4 +1,36 @@
-I"m!
+I"b'
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/react/post25/">리액트 Hooks : useRef()</a>
+            </span>
+            <small> 
+              <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.21
+              <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><!-- <span>[<a href="/categories/#react" class="page__taxonomy-item-category" rel="tag">React</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px;"><a style="color: white;" href="/tags/#blog" class="page__taxonomy-item-tag" rel="tag">blog</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px;"><a style="color: white;" href="/tags/#jekyll" class="page__taxonomy-item-tag" rel="tag">jekyll</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #4C4F52; border-radius: 10px; padding: 4px;"><a style="color: white;" href="/tags/#%EC%A7%80%ED%82%AC" class="page__taxonomy-item-tag" rel="tag">지킬</a></span>
+                
+            </span>
+        </span>
+            </small>
+        </div>
+      </article>
+</div>
+
 <div class="list__item">
     <article class="archive-item">
         <div>

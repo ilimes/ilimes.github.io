@@ -1,0 +1,65 @@
+I"�<h3 id="️-useref-언제-사용할까">✔️ useRef, 언제 사용할까?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">useRef</code>는 크게 <strong>DOM 요소에 접근</strong>하는 경우, <strong>렌더링을 일으키지 않고 값을 변경</strong>시키는 두 가지 경우에 사용합니다.<br />
+<br />
+Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 <code class="language-plaintext highlighter-rouge">getElementById</code> 혹은 <code class="language-plaintext highlighter-rouge">querySelector</code> 같은 함수를 사용하였는데요. 리액트에서는 useRef라는 Hook를 사용하거나, 콜백 함수 혹은 React.createRef(클래스형 컴포넌트) 라는 함수를 사용합니다.</p>
+
+<h3 id="️-useref-사용법">✔️ useRef 사용법</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRef</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">react</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p>useRef를 사용하기 위해서는 가장 먼저 react에서 useRef를 import 받아야 합니다.</p>
+
+<p>기본 형태는 아래와 같습니다.</p>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Ref 객체 생성</span>
+<span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+
+<span class="c1">//current -&gt; DOM 가리킴. 아래의 경우는 &lt;input /&gt; 태그 DOM을 가리킨다.</span>
+<span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+
+<span class="c1">//접근하고 싶은 태그에는 ref 속성을 준다.</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
+  <span class="na">placeholder</span><span class="p">=</span><span class="s">"focus!!"</span>
+  <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span>
+  <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+  <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">nameInput</span><span class="si">}</span>
+<span class="p">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="️-예시">✔️ 예시</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Sample</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="kd">const</span> <span class="nx">nameInput</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+
+  <span class="c1">//포커스 잡기</span>
+  <span class="kd">const</span> <span class="nx">onFocus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+        <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
+            <span class="na">placeholder</span><span class="p">=</span><span class="s">"focus!!"</span>
+            <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="nx">onChange</span><span class="si">}</span>
+            <span class="na">value</span><span class="p">=</span><span class="si">{</span><span class="nx">value</span><span class="si">}</span>
+            <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">nameInput</span><span class="si">}</span>
+          <span class="p">/&gt;</span>
+          <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onFocus</span><span class="si">}</span><span class="p">&gt;</span>포커스<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>위 예시는 useRef를 사용하여 포커스 버튼을 눌렀을 때 해당 input에 포커스가 잡히도록 한 것입니다.</p>
+
+<h4 id="today-i-learned">Today I Learned</h4>
+
+<p>React에서 특정 DOM을 가리키는 경우에 <code class="language-plaintext highlighter-rouge">useRef</code>를 사용한다는 것을 알게되었습니다 :)</p>
+
+<h4 id="참고사이트">참고사이트</h4>
+<p><a href="https://react.vlpt.us/basic/10-useRef.html">https://react.vlpt.us/basic/10-useRef.html</a><br />
+<a href="https://ko.reactjs.org/docs/hooks-reference.html#useref">https://ko.reactjs.org/docs/hooks-reference.html#useref</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET
