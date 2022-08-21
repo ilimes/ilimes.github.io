@@ -140,18 +140,18 @@ var store = [{
         "title": "jekyll serve 할 때 install missing gem executables with 'bundle install' 오류 해결 방법",
         "excerpt":"오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :) 문제 상황 bundle exec jekyll serve bundler: command not found: jekyll Install missing gem executables with `bundle install` 해결 방법 $ rm .bundle/config $ gem update --system $ gem update...","categories": ["Blog"],
         "tags": ["지킬","jekyll","blog"],
-        "url": "/blog/post23/",
+        "url": "/blog/post24/",
         "teaser": null
       },{
         "title": "jekyll 실행 시 'require': cannot load such file -- webrick (LoadError) 오류 해결 방법",
         "excerpt":"문제 상황 ------------------------------------------------ Jekyll 4.2.0 Please append `--trace` to the `serve` command for any additional information or backtrace. ------------------------------------------------ bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다. 해결 방법 $ bundle add webrick 이런 경우에는 bundle add webrick으로 Webrick를 추가하면...","categories": ["Blog"],
         "tags": ["지킬","jekyll","blog"],
-        "url": "/blog/post24/",
+        "url": "/blog/post25/",
         "teaser": null
       },{
         "title": "리액트 Hooks : useRef()",
         "excerpt":"✔️ useRef, 언제 사용할까? useRef는 크게 DOM 요소에 접근하는 경우, 렌더링을 일으키지 않고 값을 변경시키는 두 가지 경우에 사용합니다. Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 getElementById 혹은 querySelector 같은 함수를 사용하였는데요. 리액트에서는 useRef라는 Hook를 사용하거나, 콜백 함수 혹은 React.createRef(클래스형 컴포넌트) 라는 함수를 사용합니다. ✔️ useRef 사용법 import {...","categories": ["React"],
         "tags": ["useRef","Hooks","리액트"],
-        "url": "/react/post25/",
+        "url": "/react/post26/",
         "teaser": null
       }]

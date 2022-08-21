@@ -108,11 +108,45 @@
       ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
       {
           width:12px;height:12px;background:transparent;}
-      } 
     </style>
+    
   </head>
 
   <body class="layout--single">
+    <!-- 상단 진행바 시작 -->
+    <style>
+      .progress-bar {
+        background: linear-gradient(to right, #becc80 var(--scroll), transparent 0);
+        background-repeat: no-repeat;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        z-index: 9000;
+      }
+    </style>
+
+    <!-- This is the bar which shows scroll percentage -->
+    <div class="progress-bar"></div>
+
+
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+      var element = document.documentElement,
+        body = document.body,
+        scrollTop = 'scrollTop',
+        scrollHeight = 'scrollHeight',
+        progress = document.querySelector('.progress-bar'),
+        scroll;
+
+      document.addEventListener('scroll', function () {
+        scroll = (element[scrollTop] || body[scrollTop]) / ((element[scrollHeight] || body[scrollHeight]) - element.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+      });
+    </script>
+    <!-- 하단 진행바 끝 -->
+
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -940,7 +974,7 @@ console.log("test!!!");
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/react/post25/" rel="permalink">리액트 Hooks : useRef()
+        <a href="/react/post26/" rel="permalink">리액트 Hooks : useRef()
 </a>
       
     </h2>
@@ -980,7 +1014,7 @@ console.log("test!!!");
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/post24/" rel="permalink">jekyll 실행 시 ‘require’: cannot load such file – webrick (LoadError) 오류 해결 방법
+        <a href="/blog/post25/" rel="permalink">jekyll 실행 시 ‘require’: cannot load such file – webrick (LoadError) 오류 해결 방법
 </a>
       
     </h2>
@@ -1020,7 +1054,7 @@ console.log("test!!!");
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/blog/post23/" rel="permalink">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법
+        <a href="/blog/post24/" rel="permalink">jekyll serve 할 때 install missing gem executables with ‘bundle install’ 오류 해결 방법
 </a>
       
     </h2>
