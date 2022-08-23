@@ -154,4 +154,10 @@ var store = [{
         "tags": ["useRef","Hooks","리액트"],
         "url": "/react/post26/",
         "teaser": null
+      },{
+        "title": "PureComponent와 React.memo",
+        "excerpt":"유저들은 반응이 빠른 UI를 선호합니다. 최근 리액트로 개발을 하다보니 자식 컴포넌트가 필요 이상으로 계속해서 렌더링이 되는 경우가 생겼고, 이는 곧 성능 저하로 이어지기 때문에 개선이 필요하다는 생각이 들었습니다. 우선 React의 특성으로, React 앱은 state가 변화하거나 관련된 props가 변경되는 경우 전체적으로 렌더링이 됩니다. React는 먼저 컴포넌트를 렌더링 한 뒤, 이전 렌더링...","categories": ["React"],
+        "tags": ["React.memo","memo","PureComponent"],
+        "url": "/react/post27/",
+        "teaser": null
       }]
