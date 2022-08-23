@@ -1,4 +1,4 @@
-I"�<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
+I"�<p>Git을 사용하여 작업하다 보면 이미 커밋한 내용을 되돌리고 싶은 경우가 종종 생기곤 합니다. Git에서 이력을 되돌리기 위해서 사용하는 것 중에서 대표적인 것 2개가 바로 Reset과 Revert인데요. 둘 다 과거로 되돌린다는 의미라 언뜻 보기엔 비슷해 보이는데 과연 차이점은 무엇일까요?</p>
 
 <h3 id="reset과-revert의-차이점">Reset과 Revert의 차이점</h3>
 
@@ -13,8 +13,9 @@
 
 <h4 id="reset">Reset</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git reset &lt;옵션&gt; &lt;돌아가고 싶은 커밋&gt;
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git reset &lt;옵션&gt; &lt;돌아가고 싶은 커밋&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h5 id="옵션">옵션</h5>
 
@@ -50,8 +51,9 @@
 
 <h4 id="revert">Revert</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git revert &lt;되돌릴 커밋&gt;
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git revert &lt;되돌릴 커밋&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Revert 사용 시 되돌릴 커밋의 [commit ID]를 적어주면 됩니다.</p>
 

@@ -20,7 +20,7 @@ title: "ilimes"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "LIME"
-description: "**공부하고 기록하는** 블로그 입니다."
+description: "**공부하고 기록하는** 블로그"
 url: "https://ilimes.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "ilimes/ilimes.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -109,7 +109,7 @@ analytics:
 author:
   name: "LIME"
   avatar: "https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "**공부하고 기록하는** 블로그 입니다."
+  bio: "**공부하고 기록하는** 블로그"
   location: "Republic of Korea"
   email: "ilimes1307@gmail.com"
   github: "ilimes"
@@ -209,6 +209,9 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  syntax_highlighter_opts:
+        block:
+            line_numbers: true
 
 # Sass/SCSS
 sass:

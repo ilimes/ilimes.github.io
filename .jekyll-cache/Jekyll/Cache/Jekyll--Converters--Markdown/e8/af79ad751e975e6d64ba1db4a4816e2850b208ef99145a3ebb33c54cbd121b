@@ -1,4 +1,4 @@
-I"%<h2 id="ant-design이란">Ant Design이란?</h2>
+I"9<h2 id="ant-design이란">Ant Design이란?</h2>
 
 <p>Ant Design은 알리바바 그룹에서 개발한 UI 라이브러리로 리액트와 타입스크립트(Typescript)를 기반으로 제작되었으며 Layout, Button, Grid, Card 등 다양한 컴포넌트를 지원합니다.</p>
 
@@ -19,21 +19,45 @@
 
 <h2 id="설치-방법">설치 방법</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">antd</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">antd</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><img width="739" alt="1" src="https://user-images.githubusercontent.com/95404736/175957425-2868ad78-6eed-499c-9f18-4217ebf97045.png" /></p>
 
 <h2 id="사용-방법">사용 방법</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="dl">"</span><span class="s2">antd/dist/antd.css</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="dl">"</span><span class="s2">antd/dist/antd.css</span><span class="dl">"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>npm으로 설치가 완료되면 <code class="language-plaintext highlighter-rouge">index.js</code>에 위와 같이 스타일을 import 하고 손쉽게 사용 가능합니다.</p>
 
 <h2 id="툴팁-띄워보기">툴팁 띄워보기</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Tooltip</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">Button</span><span class="p">,</span> <span class="nx">Tooltip</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">FilterOutlined</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@ant-design/icons</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
 
@@ -55,7 +79,7 @@
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><img width="74" alt="2" src="https://user-images.githubusercontent.com/95404736/175968267-3ca1c031-1275-43bb-b9d1-7fd0732fb118.png" /></p>
 

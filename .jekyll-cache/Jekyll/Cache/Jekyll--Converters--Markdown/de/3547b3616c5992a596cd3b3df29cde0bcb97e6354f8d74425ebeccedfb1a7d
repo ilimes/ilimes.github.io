@@ -1,17 +1,19 @@
-I"�<p>회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다.</p>
+I"�<p>회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다.</p>
 
 <h2 id="mac에서-mariadb-설치하기">Mac에서 MariaDB 설치하기</h2>
 
 <p><a href="https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25">https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25</a><br />
 위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mariadb
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew install mariadb
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>homebrew가 설치되어 있지 않다면 우선적으로 설치를 해주시고, homebrew 설치가 완료되었다면 터미널에 위 명령어를 입력하시면 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arch -arm64 brew install mariadb
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>arch -arm64 brew install mariadb
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>저같은 경우는 M1 Mac을 사용중이라 위 명령어를 입력하여 설치를 진행하였습니다.</p>
 
@@ -23,22 +25,25 @@
   <li>DB 서비스 시작</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mariadb
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew services start mariadb
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>DB 서비스 중지</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services stop mariadb
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew services stop mariadb
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>DB 서비스 상태 확인</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services list
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew services list
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="gui-툴-설치하기">GUI 툴 설치하기</h2>
 

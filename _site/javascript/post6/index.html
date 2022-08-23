@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -704,34 +704,51 @@
   <li>Pending(대기) : 비동기 로직 처리가 완료되지 않은 상태(결과를 기다리는 중)</li>
 </ul>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// ...</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>Fulfilled(이행) : 비동기 로직 처리가 완료된 상태(정상적으로 수행, 결과값 가짐)</li>
 </ul>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">resolve</span><span class="p">();</span>
 <span class="p">});</span> <span class="c1">//이렇게 resolve가 실행되면 이행 상태가 된다.</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
     <span class="nx">resolve</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 이행 상태가 된 후에는 then을 이용하여 결과값을 받을 수 있다.</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">// 이행 상태가 된 후에는 then을 이용하여 결과값을 받을 수 있다.</span>
 <span class="c1">// resolve()의 결과 값 data를 resolveData로 받음</span>
 <span class="nx">getData</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">resolvedData</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resolvedData</span><span class="p">);</span> <span class="c1">// 100;</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>Rejected(실패) : 비동기 로직 처리의 실패 또는 오류 상태(수행이 비정상적으로 끝남)</li>
@@ -741,7 +758,15 @@
 
 <p>Promise를 생성하는 방법은 아래와 같이 3가지 방법이 있습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//1</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="c1">//1</span>
 <span class="kd">const</span> <span class="nx">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{});</span>
 
 <span class="c1">//2</span>
@@ -749,7 +774,7 @@
 
 <span class="c1">//3</span>
 <span class="kd">const</span> <span class="nx">p3</span> <span class="o">=</span> <span class="nb">Promise</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">param</span><span class="p">);</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>첫 번째 방법으로 Promise를 만들었을 때는 resolve와 reject라는 콜백 함수를 매개변수로 갖고 비동기로 어떤 작업을 수행하고 난 뒤에 성공하면 resolve를 호출하고 실패하면 reject를 호출하면 됩니다.</p>
 

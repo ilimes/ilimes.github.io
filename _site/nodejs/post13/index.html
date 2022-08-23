@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -745,21 +745,29 @@
 
 <h2 id="axios-설치-방법">Axios 설치 방법</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install axios
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm install axios
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>Axios는 위와 같이 npm으로 간단하게 설치할 수 있습니다.</p>
 
 <h2 id="axios-문법">Axios 문법</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">({</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">axios</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 통신할 웹문서</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 통신 방식</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// 보낼 데이터</span>
     <span class="na">foo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span>
   <span class="p">}</span>
 <span class="p">})</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="axios-요청request-파라미터-옵션">Axios 요청(request) 파라미터 옵션</h2>
 
@@ -797,7 +805,23 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 
 <h2 id="axios-응답-스키마">Axios 응답 스키마</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="p">{</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{},</span> <span class="c1">// 서버가 제공한 응답(데이터)</span>
  
   <span class="na">status</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="c1">// `status`는 서버 응답의 HTTP 상태 코드</span>
@@ -813,13 +837,21 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
   <span class="c1">// 브라우저: XMLHttpRequest 인스턴스</span>
   <span class="c1">// Node.js: ClientRequest 인스턴스(리디렉션)</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="axios-단축-메소드">Axios 단축 메소드</h2>
 
 <p>axios 를 편리하게 사용할 수 있게하는 메소드입니다. (Ajax에서 <code class="language-plaintext highlighter-rouge">$.get()</code>이나 <code class="language-plaintext highlighter-rouge">$.post()</code> 같은 느낌)</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
 <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
 <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
 <span class="nx">axios</span><span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
@@ -827,7 +859,7 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
 <span class="nx">axios</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
 <span class="nx">axios</span><span class="p">.</span><span class="nx">patch</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="axios-기본-사용법">Axios 기본 사용법</h2>
 
@@ -835,7 +867,24 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
   <li>기본 사용법</li>
 </ul>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
 
 <span class="c1">// ID로 사용자 요청</span>
 <span class="nx">axios</span>
@@ -852,13 +901,21 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">})</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>async와 await을 사용하여 보기 좋아진 코드</li>
 </ul>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">getUser</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">async</span> <span class="kd">function</span> <span class="nx">getUser</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user?ID=12345</span><span class="dl">'</span><span class="p">)</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
@@ -866,7 +923,7 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
     <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="today-i-learned">Today I Learned</h2>
 

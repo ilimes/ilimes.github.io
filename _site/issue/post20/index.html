@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -686,25 +686,31 @@
         
         <h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> :[포트번호]
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>lsof <span class="nt">-i</span> :[포트번호]
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>ex)</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :3000
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :3000
 COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 node      13736 lime   31u  IPv4 0x35b417c98f796509      0t0  TCP localhost:hbci-&gt;localhost:62414 <span class="o">(</span>ESTABLISHED<span class="o">)</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="kill-하기">kill 하기</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">kill</span> <span class="nt">-9</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>ex)</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">kill</span> <span class="nt">-9</span> 13736
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">kill</span> <span class="nt">-9</span> 13736
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위와 같이 해당 포트번호 PID 를 찾은 후 kill 명령어로 포트를 간단하게 죽일 수 있습니다.</p>
 

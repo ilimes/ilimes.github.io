@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -692,8 +692,9 @@
 
 <p>아래 명령어를 이용하여 전역설치를 해줍니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install pm2 -g
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npm install pm2 -g
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>설치 할 때 뒤에 <code class="language-plaintext highlighter-rouge">-g</code>라는 옵션을 붙이는 이유는 pm2 명령어를 어떤 디렉토리에서든 사용할 수 있도록 하기 위함입니다.</p>
 
@@ -703,36 +704,41 @@
   <li>프로세스 실행</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 시작하고자 하는 파일 명.js
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 start 시작하고자 하는 파일 명.js
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>실행중인 파일 리스트 보기</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 list
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 list
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>상세 정보 보기</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 show 파일명
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 show 파일명
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>프로세스 종료</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 stop 실행중인 파일 명.js
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 stop 실행중인 파일 명.js
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>pm2 데몬 자체를 꺼버리기</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 kill
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 kill
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>(위에서 <code class="language-plaintext highlighter-rouge">stop</code>이라는 명령어를 사용하면 프로세스는 중지되지만 pm2가 여전히 관리하고 있는 상태가 됩니다. 데몬 자체를 꺼버리기 위해서는 <code class="language-plaintext highlighter-rouge">kill</code>명령어를 입력해야합니다.)</p>
 
@@ -740,15 +746,17 @@
   <li>프로세스 재시작</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 restart 실행중인 파일 명.js
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 restart 실행중인 파일 명.js
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>모니터링</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 monit
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 monit
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>(모니터링 상태에서는 pm2로 관리되는 프로세스별 상태를 볼 수 있고 실시간으로 로그를 확인하는 것이 가능합니다. 모니터링 상태에서 빠져나오기 위해서는 키보드의 <code class="language-plaintext highlighter-rouge">q</code>키를 누르면 됩니다.)</p>
 
@@ -756,8 +764,9 @@
   <li>자동 재시작 설정</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 start 실행하고자 하는 파일 명.js --watch
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 start 실행하고자 하는 파일 명.js --watch
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>(위와 같이 watch 옵션을 추가하게 되면 pm2에서 파일 변경을 파악하고 자동 재시작을 해줍니다. node는 내용을 변경하고 나면 서버를 껐다가 다시 켜줘야만 변경사항이 반영되는데 자동 재시작을 해주기 때문에 굉장히 편리합니다.)</p>
 
@@ -765,8 +774,9 @@
   <li>로그 보기</li>
 </ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pm2 log
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>pm2 log
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="today-i-learned">Today I Learned</h2>
 

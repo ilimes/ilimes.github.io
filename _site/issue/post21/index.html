@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -688,11 +688,15 @@
 
 <p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
 COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
 ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
 

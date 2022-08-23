@@ -17,7 +17,7 @@ $indent-var: 1.3em !default;
 $serif: Georgia, Times, serif !default;
 $sans-serif: "Montserrat", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: 'D2Coding', 'IBM Plex Mono', monospace, Monaco, Consolas, "Lucida Console", monospace !default;
+$monospace: 'IBM Plex Mono', monospace, Monaco, Consolas, "Lucida Console", monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
@@ -40,14 +40,16 @@ $type-size-2: 1.953em !default; // ~31.248px
 $type-size-3: 1.563em !default; // ~25.008px
 $type-size-4: 1.25em !default; // ~20px
 $type-size-5: 1em !default; // ~16px
-$type-size-6: 0.75em !default; // ~12px
+$type-size-6: 0.80em !default; // ~12px
+// $type-size-6: 0.75em !default; // ~12px
 $type-size-7: 0.6875em !default; // ~11px
 $type-size-8: 0.625em !default; // ~10px
 
 /* headline scale */
 $h-size-1: 1.563em !default; // ~25.008px
 $h-size-2: 1.25em !default; // ~20px
-$h-size-3: 1.125em !default; // ~18px
+$h-size-3: 1.325em !default; // ~18px
+// $h-size-3: 1.125em !default; // ~18px
 $h-size-4: 1.0625em !default; // ~17px
 $h-size-5: 1.03125em !default; // ~16.5px
 $h-size-6: 1em !default; // ~16px
@@ -124,7 +126,8 @@ $notice-background-mix: 80% !default;
 $code-notice-background-mix: 90% !default;
 
 /* syntax highlighting (base16) */
-$base00: #263238 !default;
+// $base00: #263238 !default;
+$base00: #2c363a !default;
 $base01: #2e3c43 !default;
 $base02: #314549 !default;
 $base03: #546e7a !default;
@@ -156,9 +159,12 @@ $max-width: $x-large !default;
    Grid
    ========================================================================== */
 
-$right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 400px !default;
+$right-sidebar-width-narrow: 150px !default;
+$right-sidebar-width: 250px !default;
+$right-sidebar-width-wide: 350px !default;
+// $right-sidebar-width-narrow: 200px !default;
+// $right-sidebar-width: 300px !default;
+// $right-sidebar-width-wide: 400px !default;
 
 /*
    Other

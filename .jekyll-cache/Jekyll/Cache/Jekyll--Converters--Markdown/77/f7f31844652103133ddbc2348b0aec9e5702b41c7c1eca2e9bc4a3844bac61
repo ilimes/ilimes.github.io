@@ -1,4 +1,4 @@
-I"S.<h2 id="이벤트event란">이벤트(Event)란?</h2>
+I"c1<h2 id="이벤트event란">이벤트(Event)란?</h2>
 
 <p>이벤트는 사용자가 웹 브라우저에서 <code class="language-plaintext highlighter-rouge">DOM요소</code>들과 상호작용하는 것을 말합니다. (input 요소에 타이핑을 하거나, 버튼을 클릭하는 등..)</p>
 
@@ -21,7 +21,16 @@
 <p>먼저 src 폴더에 EventPractices.js라는 파일을 만들고 App.js에서 불러오도록 하겠습니다.<br />
 EventPractives.js</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre> <span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
    <span class="k">return</span> <span class="p">(</span>
      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Event<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -30,11 +39,22 @@ EventPractives.js</p>
  <span class="p">};</span>
  <span class="err">​</span>
  <span class="k">export</span> <span class="k">default</span> <span class="nx">EventPractices</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>App.js</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err"> </span><span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="err"> </span><span class="k">import</span> <span class="dl">'</span><span class="s1">./App.css</span><span class="dl">'</span><span class="p">;</span>
 <span class="err"> </span><span class="k">import</span> <span class="nx">EventPractices</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./EventPractices</span><span class="dl">'</span><span class="p">;</span>
 <span class="err"> ​</span>
 <span class="err"> ​</span>
@@ -45,11 +65,26 @@ EventPractives.js</p>
 <span class="err"> </span><span class="p">};</span>
 <span class="err"> ​</span>
 <span class="err"> </span><span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>onChange 이벤트를 핸들링하는 예제를 만들어보도록 하겠습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">return</span> <span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>이벤트<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
@@ -64,7 +99,7 @@ EventPractives.js</p>
 <span class="p">};</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">EventPractices</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><img width="208" alt="1" src="https://user-images.githubusercontent.com/95404736/177163665-3c1766e6-cfb3-4e1e-b91a-b8003ee24760.png" /><br />
 input 박스에 위와 같이 입력하면</p>
@@ -74,7 +109,36 @@ input 박스에 위와 같이 입력하면</p>
 
 <p>만약 input이 여러개라면 아래처럼 하면 됩니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
@@ -103,7 +167,7 @@ input 박스에 위와 같이 입력하면</p>
 <span class="p">};</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">EventPractices</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p><img width="323" alt="3" src="https://user-images.githubusercontent.com/95404736/177165682-560d905c-724d-455e-8103-7ad05f2c6a78.png" />
 <img width="338" alt="4" src="https://user-images.githubusercontent.com/95404736/177165686-95b7aa42-7b55-4cc9-9b61-cb6170dbce99.png" /></p>

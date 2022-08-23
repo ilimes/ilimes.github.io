@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -663,7 +663,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
     
@@ -694,7 +694,29 @@
 
 <p>Counter.js</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -716,26 +738,34 @@
 <span class="p">}</span>
 
 <span class="k">export</span> <span class="k">default</span> <span class="nx">Counter</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>useState를 사용하기 위해서는 가장 먼저 위와 같이 리액트 패키지에서 useState 함수를 불러와야 한다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>useState 함수를 호출하면 위처럼 배열을 반환하게 된다.<br />
 첫 번째 원소는 현재 상태 값을 저장하는 변수이고, 두 번째 원소는 상태 값을 바꿔주는 setter 함수다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>상태 값 저장 변수가 아니라 <code class="language-plaintext highlighter-rouge">setter</code> 함수(setNumber)를 사용해서, 파라미터로 전달받은 값을 최신상태로 바꿀 수 있다.</p>
 

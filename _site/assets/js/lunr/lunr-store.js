@@ -6,13 +6,13 @@ var store = [{
         "teaser": null
       },{
         "title": "마크다운(Markdown) 문법",
-        "excerpt":"마크다운(Markdown) 이란? 텍스트 기반의 마크업 언어로 GitHub에서 README 파일을 편집할 때 많이 쓰인다. 가독성이 좋고 간단해서 배우기 쉽다. 제목 # 제목 1단계 ## 제목 2단계 ### 제목 3단계 #### 제목 4단계 ##### 제목 5단계 ###### 제목 6단계 제목 1단계 제목 2단계 제목 3단계 제목 4단계 제목 5단계 제목 6단계 강조...","categories": ["Blog"],
+        "excerpt":"마크다운(Markdown) 이란? 텍스트 기반의 마크업 언어로 GitHub에서 README 파일을 편집할 때 많이 쓰인다. 가독성이 좋고 간단해서 배우기 쉽다. 제목 1 2 3 4 5 6 7 8 9 10 11 # 제목 1단계 ## 제목 2단계 ### 제목 3단계 #### 제목 4단계 ##### 제목 5단계 ###### 제목 6단계 제목 1단계...","categories": ["Blog"],
         "tags": ["Blog","Markdown","Jekyll"],
         "url": "/blog/post2/",
         "teaser": null
       },{
         "title": "리액트 Hooks : useState()",
-        "excerpt":"상태(state)란 무엇인가? 리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다. useState() 함수 사용법 Counter.js import React, { useState } from \"react\"; function Counter() { const [number, setNumber] =...","categories": ["React"],
+        "excerpt":"상태(state)란 무엇인가? 리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다. useState() 함수 사용법 Counter.js 1 2 3 4 5 6 7 8 9 10 11 12 13 14...","categories": ["React"],
         "tags": ["useState","Hooks","react","setState"],
         "url": "/react/post3/",
         "teaser": null
@@ -42,7 +42,7 @@ var store = [{
         "teaser": null
       },{
         "title": "리액트에서 styled-components로 스타일링 하기",
-        "excerpt":"styled-components란? styled-component는 리액트에서 사용하는 대표적인 CSS-in-JS 라이브러리 입니다. 스타일을 자바스크립트 파일에 내장시켜 사용할 수 있으며 CSS 커스텀 컴포넌트를 만들어서 쉽게 재사용할 수 있습니다. styled-components 설치 방법 먼저 터미널에 아래 명령어를 입력하여 styled-components를 설치합니다. npm install styled-components 그리고 적용하려는 components 파일 상단에 아래 한 줄을 import 합니다. import styled from \"styled-components\";...","categories": ["React"],
+        "excerpt":"styled-components란? styled-component는 리액트에서 사용하는 대표적인 CSS-in-JS 라이브러리 입니다. 스타일을 자바스크립트 파일에 내장시켜 사용할 수 있으며 CSS 커스텀 컴포넌트를 만들어서 쉽게 재사용할 수 있습니다. styled-components 설치 방법 먼저 터미널에 아래 명령어를 입력하여 styled-components를 설치합니다. 1 npm install styled-components 그리고 적용하려는 components 파일 상단에 아래 한 줄을 import 합니다. 1 import styled...","categories": ["React"],
         "tags": ["리액트","react","style","css","styled","component"],
         "url": "/react/post8/",
         "teaser": null
@@ -60,13 +60,13 @@ var store = [{
         "teaser": null
       },{
         "title": "Node.js-Express",
-        "excerpt":"Express란? Express란 Node.js 기반 웹 프레임워크로, 간단하게 서버 쪽 웹 어플리케이션을 쉽게 구현할 수 있도록 도와주는 프레임워크라고 할 수 있습니다. Express 설치하기 npm install express Express를 설치하기 위해서는 위와 같이 npm 명령어를 사용하면 간단하게 설치할 수 있습니다. npm 명령어를 사용하기 이전에 Node.js와 npm init 실행이 반드시 선행되어야 합니다. Express 5가지...","categories": ["NodeJs"],
+        "excerpt":"Express란? Express란 Node.js 기반 웹 프레임워크로, 간단하게 서버 쪽 웹 어플리케이션을 쉽게 구현할 수 있도록 도와주는 프레임워크라고 할 수 있습니다. Express 설치하기 1 npm install express Express를 설치하기 위해서는 위와 같이 npm 명령어를 사용하면 간단하게 설치할 수 있습니다. npm 명령어를 사용하기 이전에 Node.js와 npm init 실행이 반드시 선행되어야 합니다. Express...","categories": ["NodeJs"],
         "tags": ["express","NodeJs","Node.js"],
         "url": "/nodejs/post11/",
         "teaser": null
       },{
         "title": "Mac에서 MariaDB 및 GUI 툴 설치하기",
-        "excerpt":"회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다. Mac에서 MariaDB 설치하기 https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25 위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다. brew install mariadb homebrew가 설치되어 있지 않다면...","categories": ["Web"],
+        "excerpt":"회사에 사용하는 데이터베이스가 MariaDB라서 집에서도 DB공부를 진행해보고자 개인 PC에 MariaDB를 설치해보았습니다. Mac에서 MariaDB 설치하기 https://mariadb.org/download/?t=mariadb&amp;p=mariadb&amp;r=10.4.25 위 링크는 MariaDB 서버를 설치파일로 다운로드 받을 수 있는 페이지로 이동하는 링크입니다. 들어가서 확인해보시면 아시겠지만 MariaDB는 Mac전용 설치파일을 지원하지 않습니다. 그래서 저는 homebrew 를 이용하여 MariaDB를 설치 하였습니다. 1 brew install mariadb homebrew가 설치되어 있지...","categories": ["Web"],
         "tags": ["MariaDB","SequelPro","db"],
         "url": "/web/post12/",
         "teaser": null
@@ -102,31 +102,31 @@ var store = [{
         "teaser": null
       },{
         "title": "MacOS에서 MongoDB, compass 설치하기",
-        "excerpt":"몽고디비(MongoDB)란? https://ilimes.github.io/mongodb/post16/ 위 링크를 참고해주세요 :) MongoDB 설치하기 설치환경 : MacOS(M1), Homebrew를 통해 설치(만약 Homebrew 설치가 되어있지 않은 경우에는 먼저 Homebrew부터 설치해주세요.) 1) 먼저 터미널에 아래의 명령어를 입력해주세요. brew tap mongodb/brew brew install mongodb-community (arm맥에서 설치하시는 경우 brew install 앞에 arch -arm64를 붙이면 됩니다.) 2) MongoDB 실행 및 정지 명령어...","categories": ["MongoDB"],
+        "excerpt":"몽고디비(MongoDB)란? https://ilimes.github.io/mongodb/post16/ 위 링크를 참고해주세요 :) MongoDB 설치하기 설치환경 : MacOS(M1), Homebrew를 통해 설치(만약 Homebrew 설치가 되어있지 않은 경우에는 먼저 Homebrew부터 설치해주세요.) 1) 먼저 터미널에 아래의 명령어를 입력해주세요. 1 brew tap mongodb/brew 1 brew install mongodb-community (arm맥에서 설치하시는 경우 brew install 앞에 arch -arm64를 붙이면 됩니다.) 2) MongoDB 실행 및...","categories": ["MongoDB"],
         "tags": ["몽고디비","mongoDB","MongoDB","데이터베이스","mac"],
         "url": "/mongodb/post18/",
         "teaser": null
       },{
         "title": "Sequelize - 데이터타입",
-        "excerpt":"Sequelize DataTypes 시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 여기를 클릭해서 DataTypes를 참고해주시기 바랍니다. Sequelize.STRING // VARCHAR(255) Sequelize.STRING(1234) // VARCHAR(1234) Sequelize.STRING.BINARY // VARCHAR BINARY Sequelize.TEXT // TEXT Sequelize.TEXT('tiny') // TINYTEXT Sequelize.CITEXT // CITEXT PostgreSQL and SQLite only. Sequelize.INTEGER // INTEGER Sequelize.BIGINT // BIGINT Sequelize.BIGINT(11) // BIGINT(11) Sequelize.FLOAT //...","categories": ["Sequelize"],
+        "excerpt":"Sequelize DataTypes 시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 여기를 클릭해서 DataTypes를 참고해주시기 바랍니다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34...","categories": ["Sequelize"],
         "tags": ["시퀄라이즈","Sequelize","백엔드","backend"],
         "url": "/sequelize/post19/",
         "teaser": null
       },{
         "title": "[Mac] 사용중인 포트 kill 하는법",
-        "excerpt":"사용중 포트 찾기 lsof -i :[포트번호] ex) lime@laim-ui-MacBookAir ~ % lsof -i :3000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME node 13736 lime 31u IPv4 0x35b417c98f796509 0t0 TCP localhost:hbci-&gt;localhost:62414 (ESTABLISHED) kill 하기 kill -9 ex) kill -9 13736 위와 같이 해당 포트번호 PID 를 찾은 후 kill 명령어로...","categories": ["Issue"],
+        "excerpt":"사용중 포트 찾기 1 lsof -i :[포트번호] ex) 1 2 3 lime@laim-ui-MacBookAir ~ % lsof -i :3000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME node 13736 lime 31u IPv4 0x35b417c98f796509 0t0 TCP localhost:hbci-&gt;localhost:62414 (ESTABLISHED) kill 하기 1 kill -9 ex) 1 kill -9 13736 위와 같이 해당 포트번호...","categories": ["Issue"],
         "tags": ["port","lsof","kill","mac"],
         "url": "/issue/post20/",
         "teaser": null
       },{
         "title": "[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법",
-        "excerpt":"문제 5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다. lime@laim-ui-MacBookAir ~ % lsof -i :5000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME ControlCe 10422 lime 29u IPv4 0x35b417c98db2da79 0t0 TCP *:commplex-main (LISTEN) ControlCe 10422 lime 30u IPv6 0x35b417d328e92061 0t0 TCP *:commplex-main (LISTEN)...","categories": ["Issue"],
+        "excerpt":"문제 5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다. 1 2 3 4 lime@laim-ui-MacBookAir ~ % lsof -i :5000 COMMAND PID USER FD TYPE DEVICE SIZE/OFF NODE NAME ControlCe 10422 lime 29u IPv4 0x35b417c98db2da79 0t0 TCP *:commplex-main (LISTEN) ControlCe 10422 lime 30u IPv6 0x35b417d328e92061...","categories": ["Issue"],
         "tags": ["port","AirPlay","5000"],
         "url": "/issue/post21/",
         "teaser": null
       },{
         "title": "Antd Table 컴포넌트 column render",
-        "excerpt":"AntD Table column render AntD를 사용하면서 multi line으로 데이터를 표시하거나, 조건에 맞게 데이터를 표시하는 경우 등 렌더링이 필요한 경우에 render 옵션을 활용하면 쉽게 원하는대로 표현할 수 있습니다. render 옵션 // render 옵션은 Array.map()처럼 작동합니다. render: (text, row, index) =&gt; {}; // text: name의 data [String] // row: 하나의 row data...","categories": ["Web"],
+        "excerpt":"AntD Table column render AntD를 사용하면서 multi line으로 데이터를 표시하거나, 조건에 맞게 데이터를 표시하는 경우 등 렌더링이 필요한 경우에 render 옵션을 활용하면 쉽게 원하는대로 표현할 수 있습니다. render 옵션 1 2 3 4 5 // render 옵션은 Array.map()처럼 작동합니다. render: (text, row, index) =&gt; {}; // text: name의 data [String]...","categories": ["Web"],
         "tags": ["웹개발","antd","ant design"],
         "url": "/web/post22/",
         "teaser": null
@@ -138,19 +138,19 @@ var store = [{
         "teaser": null
       },{
         "title": "jekyll serve 할 때 install missing gem executables with 'bundle install' 오류 해결 방법",
-        "excerpt":"오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :) 문제 상황 bundle exec jekyll serve bundler: command not found: jekyll Install missing gem executables with `bundle install` 해결 방법 $ rm .bundle/config $ gem update --system $ gem update...","categories": ["Blog"],
+        "excerpt":"오늘은 jekyll 블로그를 serve할 때 install missing gem executables with ‘bundle install’ 오류가 나는 경우 해결하는 방법에 대한 포스팅입니다 :) 문제 상황 1 2 3 4 bundle exec jekyll serve bundler: command not found: jekyll Install missing gem executables with `bundle install` 해결 방법 1 2 3 4 $ rm...","categories": ["Blog"],
         "tags": ["지킬","jekyll","blog"],
         "url": "/blog/post24/",
         "teaser": null
       },{
         "title": "jekyll 실행 시 'require': cannot load such file -- webrick (LoadError) 오류 해결 방법",
-        "excerpt":"문제 상황 ------------------------------------------------ Jekyll 4.2.0 Please append `--trace` to the `serve` command for any additional information or backtrace. ------------------------------------------------ bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다. 해결 방법 $ bundle add webrick 이런 경우에는 bundle add webrick으로 Webrick를 추가하면...","categories": ["Blog"],
+        "excerpt":"문제 상황 1 2 3 4 ------------------------------------------------ Jekyll 4.2.0 Please append `--trace` to the `serve` command for any additional information or backtrace. ------------------------------------------------ bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다. 해결 방법 1 $ bundle add webrick 이런 경우에는...","categories": ["Blog"],
         "tags": ["지킬","jekyll","blog"],
         "url": "/blog/post25/",
         "teaser": null
       },{
         "title": "리액트 Hooks : useRef()",
-        "excerpt":"✔️ useRef, 언제 사용할까? useRef는 크게 DOM 요소에 접근하는 경우, 렌더링을 일으키지 않고 값을 변경시키는 두 가지 경우에 사용합니다. Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 getElementById 혹은 querySelector 같은 함수를 사용하였는데요. 리액트에서는 useRef라는 Hook를 사용하거나, 콜백 함수 혹은 React.createRef(클래스형 컴포넌트) 라는 함수를 사용합니다. ✔️ useRef 사용법 import {...","categories": ["React"],
+        "excerpt":"✔️ useRef, 언제 사용할까? useRef는 크게 DOM 요소에 접근하는 경우, 렌더링을 일으키지 않고 값을 변경시키는 두 가지 경우에 사용합니다. Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 getElementById 혹은 querySelector 같은 함수를 사용하였는데요. 리액트에서는 useRef라는 Hook를 사용하거나, 콜백 함수 혹은 React.createRef(클래스형 컴포넌트) 라는 함수를 사용합니다. ✔️ useRef 사용법 1 import...","categories": ["React"],
         "tags": ["useRef","Hooks","리액트"],
         "url": "/react/post26/",
         "teaser": null

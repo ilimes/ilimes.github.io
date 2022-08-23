@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -736,18 +736,37 @@
 
 <p>[Git 폴더 초기화]</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init //버전 관리를 위한 기본 폴더를 생성하는 명령어
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git init //버전 관리를 위한 기본 폴더를 생성하는 명령어
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>[Git 상태 확인]</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status //현재 상태 출력
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>git status //현재 상태 출력
 git log //현재 커밋 로그 등을 출력
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>[Github에 업로드]</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//업로드할 파일 추가
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>//업로드할 파일 추가
 git add 파일명
 git add .
 
@@ -763,11 +782,25 @@ git revert 원상복구할 커밋아이디
 //푸쉬
 git push 저장소명 브랜치명
 git push origin main
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>[브랜치 관련]</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//저장소 확인
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>//저장소 확인
 git remote
 
 //모든 브랜치 확인, 현재 브랜치는 다른 색이 표시됨
@@ -781,11 +814,19 @@ git checkout 브랜치명
 
 //해당 브랜치가 합쳐짐
 git merge 합쳐질 브랜치명
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>[그 외]</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//커밋되기 전의 수정 파일들 숨겨놓기
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre>//커밋되기 전의 수정 파일들 숨겨놓기
 git stash
 
 //숨겨놓은 파일 리스트 보기
@@ -793,7 +834,7 @@ git stash -list
 
 //원격 저장소 복제
 git clone 원격 저장소 주소
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="today-i-learned">Today I Learned</h2>
 

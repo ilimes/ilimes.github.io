@@ -1,19 +1,56 @@
-I"�<h3 id="antd-table-column-render">AntD Table column render</h3>
+I" <h3 id="antd-table-column-render">AntD Table column render</h3>
 
 <p>AntD를 사용하면서 multi line으로 데이터를 표시하거나, 조건에 맞게 데이터를 표시하는 경우 등 렌더링이 필요한 경우에 render 옵션을 활용하면 쉽게 원하는대로 표현할 수 있습니다.</p>
 
 <h3 id="render-옵션">render 옵션</h3>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// render 옵션은 Array.map()처럼 작동합니다.</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c1">// render 옵션은 Array.map()처럼 작동합니다.</span>
 <span class="nx">render</span><span class="p">:</span> <span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{};</span>
 <span class="c1">// text: name의 data [String]</span>
 <span class="c1">// row: 하나의 row data [Object]</span>
 <span class="c1">// index: row index [Number]</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="사용하기">사용하기</h3>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">columns</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
     <span class="na">title</span><span class="p">:</span> <span class="dl">"</span><span class="s2">월</span><span class="dl">"</span><span class="p">,</span>
     <span class="na">dataIndex</span><span class="p">:</span> <span class="dl">"</span><span class="s2">month</span><span class="dl">"</span><span class="p">,</span>
@@ -45,7 +82,7 @@
     <span class="p">},</span>
   <span class="p">},</span>
 <span class="p">];</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="결과">결과</h3>
 

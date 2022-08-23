@@ -1,4 +1,4 @@
-I"�<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
+I"9<h3 id="몽고디비mongodb란">몽고디비(MongoDB)란?</h3>
 
 <p><a href="https://ilimes.github.io/mongodb/post16/">https://ilimes.github.io/mongodb/post16/</a><br />
 위 링크를 참고해주세요 :)</p>
@@ -12,11 +12,13 @@
 <p><br />
 <strong>1) 먼저 터미널에 아래의 명령어를 입력해주세요.</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap mongodb/brew
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew tap mongodb/brew
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mongodb-community
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew install mongodb-community
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>(arm맥에서 설치하시는 경우 brew install 앞에 arch -arm64를 붙이면 됩니다.)</p>
 
@@ -25,13 +27,15 @@
 
 <p>▼ 실행</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services start mongodb-community
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew services start mongodb-community
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>▼ 정지</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew services stop mongodb-community
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew services stop mongodb-community
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>정상적으로 설치 및 실행이 완료되었다면 <code class="language-plaintext highlighter-rouge">http://localhost:27017/</code> 와 같이 몽고디비 기본 포트 주소로 접속하였을 때 아래와 같은 메시지가 나타나게 됩니다.</p>
 
@@ -79,20 +83,39 @@
 <p>일단 가장 먼저 몽고디비가 실행된 상태로 <code class="language-plaintext highlighter-rouge">mongo</code>를 터미널에서 입력해줍니다.<br />
 그럼 <code class="language-plaintext highlighter-rouge">&gt;</code> 가 활성화되고 명령어를 입력할 수 있게 됩니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zsh: command not found: mongo
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>zsh: command not found: mongo
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이 과정에서 저는 위와 같은 에러를 마주하게 되었는데요.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install mongodb-community-shell
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>brew install mongodb-community-shell
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>만약 같은 에러가 뜨신다면 위 명령어를 입력하여 간단하게 해결할 수 있구요.<br />
 에러가 뜨지 않는다면 바로 테스트를 진행하시면 됩니다.<br />
 <br />
 몽고디비 데이터베이스 및 컬렉션 관련 문법은 아래와 같습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 데이터베이스 생성
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre></td><td class="rouge-code"><pre>// 데이터베이스 생성
 use 데이터베이스명
 
 // 데이터베이스 확인
@@ -109,11 +132,25 @@ db.컬렉션명.drop();
 
 // 데이터베이스 삭제
 db.dropDatabase()
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위 문법 대로 테스트를 진행해보았습니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; use limedb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>&gt; use limedb
 switched to db limedb
 &gt; show dbs
 admin   0.000GB
@@ -127,7 +164,7 @@ test
 true
 &gt; db.dropDatabase()
 { "ok" : 1 }
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="mongodb-gui-clientcompass-설치하기">MongoDB GUI Client(compass) 설치하기</h3>
 

@@ -1,4 +1,4 @@
-I"�<h2 id="styled-components란">styled-components란?</h2>
+I"�!<h2 id="styled-components란">styled-components란?</h2>
 
 <p>styled-component는 리액트에서 사용하는 대표적인 CSS-in-JS 라이브러리 입니다. 스타일을 자바스크립트 파일에 내장시켜 사용할 수 있으며 CSS 커스텀 컴포넌트를 만들어서 쉽게 재사용할 수 있습니다.</p>
 
@@ -6,27 +6,33 @@
 
 <p>먼저 터미널에 아래 명령어를 입력하여 styled-components를 설치합니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>그리고 적용하려는 components 파일 상단에 아래 한 줄을 import 합니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="styled-components-사용하기">styled-components 사용하기</h2>
 
 <p>기본적인 사용방법은 아래와 같습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyStyle</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">MyStyle</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
   color: blue;
 `</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위와 같이 고정된 blue 색상을 주는 MyStyle 컴포넌트를 만들어주도록 하겠습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">MyStyle</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">MyStyle</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>해당 컴포넌트를 사용하면 아래와 같은 실행결과를 얻을 수 있습니다.</p>
 
@@ -39,13 +45,17 @@
 
 <p>그래서 좀 더 효율적으로 컴포넌트를 만들기 위해서는 props를 잘 활용해야 하는데요. props를 활용한 예는 아래와 같습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">MyStyle</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">MyStyle</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
   color: </span><span class="p">${(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">myColor</span><span class="p">}</span><span class="s2">;
 `</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">MyStyle</span> <span class="na">myColor</span><span class="p">=</span><span class="s">"red"</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">MyStyle</span> <span class="na">myColor</span><span class="p">=</span><span class="s">"red"</span><span class="p">&gt;</span>안녕하세요<span class="p">&lt;/</span><span class="nc">MyStyle</span><span class="p">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>실행 결과<br />
@@ -56,13 +66,25 @@
 
 <p>직접 만든 컴포넌트 뿐만 아니라 AntD와 styled-components를 함께 사용할 수 있습니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">Switch</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">antd</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">"</span><span class="s2">antd/dist/antd.css</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">StyledSwitch</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">(</span><span class="nx">Switch</span><span class="p">)</span><span class="s2">`
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">StyledSwitch</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">(</span><span class="nx">Switch</span><span class="p">)</span><span class="s2">`
   &amp;[aria-checked="true"] {
     background: green;
   }
@@ -70,12 +92,13 @@
     background: red;
   }
 `</span><span class="p">;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위 코드에서 &amp;은 부모 선택자입니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nc">StyledSwitch</span> <span class="na">checkedChildren</span><span class="p">=</span><span class="s">"ON"</span> <span class="na">unCheckedChildren</span><span class="p">=</span><span class="s">"OFF"</span> <span class="na">defaultChecked</span> <span class="p">/&gt;</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">StyledSwitch</span> <span class="na">checkedChildren</span><span class="p">=</span><span class="s">"ON"</span> <span class="na">unCheckedChildren</span><span class="p">=</span><span class="s">"OFF"</span> <span class="na">defaultChecked</span> <span class="p">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <ul>
   <li>

@@ -1,15 +1,20 @@
-I"�<h3 id="문제-상황">문제 상황</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>                    <span class="nt">------------------------------------------------</span>
+I"<h3 id="문제-상황">문제 상황</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>                    <span class="nt">------------------------------------------------</span>
       Jekyll 4.2.0   Please append <span class="sb">`</span><span class="nt">--trace</span><span class="sb">`</span> to the <span class="sb">`</span>serve<span class="sb">`</span> <span class="nb">command
                      </span><span class="k">for </span>any additional information or backtrace.
                     <span class="nt">------------------------------------------------</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>bundle exec jekyll serve 명령어를 사용하여 로컬에서 지킬 서버를 구동하려고 할 때 위와 같은 오류가 발생하는 경우가 있습니다.</p>
 
 <h3 id="해결-방법">해결 방법</h3>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ bundle add webrick
-</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>$ bundle add webrick
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>이런 경우에는 bundle add webrick으로 Webrick를 추가하면 오류 없이 실행됩니다. 
 위와 같은 오류가 발생하는 이유는 ruby 3.x 버전 부터 webrick이 bundle로 제공되지 않기 때문입니다.</p>

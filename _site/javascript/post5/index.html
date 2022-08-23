@@ -224,7 +224,7 @@
     </h3>
     
       <div class="author__bio p-note" itemprop="description">
-        <p><strong>공부하고 기록하는</strong> 블로그 입니다.</p>
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
 
       </div>
     
@@ -690,8 +690,9 @@
 
 <h2 id="자바스크립트에서-함수란">자바스크립트에서 함수란?</h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">()</span> <span class="p">{}</span>
-</code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>자바스크립트에서 함수는 곧 객체입니다. 객체는 속성(property)을 가지고 함수 또한 property를 갖습니다. 기본적으로 위와 같이 함수를 정의한다면 <code class="language-plaintext highlighter-rouge">Person 객체</code>와 함께 <code class="language-plaintext highlighter-rouge">Person의 prototype 객체</code>가 함께 생깁니다. 이 때 생성된 객체의 부모 역할을 하는 것은 생성자 Person 자신이 아니라 prototype 객체입니다.</p>
 
@@ -701,19 +702,27 @@
 
 <h2 id="__proto__"><code class="language-plaintext highlighter-rouge">__proto__</code></h2>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">아기사자</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">;</span> <span class="c1">// 엄마사자</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nx">아기사자</span><span class="p">.</span><span class="nx">__proto__</span><span class="p">;</span> <span class="c1">// 엄마사자</span>
 <span class="nx">아기사자</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">엄마사자</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span> <span class="c1">// true;</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>모든 객체는 <code class="language-plaintext highlighter-rouge">__proto__</code> 를 통해 자신이 물려받은 [[Prototype]] 값에 접근할 수 있습니다. 즉 참조하는 용도로 쓰이며 상위 객체가 무엇인지 알 수 있는 것입니다. 그런데 [[Prototype]] 내부 슬롯에는 직접 접근이 불가합니다. 이는 프로토타입 체인의 단방향을 지키기 위해서입니다.</p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="p">{};</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">parent</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="kd">const</span> <span class="nx">child</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="c1">//child의 프로토타입을 parent로</span>
 <span class="nx">child</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">parent</span><span class="p">;</span>
 <span class="c1">//parent의 프로토타입을 child로</span>
 <span class="nx">parent</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">child</span><span class="p">;</span> <span class="c1">// TypeError:Cyclic__proto__ value</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>프로토타입 체인이 단방향성을 지켜야 하는 이유는 위와 같이 코드를 짜면 서로가 자신의 프로토타입이 되는 비정상적인 경우가 만들어지기 때문입니다.</p>
 
@@ -723,12 +732,24 @@
 
 <p>모든 프로토타입 체이닝의 종점은 <code class="language-plaintext highlighter-rouge">Object.prototype</code> 입니다.</p>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayMyName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`My name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
 <span class="p">};</span>
 
@@ -737,7 +758,7 @@
 <span class="c1">//hasOwnProperty는 Object.prototype의 메소드로</span>
 <span class="c1">//객체가 특정 property를 가지고 있는지 나타내는 Boolean 값을 리턴한다.</span>
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">me</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">));</span> <span class="c1">//true</span>
-</code></pre></div></div>
+</pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위 예제를 보면 Person 생성자 함수에 의해서 생성된 me라는 객체는 Object.prototype 메소드인 hasOwnProperty를 호출할 수 있다는 것을 알 수 있습니다. 객체는 chain rule(연쇄법칙) 구조로 property나 method를 활용하기 때문에 찾고자 하는게 me에서 없는 경우에는 상위 prototype에서 찾고 거기서 없다면 또 상위 prototype에서 찾고 최종적으로는 Object.prototype에서 찾게 되는 것입니다.</p>
 
