@@ -1,0 +1,85 @@
+I"
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/post6/">자바스크립트 Promise 이해하기</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.29
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><!-- <span>[<a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">javaScript</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#js" class="page__taxonomy-item-tag" rel="tag">js</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#promise" class="page__taxonomy-item-tag" rel="tag">Promise</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#%EB%B9%84%EB%8F%99%EA%B8%B0" class="page__taxonomy-item-tag" rel="tag">비동기</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">자바스크립트</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/javascript/post5/">자바스크립트 프로토타입(prototype) 이해하기</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.28
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords"><!-- <span>[<a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">javaScript</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#js" class="page__taxonomy-item-tag" rel="tag">js</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#prototype" class="page__taxonomy-item-tag" rel="tag">prototype</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">자바스크립트</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 10px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85" class="page__taxonomy-item-tag" rel="tag">프로토타입</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET
