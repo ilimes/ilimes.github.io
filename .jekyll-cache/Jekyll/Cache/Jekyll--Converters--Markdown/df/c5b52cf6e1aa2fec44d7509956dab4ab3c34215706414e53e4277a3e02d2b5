@@ -1,0 +1,35 @@
+I"�
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/mariadb/post28/">PureComponent와 React.memo</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.25
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#mariadb" class="page__taxonomy-item-category" rel="tag">MariaDB</a>]</span> -->
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 8px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#memo" class="page__taxonomy-item-tag" rel="tag">memo</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 8px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#purecomponent" class="page__taxonomy-item-tag" rel="tag">PureComponent</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span style="background-color: #85898d; border-radius: 8px; padding: 3px 5px 3px 5px;"><a style="color: white; font-size: 13px;" href="/tags/#react-memo" class="page__taxonomy-item-tag" rel="tag">React.memo</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

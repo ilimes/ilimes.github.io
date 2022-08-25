@@ -160,4 +160,10 @@ var store = [{
         "tags": ["React.memo","memo","PureComponent"],
         "url": "/react/post27/",
         "teaser": null
+      },{
+        "title": "MySQL/MariaDB 원격 접속 허용하기 (Host 'IP' is not allowed to connect to this MySQL server)",
+        "excerpt":"MySQL(MariaDB)는 기본적으로 로컬에서만 접속할 수 있도록 설정되어 있습니다. 그래서 외부에서 DB에 접속하고자 하는 경우에는 반드시 접근 허용을 해주어야 합니다. ✔️ 접근 권한 확인 해당 오류가 났다는 것은 접근 권한이 없다는 것을 의미하는 것이라, 사실 권한 확인은 생략하고 넘어가도 되지만 그래도 한번 확인해보도록 하겠습니다. 1 select Host,User,plugin,authentication_string FROM mysql.user; DB 접속...","categories": ["MariaDB"],
+        "tags": ["데이터베이스","DB","MariaDB"],
+        "url": "/mariadb/post28/",
+        "teaser": null
       }]
