@@ -1,0 +1,73 @@
+I"{
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/issue/post21/">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.14
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#issue" class="page__taxonomy-item-category" rel="tag">Issue</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#5000" rel="tag">5000</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#airplay" rel="tag">AirPlay</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#port" rel="tag">port</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/issue/post20/">[Mac] 사용중인 포트 kill 하는법</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.14
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#issue" class="page__taxonomy-item-category" rel="tag">Issue</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#kill" rel="tag">kill</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#lsof" rel="tag">lsof</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#mac" rel="tag">mac</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#port" rel="tag">port</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

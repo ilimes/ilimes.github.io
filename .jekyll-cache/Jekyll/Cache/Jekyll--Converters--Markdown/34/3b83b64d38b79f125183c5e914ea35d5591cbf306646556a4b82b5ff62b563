@@ -1,0 +1,69 @@
+I"�
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/git/post23/">Git 커밋 되돌리기 (Reset, Revert)</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.16
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#git" class="page__taxonomy-item-category" rel="tag">Git</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#git" rel="tag">git</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#reset" rel="tag">reset</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#revert" rel="tag">revert</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/git/post10/">Git 기본 CLI 명령어 정리</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.11
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#git" class="page__taxonomy-item-category" rel="tag">Git</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#cli" rel="tag">cli</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#github" rel="tag">github</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#git" rel="tag">git</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

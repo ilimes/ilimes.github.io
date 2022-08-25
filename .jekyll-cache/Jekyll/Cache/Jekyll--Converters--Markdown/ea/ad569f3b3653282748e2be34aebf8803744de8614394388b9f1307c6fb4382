@@ -1,0 +1,39 @@
+I"�
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/sequelize/post19/">Sequelize - 데이터타입</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.09
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#sequelize" class="page__taxonomy-item-category" rel="tag">Sequelize</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#backend" rel="tag">backend</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#sequelize" rel="tag">Sequelize</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#%EB%B0%B1%EC%97%94%EB%93%9C" rel="tag">백엔드</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#%EC%8B%9C%ED%80%84%EB%9D%BC%EC%9D%B4%EC%A6%88" rel="tag">시퀄라이즈</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

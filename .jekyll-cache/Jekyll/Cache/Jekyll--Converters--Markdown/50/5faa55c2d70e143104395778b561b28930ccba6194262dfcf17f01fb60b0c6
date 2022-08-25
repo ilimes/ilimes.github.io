@@ -1,0 +1,153 @@
+I"�!
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/web/post22/">Antd Table 컴포넌트 column render</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.15
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#ant-design" rel="tag">ant design</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#antd" rel="tag">antd</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#%EC%9B%B9%EA%B0%9C%EB%B0%9C" rel="tag">웹개발</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/web/post15/">POSTMAN이란?</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.18
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#api" rel="tag">API</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#postman" rel="tag">postman</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#restapi" rel="tag">restapi</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#%EA%B0%9C%EB%B0%9C" rel="tag">개발</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#%ED%8F%AC%EC%8A%A4%ED%8A%B8%EB%A7%A8" rel="tag">포스트맨</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/web/post12/">Mac에서 MariaDB 및 GUI 툴 설치하기</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.12
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#db" rel="tag">db</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#mariadb" rel="tag">MariaDB</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#sequelpro" rel="tag">SequelPro</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/web/post4/">리액트에서 UI 라이브러리 앤트 디자인(Ant Design) 사용하기</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.06.27
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#web" class="page__taxonomy-item-category" rel="tag">Web</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#antdesign" rel="tag">antdesign</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#design" rel="tag">design</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#react" rel="tag">react</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#ui" rel="tag">ui</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 15px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(48, 48, 48); font-size: 13px;" href="/tags/#web" rel="tag">web</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

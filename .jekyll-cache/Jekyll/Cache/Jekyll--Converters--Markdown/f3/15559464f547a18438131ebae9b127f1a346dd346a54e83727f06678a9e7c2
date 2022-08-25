@@ -1,0 +1,44 @@
+I"F
+
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/figma/post17/">작업 효율을 높여주는 피그마(figma) 단축키 모음</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.07.27
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#figma" class="page__taxonomy-item-category" rel="tag">Figma</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 10px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#design" rel="tag">design</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 10px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#figma" rel="tag">figma</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 10px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#%EB%94%94%EC%9E%90%EC%9D%B8" rel="tag">디자인</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 10px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#%ED%94%BC%EA%B7%B8%EB%A7%88" rel="tag">피그마</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="/* background-color: #85898d; */ border-radius: 10px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="/* color: white; */ font-size: 13px;" href="/tags/#%ED%94%BC%EA%B7%B8%EB%A7%88%EB%8B%A8%EC%B6%95%ED%82%A4" rel="tag">피그마단축키</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET
