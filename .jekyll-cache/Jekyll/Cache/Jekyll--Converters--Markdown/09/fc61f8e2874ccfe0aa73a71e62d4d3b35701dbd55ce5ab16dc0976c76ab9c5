@@ -1,0 +1,402 @@
+I"EA<h3 id="️-jsdoc-이란">✔️ JSDoc 이란?</h3>
+
+<p>JSDoc은 자바스크립트 API 문서 생성기인데요. VSCode나 Webstorm 같은 편집기에서 기본으로 제공하고 있는 기능입니다. 이 기능을 사용하면 주석을 예쁘게 만들 수 있을 뿐만 아니라 함수 정보, 타입 힌트 등을 제공할 수 있어서 유용합니다.</p>
+
+<h3 id="️-jsdoc-사용법">✔️ JSDoc 사용법</h3>
+
+<p>사용법은 간단합니다. 아래와 같이 입력하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="cm">/** ... */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>기본 형태가 위와 같기 때문에 각 주석은 반드시 <code class="language-plaintext highlighter-rouge">/** ... */</code> 사이에 기술해야 합니다. 만약 <code class="language-plaintext highlighter-rouge">/*</code>, <code class="language-plaintext highlighter-rouge">/***</code> 와 같이 시작하게 된다면 그것은 무시됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * 이름과 나이 입력받아 출력하는 함수
+ * @param {string} name 이름 입력란 입니다!
+ * @param {number} age 나이 입력란 입니다!
+ * @returns 이름과 나이를 출력합니다~
+ */</span>
+<span class="kd">const</span> <span class="nx">lime</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">name</span> <span class="o">+</span> <span class="nx">age</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예를 들면 위와 같이 사용될 수 있습니다. 주석 설명은 자주 사용할만한 것들로 정리해놓았으니 아래를 참고해주세요. 추가로 더 자세한 내용이 궁금하시다면 참고사이트에 있는 JSDoc 문서를 참고해주세요 :)</p>
+
+<h3 id="️-주석설명">✔️ 주석설명</h3>
+
+<h4 id="-문서-주석">👉 문서 주석</h4>
+
+<h5 id="version"><code class="language-plaintext highlighter-rouge">@version</code></h5>
+
+<p>라이브러리 버전 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Solves equations of the form a * x = b. Returns the value
+ * of x.
+ * @version 1.2.3
+ * @tutorial solver
+ */</span>
+<span class="kd">function</span> <span class="nx">solver</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">b</span> <span class="o">/</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="file-fileoverview-overview"><code class="language-plaintext highlighter-rouge">@file (@fileoverview, @overview)</code></h5>
+
+<p>파일 정보를 나타냅니다.</p>
+
+<h5 id="copyright"><code class="language-plaintext highlighter-rouge">@copyright</code></h5>
+
+<p>저작권 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @file This is my cool script.
+ * @copyright Michael Mathews 2011
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="license"><code class="language-plaintext highlighter-rouge">@license</code></h5>
+
+<p>소프트웨어 라이센스 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Utility functions for the foo package.
+ * @module foo/util
+ * @license Apache-2.0
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="author"><code class="language-plaintext highlighter-rouge">@author</code></h5>
+
+<p>작성자 정보를 나타냅니다. 이메일 주소를 입력하는 경우에는 &lt;&gt; 를 활용하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @author Jane Smith &lt;jsmith@example.com&gt;
+ */</span>
+<span class="kd">function</span> <span class="nx">MyClass</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="-함수-주석">👉 함수 주석</h4>
+
+<h5 id="this"><code class="language-plaintext highlighter-rouge">@this</code></h5>
+
+<p>this 키워드가 참조하는 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="cm">/** @constructor */</span>
+<span class="kd">function</span> <span class="nx">Greeter</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setName</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/** @this Greeter */</span>
+<span class="kd">function</span> <span class="nx">setName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/** document me */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="constant-const"><code class="language-plaintext highlighter-rouge">@constant (@const)</code></h5>
+
+<p>상수 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cm">/** @constant
+    @type {string}
+    @default
+*/</span>
+<span class="kd">const</span> <span class="nx">RED</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FF0000</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/** @constant {number} */</span>
+<span class="kd">var</span> <span class="nx">ONE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="description"><code class="language-plaintext highlighter-rouge">@description</code></h5>
+
+<p>설명 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ * @description Add two numbers.
+ */</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>만약 첫 번째 줄인 경우 아래처럼 생략하여 쓸 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Add two numbers.
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="throws-exception"><code class="language-plaintext highlighter-rouge">@throws (@exception)</code></h5>
+
+<p>오류나 예외사항을 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws {InvalidArgumentException}
+ */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws Will throw an error if the argument is null.
+ */</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws {DivideByZero} Argument x must be non-zero.
+ */</span>
+<span class="kd">function</span> <span class="nx">baz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="param-arg-argument"><code class="language-plaintext highlighter-rouge">@param (@arg, @argument)</code>`</h5>
+
+<p>파라미터 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @param {string} somebody Somebody's name.
+ */</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">somebody</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">somebody</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="callback"><code class="language-plaintext highlighter-rouge">@callback</code></h5>
+
+<p>콜백으로 받은 인자 및 반환값에 대한 정보를 나타냅니다.</p>
+
+<ul>
+  <li>클래스별</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @class
+ */</span>
+<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="cm">/**
+ * Send a request.
+ * @param {Requester~requestCallback} cb - The callback that handles the response.
+ */</span>
+<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * This callback is displayed as part of the Requester class.
+ * @callback Requester~requestCallback
+ * @param {number} responseCode
+ * @param {string} responseMessage
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>글로벌</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @class
+ */</span>
+<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="cm">/**
+ * Send a request.
+ * @param {requestCallback} cb - The callback that handles the response.
+ */</span>
+<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * This callback is displayed as a global member.
+ * @callback requestCallback
+ * @param {number} responseCode
+ * @param {string} responseMessage
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="requires"><code class="language-plaintext highlighter-rouge">@requires</code></h5>
+
+<p>필요한 모듈이 있음을 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * This class requires the modules {@link module:xyzcorp/helper} and
+ * {@link module:xyzcorp/helper.ShinyWidget#polish}.
+ * @class
+ * @requires module:xyzcorp/helper
+ * @requires xyzcorp/helper.ShinyWidget#polish
+ */</span>
+<span class="kd">function</span> <span class="nx">Widgetizer</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="todo"><code class="language-plaintext highlighter-rouge">@todo</code></h5>
+
+<p>해야할 일이나 작업에 대한 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// write me</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-참고사이트">✔️ 참고사이트</h3>
+
+<p><a href="https://jsdoc.app/">https://jsdoc.app/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

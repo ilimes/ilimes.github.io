@@ -166,4 +166,10 @@ var store = [{
         "tags": ["데이터베이스","DB","MariaDB"],
         "url": "/mariadb/post28/",
         "teaser": null
+      },{
+        "title": "JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기",
+        "excerpt":"✔️ JSDoc 이란? JSDoc은 자바스크립트 API 문서 생성기인데요. VSCode나 Webstorm 같은 편집기에서 기본으로 제공하고 있는 기능입니다. 이 기능을 사용하면 주석을 예쁘게 만들 수 있을 뿐만 아니라 함수 정보, 타입 힌트 등을 제공할 수 있어서 유용합니다. ✔️ JSDoc 사용법 사용법은 간단합니다. 아래와 같이 입력하면 됩니다. 1 /** ... */ 기본 형태가...","categories": ["JavaScript"],
+        "tags": ["JSDoc","javaScript","자바스크립트","주석"],
+        "url": "/javascript/post29/",
+        "teaser": null
       }]

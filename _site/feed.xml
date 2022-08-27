@@ -1,4 +1,444 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-25T23:47:17+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">MySQL/MariaDB 원격 접속 허용하기 (Host ‘IP’ is not allowed to connect to this MySQL server)</title><link href="http://localhost:4000/mariadb/post28/" rel="alternate" type="text/html" title="MySQL/MariaDB 원격 접속 허용하기 (Host ‘IP’ is not allowed to connect to this MySQL server)" /><published>2022-08-25T00:00:00+09:00</published><updated>2022-08-25T00:00:00+09:00</updated><id>http://localhost:4000/mariadb/post28</id><content type="html" xml:base="http://localhost:4000/mariadb/post28/"><![CDATA[<p>MySQL(MariaDB)는 기본적으로 로컬에서만 접속할 수 있도록 설정되어 있습니다. 그래서 외부에서 DB에 접속하고자 하는 경우에는 반드시 접근 허용을 해주어야 합니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-27T23:11:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기</title><link href="http://localhost:4000/javascript/post29/" rel="alternate" type="text/html" title="JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기" /><published>2022-08-27T00:00:00+09:00</published><updated>2022-08-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post29</id><content type="html" xml:base="http://localhost:4000/javascript/post29/"><![CDATA[<h3 id="️-jsdoc-이란">✔️ JSDoc 이란?</h3>
+
+<p>JSDoc은 자바스크립트 API 문서 생성기인데요. VSCode나 Webstorm 같은 편집기에서 기본으로 제공하고 있는 기능입니다. 이 기능을 사용하면 주석을 예쁘게 만들 수 있을 뿐만 아니라 함수 정보, 타입 힌트 등을 제공할 수 있어서 유용합니다.</p>
+
+<h3 id="️-jsdoc-사용법">✔️ JSDoc 사용법</h3>
+
+<p>사용법은 간단합니다. 아래와 같이 입력하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="cm">/** ... */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>기본 형태가 위와 같기 때문에 각 주석은 반드시 <code class="language-plaintext highlighter-rouge">/** ... */</code> 사이에 기술해야 합니다. 만약 <code class="language-plaintext highlighter-rouge">/*</code>, <code class="language-plaintext highlighter-rouge">/***</code> 와 같이 시작하게 된다면 그것은 무시됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * 이름과 나이 입력받아 출력하는 함수
+ * @param {string} name 이름 입력란 입니다!
+ * @param {number} age 나이 입력란 입니다!
+ * @returns 이름과 나이를 출력합니다~
+ */</span>
+<span class="kd">const</span> <span class="nx">lime</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">name</span> <span class="o">+</span> <span class="nx">age</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예를 들면 위와 같이 사용될 수 있습니다. 주석 설명은 자주 사용할만한 것들로 정리해놓았으니 아래를 참고해주세요. 추가로 더 자세한 내용이 궁금하시다면 참고사이트에 있는 JSDoc 문서를 참고해주세요 :)</p>
+
+<h3 id="️-주석설명">✔️ 주석설명</h3>
+
+<h4 id="-문서-주석">👉 문서 주석</h4>
+
+<h5 id="version"><code class="language-plaintext highlighter-rouge">@version</code></h5>
+
+<p>라이브러리 버전 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Solves equations of the form a * x = b. Returns the value
+ * of x.
+ * @version 1.2.3
+ * @tutorial solver
+ */</span>
+<span class="kd">function</span> <span class="nx">solver</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">b</span> <span class="o">/</span> <span class="nx">a</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="file-fileoverview-overview"><code class="language-plaintext highlighter-rouge">@file (@fileoverview, @overview)</code></h5>
+
+<p>파일 정보를 나타냅니다.</p>
+
+<h5 id="copyright"><code class="language-plaintext highlighter-rouge">@copyright</code></h5>
+
+<p>저작권 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @file This is my cool script.
+ * @copyright Michael Mathews 2011
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="license"><code class="language-plaintext highlighter-rouge">@license</code></h5>
+
+<p>소프트웨어 라이센스 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Utility functions for the foo package.
+ * @module foo/util
+ * @license Apache-2.0
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="author"><code class="language-plaintext highlighter-rouge">@author</code></h5>
+
+<p>작성자 정보를 나타냅니다. 이메일 주소를 입력하는 경우에는 &lt;&gt; 를 활용하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @author Jane Smith &lt;jsmith@example.com&gt;
+ */</span>
+<span class="kd">function</span> <span class="nx">MyClass</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="-함수-주석">👉 함수 주석</h4>
+
+<h5 id="this"><code class="language-plaintext highlighter-rouge">@this</code></h5>
+
+<p>this 키워드가 참조하는 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="cm">/** @constructor */</span>
+<span class="kd">function</span> <span class="nx">Greeter</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setName</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/** @this Greeter */</span>
+<span class="kd">function</span> <span class="nx">setName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="cm">/** document me */</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="constant-const"><code class="language-plaintext highlighter-rouge">@constant (@const)</code></h5>
+
+<p>상수 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cm">/** @constant
+    @type {string}
+    @default
+*/</span>
+<span class="kd">const</span> <span class="nx">RED</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FF0000</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="cm">/** @constant {number} */</span>
+<span class="kd">var</span> <span class="nx">ONE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="description"><code class="language-plaintext highlighter-rouge">@description</code></h5>
+
+<p>설명 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ * @description Add two numbers.
+ */</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>만약 첫 번째 줄인 경우 아래처럼 생략하여 쓸 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Add two numbers.
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="throws-exception"><code class="language-plaintext highlighter-rouge">@throws (@exception)</code></h5>
+
+<p>오류나 예외사항을 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws {InvalidArgumentException}
+ */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws Will throw an error if the argument is null.
+ */</span>
+<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @throws {DivideByZero} Argument x must be non-zero.
+ */</span>
+<span class="kd">function</span> <span class="nx">baz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="param-arg-argument"><code class="language-plaintext highlighter-rouge">@param (@arg, @argument)</code>`</h5>
+
+<p>파라미터 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @param {string} somebody Somebody's name.
+ */</span>
+<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">somebody</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">somebody</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="callback"><code class="language-plaintext highlighter-rouge">@callback</code></h5>
+
+<p>콜백으로 받은 인자 및 반환값에 대한 정보를 나타냅니다.</p>
+
+<ul>
+  <li>클래스별</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @class
+ */</span>
+<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="cm">/**
+ * Send a request.
+ * @param {Requester~requestCallback} cb - The callback that handles the response.
+ */</span>
+<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * This callback is displayed as part of the Requester class.
+ * @callback Requester~requestCallback
+ * @param {number} responseCode
+ * @param {string} responseMessage
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>글로벌</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @class
+ */</span>
+<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="cm">/**
+ * Send a request.
+ * @param {requestCallback} cb - The callback that handles the response.
+ */</span>
+<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// code</span>
+<span class="p">};</span>
+
+<span class="cm">/**
+ * This callback is displayed as a global member.
+ * @callback requestCallback
+ * @param {number} responseCode
+ * @param {string} responseMessage
+ */</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="requires"><code class="language-plaintext highlighter-rouge">@requires</code></h5>
+
+<p>필요한 모듈이 있음을 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * This class requires the modules {@link module:xyzcorp/helper} and
+ * {@link module:xyzcorp/helper.ShinyWidget#polish}.
+ * @class
+ * @requires module:xyzcorp/helper
+ * @requires xyzcorp/helper.ShinyWidget#polish
+ */</span>
+<span class="kd">function</span> <span class="nx">Widgetizer</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="todo"><code class="language-plaintext highlighter-rouge">@todo</code></h5>
+
+<p>해야할 일이나 작업에 대한 정보를 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * @todo Write the documentation.
+ * @todo Implement this function.
+ */</span>
+<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// write me</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="return-returns"><code class="language-plaintext highlighter-rouge">@return (@returns)</code>`</h5>
+
+<p>리턴값을 나타냅니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Returns the sum of a and b
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */</span>
+<span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="since"><code class="language-plaintext highlighter-rouge">@since</code></h5>
+
+<p>클래스나 메서드 등이 특정 버전에서 추가되었을 경우 사용합니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="cm">/**
+ * Provides access to user information.
+ * @since 1.0.1
+ */</span>
+<span class="kd">function</span> <span class="nx">UserRecord</span><span class="p">()</span> <span class="p">{}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-참고사이트">✔️ 참고사이트</h3>
+
+<p><a href="https://jsdoc.app/">https://jsdoc.app/</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="JSDoc" /><category term="javaScript" /><category term="자바스크립트" /><category term="주석" /><summary type="html"><![CDATA[JSDoc 기능 사용법]]></summary></entry><entry><title type="html">MySQL/MariaDB 원격 접속 허용하기 (Host ‘IP’ is not allowed to connect to this MySQL server)</title><link href="http://localhost:4000/mariadb/post28/" rel="alternate" type="text/html" title="MySQL/MariaDB 원격 접속 허용하기 (Host ‘IP’ is not allowed to connect to this MySQL server)" /><published>2022-08-25T00:00:00+09:00</published><updated>2022-08-25T00:00:00+09:00</updated><id>http://localhost:4000/mariadb/post28</id><content type="html" xml:base="http://localhost:4000/mariadb/post28/"><![CDATA[<p>MySQL(MariaDB)는 기본적으로 로컬에서만 접속할 수 있도록 설정되어 있습니다. 그래서 외부에서 DB에 접속하고자 하는 경우에는 반드시 접근 허용을 해주어야 합니다.</p>
 
 <h3 id="️-접근-권한-확인">✔️ 접근 권한 확인</h3>
 
@@ -34,7 +474,7 @@
 
 <p>위와 같이 설정하는 경우에는 192.168.0.19 인 아이피만 허용됩니다.</p>
 
-<h3 id="허용-전으로-되돌리기">허용 전으로 되돌리기</h3>
+<h3 id="️-허용-전으로-되돌리기">✔️ 허용 전으로 되돌리기</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -42,7 +482,7 @@
 FLUSH PRIVILEGES;
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h3 id="원격-접속-하기">원격 접속 하기</h3>
+<h3 id="️-원격-접속-하기">✔️ 원격 접속 하기</h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>mysql -h '원격 IP주소' -u '허용된 사용자 이름(ex. root)' -p
@@ -509,39 +949,7 @@ $ bundle install
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
-
-<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
-COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
-ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
-
-<h3 id="해결하기">해결하기</h3>
-
-<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
-
-<ul>
-  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
-</ul>
-
-<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
-
-<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
-
-<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹개발" /><category term="antd" /><category term="ant design" /><summary type="html"><![CDATA[앤트디자인 테이블 컴포넌트 사용]]></summary></entry><entry><title type="html">[Mac] 사용중인 포트 kill 하는법</title><link href="http://localhost:4000/issue/post20/" rel="alternate" type="text/html" title="[Mac] 사용중인 포트 kill 하는법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post20</id><content type="html" xml:base="http://localhost:4000/issue/post20/"><![CDATA[<h3 id="사용중-포트-찾기">사용중 포트 찾기</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>lsof <span class="nt">-i</span> :[포트번호]
@@ -579,134 +987,36 @@ node      13736 lime   31u  IPv4 0x35b417c98f796509      0t0  TCP localhost:hbci
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">Sequelize - 데이터타입</title><link href="http://localhost:4000/sequelize/post19/" rel="alternate" type="text/html" title="Sequelize - 데이터타입" /><published>2022-08-09T00:00:00+09:00</published><updated>2022-08-09T00:00:00+09:00</updated><id>http://localhost:4000/sequelize/post19</id><content type="html" xml:base="http://localhost:4000/sequelize/post19/"><![CDATA[<h3 id="sequelize-datatypes">Sequelize DataTypes</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="lsof" /><category term="kill" /><category term="mac" /><summary type="html"><![CDATA[포트 죽이기!!]]></summary></entry><entry><title type="html">[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법</title><link href="http://localhost:4000/issue/post21/" rel="alternate" type="text/html" title="[Mac] 맥북에게 5000번 포트를 뺏겼을 때 해결방법" /><published>2022-08-14T00:00:00+09:00</published><updated>2022-08-14T00:00:00+09:00</updated><id>http://localhost:4000/issue/post21</id><content type="html" xml:base="http://localhost:4000/issue/post21/"><![CDATA[<h3 id="문제">문제</h3>
 
-<p>시퀄라이즈 데이터타입을 정리해보았습니다. 추가로 업데이트 된 목록을 확인하고 싶으시다면 <a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes" title="sequelize DataTypes :)">여기</a>를 클릭해서 DataTypes를 참고해주시기 바랍니다.</p>
+<p>5000번 포트를 사용하려는데 계속 403에러가 발생합니다. 5000번을 쓰고싶어서 kill -9로 죽이려고 했는데 계속 살아납니다.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-</pre></td><td class="rouge-code"><pre>Sequelize.STRING                      // VARCHAR(255)
-Sequelize.STRING(1234)                // VARCHAR(1234)
-Sequelize.STRING.BINARY               // VARCHAR BINARY
-Sequelize.TEXT                        // TEXT
-Sequelize.TEXT('tiny')                // TINYTEXT
-Sequelize.CITEXT                      // CITEXT      PostgreSQL and SQLite only.
-
-Sequelize.INTEGER                     // INTEGER
-Sequelize.BIGINT                      // BIGINT
-Sequelize.BIGINT(11)                  // BIGINT(11)
-
-Sequelize.FLOAT                       // FLOAT
-Sequelize.FLOAT(11)                   // FLOAT(11)
-Sequelize.FLOAT(11, 10)               // FLOAT(11,10)
-
-Sequelize.REAL                        // REAL        PostgreSQL only.
-Sequelize.REAL(11)                    // REAL(11)    PostgreSQL only.
-Sequelize.REAL(11, 12)                // REAL(11,12) PostgreSQL only.
-
-Sequelize.DOUBLE                      // DOUBLE
-Sequelize.DOUBLE(11)                  // DOUBLE(11)
-Sequelize.DOUBLE(11, 10)              // DOUBLE(11,10)
-
-Sequelize.DECIMAL                     // DECIMAL
-Sequelize.DECIMAL(10, 2)              // DECIMAL(10,2)
-
-Sequelize.DATE                        // DATETIME for mysql / sqlite, TIMESTAMP WITH TIME ZONE for postgres
-Sequelize.DATE(6)                     // DATETIME(6) for mysql 5.6.4+. Fractional seconds support with up to 6 digits of precision
-Sequelize.DATEONLY                    // DATE without time.
-Sequelize.BOOLEAN                     // TINYINT(1)
-
-Sequelize.ENUM('value 1', 'value 2')  // An ENUM with allowed values 'value 1' and 'value 2'
-Sequelize.ARRAY(Sequelize.TEXT)       // Defines an array. PostgreSQL only.
-Sequelize.ARRAY(Sequelize.ENUM)       // Defines an array of ENUM. PostgreSQL only.
-
-Sequelize.JSON                        // JSON column. PostgreSQL, SQLite and MySQL only.
-Sequelize.JSONB                       // JSONB column. PostgreSQL only.
-
-Sequelize.BLOB                        // BLOB (bytea for PostgreSQL)
-Sequelize.BLOB('tiny')                // TINYBLOB (bytea for PostgreSQL. Other options are medium and long)
-
-Sequelize.UUID                        // UUID datatype for PostgreSQL and SQLite, CHAR(36) BINARY for MySQL (use defaultValue: Sequelize.UUIDV1 or Sequelize.UUIDV4 to make sequelize generate the ids automatically)
-
-Sequelize.CIDR                        // CIDR datatype for PostgreSQL
-Sequelize.INET                        // INET datatype for PostgreSQL
-Sequelize.MACADDR                     // MACADDR datatype for PostgreSQL
-
-Sequelize.RANGE(Sequelize.INTEGER)    // Defines int4range range. PostgreSQL only.
-Sequelize.RANGE(Sequelize.BIGINT)     // Defined int8range range. PostgreSQL only.
-Sequelize.RANGE(Sequelize.DATE)       // Defines tstzrange range. PostgreSQL only.
-Sequelize.RANGE(Sequelize.DATEONLY)   // Defines daterange range. PostgreSQL only.
-Sequelize.RANGE(Sequelize.DECIMAL)    // Defines numrange range. PostgreSQL only.
-
-Sequelize.ARRAY(Sequelize.RANGE(Sequelize.DATE)) // Defines array of tstzrange ranges. PostgreSQL only.
-
-Sequelize.GEOMETRY                    // Spatial column.  PostgreSQL (with PostGIS) or MySQL only.
-Sequelize.GEOMETRY('POINT')           // Spatial column with geometry type. PostgreSQL (with PostGIS) or MySQL only.
-Sequelize.GEOMETRY('POINT', 4326)     // Spatial column with geometry type and SRID.  PostgreSQL (with PostGIS) or MySQL only.
+</pre></td><td class="rouge-code"><pre>lime@laim-ui-MacBookAir ~ % lsof <span class="nt">-i</span> :5000
+COMMAND     PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+ControlCe 10422 lime   29u  IPv4 0x35b417c98db2da79      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
+ControlCe 10422 lime   30u  IPv6 0x35b417d328e92061      0t0  TCP <span class="k">*</span>:commplex-main <span class="o">(</span>LISTEN<span class="o">)</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<h3 id="참고사이트">참고사이트</h3>
+<p>대체 왜 그런가 알아보니 <code class="language-plaintext highlighter-rouge">ControlCenter</code>라는 자체프로그램이 5000번 포트를 잡아먹고 있는 것이었는데요. 좀 더 자세히 살펴보니 MacOS Monterey에서 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 기능이 해당 포트를 사용하기 때문이었습니다.</p>
+
+<h3 id="해결하기">해결하기</h3>
+
+<p>Mac에서 5000번 포트를 사용하고 싶다면 <code class="language-plaintext highlighter-rouge">AirPlay 수신모드</code> 를 해제하는 간단한 방법으로 문제를 해결할 수 있습니다.</p>
 
 <ul>
-  <li><a href="https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes">https://sequelize.org/api/v6/variable/index.html#static-variable-DataTypes</a></li>
+  <li><strong>시스템 환경설정 - 공유 - AirPlay 수신 모드</strong></li>
 </ul>
+
+<p><img width="654" alt="image" src="https://user-images.githubusercontent.com/95404736/184541821-01863f4a-7b5b-4323-8677-d558717f9429.png" /></p>
+
+<p>위와 같이 체크가 되어 있다면 그냥 체크를 해제해주기만 하면 됩니다. 정말 간단합니다.</p>
+
+<p>다만 5000번 포트를 기본으로 사용하는 분들이 분명 많을 것 같은데 왜 애플에서 기본으로 5000번을 잡아먹게 한 건지는 당최 이해할 수가 없네요 🤣</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Sequelize" /><category term="시퀄라이즈" /><category term="Sequelize" /><category term="백엔드" /><category term="backend" /><summary type="html"><![CDATA[Sequelize 데이터타입 정리]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="port" /><category term="AirPlay" /><category term="5000" /><summary type="html"><![CDATA[AirPlay 수신모드에게 뺏긴 5000번 포트..]]></summary></entry></feed>
