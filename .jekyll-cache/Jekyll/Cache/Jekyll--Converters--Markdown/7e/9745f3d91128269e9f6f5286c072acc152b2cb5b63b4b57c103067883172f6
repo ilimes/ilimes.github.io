@@ -1,0 +1,47 @@
+I"~<blockquote>
+  <p>MongoDB 데이터베이스 및 컬렉션 관련 문법에 대한 내용은 <a href="https://ilimes.github.io/mongodb/post18/" title="mongoDB">관련 포스팅</a> 을 참고해주세요 :)</p>
+</blockquote>
+
+<h3 id="️-mongodb">✔️ MongoDB</h3>
+
+<p>ㅇㅇ</p>
+
+<h3 id="️-rdb와-mongodb-용어-비교">✔️ RDB와 MongoDB 용어 비교</h3>
+
+<p>RDB와 MongoDB에서의 용어를 비교하는 경우 아래와 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table</td>
+      <td>Collection</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Field</td>
+    </tr>
+    <tr>
+      <td>Primary Key</td>
+      <td>Object_Id Field</td>
+    </tr>
+    <tr>
+      <td>Relationship</td>
+      <td>Embedded &amp; Link</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET

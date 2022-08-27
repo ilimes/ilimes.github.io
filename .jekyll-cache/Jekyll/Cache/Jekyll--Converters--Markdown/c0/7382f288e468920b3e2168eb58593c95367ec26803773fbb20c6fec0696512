@@ -1,0 +1,213 @@
+I"i!<h3 id="️-mongodb">✔️ MongoDB</h3>
+
+<p>MongoDB는 NoSQL이라 고정된 스키마나 JOIN이 존재하지 않고 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그러한 동적 스키마형 문서를 Binary JSON(JavaScript Object Notaion) 라고 부릅니다.
+JSON 형태기 때문에 직관적이라 개발이 편리하고, 읽기 및 쓰기 성능이 뛰어나서 속도가 매우 빠릅니다.</p>
+
+<h3 id="️-rdb와-mongodb-용어-비교">✔️ RDB와 MongoDB 용어 비교</h3>
+
+<p>RDB와 MongoDB 용어를 비교하는 경우 아래와 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table</td>
+      <td>Collection</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Field</td>
+    </tr>
+    <tr>
+      <td>Primary Key</td>
+      <td>Object_Id Field</td>
+    </tr>
+    <tr>
+      <td>Relationship</td>
+      <td>Embedded &amp; Link</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="️-연산자-정리">✔️ 연산자 정리</h3>
+
+<h4 id="-비교연산자">👉 비교연산자</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>operator</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;eq</td>
+      <td>같음 (==)</td>
+    </tr>
+    <tr>
+      <td>&amp;gt</td>
+      <td>초과 (&gt;)</td>
+    </tr>
+    <tr>
+      <td>&amp;gte</td>
+      <td>이상 (&gt;=)</td>
+    </tr>
+    <tr>
+      <td>&amp;lt</td>
+      <td>미만 (&lt;)</td>
+    </tr>
+    <tr>
+      <td>&amp;lte</td>
+      <td>이하 (&lt;=)</td>
+    </tr>
+    <tr>
+      <td>&amp;ne</td>
+      <td>같지 않음 (!=)</td>
+    </tr>
+    <tr>
+      <td>&amp;in</td>
+      <td>전달한 배열 요소중 하나</td>
+    </tr>
+    <tr>
+      <td>&amp;nin</td>
+      <td>전달한 배열 요소중에 없거나 필드가 존재하지 않을 때 조회</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-논리연산자">👉 논리연산자</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>operator</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;or</td>
+      <td>주어진 조건 중 하나라도 true인 경우 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;and</td>
+      <td>모든 조건이 true 이면 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;not</td>
+      <td>해당 조건이 false 이면 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;nor</td>
+      <td>모든 조건이 false 이면 true 반환</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="️-쿼리-정리">✔️ 쿼리 정리</h3>
+
+<blockquote>
+  <p>MongoDB 데이터베이스 및 컬렉션 문법에 대한 내용은 <a href="https://ilimes.github.io/mongodb/post18/" title="mongoDB">관련 포스팅</a> 을 참고해주세요 :)</p>
+</blockquote>
+
+<h4 id="-documents-조회find">👉 documents 조회(find)</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find()
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="입력-keyvalue-값을-가진-docs만-리턴">입력 key&amp;value 값을 가진 docs만 리턴</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "books" : "Gravity" })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="views의-값이-30이하인-docs만-리턴">views의 값이 30이하인 docs만 리턴</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "views" : {$lte:30} })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="쿼리-결과에-보여줄-field지정">쿼리 결과에 보여줄 field지정</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{ "\_id" : false, "title" : true })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="comments의-name이라는-field의-value가-charles인-docs만-출력">comments의 name이라는 field의 value가 Charles인 docs만 출력</h5>
+
+<ul>
+  <li>$elemMatch : embedded doct 배열 쿼리시 사용</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "comments" : {$elemMatch : { "name" : "Charles" }}})
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="보기좋게-정렬-pretty">보기좋게 정렬: pretty()</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.cities.find({ "name" : "Minneapolis" }).pretty()
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="오름차순--내림차순-정렬-sort">오름차순 &amp; 내림차순 정렬: sort()</h5>
+
+<ul>
+  <li>name field를 내림차순으로 정렬하여 출력</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{"name":true}).sort({"name":-1})
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>_id field를 내림차순으로 정리하고, name field를 오름차순으로 정렬하여 출력</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{"name":true}).sort({"\_id":-1, "name":1}}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="5개-docs만-출력">5개 docs만 출력</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find().limit(5)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="2개를-건너뛰고-그-다음-docs를-출력">2개를 건너뛰고 그 다음 docs를 출력</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find().skip(2)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>d</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<p><a href="https://velopert.com/479">https://velopert.com/479</a>
+<a href="https://www.mongodb.com/docs/manual/reference/operator/query/">https://www.mongodb.com/docs/manual/reference/operator/query/</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>{:.notice--success}
+🔔**포스팅 공지**
+개인 공부 기록용 블로그 입니다.
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)
+</pre></td></tr></tbody></table></code></pre></div></div>
+:ET

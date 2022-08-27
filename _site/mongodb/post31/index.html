@@ -1,0 +1,1499 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>MongoDB 기본 쿼리문 정리 - ilimes</title>
+<meta name="description" content="몽고디비 기본 쿼리문을 정리해보았습니다.">
+
+
+  <meta name="author" content="LIME">
+  
+  <meta property="article:author" content="LIME">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="ilimes">
+<meta property="og:title" content="MongoDB 기본 쿼리문 정리">
+<meta property="og:url" content="http://localhost:4000/mongodb/post31/">
+
+
+  <meta property="og:description" content="몽고디비 기본 쿼리문을 정리해보았습니다.">
+
+
+
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2022-08-28T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/mongodb/post31/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "LIME",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="ilimes Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- darkmode css -->
+
+<link rel="stylesheet" href="/assets/css/main_dark.css">
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <style> 
+      ::-webkit-scrollbar{width: 6px;}
+      ::-webkit-scrollbar-track {background-color:#4b4f52; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb {background-color:#5e6265; border-radius: 16px;}
+      ::-webkit-scrollbar-thumb:hover {background: #818587;}
+      ::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment 
+      {
+          width:12px;height:12px;background:transparent;}
+    </style>
+    
+  </head>
+
+  <body class="layout--single">
+    <!-- 상단 진행바 시작 -->
+    <style>
+      .progress-bar {
+        background: linear-gradient(to right, #becc80 var(--scroll), transparent 0);
+        background-repeat: no-repeat;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        z-index: 9000;
+      }
+    </style>
+
+    <!-- This is the bar which shows scroll percentage -->
+    <div class="progress-bar"></div>
+
+
+    <!-- Script used to generate --scroll variable with current scroll percentage value -->
+    <script>
+      var element = document.documentElement,
+        body = document.body,
+        scrollTop = 'scrollTop',
+        scrollHeight = 'scrollHeight',
+        progress = document.querySelector('.progress-bar'),
+        scroll;
+
+      document.addEventListener('scroll', function () {
+        scroll = (element[scrollTop] || body[scrollTop]) / ((element[scrollHeight] || body[scrollHeight]) - element.clientHeight) * 100;
+        progress.style.setProperty('--scroll', scroll + '%');
+      });
+    </script>
+    <!-- 하단 진행바 끝 -->
+
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          ilimes
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/">카테고리</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">태그</a>
+            </li><li class="masthead__menu-item">
+              <a href="/search/">검색</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+        
+        <!-- 다크 모드 토글 버튼 -->
+        
+        <input id="toggle_dark_theme" class="mh_toogle" type="checkbox">
+        <label for="toggle_dark_theme" class="material-icons-sharp mh_toggle_btn"></label>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+            <span class="visually-hidden">토글 메뉴</span>
+            <div class="navicon"></div>
+        </button>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="http://localhost:4000/">
+        <img src="https://cdn.jsdelivr.net/gh/ilimes/ilimes.github.io/avatar.png" alt="LIME" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">LIME</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p><strong>공부하고 기록하는</strong> 블로그</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:ilimes1307@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="ilimes1307@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ilimes" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+
+  
+      <!--전체 글 수를 세기 위한 연산. sum 변수에 전체 글 수 저장-->
+
+
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <!--전체 글 수-->
+      <li>
+            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> 31 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+      </li>
+      <li>
+        <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
+        <!--Cpp 카테고리 글들을 모아둔 페이지인 /categories/cpp 주소의 글로 링크 연결-->
+        <!--category[1].size 로 해당 카테고리를 가진 글의 개수 표시--> 
+        <!--ul 태그로 같은 카테고리들 모아둔 페이지들 나열-->
+        <span class="nav__sub-title">Blog</span>
+            <ul>
+                
+                    
+                        <li><a href="/categories/blog" class="">Blog (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">FrontEnd</span>
+            <ul>
+                
+                    
+                
+                    
+                        <li><a href="/categories/react" class="">React (7)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">BackEnd</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/nodeJs" class="">Node.js (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/mariadb" class="">MariaDB (1)</a></li>
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/mongoDB" class="">MongoDB (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/sequelize" class="">Sequelize (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">JavaScript</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/javaScript" class="">JavaScript (3)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">Figma</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/figma" class="">Figma (1)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">개발</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/web" class="">웹 개발 (4)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/git" class="">Git (2)</a></li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li><a href="/categories/issue" class="">문제 해결 (2)</a></li>
+                    
+                
+                    
+                
+            </ul>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+      </li>
+  </ul>
+</nav>
+  
+    <img style="width: auto; height: auto; margin-right: 5px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=%F0%9F%91%8B&edge_flat=false"/>
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="MongoDB 기본 쿼리문 정리">
+    <meta itemprop="description" content="몽고디비 기본 쿼리문을 정리해보았습니다.">
+    <meta itemprop="datePublished" content="2022-08-28T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/mongodb/post31/" class="u-url" itemprop="url">MongoDB 기본 쿼리문 정리
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+          <!-- <img style="width: auto; height: auto; margin-right: 5px; margin-bottom: 15px" class="hits" src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Filimes.github.io/how%20to/HITS/&count_bg=%239C9999&title_bg=%239C9999&icon=&icon_color=%23E7E7E7&title=조회수&edge_flat=false"/> -->
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 목차</h4></header>
+              <ul class="toc__menu"><li><a href="#️-mongodb">✔️ MongoDB</a></li><li><a href="#️-rdb와-mongodb-용어-비교">✔️ RDB와 MongoDB 용어 비교</a></li><li><a href="#️-연산자-정리">✔️ 연산자 정리</a><ul><li><a href="#-비교연산자">👉 비교연산자</a></li><li><a href="#-논리연산자">👉 논리연산자</a></li></ul></li><li><a href="#️-쿼리-정리">✔️ 쿼리 정리</a><ul><li><a href="#-documents-조회find">👉 documents 조회(find)</a><ul><li><a href="#입력-keyvalue-값을-가진-docs만-리턴">입력 key&amp;value 값을 가진 docs만 리턴</a></li><li><a href="#views의-값이-30이하인-docs만-리턴">views의 값이 30이하인 docs만 리턴</a></li><li><a href="#쿼리-결과에-보여줄-field지정">쿼리 결과에 보여줄 field지정</a></li><li><a href="#comments의-name이라는-field의-value가-charles인-docs만-출력">comments의 name이라는 field의 value가 Charles인 docs만 출력</a></li><li><a href="#보기좋게-정렬-pretty">보기좋게 정렬: pretty()</a></li><li><a href="#오름차순--내림차순-정렬-sort">오름차순 &amp; 내림차순 정렬: sort()</a></li><li><a href="#5개-docs만-출력">5개 docs만 출력</a></li><li><a href="#2개를-건너뛰고-그-다음-docs를-출력">2개를 건너뛰고 그 다음 docs를 출력</a></li></ul></li><li><a href="#-데이터-업데이트">👉 데이터 업데이트</a><ul><li><a href="#insert-하기">INSERT 하기</a></li><li><a href="#특정-field-업데이트-하기-set">특정 field 업데이트 하기: $set</a></li><li><a href="#특정-field-제거하기-unset">특정 field 제거하기: $unset</a></li><li><a href="#field가-있으면-수정-없으면-새로-추가하기--upserttrue">field가 있으면 수정, 없으면 새로 추가하기 : upsert:true</a></li><li><a href="#특정-조건에-맞는-field-한꺼번에-수정하기-multitrue">특정 조건에 맞는 field 한꺼번에 수정하기: multi:true</a></li><li><a href="#skills-배열에-새로운-값-추가하기-push">skills 배열에 새로운 값 추가하기: $push</a></li><li><a href="#skills-배열에-여러-값-추가하고-오름차순으로-정렬하기-each-sort">skills 배열에 여러 값 추가하고 오름차순으로 정렬하기: $each, $sort</a></li><li><a href="#skills-배열에-하나의-요소-제거-pull">skills 배열에 하나의 요소 제거: $pull</a></li></ul></li><li><a href="#-커스텀-인덱스-추가">👉 커스텀 인덱스 추가</a><ul><li><a href="#이미-존재하는-collection-에-추가할-경우">이미 존재하는 collection 에 추가할 경우</a></li><li><a href="#인덱스-종류-쿼리">인덱스 종류 쿼리</a></li><li><a href="#new-schema-field-레벨-에서-추가">new schema, field 레벨 에서 추가</a></li><li><a href="#new-schema-compound-index는-항상-schema-레벨에서-추가하기">new schema, compound index는 항상 schema 레벨에서 추가하기</a></li></ul></li></ul></li><li><a href="#️-참고-사이트">✔️ 참고 사이트</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h3 id="️-mongodb">✔️ MongoDB</h3>
+
+<p>MongoDB는 NoSQL이라 고정된 스키마나 JOIN이 존재하지 않고 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그러한 동적 스키마형 문서를 Binary JSON(JavaScript Object Notaion) 라고 부릅니다.
+JSON 형태기 때문에 직관적이라 개발이 편리하고, 읽기 및 쓰기 성능이 뛰어나서 속도가 매우 빠릅니다.</p>
+
+<h3 id="️-rdb와-mongodb-용어-비교">✔️ RDB와 MongoDB 용어 비교</h3>
+
+<p>RDB와 MongoDB 용어를 비교하는 경우 아래와 같습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RDB</th>
+      <th>MongoDB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Table</td>
+      <td>Collection</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Document</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Field</td>
+    </tr>
+    <tr>
+      <td>Primary Key</td>
+      <td>Object_Id Field</td>
+    </tr>
+    <tr>
+      <td>Relationship</td>
+      <td>Embedded &amp; Link</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="️-연산자-정리">✔️ 연산자 정리</h3>
+
+<h4 id="-비교연산자">👉 비교연산자</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>operator</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;eq</td>
+      <td>같음 (==)</td>
+    </tr>
+    <tr>
+      <td>&amp;gt</td>
+      <td>초과 (&gt;)</td>
+    </tr>
+    <tr>
+      <td>&amp;gte</td>
+      <td>이상 (&gt;=)</td>
+    </tr>
+    <tr>
+      <td>&amp;lt</td>
+      <td>미만 (&lt;)</td>
+    </tr>
+    <tr>
+      <td>&amp;lte</td>
+      <td>이하 (&lt;=)</td>
+    </tr>
+    <tr>
+      <td>&amp;ne</td>
+      <td>같지 않음 (!=)</td>
+    </tr>
+    <tr>
+      <td>&amp;in</td>
+      <td>전달한 배열 요소중 하나</td>
+    </tr>
+    <tr>
+      <td>&amp;nin</td>
+      <td>전달한 배열 요소중에 없거나 필드가 존재하지 않을 때 조회</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-논리연산자">👉 논리연산자</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>operator</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>&amp;or</td>
+      <td>주어진 조건 중 하나라도 true인 경우 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;and</td>
+      <td>모든 조건이 true 이면 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;not</td>
+      <td>해당 조건이 false 이면 true 반환</td>
+    </tr>
+    <tr>
+      <td>&amp;nor</td>
+      <td>모든 조건이 false 이면 true 반환</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="️-쿼리-정리">✔️ 쿼리 정리</h3>
+
+<blockquote>
+  <p>MongoDB 데이터베이스 및 컬렉션 문법에 대한 내용은 <a href="https://ilimes.github.io/mongodb/post18/" title="mongoDB">관련 포스팅</a> 을 참고해주세요 :)</p>
+</blockquote>
+
+<h4 id="-documents-조회find">👉 documents 조회(find)</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find()
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="입력-keyvalue-값을-가진-docs만-리턴">입력 key&amp;value 값을 가진 docs만 리턴</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "books" : "Gravity" })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="views의-값이-30이하인-docs만-리턴">views의 값이 30이하인 docs만 리턴</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "views" : {$lte:30} })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="쿼리-결과에-보여줄-field지정">쿼리 결과에 보여줄 field지정</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{ "\_id" : false, "title" : true })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="comments의-name이라는-field의-value가-charles인-docs만-출력">comments의 name이라는 field의 value가 Charles인 docs만 출력</h5>
+
+<ul>
+  <li>$elemMatch : embedded doct 배열 쿼리시 사용</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({ "comments" : {$elemMatch : { "name" : "Charles" }}})
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="보기좋게-정렬-pretty">보기좋게 정렬: pretty()</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.cities.find({ "name" : "Minneapolis" }).pretty()
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="오름차순--내림차순-정렬-sort">오름차순 &amp; 내림차순 정렬: sort()</h5>
+
+<ul>
+  <li>name field를 내림차순으로 정렬하여 출력</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{ "name" : true }).sort({ "name" : -1 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>_id field를 내림차순으로 정리하고, name field를 오름차순으로 정렬하여 출력</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find({},{ "name" : true }).sort({ "\_id" : -1 , "name" : 1 }}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="5개-docs만-출력">5개 docs만 출력</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find().limit(5)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="2개를-건너뛰고-그-다음-docs를-출력">2개를 건너뛰고 그 다음 docs를 출력</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&gt; db.&lt;collection 이름&gt;.find().skip(2)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="-데이터-업데이트">👉 데이터 업데이트</h4>
+
+<h5 id="insert-하기">INSERT 하기</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>&gt; db.people.insert( [
+    { name: "Abet", age: 19 },
+    { name: "Betty", age: 20 },
+    { name: "Charlie", age: 23, skills: [ "mongodb", "nodejs"] },
+    { name: "David", age: 23, score: 20 }
+])
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="특정-field-업데이트-하기-set">특정 field 업데이트 하기: $set</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update( { name: "Abet" }, { $set: { age: 20 } } )
+&gt; WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="특정-field-제거하기-unset">특정 field 제거하기: $unset</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update( { name: "David" }, { $unset: { score: 1 } } )
+&gt; WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="field가-있으면-수정-없으면-새로-추가하기--upserttrue">field가 있으면 수정, 없으면 새로 추가하기 : upsert:true</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update( { name: "Elly" }, { name: "Elly", age: 17 }, { upsert: true } )
+WriteResult({
+  "nMatched" : 0,
+  "nUpserted" : 1,
+  "nModified" : 0,
+  "_id" : ObjectId("56c893ffc694e4e7c8594240")
+})
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="특정-조건에-맞는-field-한꺼번에-수정하기-multitrue">특정 조건에 맞는 field 한꺼번에 수정하기: multi:true</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update(
+  { age: { $lte: 20 } },
+  { $set: { score: 10 } },
+  { multi: true }
+  )
+&gt; WriteResult({ "nMatched" : 3, "nUpserted" : 0, "nModified" : 0 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="skills-배열에-새로운-값-추가하기-push">skills 배열에 새로운 값 추가하기: $push</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update(
+  { name: "Charlie" },
+  { $push: { skills: "angularjs" } }
+  )
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="skills-배열에-여러-값-추가하고-오름차순으로-정렬하기-each-sort">skills 배열에 여러 값 추가하고 오름차순으로 정렬하기: $each, $sort</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update(
+  { name: "Charlie" },
+  { $push: {
+      skills: {
+          $each: [ "c++", "java" ],
+          $sort: 1
+      }
+    }
+  }
+  )
+&gt; WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="skills-배열에-하나의-요소-제거-pull">skills 배열에 하나의 요소 제거: $pull</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; db.people.update(
+  { name: "Charlie" },
+  { $pull: { skills: "mongodb" } }
+ )
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="-커스텀-인덱스-추가">👉 커스텀 인덱스 추가</h4>
+
+<h5 id="이미-존재하는-collection-에-추가할-경우">이미 존재하는 collection 에 추가할 경우</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; db.products.createIndex(
+  { item: 1, quantity: -1 } ,
+  { name: "query for inventory" }
+)
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="인덱스-종류-쿼리">인덱스 종류 쿼리</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+</pre></td><td class="rouge-code"><pre>&gt; db.cities.getIndexes()
+[
+  {
+    "v" : 2,
+    "key" : {
+      "_id" : 1
+    },
+    "name" : "_id_",
+    "ns" : "test.cities"
+  },
+  {
+    "v" : 2,
+    "key" : {
+      "_id" : 1,
+      "checkins" : -1
+    },
+    "name" : "_id_1_checkins_-1",
+    "background" : true,
+    "ns" : "test.cities"
+  },
+  {
+    "v" : 2,
+    "key" : {
+      "geolocation" : "2dsphere",
+      "_id" : 1,
+      "checkins" : -1
+    },
+    "name" : "geolocation_2dsphere__id_1_checkins_-1",
+    "ns" : "test.cities",
+    "background" : true,
+    "2dsphereIndexVersion" : 3
+  }...
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="new-schema-field-레벨-에서-추가">new schema, field 레벨 에서 추가</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre> var animalSchema = new Schema({
+ 	name: String,
+    type: String,
+    tags: { type: [String], index: true } // animal의 tag를 인덱스로 지정
+  });
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h5 id="new-schema-compound-index는-항상-schema-레벨에서-추가하기">new schema, compound index는 항상 schema 레벨에서 추가하기</h5>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre> animalSchema.index({ name: 1, type: -1 }); // schema level
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<p><a href="https://velopert.com/479">https://velopert.com/479</a>
+<a href="https://www.mongodb.com/docs/manual/reference/operator/query/">https://www.mongodb.com/docs/manual/reference/operator/query/</a><br />
+<a href="https://velog.io/@rosewwross/MongoDB-%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95-%EB%B0%8F-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EC%A0%95%EB%A6%AC">https://velog.io/@rosewwross/MongoDB-%EC%B4%88%EA%B8%B0%EC%84%A4%EC%A0%95-%EB%B0%8F-%EC%BF%BC%EB%A6%AC%EB%AC%B8-%EC%A0%95%EB%A6%AC</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#db" class="page__taxonomy-item p-category" rel="tag">DB</a><span class="sep">, </span>
+    
+      <a href="/tags/#mongodb" class="page__taxonomy-item p-category" rel="tag">mongoDB</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84" class="page__taxonomy-item p-category" rel="tag">몽고디비</a><span class="sep">, </span>
+    
+      <a href="/tags/#%EC%BF%BC%EB%A6%AC%EB%AC%B8" class="page__taxonomy-item p-category" rel="tag">쿼리문</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#mongodb" class="page__taxonomy-item p-category" rel="tag">MongoDB</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time class="dt-published" datetime="2022-08-28T00:00:00+09:00">August 28, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=MongoDB+%EA%B8%B0%EB%B3%B8+%EC%BF%BC%EB%A6%AC%EB%AC%B8+%EC%A0%95%EB%A6%AC%20http%3A%2F%2Flocalhost%3A4000%2Fmongodb%2Fpost31%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fmongodb%2Fpost31%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fmongodb%2Fpost31%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/react/post30/" class="pagination--pager" title="리액트 Hooks : useCallback()
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">참고</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/post30/" rel="permalink">리액트 Hooks : useCallback()
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">useCallback 를 사용하여 함수 재사용하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/javascript/post29/" rel="permalink">JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">JSDoc 기능 사용법
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mariadb/post28/" rel="permalink">MySQL/MariaDB 원격 접속 허용하기 (Host ‘IP’ is not allowed to connect to this MySQL server)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터베이스 접근 권한 거부 해결하기
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/react/post27/" rel="permalink">PureComponent와 React.memo
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">리액트 성능개선, React.memo 현명하게 사용하기
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <aside class="sidebar__top">
+      <a href="#site-nav"> <i class="fas fa-angle-double-up fa-2x"></i></a>
+    </aside>
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 LIME. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+    <script>
+  'use strict';
+
+  (function() {
+    var commentContainer = document.querySelector('#utterances-comments');
+
+    if (!commentContainer) {
+      return;
+    }
+
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://utteranc.es/client.js');
+    script.setAttribute('repo', 'ilimes/ilimes.github.io');
+    script.setAttribute('issue-term', 'pathname');
+    
+    script.setAttribute('theme', 'github-light');
+    script.setAttribute('crossorigin', 'anonymous');
+
+    commentContainer.appendChild(script);
+  })();
+</script>
+
+  
+
+
+
+  
+    <script src="/assets/js/custom/dark-theme.js"></script>
+  
+
+
+
+  </body>
+</html>

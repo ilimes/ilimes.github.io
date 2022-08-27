@@ -172,4 +172,16 @@ var store = [{
         "tags": ["JSDoc","javaScript","자바스크립트","주석"],
         "url": "/javascript/post29/",
         "teaser": null
+      },{
+        "title": "리액트 Hooks : useCallback()",
+        "excerpt":"useMemo() 에 대한 내용은 관련 포스팅 을 참고해주세요 :) ✔️ useCallback() useCallback() 함수는 앞서 공부했던 useMemo() 함수와 더불어 리액트 성능 최적화에 사용되는 React Hooks 입니다. 간단히 말해 useMemo() 는 어떤 결과값을 재사용할 때 사용하였고, useCallback()은 함수를 새로 만들지 않고 재사용하고 싶을 때 사용하는 것입니다. 언뜻 보면 비슷해보이지만 확실히 다른 기능을...","categories": ["React"],
+        "tags": ["useCallback","useMemo","리액트","Hooks"],
+        "url": "/react/post30/",
+        "teaser": null
+      },{
+        "title": "MongoDB 기본 쿼리문 정리",
+        "excerpt":"✔️ MongoDB MongoDB는 NoSQL이라 고정된 스키마나 JOIN이 존재하지 않고 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그러한 동적 스키마형 문서를 Binary JSON(JavaScript Object Notaion) 라고 부릅니다. JSON 형태기 때문에 직관적이라 개발이 편리하고, 읽기 및 쓰기 성능이 뛰어나서 속도가 매우 빠릅니다. ✔️ RDB와 MongoDB 용어 비교 RDB와 MongoDB 용어를 비교하는 경우 아래와 같습니다....","categories": ["MongoDB"],
+        "tags": ["몽고디비","mongoDB","쿼리문","DB"],
+        "url": "/mongodb/post31/",
+        "teaser": null
       }]
