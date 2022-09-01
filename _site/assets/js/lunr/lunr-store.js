@@ -184,4 +184,16 @@ var store = [{
         "tags": ["몽고디비","mongoDB","쿼리문","DB"],
         "url": "/mongodb/post31/",
         "teaser": null
+      },{
+        "title": "간단하고 빠른 오픈소스 웹소켓 서버(soketi)",
+        "excerpt":"✔️ Soketi? C로 작성되어 Node.js로 포팅. 빠르고 스케일러블 → 1 CPU당 20만 커넥션 가능, 1k 사용자에게 메시지 전송하는데 6ms 연결/메시지/채널 등 제한 없음 Pusher Protocol v7을 사용하므로 기존 코드 그대로 이용 HTTP Webhook지원 - 채널 점유시 트리거 (Lambda와 연결) Prometheus 모니터링 지원 Pusher처럼 app 관리 지원 ✔️ 바로가기 Docs :...","categories": ["New"],
+        "tags": ["socket","soketi","웹소켓"],
+        "url": "/new/post32/",
+        "teaser": null
+      },{
+        "title": "UI/UX 디자인 공유 (1)",
+        "excerpt":"Ecommerce Dashboard  by. Bartosz Maryniaczyk      ✔️ 링크   https://dribbble.com/shots/13846221-Ecommerce-Dashboard   🔔포스팅 공지  개인 공부 기록용 블로그 입니다.  잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)  ","categories": ["Uiux"],
+        "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
+        "url": "/uiux/post33/",
+        "teaser": null
       }]

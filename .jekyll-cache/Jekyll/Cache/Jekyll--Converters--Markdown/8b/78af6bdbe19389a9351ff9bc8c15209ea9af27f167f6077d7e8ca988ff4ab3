@@ -1,0 +1,35 @@
+I"7
+<div class="list__item">
+    <article class="archive-item">
+        <div>
+            <span>
+              <a href="/new/post32/">간단하고 빠른 오픈소스 웹소켓 서버(soketi)</a>
+            </span>
+            <div style="margin: 3px 0 10px 0;">
+              <small> 
+                <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.01
+                <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#new" class="page__taxonomy-item-category" rel="tag">New</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 13px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(114, 114, 114); font-size: 13px;" href="/tags/#socket" rel="tag">socket</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 13px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(114, 114, 114); font-size: 13px;" href="/tags/#soketi" rel="tag">soketi</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #e7e7e7; border-radius: 13px; padding: 3px 5px 3px 5px;"><a class="page__taxonomy-item-tag" style="color: rgb(114, 114, 114); font-size: 13px;" href="/tags/#%EC%9B%B9%EC%86%8C%EC%BC%93" rel="tag">웹소켓</a></span>
+                
+            </span>
+        </span>
+              </small>
+            </div>
+        </div>
+      </article>
+</div>
+:ET

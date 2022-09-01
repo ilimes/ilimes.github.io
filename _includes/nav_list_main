@@ -68,11 +68,18 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">Figma</span>
+        <span class="nav__sub-title">Design</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Figma" %}
                         <li><a href="/categories/figma" class="">Figma ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Figma" %}
+                        <li><a href="/categories/uiux" class="">UI・UX ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -95,6 +102,13 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Issue" %}
                         <li><a href="/categories/issue" class="">문제 해결 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "New" %}
+                        <li><a href="/categories/new" class="">What's new ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
