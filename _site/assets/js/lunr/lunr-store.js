@@ -196,4 +196,10 @@ var store = [{
         "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
         "url": "/uiux/post33/",
         "teaser": null
+      },{
+        "title": "UI/UX 디자인 공유 (2)",
+        "excerpt":"Dashboard_UI  by. DStudio®      ✔️ 링크   https://dribbble.com/shots/13940752-Dashboard-UI   🔔포스팅 공지  개인 공부 기록용 블로그 입니다.  잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)  ","categories": ["Uiux"],
+        "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
+        "url": "/uiux/post34/",
+        "teaser": null
       }]
