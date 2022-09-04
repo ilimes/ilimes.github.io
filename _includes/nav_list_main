@@ -78,7 +78,7 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Figma" %}
+                    {% if category[0] == "Uiux" %}
                         <li><a href="/categories/uiux" class="">UI・UX ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
