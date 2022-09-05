@@ -208,4 +208,10 @@ var store = [{
         "tags": ["Firebase","google","파이어베이스"],
         "url": "/web/post35/",
         "teaser": null
+      },{
+        "title": "Node.js 몽고디비 (MongoDB) Driver API",
+        "excerpt":"✔️ Node.js MongoDB Driver API 최근 몽고디비와 Node.js를 연동해서 사용하다 보니 문법적으로 맞지 않아 당황스러운 경우가 종종 생기곤 했습니다. 예를 들어 아래와 같이 find 쿼리를 실행시키는 도중에 데이터 양을 제한하기 위해서 projection document를 포함하여 반환할 필드를 지정한 적이 있었는데 그 때 적용되지 않고 자꾸만 전체 필드값을 리턴하는 문제가 발생했습니다. 1...","categories": ["MongoDB"],
+        "tags": ["몽고디비","MongoDB","api"],
+        "url": "/mongodb/post36/",
+        "teaser": null
       }]

@@ -1,0 +1,35 @@
+I"<h3 id="️-nodejs-mongodb-driver-api">✔️ Node.js MongoDB Driver API</h3>
+
+<p>최근 몽고디비와 Node.js를 연동해서 사용하다 보니 문법적으로 맞지 않아 당황스러운 경우가 종종 생기곤 했습니다. 예를 들어 아래와 같이 <code class="language-plaintext highlighter-rouge">find</code> 쿼리를 실행시키는 도중에 데이터 양을 제한하기 위해서 projection document를 포함하여 반환할 필드를 지정한 적이 있었는데 그 때 적용되지 않고 자꾸만 전체 필드값을 리턴하는 문제가 발생했습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">Item001</span><span class="p">:</span><span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>알고보니 위와 같은 쿼리는 MongoDB shell에서는 맞지만 Node.js 드라이버에서는 적용되지 않기 때문이었습니다.<br />
+<br />
+Node.js MongoDB Driver API 문서를 살펴보니 projection 부분은 아래와 같이 사용해야 한다고 나와있더라고요.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">projection</span><span class="p">:{</span><span class="na">Item001</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 <code class="language-plaintext highlighter-rouge">{projection : {리턴할 필드 : 1}}</code> 로 옵션을 주게되면 정상적으로 적용됩니다.<br />
+드라이버 API가 정리되어 있는 링크는 아래에 있으니 저처럼 Node.js로 몽고디비를 개발하는데 익숙하지 않은 분들께서는 참고해서 개발하면 좋을 것 같습니다 :)</p>
+
+<h3 id="️-링크">✔️ 링크</h3>
+
+<p><a href="https://mongodb.github.io/node-mongodb-native/3.2/api/Collection.html#find">https://mongodb.github.io/node-mongodb-native/3.2/api/Collection.html#find</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET
