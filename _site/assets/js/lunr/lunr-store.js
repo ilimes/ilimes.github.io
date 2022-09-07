@@ -214,4 +214,10 @@ var store = [{
         "tags": ["몽고디비","MongoDB","api"],
         "url": "/mongodb/post36/",
         "teaser": null
+      },{
+        "title": "파이어베이스(firebase)와 리액트로 간단하게 구글 로그인 구현하기",
+        "excerpt":"✔️ 파이어베이스 구글 로그인 요즘 웹서비스에서 대부분 소셜 로그인을 지원하고 있고, 개발을 하다보면 소셜로그인이 필요한 경우가 생깁니다. 파이어베이스를 접하기 전에는 OAuth로 소셜 로그인을 구현할 수 있었지만, 파이어베이스를 사용하면 훨씬 간단하게 구현할 수 있습니다 :) https://ilimes.github.io/web/post35/ [파이어베이스가 무엇인지 궁금하시다면 위 링크를 클릭해보세요.] ✔️ 사용 방법 https://firebase.google.com/ 가장 먼저 파이어베이스를 사용하기 위해서는...","categories": ["Web"],
+        "tags": ["파이어베이스","firebase","구글로그인"],
+        "url": "/web/post37/",
+        "teaser": null
       }]
