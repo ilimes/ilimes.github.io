@@ -220,4 +220,10 @@ var store = [{
         "tags": ["파이어베이스","firebase","구글로그인"],
         "url": "/web/post37/",
         "teaser": null
+      },{
+        "title": "Git - Rebase 알아보기",
+        "excerpt":"✔️ Rebase란? rebase는 git에서 브랜치를 합치는 명령어로 실행결과만 놓고보면 merge와 유사하다고 할 수 있는데요. 두 명렁어의 차이는 커밋 히스토리가 달라진다는 것 입니다. rebase를 사용하면 커밋 순서도 변경할 수 있고 중복 커밋도 하나로 합칠 수 있어 이력 관리를 깔끔하게 할 수 있습니다. rebase는 말 그대로 기준(base)을 새롭게 설정한다는 뜻으로 이해하면 좋습니다....","categories": ["Git"],
+        "tags": ["깃","rebase","git"],
+        "url": "/git/post38/",
+        "teaser": null
       }]

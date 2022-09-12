@@ -1,0 +1,42 @@
+I"A<h3 id="️-rebase란">✔️ Rebase란?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">rebase</code>는 git에서 브랜치를 합치는 명령어로 실행결과만 놓고보면 <code class="language-plaintext highlighter-rouge">merge</code>와 유사하다고 할 수 있는데요. 두 명렁어의 차이는 커밋 히스토리가 달라진다는 것 입니다.<br />
+<br />
+<code class="language-plaintext highlighter-rouge">rebase</code>를 사용하면 커밋 순서도 변경할 수 있고 중복 커밋도 하나로 합칠 수 있어 이력 관리를 깔끔하게 할 수 있습니다. <code class="language-plaintext highlighter-rouge">rebase</code>는 말 그대로 기준(base)을 새롭게 설정한다는 뜻으로 이해하면 좋습니다.</p>
+
+<h3 id="️-rebase-명렁어">✔️ Rebase 명렁어</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>$ git rebase [newbase]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-rebase-사용하기">✔️ Rebase 사용하기</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>$ git rebase -i HEAD~2
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>2개의 커밋 메시지를 합치고 싶은 경우에는 위와 같은 명령어를 사용할 수 있구요.</p>
+
+<h3 id="️-rebase의-장점">✔️ Rebase의 장점</h3>
+
+<p><code class="language-plaintext highlighter-rouge">rebase</code>는 앞서 소개에서 말했듯이 커밋 히스토리를 깔끔하게 할 수 있습니다. 추가로 공유 브랜치에 변경사항을 즉각 반영 할 수도 있는데요. 즉각적으로 변경사항 대응이 필요한 경우에는 <code class="language-plaintext highlighter-rouge">rebase</code>를 사용하는 것이 편리할 수 있습니다.<br />
+<br />
+=&gt; merge는 rebase에 비해서 쉽고 안전하다, 하지만 커밋 히스토리가 지저분해진다.</p>
+
+<h3 id="️-rebase-사용-시-주의할-점">✔️ Rebase 사용 시 주의할 점</h3>
+
+<p>아무래도 여러명이 작업하는 브랜치에서 <code class="language-plaintext highlighter-rouge">rebase</code>를 사용하게 되면 다른사람들이 작성한 커밋 히스토리를 바꿔버릴 가능성이 있습니다. 그렇게 되면 다른 사람들이 작업하던 부분이 날라가서 새로 작업해야하는 불상사가 일어날 수도 있겠죠. 그래서 <code class="language-plaintext highlighter-rouge">rebase</code>는 웬만하면 혼자 작업하는 브랜치에서 사용하는 것이 가장 좋고 그런 경우에는 문제될 것이 없습니다. 다만 협업을 하면서 사용하는 경우에는 주의를 기울여 잘 사용해야합니다 :)</p>
+
+<h3 id="️-참고사이트">✔️ 참고사이트</h3>
+
+<ul>
+  <li><a href="https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0">https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0</a></li>
+  <li><a href="https://docs.github.com/en/get-started/using-git/using-git-rebase-on-the-command-line">https://docs.github.com/en/get-started/using-git/using-git-rebase-on-the-command-line</a></li>
+  <li><a href="https://www.atlassian.com/ko/git/tutorials/rewriting-history/git-rebase">https://www.atlassian.com/ko/git/tutorials/rewriting-history/git-rebase</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>
+:ET
