@@ -2,11 +2,13 @@
 main:
   # - title: "홈"
   #   url: "https://ilimes.github.io"
-  - title: "카테고리"
-    url: /categories/
-  - title: "태그"
+  # - title: "카테고리"
+  #   url: /categories/
+  - title: "About me"
+    url: /about/
+  - title: "Tags"
     url: /tags/
-  - title: "검색"
+  - title: "Search"
     url: /search/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
