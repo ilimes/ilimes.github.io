@@ -226,4 +226,10 @@ var store = [{
         "tags": ["깃","rebase","git"],
         "url": "/git/post38/",
         "teaser": null
+      },{
+        "title": "Visual Studio Code(VSCODE) 초기화 및 재설치 하기",
+        "excerpt":"✔️ 문제 최근 한글 이름으로 되어있는 사용자 이름을 영어로 바꾸고나서 VSCODE를 사용할 때 내용이 업데이트 되면 이따금씩 오류가 발생하게 되었습니다. 그래서 해결방법을 찾아보던 와중에 가장 쉬운 해결방법은 프로그램을 재설치 하는 것이라고 하여 모든 내용을 초기화 한 뒤에 VSCODE를 재설치하였습니다. (관련 링크 : https://github.com/microsoft/vscode/issues/102039) ✔️ 삭제 및 재설치 1. 플러그인 삭제...","categories": ["Issue"],
+        "tags": ["vscode","재설치","vscode재설치"],
+        "url": "/issue/post39/",
+        "teaser": null
       }]

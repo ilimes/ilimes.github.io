@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-17T12:18:31+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Rebase 알아보기</title><link href="http://localhost:4000/git/post38/" rel="alternate" type="text/html" title="Git - Rebase 알아보기" /><published>2022-09-12T00:00:00+09:00</published><updated>2022-09-12T00:00:00+09:00</updated><id>http://localhost:4000/git/post38</id><content type="html" xml:base="http://localhost:4000/git/post38/"><![CDATA[<h3 id="️-rebase란">✔️ Rebase란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-09-24T23:13:59+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Visual Studio Code(VSCODE) 초기화 및 재설치 하기</title><link href="http://localhost:4000/issue/post39/" rel="alternate" type="text/html" title="Visual Studio Code(VSCODE) 초기화 및 재설치 하기" /><published>2022-09-24T00:00:00+09:00</published><updated>2022-09-24T00:00:00+09:00</updated><id>http://localhost:4000/issue/post39</id><content type="html" xml:base="http://localhost:4000/issue/post39/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p>최근 한글 이름으로 되어있는 사용자 이름을 영어로 바꾸고나서 VSCODE를 사용할 때 내용이 업데이트 되면 이따금씩 오류가 발생하게 되었습니다. 그래서 해결방법을 찾아보던 와중에 가장 쉬운 해결방법은 프로그램을 재설치 하는 것이라고 하여 모든 내용을 초기화 한 뒤에 VSCODE를 재설치하였습니다. (관련 링크 : <a href="https://github.com/microsoft/vscode/issues/102039">https://github.com/microsoft/vscode/issues/102039</a>)</p>
+
+<h3 id="️-삭제-및-재설치">✔️ 삭제 및 재설치</h3>
+
+<h4 id="1-플러그인-삭제">1. 플러그인 삭제</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>c:\user\사용자이름\.vscode 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 폴더를 삭제해줍니다.</p>
+
+<h4 id="2-설정파일-삭제">2. 설정파일 삭제</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>c:\user\사용자이름\AppData\Roaming\Code
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>마찬가지로 위 폴더도 삭제해줍니다. AppData 폴더의 경우는 보이지 않을 수 있는데 숨김 폴더 보기 설정을 해주면 됩니다.</p>
+
+<h4 id="3-제어판에서-visual-studio-code-삭제">3. 제어판에서 Visual Studio Code 삭제</h4>
+
+<p>제어판으로 들어가서 <code class="language-plaintext highlighter-rouge">Microsoft Visual Studio Code (User)</code> 를 찾아 삭제해줍니다.</p>
+
+<h4 id="4-재설치">4. 재설치</h4>
+
+<p>삭제가 완료되었으면 아래 링크로 이동하여 설치파일을 다운로드 받은 뒤 실행시켜 재설치 과정을 진행하면 됩니다.</p>
+
+<p>👇 Visual Studio Code 설치 링크<br />
+<a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+
+<p>이렇게 하면 각종 설정이 초기화 된 상태로 재설치가 완료됩니다 😊</p>
+
+<h3 id="️-참고사이트">✔️ 참고사이트</h3>
+
+<ul>
+  <li><a href="https://rgb-white.tistory.com/13">https://rgb-white.tistory.com/13</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="vscode" /><category term="재설치" /><category term="vscode재설치" /><summary type="html"><![CDATA[VSCODE 완전 초기화 한 후 재설치 하기]]></summary></entry><entry><title type="html">Git - Rebase 알아보기</title><link href="http://localhost:4000/git/post38/" rel="alternate" type="text/html" title="Git - Rebase 알아보기" /><published>2022-09-12T00:00:00+09:00</published><updated>2022-09-12T00:00:00+09:00</updated><id>http://localhost:4000/git/post38</id><content type="html" xml:base="http://localhost:4000/git/post38/"><![CDATA[<h3 id="️-rebase란">✔️ Rebase란?</h3>
 
 <p><code class="language-plaintext highlighter-rouge">rebase</code>는 git에서 브랜치를 합치는 명령어로 실행결과만 놓고보면 <code class="language-plaintext highlighter-rouge">merge</code>와 유사하다고 할 수 있는데요. 두 명렁어의 차이는 커밋 히스토리가 달라진다는 것 입니다.<br />
 <br />
@@ -338,17 +379,6 @@ by. <a href="https://dribbble.com/D-studio">DStudio®</a></p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (1)</title><link href="http://localhost:4000/uiux/post33/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (1)" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post33</id><content type="html" xml:base="http://localhost:4000/uiux/post33/"><![CDATA[<p>Ecommerce Dashboard<br />
-by. <a href="https://dribbble.com/bartoszmaryniaczyk">Bartosz Maryniaczyk</a></p>
-
-<p><img width="800" alt="image" src="https://user-images.githubusercontent.com/95404736/187932468-43f74b55-0328-45be-8bc0-c22f2257869f.png" /></p>
-
-<h3 id="️-링크">✔️ 링크</h3>
-
-<p><a href="https://dribbble.com/shots/13846221-Ecommerce-Dashboard">https://dribbble.com/shots/13846221-Ecommerce-Dashboard</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
 잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">간단하고 빠른 오픈소스 웹소켓 서버(soketi)</title><link href="http://localhost:4000/new/post32/" rel="alternate" type="text/html" title="간단하고 빠른 오픈소스 웹소켓 서버(soketi)" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/new/post32</id><content type="html" xml:base="http://localhost:4000/new/post32/"><![CDATA[<p><img src="https://user-images.githubusercontent.com/95404736/187929585-64aad5ea-46ee-4cf7-b2f9-83bf5aeb0606.png" alt="image" /></p>
 
 <h3 id="️-soketi">✔️ Soketi?</h3>
@@ -374,7 +404,18 @@ Fork on Github : <a href="https://github.com/soketi/soketi">https://github.com/s
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="New" /><category term="socket" /><category term="soketi" /><category term="웹소켓" /><summary type="html"><![CDATA[웹소켓 서버 soketi]]></summary></entry><entry><title type="html">MongoDB 기본 쿼리문 정리</title><link href="http://localhost:4000/mongodb/post31/" rel="alternate" type="text/html" title="MongoDB 기본 쿼리문 정리" /><published>2022-08-28T00:00:00+09:00</published><updated>2022-08-28T00:00:00+09:00</updated><id>http://localhost:4000/mongodb/post31</id><content type="html" xml:base="http://localhost:4000/mongodb/post31/"><![CDATA[<h3 id="️-mongodb">✔️ MongoDB</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="New" /><category term="socket" /><category term="soketi" /><category term="웹소켓" /><summary type="html"><![CDATA[웹소켓 서버 soketi]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (1)</title><link href="http://localhost:4000/uiux/post33/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (1)" /><published>2022-09-01T00:00:00+09:00</published><updated>2022-09-01T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post33</id><content type="html" xml:base="http://localhost:4000/uiux/post33/"><![CDATA[<p>Ecommerce Dashboard<br />
+by. <a href="https://dribbble.com/bartoszmaryniaczyk">Bartosz Maryniaczyk</a></p>
+
+<p><img width="800" alt="image" src="https://user-images.githubusercontent.com/95404736/187932468-43f74b55-0328-45be-8bc0-c22f2257869f.png" /></p>
+
+<h3 id="️-링크">✔️ 링크</h3>
+
+<p><a href="https://dribbble.com/shots/13846221-Ecommerce-Dashboard">https://dribbble.com/shots/13846221-Ecommerce-Dashboard</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">MongoDB 기본 쿼리문 정리</title><link href="http://localhost:4000/mongodb/post31/" rel="alternate" type="text/html" title="MongoDB 기본 쿼리문 정리" /><published>2022-08-28T00:00:00+09:00</published><updated>2022-08-28T00:00:00+09:00</updated><id>http://localhost:4000/mongodb/post31</id><content type="html" xml:base="http://localhost:4000/mongodb/post31/"><![CDATA[<h3 id="️-mongodb">✔️ MongoDB</h3>
 
 <p>MongoDB는 NoSQL이라 고정된 스키마나 JOIN이 존재하지 않고 동적 스키마형 문서를 사용합니다. 몽고디비에서는 그러한 동적 스키마형 문서를 Binary JSON(JavaScript Object Notaion) 라고 부릅니다.
 JSON 형태기 때문에 직관적이라 개발이 편리하고, 읽기 및 쓰기 성능이 뛰어나서 속도가 매우 빠릅니다.</p>
@@ -834,444 +875,4 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="useCallback" /><category term="useMemo" /><category term="리액트" /><category term="Hooks" /><summary type="html"><![CDATA[useCallback 를 사용하여 함수 재사용하기]]></summary></entry><entry><title type="html">JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기</title><link href="http://localhost:4000/javascript/post29/" rel="alternate" type="text/html" title="JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기" /><published>2022-08-27T00:00:00+09:00</published><updated>2022-08-27T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post29</id><content type="html" xml:base="http://localhost:4000/javascript/post29/"><![CDATA[<h3 id="️-jsdoc-이란">✔️ JSDoc 이란?</h3>
-
-<p>JSDoc은 자바스크립트 API 문서 생성기인데요. VSCode나 Webstorm 같은 편집기에서 기본으로 제공하고 있는 기능입니다. 이 기능을 사용하면 주석을 예쁘게 만들 수 있을 뿐만 아니라 함수 정보, 타입 힌트 등을 제공할 수 있어서 유용합니다.</p>
-
-<h3 id="️-jsdoc-사용법">✔️ JSDoc 사용법</h3>
-
-<p>사용법은 간단합니다. 아래와 같이 입력하면 됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="cm">/** ... */</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>기본 형태가 위와 같기 때문에 각 주석은 반드시 <code class="language-plaintext highlighter-rouge">/** ... */</code> 사이에 기술해야 합니다. 만약 <code class="language-plaintext highlighter-rouge">/*</code>, <code class="language-plaintext highlighter-rouge">/***</code> 와 같이 시작하게 된다면 그것은 무시됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * 이름과 나이 입력받아 출력하는 함수
- * @param {string} name 이름 입력란 입니다!
- * @param {number} age 나이 입력란 입니다!
- * @returns 이름과 나이를 출력합니다~
- */</span>
-<span class="kd">const</span> <span class="nx">lime</span> <span class="o">=</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">name</span> <span class="o">+</span> <span class="nx">age</span><span class="p">;</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>예를 들면 위와 같이 사용될 수 있습니다. 주석 설명은 자주 사용할만한 것들로 정리해놓았으니 아래를 참고해주세요. 추가로 더 자세한 내용이 궁금하시다면 참고사이트에 있는 JSDoc 문서를 참고해주세요 :)</p>
-
-<h3 id="️-주석설명">✔️ 주석설명</h3>
-
-<h4 id="-문서-주석">👉 문서 주석</h4>
-
-<h5 id="version"><code class="language-plaintext highlighter-rouge">@version</code></h5>
-
-<p>라이브러리 버전 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * Solves equations of the form a * x = b. Returns the value
- * of x.
- * @version 1.2.3
- * @tutorial solver
- */</span>
-<span class="kd">function</span> <span class="nx">solver</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">b</span> <span class="o">/</span> <span class="nx">a</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="file-fileoverview-overview"><code class="language-plaintext highlighter-rouge">@file (@fileoverview, @overview)</code></h5>
-
-<p>파일 정보를 나타냅니다.</p>
-
-<h5 id="copyright"><code class="language-plaintext highlighter-rouge">@copyright</code></h5>
-
-<p>저작권 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @file This is my cool script.
- * @copyright Michael Mathews 2011
- */</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="license"><code class="language-plaintext highlighter-rouge">@license</code></h5>
-
-<p>소프트웨어 라이센스 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * Utility functions for the foo package.
- * @module foo/util
- * @license Apache-2.0
- */</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="author"><code class="language-plaintext highlighter-rouge">@author</code></h5>
-
-<p>작성자 정보를 나타냅니다. 이메일 주소를 입력하는 경우에는 &lt;&gt; 를 활용하면 됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @author Jane Smith &lt;jsmith@example.com&gt;
- */</span>
-<span class="kd">function</span> <span class="nx">MyClass</span><span class="p">()</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="-함수-주석">👉 함수 주석</h4>
-
-<h5 id="this"><code class="language-plaintext highlighter-rouge">@this</code></h5>
-
-<p>this 키워드가 참조하는 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="cm">/** @constructor */</span>
-<span class="kd">function</span> <span class="nx">Greeter</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">setName</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="cm">/** @this Greeter */</span>
-<span class="kd">function</span> <span class="nx">setName</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-  <span class="cm">/** document me */</span>
-  <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="constant-const"><code class="language-plaintext highlighter-rouge">@constant (@const)</code></h5>
-
-<p>상수 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="cm">/** @constant
-    @type {string}
-    @default
-*/</span>
-<span class="kd">const</span> <span class="nx">RED</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">FF0000</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="cm">/** @constant {number} */</span>
-<span class="kd">var</span> <span class="nx">ONE</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="description"><code class="language-plaintext highlighter-rouge">@description</code></h5>
-
-<p>설명 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @param {number} a
- * @param {number} b
- * @returns {number}
- * @description Add two numbers.
- */</span>
-<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>만약 첫 번째 줄인 경우 아래처럼 생략하여 쓸 수 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * Add two numbers.
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */</span>
-<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="throws-exception"><code class="language-plaintext highlighter-rouge">@throws (@exception)</code></h5>
-
-<p>오류나 예외사항을 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @throws {InvalidArgumentException}
- */</span>
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @throws Will throw an error if the argument is null.
- */</span>
-<span class="kd">function</span> <span class="nx">bar</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @throws {DivideByZero} Argument x must be non-zero.
- */</span>
-<span class="kd">function</span> <span class="nx">baz</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="param-arg-argument"><code class="language-plaintext highlighter-rouge">@param (@arg, @argument)</code>`</h5>
-
-<p>파라미터 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @param {string} somebody Somebody's name.
- */</span>
-<span class="kd">function</span> <span class="nx">sayHello</span><span class="p">(</span><span class="nx">somebody</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">somebody</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="callback"><code class="language-plaintext highlighter-rouge">@callback</code></h5>
-
-<p>콜백으로 받은 인자 및 반환값에 대한 정보를 나타냅니다.</p>
-
-<ul>
-  <li>클래스별</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @class
- */</span>
-<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
-
-<span class="cm">/**
- * Send a request.
- * @param {Requester~requestCallback} cb - The callback that handles the response.
- */</span>
-<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// code</span>
-<span class="p">};</span>
-
-<span class="cm">/**
- * This callback is displayed as part of the Requester class.
- * @callback Requester~requestCallback
- * @param {number} responseCode
- * @param {string} responseMessage
- */</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>글로벌</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @class
- */</span>
-<span class="kd">function</span> <span class="nx">Requester</span><span class="p">()</span> <span class="p">{}</span>
-
-<span class="cm">/**
- * Send a request.
- * @param {requestCallback} cb - The callback that handles the response.
- */</span>
-<span class="nx">Requester</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">send</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">cb</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// code</span>
-<span class="p">};</span>
-
-<span class="cm">/**
- * This callback is displayed as a global member.
- * @callback requestCallback
- * @param {number} responseCode
- * @param {string} responseMessage
- */</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="requires"><code class="language-plaintext highlighter-rouge">@requires</code></h5>
-
-<p>필요한 모듈이 있음을 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * This class requires the modules {@link module:xyzcorp/helper} and
- * {@link module:xyzcorp/helper.ShinyWidget#polish}.
- * @class
- * @requires module:xyzcorp/helper
- * @requires xyzcorp/helper.ShinyWidget#polish
- */</span>
-<span class="kd">function</span> <span class="nx">Widgetizer</span><span class="p">()</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="todo"><code class="language-plaintext highlighter-rouge">@todo</code></h5>
-
-<p>해야할 일이나 작업에 대한 정보를 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * @todo Write the documentation.
- * @todo Implement this function.
- */</span>
-<span class="kd">function</span> <span class="nx">foo</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// write me</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="return-returns"><code class="language-plaintext highlighter-rouge">@return (@returns)</code></h5>
-
-<p>리턴값을 나타냅니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * Returns the sum of a and b
- * @param {number} a
- * @param {number} b
- * @returns {number}
- */</span>
-<span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h5 id="since"><code class="language-plaintext highlighter-rouge">@since</code></h5>
-
-<p>클래스나 메소드 등이 특정 버전에서 추가되었을 경우 사용합니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="cm">/**
- * Provides access to user information.
- * @since 1.0.1
- */</span>
-<span class="kd">function</span> <span class="nx">UserRecord</span><span class="p">()</span> <span class="p">{}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-참고사이트">✔️ 참고사이트</h3>
-
-<p><a href="https://jsdoc.app/">https://jsdoc.app/</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="JSDoc" /><category term="javaScript" /><category term="자바스크립트" /><category term="주석" /><summary type="html"><![CDATA[JSDoc 기능 사용법]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="useCallback" /><category term="useMemo" /><category term="리액트" /><category term="Hooks" /><summary type="html"><![CDATA[useCallback 를 사용하여 함수 재사용하기]]></summary></entry></feed>
