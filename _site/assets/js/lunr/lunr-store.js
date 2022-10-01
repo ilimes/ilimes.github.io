@@ -238,4 +238,10 @@ var store = [{
         "tags": ["npm","yarn","개발상식"],
         "url": "/web/post40/",
         "teaser": null
+      },{
+        "title": "UI/UX 디자인 공유 (3)",
+        "excerpt":"Dashboard  by. Sajon      ✔️ 링크   https://dribbble.com/shots/15025300-Dashboard   🔔포스팅 공지  개인 공부 기록용 블로그 입니다.  잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)  ","categories": ["Uiux"],
+        "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
+        "url": "/uiux/post41/",
+        "teaser": null
       }]
