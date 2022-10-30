@@ -244,4 +244,10 @@ var store = [{
         "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
         "url": "/uiux/post41/",
         "teaser": null
+      },{
+        "title": "Mac, 맥북 업데이트 후 xcrun: error: invalid active developer path 에러 나는 경우 해결방법",
+        "excerpt":"✔️ 오류발생 최근 macOS를 Ventura로 업그레이드 했는데 개발 관련 도구(이를테면 git)가 missing xcrun 에러를 내뿜게 되었습니다. 알고보니 아주 간단하게 해결할 수 있는 문제더라고요. 그래서 오늘은 맥북 사용자 분들께서 해당 오류가 나는 경우에 간단하게 해결할 수 있는 방법을 공유해드리고자 합니다. ✔️ 오류원인 이러한 오류가 발생하는 것은 업데이트 과정을 거친 뒤에 CommandLineTools을...","categories": ["Issue"],
+        "tags": ["mac","맥북","xcrun","xcode","error","에러"],
+        "url": "/issue/post42/",
+        "teaser": null
       }]
