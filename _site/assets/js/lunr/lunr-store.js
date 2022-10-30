@@ -250,4 +250,10 @@ var store = [{
         "tags": ["mac","맥북","xcrun","xcode","error","에러"],
         "url": "/issue/post42/",
         "teaser": null
+      },{
+        "title": "리액트 Redux 기초 개념 정리",
+        "excerpt":"✔️ Redux란? 리덕스는 리액트에서 많이 사용되는 상태 관리 라이브러리 중 하나입니다. 리덕스를 사용하게 되면 컴포넌트의 상태 업데이트 관련 로직을 다른 파일로 분리시켜 효율적인 관리가 가능하게 됩니다. ✔️ Redux 설치 1 npm i redux react-redux ✔️ Redux 기본개념 리덕스는 크게 3가지의 기본 개념이 있습니다. 동일한 데이터는 항상 같은 곳에서 가지고 온다....","categories": ["React"],
+        "tags": ["리액트","리덕스","redux","react","리덕스기초"],
+        "url": "/react/post43/",
+        "teaser": null
       }]
