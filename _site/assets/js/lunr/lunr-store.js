@@ -256,4 +256,10 @@ var store = [{
         "tags": ["리액트","리덕스","redux","react","리덕스기초"],
         "url": "/react/post43/",
         "teaser": null
+      },{
+        "title": "리액트 조건부 렌더링 패턴 및 옵셔널 체이닝",
+        "excerpt":"✔️ 조건부 렌더링이란? 리액트에서는 JSX라는 문법을 사용하고, 조건부 렌더링을 하는 것은 JS에서 if문 등을 사용하여 조건처리를 하듯이 UI 업데이트를 하는 것을 말합니다. ✔️ 조건부 렌더링 패턴 조건부 렌더링 패턴으로는 if-else 패턴, : ? 패턴(삼항연산자), &amp;&amp; 패턴, switch case 패턴, enum 패턴, HOC 패턴 등이 있습니다. 오늘은 이 중에서 : ?...","categories": ["React"],
+        "tags": ["리액트","조건부렌더링","js","자바스크립트조건부렌더링","연산자","옵셔널체이닝","optional-chaining"],
+        "url": "/react/post44/",
+        "teaser": null
       }]
