@@ -1,4 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-09T19:38:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기</title><link href="http://localhost:4000/nodejs/post45/" rel="alternate" type="text/html" title="Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post45</id><content type="html" xml:base="http://localhost:4000/nodejs/post45/"><![CDATA[<h3 id="️-nodejs-파일-시스템-모듈로-데이터-읽기">✔️ Node.js 파일 시스템 모듈로 데이터 읽기</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-09T19:54:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">[Lv.1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/codingtest/post46/" rel="alternate" type="text/html" title="[Lv.1] 나머지가 1이 되는 수 찾기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post46</id><content type="html" xml:base="http://localhost:4000/codingtest/post46/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">https://school.programmers.co.kr/learn/courses/30/lessons/87389</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>단순하게 for 반복문을 사용하여 해결</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기</title><link href="http://localhost:4000/nodejs/post45/" rel="alternate" type="text/html" title="Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post45</id><content type="html" xml:base="http://localhost:4000/nodejs/post45/"><![CDATA[<h3 id="️-nodejs-파일-시스템-모듈로-데이터-읽기">✔️ Node.js 파일 시스템 모듈로 데이터 읽기</h3>
 
 <p>오늘은 파일 시스템 모듈로 데이터를 읽는 방법을 소개해드리도록 하겠습니다. 사용 방법은 매우 간단합니다. fs 모듈을 우선 불러와야하구요. 아래에서 사용 가능한 2가지 메서드를 소개해드리겠습니다.</p>
 
@@ -735,38 +763,4 @@ $ git merge feature
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="파이어베이스" /><category term="firebase" /><category term="구글로그인" /><summary type="html"><![CDATA[파이어베이스 구글 로그인]]></summary></entry><entry><title type="html">Node.js 몽고디비 (MongoDB) Driver API</title><link href="http://localhost:4000/mongodb/post36/" rel="alternate" type="text/html" title="Node.js 몽고디비 (MongoDB) Driver API" /><published>2022-09-05T00:00:00+09:00</published><updated>2022-09-05T00:00:00+09:00</updated><id>http://localhost:4000/mongodb/post36</id><content type="html" xml:base="http://localhost:4000/mongodb/post36/"><![CDATA[<h3 id="️-nodejs-mongodb-driver-api">✔️ Node.js MongoDB Driver API</h3>
-
-<p>최근 몽고디비와 Node.js를 연동해서 사용하다 보니 문법적으로 맞지 않아 당황스러운 경우가 종종 생기곤 했습니다. 예를 들어 아래와 같이 <code class="language-plaintext highlighter-rouge">find</code> 쿼리를 실행시키는 도중에 데이터 양을 제한하기 위해서 projection document를 포함하여 반환할 필드를 지정한 적이 있었는데 그 때 적용되지 않고 자꾸만 전체 필드값을 리턴하는 문제가 발생했습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">Item001</span><span class="p">:</span><span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>알고보니 위와 같은 쿼리는 MongoDB shell에서는 맞지만, Node.js 드라이버에서는 적용되지 않는 것이기 때문이었습니다.<br />
-<br />
-Node.js MongoDB Driver API 문서를 살펴보니 projection 부분은 아래와 같이 사용해야 한다고 나와있더라고요.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">projection</span><span class="p">:{</span><span class="na">Item001</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="p">...</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 <code class="language-plaintext highlighter-rouge">{projection : {리턴할 필드 : 1}}</code> 로 옵션을 주게되면 정상적으로 적용됩니다 😊<br />
-<br />
-드라이버 API가 정리되어 있는 링크는 아래에 있으니 저처럼 Node.js와 몽고디비로 개발하는데 익숙하지 않은 분들께서는 참고하시면 좋을 것 같습니다 :)</p>
-
-<h3 id="️-링크">✔️ 링크</h3>
-
-<p><a href="https://mongodb.github.io/node-mongodb-native/3.2/api/Collection.html#find">https://mongodb.github.io/node-mongodb-native/3.2/api/Collection.html#find</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MongoDB" /><category term="몽고디비" /><category term="MongoDB" /><category term="api" /><summary type="html"><![CDATA[Node.js MongoDB Driver API]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="파이어베이스" /><category term="firebase" /><category term="구글로그인" /><summary type="html"><![CDATA[파이어베이스 구글 로그인]]></summary></entry></feed>

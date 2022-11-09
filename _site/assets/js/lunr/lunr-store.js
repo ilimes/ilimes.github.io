@@ -268,4 +268,10 @@ var store = [{
         "tags": ["노드","노드js","nodejs","fs","파일시스템"],
         "url": "/nodejs/post45/",
         "teaser": null
+      },{
+        "title": "[Lv.1] 나머지가 1이 되는 수 찾기",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/87389 ✔️ 코드 1 2 3 4 5 6 7 function solution(n) { for (let i = 0; i &lt; n; i++) { if (n % i === 1) { return i; } } } ✔️ 풀이 단순하게 for 반복문을 사용하여 해결 🔔포스팅 공지 개인 공부 기록용 블로그...","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post46/",
+        "teaser": null
       }]
