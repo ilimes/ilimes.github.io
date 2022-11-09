@@ -262,4 +262,10 @@ var store = [{
         "tags": ["리액트","조건부렌더링","js","자바스크립트조건부렌더링","연산자","옵셔널체이닝","optional-chaining"],
         "url": "/react/post44/",
         "teaser": null
+      },{
+        "title": "Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기",
+        "excerpt":"✔️ Node.js 파일 시스템 모듈로 데이터 읽기 오늘은 파일 시스템 모듈로 데이터를 읽는 방법을 소개해드리도록 하겠습니다. 사용 방법은 매우 간단합니다. fs 모듈을 우선 불러와야하구요. 아래에서 사용 가능한 2가지 메서드를 소개해드리겠습니다. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 const fs...","categories": ["NodeJs"],
+        "tags": ["노드","노드js","nodejs","fs","파일시스템"],
+        "url": "/nodejs/post45/",
+        "teaser": null
       }]

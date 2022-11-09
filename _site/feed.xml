@@ -1,4 +1,52 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-04T00:00:08+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">리액트 조건부 렌더링 패턴 및 옵셔널 체이닝</title><link href="http://localhost:4000/react/post44/" rel="alternate" type="text/html" title="리액트 조건부 렌더링 패턴 및 옵셔널 체이닝" /><published>2022-11-03T00:00:00+09:00</published><updated>2022-11-03T00:00:00+09:00</updated><id>http://localhost:4000/react/post44</id><content type="html" xml:base="http://localhost:4000/react/post44/"><![CDATA[<h3 id="️-조건부-렌더링이란">✔️ 조건부 렌더링이란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-09T19:38:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기</title><link href="http://localhost:4000/nodejs/post45/" rel="alternate" type="text/html" title="Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post45</id><content type="html" xml:base="http://localhost:4000/nodejs/post45/"><![CDATA[<h3 id="️-nodejs-파일-시스템-모듈로-데이터-읽기">✔️ Node.js 파일 시스템 모듈로 데이터 읽기</h3>
+
+<p>오늘은 파일 시스템 모듈로 데이터를 읽는 방법을 소개해드리도록 하겠습니다. 사용 방법은 매우 간단합니다. fs 모듈을 우선 불러와야하구요. 아래에서 사용 가능한 2가지 메서드를 소개해드리겠습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">fs</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">//비동기</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">test.txt</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">,</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">//동기</span>
+<span class="k">try</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">fs</span><span class="p">.</span><span class="nx">readFileSync</span><span class="p">(</span><span class="dl">"</span><span class="s2">test.txt</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">utf8</span><span class="dl">"</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 <code class="language-plaintext highlighter-rouge">readFile()</code> 메서드를 사용하는 경우는 비동기로 데이터를 읽을 수 있고, <code class="language-plaintext highlighter-rouge">readFileSync()</code> 메서드를 사용하는 경우는 동기로 사용할 수 있습니다.</p>
+
+<p>여기서 주의할 점은 파일 시스템에서 데이터를 읽을 때 반드시 두번째 인자를 <code class="language-plaintext highlighter-rouge">utf8</code>로 명시 해줘야 한다는 것인데요. 만약에 생략하는 경우는 <code class="language-plaintext highlighter-rouge">data</code> 인자로 문자열이 아니라 <code class="language-plaintext highlighter-rouge">buffer</code> 가 넘어오기 때문에 원하는 값이 나오지 않을 수 있습니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="노드" /><category term="노드js" /><category term="nodejs" /><category term="fs" /><category term="파일시스템" /><summary type="html"><![CDATA[Node.js File System Module]]></summary></entry><entry><title type="html">리액트 조건부 렌더링 패턴 및 옵셔널 체이닝</title><link href="http://localhost:4000/react/post44/" rel="alternate" type="text/html" title="리액트 조건부 렌더링 패턴 및 옵셔널 체이닝" /><published>2022-11-03T00:00:00+09:00</published><updated>2022-11-03T00:00:00+09:00</updated><id>http://localhost:4000/react/post44</id><content type="html" xml:base="http://localhost:4000/react/post44/"><![CDATA[<h3 id="️-조건부-렌더링이란">✔️ 조건부 렌더링이란?</h3>
 
 <p>리액트에서는 JSX라는 문법을 사용하고, 조건부 렌더링을 하는 것은 JS에서 if문 등을 사용하여 조건처리를 하듯이 UI 업데이트를 하는 것을 말합니다.</p>
 
@@ -721,51 +769,4 @@ Node.js MongoDB Driver API 문서를 살펴보니 projection 부분은 아래와
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MongoDB" /><category term="몽고디비" /><category term="MongoDB" /><category term="api" /><summary type="html"><![CDATA[Node.js MongoDB Driver API]]></summary></entry><entry><title type="html">파이어베이스(Firebase)란?</title><link href="http://localhost:4000/web/post35/" rel="alternate" type="text/html" title="파이어베이스(Firebase)란?" /><published>2022-09-04T00:00:00+09:00</published><updated>2022-09-04T00:00:00+09:00</updated><id>http://localhost:4000/web/post35</id><content type="html" xml:base="http://localhost:4000/web/post35/"><![CDATA[<h3 id="️-파이어베이스란">✔️ 파이어베이스란?</h3>
-
-<p>파이어베이스는 2011년 파이어베이스라는 회사가 개발하고 2014년 이후 구글에서 인수하여 서비스를 이어나가고 있는 모바일 플랫폼인데요. 일종의 개발을 편리하게 해주는 유용한 플랫폼이라고 할 수 있습니다. 파이어베이스는 앱을 개발하고, 개선하고, 키워나갈 수 있는 도구 모음(toolset) 인데 만약 이러한 도구가 없다면 개발자는 서비스의 상당 부분을 직접 만들어내야만 합니다. 개발자는 보통 사용자 경험(UX)에 집중해야 하기 때문에 세세한 부분까지 전부 직접 만드는 것을 별로 좋아하지 않습니다. 만약 인증, DB, 머신러닝, 함수, 분석, 구성 설정, 푸시 메시지 등 파이어베이스로 만든 서비스들이 클라우드에 호스팅되면 개발자는 거의 아무런 노력을 들이지 않고 앱의 규모를 확장할 수 있습니다.</p>
-
-<h3 id="️-파이어베이스-제품군">✔️ 파이어베이스 제품군</h3>
-
-<p><img width="911" alt="image" src="https://user-images.githubusercontent.com/95404736/188302393-e3f5ff83-dc47-42b0-9015-430fa394dfd5.png" /></p>
-
-<h4 id="개발하기">개발하기</h4>
-
-<ul>
-  <li>인증(Authentication): 사용자 로그인 및 ID 관리</li>
-  <li>클라우드 함수(Cloud Functions): 서버 없이 이벤트 위주로 동작하는 백엔드</li>
-  <li>클라우드 파이어스토어(Cloud Firestore): 클라우드에 호스팅 된 실시간의 비관계형(NoSQL) 데이터베이스</li>
-  <li>클라우드 스토리지(Cloud Storage): 거대하게 확장할 수 있는 파일 스토리지</li>
-  <li>파이어베이스 호스팅(Firebase Hosting): 전 세계를 대상으로 한 웹 호스팅</li>
-  <li>머신러닝 키트(ML Kit): 일반적인 머신러닝(ML) 작업을 위한 SDK</li>
-  <li>실시간 데이터베이스(Realtime Database): 클라우드에 호스팅 된 실시간의 비관계형(NoSQL) 데이터베이스</li>
-</ul>
-
-<h4 id="개선하기">개선하기</h4>
-
-<ul>
-  <li>테스트 랩 : 클라우드에 호스팅 된 기기에서 다양한 규모로 앱 테스트를 자동화</li>
-  <li>비정상 종료 분석 : 앱이 비정상 종료되는 현상에 대한 명확한 판단과 조치</li>
-  <li>성능 모니터링 : 앱의 성능 이슈와 관련한 통찰력 확보</li>
-</ul>
-
-<h4 id="키워가기">키워가기</h4>
-
-<ul>
-  <li>분석 : 이용자들이 누구이며, 그들이 앱을 이용하는 방식을 이해</li>
-  <li>예측 : 머신러닝을 적용하고 분석하여, 사용자들의 행동을 예측</li>
-  <li>클라우드 메시징 : 사용자들에게 메시지와 알림 사항을 전송</li>
-  <li>인앱 메시징 : 활성 사용자들에게 타깃 메시지를 연결</li>
-  <li>원격 구성 : 새로운 버전을 배포하지 않고도 앱의 설정을 바꾸고, 변경사항을 모니터링</li>
-  <li>A/B 테스팅 : 마케팅 방식과 사용 적합성 테스트를 수행해서 가장 좋은 결과가 무엇인지를 확인</li>
-  <li>동적 링크 : 네이티브 앱 컨버전, 사용자 공유, 마케팅 캠페인 지원</li>
-  <li>앱 인덱싱 : 구글 검색과 연동하여 사용자들을 유지하는 데 도움</li>
-</ul>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<p><a href="https://firebase.google.com/docs?hl=ko">https://firebase.google.com/docs?hl=ko</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="Firebase" /><category term="google" /><category term="파이어베이스" /><summary type="html"><![CDATA[파이어베이스에 대해 알아보기]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MongoDB" /><category term="몽고디비" /><category term="MongoDB" /><category term="api" /><summary type="html"><![CDATA[Node.js MongoDB Driver API]]></summary></entry></feed>
