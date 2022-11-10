@@ -274,4 +274,10 @@ var store = [{
         "tags": ["코테","알고리즘","프로그래머스"],
         "url": "/codingtest/post46/",
         "teaser": null
+      },{
+        "title": "리액트 차트 라이브러리 Recharts 사용법",
+        "excerpt":"✔️ Recharts 사용하기 최근 업무를 진행하면서 데이터 시각화용 차트 라이브러리를 고민해보았는데, 디자인도 괜찮고 사용 방법도 간단한 Recharts 라는 라이브러리를 찾게 되어 최종적으로 해당 라이브러리를 사용하기로 결정하였습니다. ▼ 10 Best React Chart Libraries https://openbase.com/categories/js/best-react-chart-libraries 위 페이지에서도 알 수 있듯이 Recharts는 실제로 리액트 차트 라이브러브 Best10에 들 정도로 많이들 사용하고 있는 라이브러리입니다....","categories": ["React"],
+        "tags": ["차트","리차트","Recharts"],
+        "url": "/react/post47/",
+        "teaser": null
       }]
