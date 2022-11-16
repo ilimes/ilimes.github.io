@@ -360,6 +360,17 @@
 
 .nav__sub-title {
   border-bottom: 1px solid #5f6365;
-  width: 90%;
+  // width: 90%;
+  margin-right: 20px;
 }
 
+.nav_size {
+  font-size: 10px;
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 0.1rem 0.5rem;
+  vertical-align: middle;
+  margin-right: 20px;
+  float: right;
+  line-height: 1.85;
+}

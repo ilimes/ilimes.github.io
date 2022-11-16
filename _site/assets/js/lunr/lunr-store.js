@@ -280,4 +280,28 @@ var store = [{
         "tags": ["차트","리차트","Recharts"],
         "url": "/react/post47/",
         "teaser": null
+      },{
+        "title": "[Lv.1] 없는 숫자 더하기",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/86051 ✔️ 코드 1 2 3 4 5 6 7 function solution(numbers) { let answer = 0; for (let i = 0; i &lt; 10; i++) { if (!numbers.includes(i)) answer += i; } return answer; } ✔️ 풀이 0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다....","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post48/",
+        "teaser": null
+      },{
+        "title": "[Lv.1] 부족한 금액 계산하기",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/82612 ✔️ 코드 1 2 3 4 5 6 7 8 9 function solution(price, money, count) { let answer = 0; for (let i = 1; i &lt; count + 1; i++) { answer += price * i; } answer &gt; money ? (answer = answer - money)...","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post49/",
+        "teaser": null
+      },{
+        "title": "[Lv.1] 로또의 최고 순위와 최저 순위",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/77484 ✔️ 코드 1 2 3 4 5 6 7 8 9 10 11 12 13 function solution(lottos, win_nums) { const zeroCnt = lottos.reduce((acc, cur) =&gt; acc + (cur === 0 &amp;&amp; 1), 0); const lowCnt = lottos.reduce( (acc, cur) =&gt; acc + (win_nums.includes(cur) &amp;&amp; 1), 0 );...","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post50/",
+        "teaser": null
+      },{
+        "title": "UI/UX 디자인 공유 (4)",
+        "excerpt":"Dashboard  by. Dimo.ui      ✔️ 링크   https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI   🔔포스팅 공지  개인 공부 기록용 블로그 입니다.  잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)  ","categories": ["Uiux"],
+        "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
+        "url": "/uiux/post51/",
+        "teaser": null
       }]

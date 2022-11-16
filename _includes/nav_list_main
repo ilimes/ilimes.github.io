@@ -8,7 +8,10 @@
   <ul class="nav__items" id="category_tag_menu">
       <!--전체 글 수-->
       <li>
-            📂 <span style="font-family:'Cafe24Oneprettynight';">전체 글 수</style> {{sum}} <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+        </svg> <span style="font-family:'Cafe24Oneprettynight'; font-size: 16px; vertical-align: top; font-weight: bold;">전체 글 수</style> {{sum}} <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -19,7 +22,9 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Blog" %}
-                        <li><a href="/categories/blog" class="">Blog ({{category[1].size}})</a></li>
+                        <li>
+                            <a href="/categories/blog" class="">Blog<span class="nav_size">{{category[1].size}}</span></a>
+                        </li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -27,7 +32,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "React" %}
-                        <li><a href="/categories/react" class="">React ({{category[1].size}})</a></li>
+                        <li><a href="/categories/react" class="">React<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -35,28 +40,28 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "NodeJs" %}
-                        <li><a href="/categories/nodeJs" class="">Node.js ({{category[1].size}})</a></li>
+                        <li><a href="/categories/nodeJs" class="">Node.js<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "MariaDB" %}
-                        <li><a href="/categories/mariadb" class="">MariaDB ({{category[1].size}})</a></li>
+                        <li><a href="/categories/mariadb" class="">MariaDB<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "MongoDB" %}
-                        <li><a href="/categories/mongoDB" class="">MongoDB ({{category[1].size}})</a></li>
+                        <li><a href="/categories/mongoDB" class="">MongoDB<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Sequelize" %}
-                        <li><a href="/categories/sequelize" class="">Sequelize ({{category[1].size}})</a></li>
+                        <li><a href="/categories/sequelize" class="">Sequelize<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -64,7 +69,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "JavaScript" %}
-                        <li><a href="/categories/javaScript" class="">JavaScript ({{category[1].size}})</a></li>
+                        <li><a href="/categories/javaScript" class="">JavaScript<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -72,14 +77,14 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Figma" %}
-                        <li><a href="/categories/figma" class="">Figma ({{category[1].size}})</a></li>
+                        <li><a href="/categories/figma" class="">Figma<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Uiux" %}
-                        <li><a href="/categories/uiux" class="">UI・UX ({{category[1].size}})</a></li>
+                        <li><a href="/categories/uiux" class="">UI・UX<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -87,28 +92,28 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Web" %}
-                        <li><a href="/categories/web" class="">웹 개발 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/web" class="">웹 개발<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Git" %}
-                        <li><a href="/categories/git" class="">Git ({{category[1].size}})</a></li>
+                        <li><a href="/categories/git" class="">Git<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Issue" %}
-                        <li><a href="/categories/issue" class="">문제 해결 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/issue" class="">문제 해결<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "New" %}
-                        <li><a href="/categories/new" class="">What's new ({{category[1].size}})</a></li>
+                        <li><a href="/categories/new" class="">What's new<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -116,7 +121,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CodingTest" %}
-                        <li><a href="/categories/codingTest" class="">코딩 테스트 ({{category[1].size}})</a></li>
+                        <li><a href="/categories/codingTest" class="">코딩 테스트<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
