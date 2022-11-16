@@ -304,4 +304,10 @@ var store = [{
         "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
         "url": "/uiux/post51/",
         "teaser": null
+      },{
+        "title": "Git - Stash 사용법",
+        "excerpt":"✔️ Git stash란? 작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다. 작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다. ✔️...","categories": ["Git"],
+        "tags": ["stash","깃","commit","커밋"],
+        "url": "/git/post52/",
+        "teaser": null
       }]

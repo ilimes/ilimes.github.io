@@ -1,4 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-17T01:06:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">UI/UX 디자인 공유 (4)</title><link href="http://localhost:4000/uiux/post51/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (4)" /><published>2022-11-15T00:00:00+09:00</published><updated>2022-11-15T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post51</id><content type="html" xml:base="http://localhost:4000/uiux/post51/"><![CDATA[<p>Dashboard<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-17T01:25:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
+
+<p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
+작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
+
+<h3 id="️-git-stash-사용법">✔️ Git stash 사용법</h3>
+
+<h4 id="git-stash">git stash</h4>
+
+<p>작업 임시 저장, 명령어 사용 시 스택에 새로운 stash가 생성됨</p>
+
+<h4 id="git-stash-list">git stash list</h4>
+
+<p>stash 목록 확인</p>
+
+<h4 id="git-stash-apply">git stash apply</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>git stash apply  // 가장 최근의 stash를 가져오기
+git stash apply [stash명]  // 해당 stash명의 stash 가져오기
+git stash apply --index  // Staged 상태였던 작업들을 다시 Staged상태로 복원
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="git-stash-drop">git stash drop</h4>
+
+<p>stash 제거</p>
+
+<h4 id="git-stash-pop">git stash pop</h4>
+
+<p>apply + drop 같은 느낌, 적용과 동시에 해당 stash를 제거</p>
+
+<h4 id="git-stash-show--p--git-apply--r">git stash show -p | git apply -R</h4>
+
+<p>stash 잘못 적용한 경우 사용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>// 가장 최근의 stash를 사용하여 패치를 만들고 거꾸로 적용
+git stash show -p | git apply -R 
+
+// stash 이름에 해당하는 stash를 이용하여 거꾸로 적용
+git stash show -p [stash 이름] | git apply -R
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (4)</title><link href="http://localhost:4000/uiux/post51/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (4)" /><published>2022-11-15T00:00:00+09:00</published><updated>2022-11-15T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post51</id><content type="html" xml:base="http://localhost:4000/uiux/post51/"><![CDATA[<p>Dashboard<br />
 by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui</a></p>
 
 <p><img width="1045" alt="image" src="https://user-images.githubusercontent.com/95404736/201929424-043cda83-f50a-40ff-8278-f58e41ba7fd1.png" /></p>
@@ -346,35 +397,7 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="차트" /><category term="리차트" /><category term="Recharts" /><summary type="html"><![CDATA[React 차트 라이브러리 - Recharts]]></summary></entry><entry><title type="html">[Lv.1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/codingtest/post46/" rel="alternate" type="text/html" title="[Lv.1] 나머지가 1이 되는 수 찾기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post46</id><content type="html" xml:base="http://localhost:4000/codingtest/post46/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">https://school.programmers.co.kr/learn/courses/30/lessons/87389</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>단순하게 for 반복문을 사용하여 해결</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기</title><link href="http://localhost:4000/nodejs/post45/" rel="alternate" type="text/html" title="Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post45</id><content type="html" xml:base="http://localhost:4000/nodejs/post45/"><![CDATA[<h3 id="️-nodejs-파일-시스템-모듈로-데이터-읽기">✔️ Node.js 파일 시스템 모듈로 데이터 읽기</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="차트" /><category term="리차트" /><category term="Recharts" /><summary type="html"><![CDATA[React 차트 라이브러리 - Recharts]]></summary></entry><entry><title type="html">Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기</title><link href="http://localhost:4000/nodejs/post45/" rel="alternate" type="text/html" title="Node.js 파일 시스템(fs) 모듈 사용하여 파일로 부터 데이터 읽기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/nodejs/post45</id><content type="html" xml:base="http://localhost:4000/nodejs/post45/"><![CDATA[<h3 id="️-nodejs-파일-시스템-모듈로-데이터-읽기">✔️ Node.js 파일 시스템 모듈로 데이터 읽기</h3>
 
 <p>오늘은 파일 시스템 모듈로 데이터를 읽는 방법을 소개해드리도록 하겠습니다. 사용 방법은 매우 간단합니다. fs 모듈을 우선 불러와야하구요. 아래에서 사용 가능한 2가지 메서드를 소개해드리겠습니다.</p>
 
@@ -422,7 +445,35 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="노드" /><category term="노드js" /><category term="nodejs" /><category term="fs" /><category term="파일시스템" /><summary type="html"><![CDATA[Node.js File System Module]]></summary></entry><entry><title type="html">리액트 조건부 렌더링 패턴 및 옵셔널 체이닝</title><link href="http://localhost:4000/react/post44/" rel="alternate" type="text/html" title="리액트 조건부 렌더링 패턴 및 옵셔널 체이닝" /><published>2022-11-03T00:00:00+09:00</published><updated>2022-11-03T00:00:00+09:00</updated><id>http://localhost:4000/react/post44</id><content type="html" xml:base="http://localhost:4000/react/post44/"><![CDATA[<h3 id="️-조건부-렌더링이란">✔️ 조건부 렌더링이란?</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="NodeJs" /><category term="노드" /><category term="노드js" /><category term="nodejs" /><category term="fs" /><category term="파일시스템" /><summary type="html"><![CDATA[Node.js File System Module]]></summary></entry><entry><title type="html">[Lv.1] 나머지가 1이 되는 수 찾기</title><link href="http://localhost:4000/codingtest/post46/" rel="alternate" type="text/html" title="[Lv.1] 나머지가 1이 되는 수 찾기" /><published>2022-11-09T00:00:00+09:00</published><updated>2022-11-09T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post46</id><content type="html" xml:base="http://localhost:4000/codingtest/post46/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/87389">https://school.programmers.co.kr/learn/courses/30/lessons/87389</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">%</span> <span class="nx">i</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">i</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>단순하게 for 반복문을 사용하여 해결</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">리액트 조건부 렌더링 패턴 및 옵셔널 체이닝</title><link href="http://localhost:4000/react/post44/" rel="alternate" type="text/html" title="리액트 조건부 렌더링 패턴 및 옵셔널 체이닝" /><published>2022-11-03T00:00:00+09:00</published><updated>2022-11-03T00:00:00+09:00</updated><id>http://localhost:4000/react/post44</id><content type="html" xml:base="http://localhost:4000/react/post44/"><![CDATA[<h3 id="️-조건부-렌더링이란">✔️ 조건부 렌더링이란?</h3>
 
 <p>리액트에서는 JSX라는 문법을 사용하고, 조건부 렌더링을 하는 것은 JS에서 if문 등을 사용하여 조건처리를 하듯이 UI 업데이트를 하는 것을 말합니다.</p>
 
@@ -667,31 +718,4 @@ coalesce는 합치다라는 뜻이고, 이러한 null 병합 연산자는 ES11�
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="리덕스" /><category term="redux" /><category term="react" /><category term="리덕스기초" /><summary type="html"><![CDATA[React redux 기초]]></summary></entry><entry><title type="html">Mac, 맥북 업데이트 후 xcrun: error: invalid active developer path 에러 나는 경우 해결방법</title><link href="http://localhost:4000/issue/post42/" rel="alternate" type="text/html" title="Mac, 맥북 업데이트 후 xcrun: error: invalid active developer path 에러 나는 경우 해결방법" /><published>2022-10-30T00:00:00+09:00</published><updated>2022-10-30T00:00:00+09:00</updated><id>http://localhost:4000/issue/post42</id><content type="html" xml:base="http://localhost:4000/issue/post42/"><![CDATA[<h3 id="️-오류발생">✔️ 오류발생</h3>
-
-<p>최근 macOS를 Ventura로 업그레이드 했는데 개발 관련 도구(이를테면 git)가 <code class="language-plaintext highlighter-rouge">missing xcrun</code> 에러를 내뿜게 되었습니다. 알고보니 아주 간단하게 해결할 수 있는 문제더라고요.<br />
-<br />
-그래서 오늘은 맥북 사용자 분들께서 해당 오류가 나는 경우에 간단하게 해결할 수 있는 방법을 공유해드리고자 합니다.</p>
-
-<h3 id="️-오류원인">✔️ 오류원인</h3>
-
-<p>이러한 오류가 발생하는 것은 업데이트 과정을 거친 뒤에 CommandLineTools을 인식하지 못했기 때문입니다.</p>
-
-<h3 id="️-해결방법">✔️ 해결방법</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>xcode-select --installs
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위 명령어를 입력하여 CommandLineTools를 설치하고 관련 도구들을 실행해보면, 오류 없이 정상적으로 동작하는 걸 확인하실 수 있습니다.</p>
-
-<center>
-<img width="509" alt="image" src="https://user-images.githubusercontent.com/95404736/198861719-695569b5-e574-464b-a1e3-176cd47ad178.png" />
-</center>
-
-<p><br />
-설치 소요시간은 네트워크 환경에 따라 달라질 수 있구요. 저는 대략 2분정도 걸린 것 같네요 :)</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="mac" /><category term="맥북" /><category term="xcrun" /><category term="xcode" /><category term="error" /><category term="에러" /><summary type="html"><![CDATA[xcrun: error: invalid active developer path 에러 해결]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="리덕스" /><category term="redux" /><category term="react" /><category term="리덕스기초" /><summary type="html"><![CDATA[React redux 기초]]></summary></entry></feed>
