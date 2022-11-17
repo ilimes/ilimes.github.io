@@ -25,7 +25,11 @@
       {% endif %}
     </h2>
     {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">{{ post.excerpt | markdownify | strip_html | truncate: 160 }} <span style="font-size: 13px; margin-left: 5px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m.%d" }}</span> </div>{% endif %}
+    {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</div>{% endif %}
     <!-- {% if post.excerpt %}<span style="background: #eef2f6; padding: 6px; font-size: 12px; font-weight: bold;">{{ post.categories }}</span>{% endif %} -->
+    <span style="font-size: 13px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m.%d" }}</span>
+    {% if site.category_archive.type and post.categories[0] and site.tag_archive.type and post.tags[0] %}
+    {%- include post__taxonomy.html -%}
+    {% endif %}
   </article>
 </div>
