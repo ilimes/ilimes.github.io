@@ -310,4 +310,10 @@ var store = [{
         "tags": ["stash","깃","commit","커밋"],
         "url": "/git/post52/",
         "teaser": null
+      },{
+        "title": "Webpack 알아보기 & 설치방법",
+        "excerpt":"✔️ Webpack(웹팩) 이란? 웹팩 은 오픈 소스 자바스크립트 모듈 번들러로 요즘 프론트엔드 개발에 필수라고 할 수 있는 요소 중 하나인데요. 여러개로 나눠져 있는 파일들을 하나의 js코드로 압축하고 최적화 하는 라이브러리입니다. ✔️ Webpack(웹팩) 구성요소 웹팩은 Entry, Output, Loaders, Plugins, Mode로 구성되어 있습니다. Entry 웹팩이 빌드할 파일의 시작 위치를 나타냅니다. entry 지점으로부터...","categories": ["Web"],
+        "tags": ["웹팩","Webpack","개발","Frontend"],
+        "url": "/web/post53/",
+        "teaser": null
       }]

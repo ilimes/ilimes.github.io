@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-17T22:37:06+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-17T23:02:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
 
 <p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
 작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
@@ -49,7 +49,169 @@ git stash show -p [stash 이름] | git apply -R
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (4)</title><link href="http://localhost:4000/uiux/post51/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (4)" /><published>2022-11-15T00:00:00+09:00</published><updated>2022-11-15T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post51</id><content type="html" xml:base="http://localhost:4000/uiux/post51/"><![CDATA[<p>Dashboard<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry><entry><title type="html">Webpack 알아보기 &amp;amp; 설치방법</title><link href="http://localhost:4000/web/post53/" rel="alternate" type="text/html" title="Webpack 알아보기 &amp;amp; 설치방법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/web/post53</id><content type="html" xml:base="http://localhost:4000/web/post53/"><![CDATA[<h3 id="️-webpack웹팩-이란">✔️ Webpack(웹팩) 이란?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">웹팩</code> 은 오픈 소스 자바스크립트 모듈 번들러로 요즘 프론트엔드 개발에 필수라고 할 수 있는 요소 중 하나인데요. 여러개로 나눠져 있는 파일들을 하나의 js코드로 압축하고 최적화 하는 라이브러리입니다.</p>
+
+<h3 id="️-webpack웹팩-구성요소">✔️ Webpack(웹팩) 구성요소</h3>
+
+<p>웹팩은 Entry, Output, Loaders, Plugins, Mode로 구성되어 있습니다.</p>
+
+<h4 id="entry">Entry</h4>
+
+<ul>
+  <li>웹팩이 빌드할 파일의 시작 위치를 나타냅니다.</li>
+  <li>entry 지점으로부터 import되어 있는 다른 모듈과 라이브러리의 연관성을 찾습니다.</li>
+  <li>entry의 디폴트로 설정된 값은 ./src/index.js 입니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1"> ./src/index.js</span><span class="dl">'</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="output">Output</h4>
+
+<ul>
+  <li>웹팩에 의해 생성되는 번들을 내보낼 위치와 파일의 이름을 정합니다.</li>
+  <li>output의 기본값은 ./dist/main.js 입니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">entry</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./path/to/my/entry/file.js</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">path</span><span class="p">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">dist</span><span class="dl">'</span><span class="p">),</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">main.js</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="loaders">Loaders</h4>
+
+<ul>
+  <li>loaders를 통해 자바스크립트 파일이 아닌 파일들도 유효한 모듈로 변환해줍니다.</li>
+  <li>loaders의 설정은 싱글 모듈에 대한 rules 프로퍼티를 정의해야 하며, rules 프로퍼티는 test와 use를 필수 프로퍼티로 가집니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">test</code> 프로퍼티는 변환해야하는 파일들을 식별하는 역할을 합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">use</code> 프로퍼티는 변환되어야 하는 파일에 대하여 어떤 로더를 사용해야하는지 설정합니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">path</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">output</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">filename</span><span class="p">:</span> <span class="dl">'</span><span class="s1">my-first-webpack.bundle.js</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">txt$/</span><span class="p">,</span> <span class="na">use</span><span class="p">:</span> <span class="dl">'</span><span class="s1">raw-loader</span><span class="dl">'</span> <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="plugins">Plugins</h4>
+
+<ul>
+  <li>로더가 파일단위로 처리하는 반면 플러그인은 번들된 결과물을 처리합니다.</li>
+  <li>번들된 자바스크립트를 난독화 한다거나 특정 텍스트를 추출하는 용도로 사용할 수 있습니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">HtmlWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">html-webpack-plugin</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">webpack</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">webpack</span><span class="dl">'</span><span class="p">);</span> <span class="c1">//to access built-in plugins</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">rules</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span> <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">txt$/</span><span class="p">,</span> <span class="na">use</span><span class="p">:</span> <span class="dl">'</span><span class="s1">raw-loader</span><span class="dl">'</span> <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span>
+    <span class="k">new</span> <span class="nx">HtmlWebpackPlugin</span><span class="p">({</span><span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">./src/index.html</span><span class="dl">'</span><span class="p">})</span>
+  <span class="p">]</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="mode">Mode</h4>
+
+<ul>
+  <li>mode는 웹팩을 세팅함에 있어서 development, production, none 중 하나를 파라미터로 사용합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">production</code> 은 최적화되어 빌드됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">development</code> 는 빠르게 빌드됩니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">none</code> 은 아무 기능 없이 웹팩으로 빌드됩니다.</li>
+</ul>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">mode</span><span class="p">:</span> <span class="dl">'</span><span class="s1">production</span><span class="dl">'</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-webpack-설치-방법">✔️ Webpack 설치 방법</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>npm init
+npm install -D webpack webpack-cli
+npx webpack-cli .src/index.js
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>웹팩 설치 방법은 매우 간단합니다. 번들링을 할 디렉토리에 들어가서 위 명렁어를 차례로 입력해주면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>npx create-react-app [파일명]
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>웹팩으로 빌드를 하고 싶은 경우는 위 명령어를 입력해주면 됩니다.</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<p><a href="https://medium.com/@woody_dev/js-webpack-1-%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-f29ebca31da4">https://medium.com/@woody_dev/js-webpack-1-%EC%9B%B9%ED%8C%A9%EC%9D%B4%EB%9E%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80-f29ebca31da4</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹팩" /><category term="Webpack" /><category term="개발" /><category term="Frontend" /><summary type="html"><![CDATA[오픈 소스 자바스크립트 모듈 번들러 Webpack]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (4)</title><link href="http://localhost:4000/uiux/post51/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (4)" /><published>2022-11-15T00:00:00+09:00</published><updated>2022-11-15T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post51</id><content type="html" xml:base="http://localhost:4000/uiux/post51/"><![CDATA[<p>Dashboard<br />
 by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui</a></p>
 
 <p><img width="1045" alt="image" src="https://user-images.githubusercontent.com/95404736/201929424-043cda83-f50a-40ff-8278-f58e41ba7fd1.png" /></p>
@@ -60,35 +222,7 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 없는 숫자 더하기</title><link href="http://localhost:4000/codingtest/post48/" rel="alternate" type="text/html" title="[Lv.1] 없는 숫자 더하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post48</id><content type="html" xml:base="http://localhost:4000/codingtest/post48/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/86051">https://school.programmers.co.kr/learn/courses/30/lessons/86051</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
 
 <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484">https://school.programmers.co.kr/learn/courses/30/lessons/77484</a></p>
 
@@ -158,6 +292,34 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 <h3 id="️-풀이">✔️ 풀이</h3>
 
 <p>이용 횟수 만큼 반복문 돌려주고 더한 값 구한 뒤 money와 비교하여 answer값 return</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">[Lv.1] 없는 숫자 더하기</title><link href="http://localhost:4000/codingtest/post48/" rel="alternate" type="text/html" title="[Lv.1] 없는 숫자 더하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post48</id><content type="html" xml:base="http://localhost:4000/codingtest/post48/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/86051">https://school.programmers.co.kr/learn/courses/30/lessons/86051</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
@@ -547,175 +709,4 @@ coalesce는 합치다라는 뜻이고, 이러한 null 병합 연산자는 ES11�
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="조건부렌더링" /><category term="js" /><category term="자바스크립트조건부렌더링" /><category term="연산자" /><category term="옵셔널체이닝" /><category term="optional-chaining" /><summary type="html"><![CDATA[React Conditional Rendering Pattern & Optional-Chaining]]></summary></entry><entry><title type="html">리액트 Redux 기초 개념 정리</title><link href="http://localhost:4000/react/post43/" rel="alternate" type="text/html" title="리액트 Redux 기초 개념 정리" /><published>2022-10-31T00:00:00+09:00</published><updated>2022-10-31T00:00:00+09:00</updated><id>http://localhost:4000/react/post43</id><content type="html" xml:base="http://localhost:4000/react/post43/"><![CDATA[<h3 id="️-redux란">✔️ Redux란?</h3>
-
-<p>리덕스는 리액트에서 많이 사용되는 상태 관리 라이브러리 중 하나입니다. 리덕스를 사용하게 되면 컴포넌트의 상태 업데이트 관련 로직을 다른 파일로 분리시켜 효율적인 관리가 가능하게 됩니다.</p>
-
-<h3 id="️-redux-설치">✔️ Redux 설치</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>npm i redux react-redux
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-redux-기본개념">✔️ Redux 기본개념</h3>
-
-<p>리덕스는 크게 3가지의 기본 개념이 있습니다.</p>
-
-<blockquote>
-  <p>동일한 데이터는 항상 같은 곳에서 가지고 온다.</p>
-</blockquote>
-
-<ul>
-  <li>이는 곧 Store라는 하나 뿐인 데이터 공간이 있다는 것을 의미합니다. (중앙 상태 관리)</li>
-  <li>이러한 점 덕분에 디버깅이 쉬워집니다.</li>
-</ul>
-
-<blockquote>
-  <p>액션 객체를 통해서만 상태 변경 가능</p>
-</blockquote>
-
-<ul>
-  <li>기본적으로 상태는 읽기 전용(read-only) 입니다.</li>
-  <li>리액트에서 setState 메소드를 활용해야만 상태 변경이 가능하듯이 리덕스에서도 액션이라는 객체로만 상태를 변경할 수 있습니다.</li>
-</ul>
-
-<blockquote>
-  <p>변경은 순수 함수로만 가능</p>
-</blockquote>
-
-<ul>
-  <li>리듀서 함수는 이전 상태와 액션 객체를 파라미터로 받습니다.</li>
-  <li>파라미터 외의 값에는 의존하면 안됩니다.</li>
-  <li>이전 상태는 절대로 건드리지 않고, 변화를 준 새로운 상태 객체를 만들어서 반환합니다.</li>
-  <li>똑같은 파라미터로 호출된 리듀서 함수는 언제나 똑같은 결과 값을 반환해야 합니다.</li>
-</ul>
-
-<h3 id="️-redux-기본용어">✔️ Redux 기본용어</h3>
-
-<p>아래는 Redux에 대해서 기본적으로 알아야 할 용어들입니다.</p>
-
-<h2 id="액션action">액션(Action)</h2>
-
-<ul>
-  <li>Store의 상태를 변경하는 용도로 사용</li>
-  <li>직접 상태를 변경하기 보다는 <code class="language-plaintext highlighter-rouge">어떤 상태로 변경할 것인지</code> 결정</li>
-</ul>
-
-<p>액션을 일종의 주문서 같은 것인데 자바스크립트 객체 형식으로 되어있습니다.</p>
-
-<h3 id="액션의-표현">액션의 표현</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="p">{</span>
-   <span class="na">type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ADD_TODO</span><span class="dl">'</span><span class="p">,</span>
-   <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
-       <span class="na">id</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-       <span class="na">text</span><span class="p">:</span> <span class="dl">'</span><span class="s1">라임</span><span class="dl">'</span>
-   <span class="p">}</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>액션은 위와 같이 표현되며 type 필드는 필수로 가지고 있어야 합니다.</p>
-
-<h3 id="액션-생성함수">액션 생성함수</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">addTodo</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span>
-    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ADD_TODO</span><span class="dl">"</span><span class="p">,</span>
-    <span class="nx">data</span><span class="p">,</span>
-  <span class="p">};</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>액션 생성함수는 말그대로 액션 객체를 만들어주는 함수입니다.</p>
-
-<h2 id="리듀서reducer">리듀서(Reducer)</h2>
-
-<ul>
-  <li>State를 정의하고 전달받은 액션에 따라 Store의 상태 변경이 이루어집니다.</li>
-  <li>실제 Store의 상태 변경은 <code class="language-plaintext highlighter-rouge">Reducer</code> 에서 이루어집니다.</li>
-  <li>업데이트 로직을 정의 하는 함수라고도 할 수 있습니다.</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">initialState</span> <span class="o">=</span> <span class="p">{</span> <span class="na">value</span><span class="p">:</span> <span class="mi">0</span> <span class="p">};</span>
-
-<span class="kd">function</span> <span class="nx">counterReducer</span><span class="p">(</span><span class="nx">state</span> <span class="o">=</span> <span class="nx">initialState</span><span class="p">,</span> <span class="nx">action</span><span class="p">)</span> <span class="p">{</span>
-  <span class="c1">// Check to see if the reducer cares about this action</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="nx">type</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">counter/increment</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// If so, make a copy of `state`</span>
-    <span class="k">return</span> <span class="p">{</span>
-      <span class="p">...</span><span class="nx">state</span><span class="p">,</span>
-      <span class="c1">// and update the copy with the new value</span>
-      <span class="na">value</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">value</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="p">};</span>
-  <span class="p">}</span>
-  <span class="c1">// otherwise return the existing state unchanged</span>
-  <span class="k">return</span> <span class="nx">state</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h2 id="스토어store">스토어(Store)</h2>
-
-<ul>
-  <li>액션과 리듀서의 연결지점입니다.</li>
-  <li>Store는 dispatch, getState, subscribe 메서드가 담겨있는 일종의 객체일 뿐입니다.</li>
-  <li>Redux는 Store를 오직 하나만 가집니다.</li>
-</ul>
-
-<h3 id="store-methods">Store Methods</h3>
-
-<ol>
-  <li>getState() : 애플리케이션의 현재 state 반환 =&gt; reducer 마지막 반환 값</li>
-  <li>dispatch(action) : action을 파라미터로 받고 dispatch를 호출하면 store는 reducer를 실행합니다.</li>
-  <li>subscribe(listener) : 변경사항에 대한 리스너 추가, subscribe에 리스너를 전달해주면 액션이 디스패치 될 때마다 전달해준 리스너가 호출됩니다.</li>
-  <li>replaceReducer(nextReducer)</li>
-</ol>
-
-<h3 id="️-redux는-언제-쓰면-좋을까">✔️ Redux는 언제 쓰면 좋을까?</h3>
-
-<p>해당 내용은 Redux 공식 문서에 나와있습니다 :)</p>
-
-<p><a href="https://redux.js.org/faq/general#when-should-i-use-redux">https://redux.js.org/faq/general#when-should-i-use-redux</a></p>
-
-<ul>
-  <li>앱의 여러 위치에서 필요한 많은 양의 상태들이 존재할 때 (전역 상태가 필요하다고 느껴질 때)</li>
-  <li>상태들이 자주 업데이트 될 때</li>
-  <li>상태를 업데이트 하는 로직이 복잡할 때</li>
-  <li>앱이 중간 또는 큰 사이즈의 코드를 갖고 있고 많은 사람들에 의해 코드가 관리될 때</li>
-  <li>상태가 업데이트되는 시점을 관찰할 필요가 있을 때</li>
-</ul>
-
-<h3 id="️-참고사이트">✔️ 참고사이트</h3>
-
-<p><a href="https://ko.redux.js.org/introduction/getting-started/">https://ko.redux.js.org/introduction/getting-started/</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="리덕스" /><category term="redux" /><category term="react" /><category term="리덕스기초" /><summary type="html"><![CDATA[React redux 기초]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="조건부렌더링" /><category term="js" /><category term="자바스크립트조건부렌더링" /><category term="연산자" /><category term="옵셔널체이닝" /><category term="optional-chaining" /><summary type="html"><![CDATA[React Conditional Rendering Pattern & Optional-Chaining]]></summary></entry></feed>
