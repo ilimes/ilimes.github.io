@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-17T23:12:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-22T00:59:56+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">[Lv.1] 어린 동물 찾기 (MySQL)</title><link href="http://localhost:4000/codingtest/post54/" rel="alternate" type="text/html" title="[Lv.1] 어린 동물 찾기 (MySQL)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post54</id><content type="html" xml:base="http://localhost:4000/codingtest/post54/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/59037">https://school.programmers.co.kr/learn/courses/30/lessons/59037</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
+<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
+<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">!=</span> <span class="s1">'Aged'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
+<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
+<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">&lt;&gt;</span> <span class="s1">'Aged'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>풀고 나서 알아보니 != 는 &lt;&gt; 로 자동 변환 된다고 하는데 퍼포먼스면에서는 &lt;&gt;를 바로 사용해주는 것이 좋다고 합니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
 
 <p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
 작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
@@ -222,48 +252,7 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484">https://school.programmers.co.kr/learn/courses/30/lessons/77484</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">lottos</span><span class="p">,</span> <span class="nx">win_nums</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">zeroCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">lowCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">win_nums</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">cur</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="mi">0</span>
-  <span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span><span class="p">),</span>
-    <span class="nx">lowCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="nx">lowCnt</span><span class="p">,</span>
-  <span class="p">];</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>reduce를 활용해보았습니다. 풀고나서 찾아보니 <code class="language-plaintext highlighter-rouge">Array.includes()</code> 대신 <code class="language-plaintext highlighter-rouge">Set.has()</code> 를 사용하면 시간복잡도가 O(n) 에서 O(1)로 줄어든다고 합니다.
-위 코드에 적용해서 푼 것은 아니지만, 중복값이 없는 배열은 Set으로 바꾸는 좋은 방법이 있다는 것을 알게되었습니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">[Lv.1] 부족한 금액 계산하기</title><link href="http://localhost:4000/codingtest/post49/" rel="alternate" type="text/html" title="[Lv.1] 부족한 금액 계산하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post49</id><content type="html" xml:base="http://localhost:4000/codingtest/post49/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 부족한 금액 계산하기</title><link href="http://localhost:4000/codingtest/post49/" rel="alternate" type="text/html" title="[Lv.1] 부족한 금액 계산하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post49</id><content type="html" xml:base="http://localhost:4000/codingtest/post49/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
 
 <p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/82612">https://school.programmers.co.kr/learn/courses/30/lessons/82612</a></p>
 
@@ -320,6 +309,47 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 <h3 id="️-풀이">✔️ 풀이</h3>
 
 <p>0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484">https://school.programmers.co.kr/learn/courses/30/lessons/77484</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">lottos</span><span class="p">,</span> <span class="nx">win_nums</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">zeroCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">lowCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">win_nums</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">cur</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="mi">0</span>
+  <span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span><span class="p">),</span>
+    <span class="nx">lowCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="nx">lowCnt</span><span class="p">,</span>
+  <span class="p">];</span>
+  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>reduce를 활용해보았습니다. 풀고나서 찾아보니 <code class="language-plaintext highlighter-rouge">Array.includes()</code> 대신 <code class="language-plaintext highlighter-rouge">Set.has()</code> 를 사용하면 시간복잡도가 O(n) 에서 O(1)로 줄어든다고 합니다.
+위 코드에 적용해서 푼 것은 아니지만, 중복값이 없는 배열은 Set으로 바꾸는 좋은 방법이 있다는 것을 알게되었습니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
@@ -635,78 +665,4 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">리액트 조건부 렌더링 패턴 및 옵셔널 체이닝</title><link href="http://localhost:4000/react/post44/" rel="alternate" type="text/html" title="리액트 조건부 렌더링 패턴 및 옵셔널 체이닝" /><published>2022-11-03T00:00:00+09:00</published><updated>2022-11-03T00:00:00+09:00</updated><id>http://localhost:4000/react/post44</id><content type="html" xml:base="http://localhost:4000/react/post44/"><![CDATA[<h3 id="️-조건부-렌더링이란">✔️ 조건부 렌더링이란?</h3>
-
-<p>리액트에서는 JSX라는 문법을 사용하고, 조건부 렌더링을 하는 것은 JS에서 if문 등을 사용하여 조건처리를 하듯이 UI 업데이트를 하는 것을 말합니다.</p>
-
-<h3 id="️-조건부-렌더링-패턴">✔️ 조건부 렌더링 패턴</h3>
-
-<p>조건부 렌더링 패턴으로는 <code class="language-plaintext highlighter-rouge">if-else 패턴</code>, <code class="language-plaintext highlighter-rouge">: ? 패턴(삼항연산자)</code>, <code class="language-plaintext highlighter-rouge">&amp;&amp; 패턴</code>, <code class="language-plaintext highlighter-rouge">switch case 패턴</code>, <code class="language-plaintext highlighter-rouge">enum 패턴</code>, <code class="language-plaintext highlighter-rouge">HOC 패턴</code> 등이 있습니다.<br />
-<br />
-오늘은 이 중에서 <code class="language-plaintext highlighter-rouge">: ? 패턴</code>, <code class="language-plaintext highlighter-rouge">&amp;&amp; 패턴</code> 종류에 대해서 알아보고 <code class="language-plaintext highlighter-rouge">옵셔널 체이닝</code>까지 정리하도록 하겠습니다.</p>
-
-<h3 id="️---패턴삼항연산자">✔️ : ? 패턴(삼항연산자)</h3>
-
-<p>우선 삼항연산자 같은 경우는 아래와 같이 사용합니다.<br />
-리액트 공식 문서에서는 이 패턴을 인라인 If-Else 라고 소개하고 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">조건</span> <span class="p">?</span> <span class="nx">참일경우</span> <span class="p">:</span> <span class="nx">거짓일</span> <span class="nx">경우</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️--패턴">✔️ &amp;&amp; 패턴</h3>
-
-<p>조건부 렌더링 &amp;&amp; 패턴 같은 경우는 아래와 같이 사용될 수 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="c1">// 선행 조건 &amp;&amp; 후행 조건</span>
-<span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">LIME</span><span class="dl">"</span><span class="p">;</span>
-<span class="c1">// 결과 = 'LIME'</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>&amp;&amp; 기준으로 앞에 있는 조건이 참이어야 뒤에있는 결과를 그려주게 되는 것입니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">조건1</span> <span class="o">||</span> <span class="nx">조건2</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같은 경우는 참인 경우에 앞을 그려주고 거짓인 경우에 뒤를 그려주게 됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="nx">조건1</span> <span class="p">??</span> <span class="nx">조건2</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같은 경우는 nullish-coalescing 라고 하며, 거짓인 경우 중에서도 null이나 undefined일 때 뒤를 그려주게 됩니다.<br />
-coalesce는 합치다라는 뜻이고, 이러한 null 병합 연산자는 ES11에서 도입된 문법입니다. 변수에 기본값을 설정할 때 유용하게 사용되는 문법입니다.</p>
-
-<h3 id="️-옵셔널-체이닝optional-chaining">✔️ 옵셔널 체이닝(Optional-Chaining)</h3>
-
-<p>옵셔널 체이닝은 프로퍼티가 없는 중첩 객체를 에러 없이 안전하게 접근하는 경우에 사용하곤 합니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="nx">data</span><span class="p">?.</span><span class="nx">lime</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>앞에 있는 피연산자가 null 또는 undefined 일 때는 undefined를 반환하고, 그렇지 않다면 오른쪽에 있는 프로퍼티 참조를 이어나가게 됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{};</span>
-<span class="kd">let</span> <span class="nx">length</span> <span class="o">=</span> <span class="nx">data</span> <span class="o">&amp;&amp;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// ''</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>참고) 기존의 &amp;&amp; 을 사용하는 경우에는 위와 같이 나오는 문제점이 있었습니다.</p>
-
-<p>리액트로 개발을 하다보면 조건부 렌더링을 사용할 때가 많은데, 그중에서도 <code class="language-plaintext highlighter-rouge">&amp;&amp;, ||</code> 이나 <code class="language-plaintext highlighter-rouge">옵셔널 체이닝</code>을 자주 사용하게 되는 것 같네요 :)</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="조건부렌더링" /><category term="js" /><category term="자바스크립트조건부렌더링" /><category term="연산자" /><category term="옵셔널체이닝" /><category term="optional-chaining" /><summary type="html"><![CDATA[React Conditional Rendering Pattern & Optional-Chaining]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry></feed>

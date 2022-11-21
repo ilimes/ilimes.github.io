@@ -316,4 +316,10 @@ var store = [{
         "tags": ["웹팩","Webpack","개발","Frontend"],
         "url": "/web/post53/",
         "teaser": null
+      },{
+        "title": "[Lv.1] 어린 동물 찾기 (MySQL)",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59037 ✔️ 코드 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION != 'Aged' ✔️ 풀이 SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다. 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION &lt;&gt; 'Aged' 풀고 나서 알아보니...","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post54/",
+        "teaser": null
       }]
