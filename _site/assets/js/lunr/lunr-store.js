@@ -322,4 +322,16 @@ var store = [{
         "tags": ["코테","알고리즘","프로그래머스"],
         "url": "/codingtest/post54/",
         "teaser": null
+      },{
+        "title": "UI/UX 디자인 공유 (5)",
+        "excerpt":"ProManage Dashboard - Freebie Light &amp; Dark Themes  by. vibeesh kv        ✔️ 링크   https://dribbble.com/shots/8286525-ProManage-Dashboard-Freebie-Light-Dark-Themes   🔔포스팅 공지  개인 공부 기록용 블로그 입니다.  잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)  ","categories": ["Uiux"],
+        "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
+        "url": "/uiux/post55/",
+        "teaser": null
+      },{
+        "title": "Intersection Observer API 활용하여 React에서 무한스크롤 구현하기",
+        "excerpt":"✔️ Infinite Scroll? 무한스크롤(Infinite Scroll) 이란 말 그대로 스크롤을 무한으로 할 수 있는 기능을 말합니다. 불러와야 하는 게시글 목록이 많은 경우 무한스크롤을 활용하면 사용자 편의성과 클라이언트 부담을 덜 수 있다는 장점이 있습니다. ✔️ Intersection Observer API 란? Intersection Observer API는 타겟 요소와 상위 요소 또는 최상위 document 의 viewport 사이의...","categories": ["React"],
+        "tags": ["무한스크롤","InfiniteScroll","리액트"],
+        "url": "/react/post56/",
+        "teaser": null
       }]
