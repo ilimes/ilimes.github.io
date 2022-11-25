@@ -4,7 +4,23 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>http://localhost:4000/react/post56/</loc>
+        <loc>http://localhost:4000/codingtest/post57/</loc>
+        
+        <lastmod>2022-11-23T00:00:00+09:00</lastmod>
+        
+
+        
+        <changefreq>weekly</changefreq>
+        
+
+        
+        <priority>0.5</priority>
+        
+
+    </url>
+    
+    <url>
+        <loc>http://localhost:4000/react/post56-copy/</loc>
         
         <lastmod>2022-11-22T00:00:00+09:00</lastmod>
         

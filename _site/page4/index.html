@@ -101,7 +101,7 @@
 <!-- end custom head snippets -->
 
     <style> 
-      ::-webkit-scrollbar{width: 6px; height: 5.5px;}
+      ::-webkit-scrollbar{width: 12px; height: 5.5px;}
       ::-webkit-scrollbar-track {background-color:#bcbcbc; border-radius: 16px;}
       ::-webkit-scrollbar-thumb {background-color:#9f9f9f; border-radius: 16px;}
       ::-webkit-scrollbar-thumb:hover {background: #8c8c8c;}
@@ -228,7 +228,11 @@
 
 
 <div id="main" role="main">
-  
+  <style> 
+  .sidebar::-webkit-scrollbar{display: none; width: 6px; height: 5.5px;}
+</style>
+
+
   <div class="sidebar sticky">
   
 
@@ -368,7 +372,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
             <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
             <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
-        </svg> <span style="font-family:'Cafe24Oneprettynight'; font-size: 16px; vertical-align: top; font-weight: bold;">전체 글 수</style> 56 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
+        </svg> <span style="font-family:'Cafe24Oneprettynight'; font-size: 16px; vertical-align: top; font-weight: bold;">전체 글 수</style> 57 <span style="font-family:'Cafe24Oneprettynight';">개</style> 
       </li>
       <li>
         <!--span 태그로 카테고리들을 크게 분류 ex) C/C++/C#-->
@@ -842,7 +846,7 @@
                     
                 
                     
-                        <li><a href="/categories/codingTest" class="">코딩 테스트<span class="nav_size">5</span></a></li>
+                        <li><a href="/categories/codingTest" class="">코딩 테스트<span class="nav_size">6</span></a></li>
                     
                 
             </ul>
@@ -872,6 +876,69 @@
 
 
 <div class="entries-list">
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/mongodb/post36/" rel="permalink">Node.js 몽고디비 (MongoDB) Driver API
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">Node.js MongoDB Driver API
+</div>
+    <!-- <span style="background: #eef2f6; padding: 6px; font-size: 12px; font-weight: bold;">MongoDB</span> -->
+    <div style="margin-bottom: 30px;">
+      <span style="font-size: 13px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.09.05</span>
+      <!--Archive page 용-: (post -> page)-->
+<!--page__taxonomy.html에서 가져 옴-->
+        
+        <span class="page__taxonomy">
+            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#mongodb" class="page__taxonomy-item-category" rel="tag">MongoDB</a>]</span> -->
+                    
+                    
+                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#api" class="page__taxonomy-item-tag" rel="tag">api</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#mongodb" class="page__taxonomy-item-tag" rel="tag">MongoDB</a><span class="sep"> </span></span>
+                
+                    
+                    
+                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84" class="page__taxonomy-item-tag" rel="tag">몽고디비</a></span>
+                
+            </span>
+        </span>
+    </div>
+  </article>
+</div>
+
   
     
 
@@ -1283,73 +1350,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/javascript/post29/" rel="permalink">JSDoc으로 타입 힌트 제공하면서 주석 예쁘게 달기
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-    
-  </p>
-
-
-    <div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">JSDoc 기능 사용법
-</div>
-    <!-- <span style="background: #eef2f6; padding: 6px; font-size: 12px; font-weight: bold;">JavaScript</span> -->
-    <div style="margin-bottom: 30px;">
-      <span style="font-size: 13px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i> 2022.08.27</span>
-      <!--Archive page 용-: (post -> page)-->
-<!--page__taxonomy.html에서 가져 옴-->
-        
-        <span class="page__taxonomy">
-            <span itemprop="keywords" style="margin-left: 5px;"><!-- <span>[<a href="/categories/#javascript" class="page__taxonomy-item-category" rel="tag">JavaScript</a>]</span> -->
-                    
-                    
-                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#javascript" class="page__taxonomy-item-tag" rel="tag">javaScript</a><span class="sep"> </span></span>
-                
-                    
-                    
-                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#jsdoc" class="page__taxonomy-item-tag" rel="tag">JSDoc</a><span class="sep"> </span></span>
-                
-                    
-                    
-                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8" class="page__taxonomy-item-tag" rel="tag">자바스크립트</a><span class="sep"> </span></span>
-                
-                    
-                    
-                    <span class="cateClass" style="background-color: #eef2f6; border-radius: 7px; padding: 3px 5px 3px 5px;"><a class="cateColor" style="color: #555E65; font-size: 13px;" href="/tags/#%EC%A3%BC%EC%84%9D" class="page__taxonomy-item-tag" rel="tag">주석</a></span>
-                
-            </span>
-        </span>
-    </div>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -1408,13 +1408,6 @@
         <li><a href="/page6/">6</a></li>
       
     
-      
-        
-        
-        
-        <li><a href="/page7/">7</a></li>
-      
-    
 
     
     
@@ -1422,7 +1415,7 @@
     
 
     
-      <li><a href="/page8/">8</a></li>
+      <li><a href="/page9/">9</a></li>
     
 
     

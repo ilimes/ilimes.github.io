@@ -1,3 +1,7 @@
+<style> 
+  .sidebar::-webkit-scrollbar{display: none; width: 6px; height: 5.5px;}
+</style>
+
 {% if page.author_profile or layout.author_profile or page.sidebar %}
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}

@@ -332,6 +332,12 @@ var store = [{
         "title": "Intersection Observer API 활용하여 React에서 무한스크롤 구현하기",
         "excerpt":"✔️ Infinite Scroll? 무한스크롤(Infinite Scroll) 이란 말 그대로 스크롤을 무한으로 할 수 있는 기능을 말합니다. 불러와야 하는 게시글 목록이 많은 경우 무한스크롤을 활용하면 사용자 편의성과 클라이언트 부담을 덜 수 있다는 장점이 있습니다. ✔️ Intersection Observer API 란? Intersection Observer API는 타겟 요소와 상위 요소 또는 최상위 document 의 viewport 사이의...","categories": ["React"],
         "tags": ["무한스크롤","InfiniteScroll","리액트"],
-        "url": "/react/post56/",
+        "url": "/react/post56-copy/",
+        "teaser": null
+      },{
+        "title": "[Lv.2] 루시와 엘라 찾기 (MySQL)",
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59046 ✔️ 코드 1 2 3 4 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS WHERE NAME IN (\"Lucy\", \"Ella\", \"Pickle\", \"Rogan\", \"Sabrina\", \"Mitty\") ORDER BY ANIMAL_ID ASC ✔️ 풀이 IN을 사용하면 특정 이름만 조회할 수 있습니다. 만약 특정 값이 아닌 경우에만 찾고싶다면 NOT IN을 사용할 수 있습니다. 🔔포스팅 공지...","categories": ["CodingTest"],
+        "tags": ["코테","알고리즘","프로그래머스"],
+        "url": "/codingtest/post57/",
         "teaser": null
       }]
