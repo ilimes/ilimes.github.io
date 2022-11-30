@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-26T06:48:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용</title><link href="http://localhost:4000/setting/post58/" rel="alternate" type="text/html" title="M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용" /><published>2022-11-26T00:00:00+09:00</published><updated>2022-11-26T00:00:00+09:00</updated><id>http://localhost:4000/setting/post58</id><content type="html" xml:base="http://localhost:4000/setting/post58/"><![CDATA[<h3 id="️-zsh-syntax-highlighting란">✔️ zsh-syntax-highlighting란?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T21:49:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Nginx랑 Apache의 차이 알아보기</title><link href="http://localhost:4000/web/post59/" rel="alternate" type="text/html" title="Nginx랑 Apache의 차이 알아보기" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/web/post59</id><content type="html" xml:base="http://localhost:4000/web/post59/"><![CDATA[<h3 id="️-웹-서버-web-server">✔️ 웹 서버 (Web Server)</h3>
+
+<p>웹 서버란 HTTP를 통하여 웹 클라이언트가 요청한 데이터를 제공해주는 (=요청에 응답하는) 프로그램 입니다.<br />
+에전에는 웹 서버로 Apache를 많이 사용했지만 최근에는 Nginx를 많이 사용합니다.</p>
+
+<h3 id="️-apache">✔️ Apache</h3>
+
+<p>프로세스 기반 접근 방식으로 하나의 스레드가 아닌 하나의 스레드가 하나의 요청을 처리하는 구조입니다.</p>
+
+<h3 id="️-ngnix">✔️ Ngnix</h3>
+
+<p>이벤트 중심 접근 방식으로 하나의 스레드 내에서 여러가지 요청을 처리하는 구조입니다.</p>
+
+<h3 id="️-ngnix가-인기-많은-이유">✔️ Ngnix가 인기 많은 이유</h3>
+
+<p>Ngnix는 대용량 트래픽 처리에 용이한 경량 웹서버입니다. Ngnix가 인기를 끌게 된 것에는 다양한 이유가 있을테지만, 그중에서도 몇 가지를 꼽자면 클라이언트의 요청을 처리하고 응답하는 방식이 다르고(Apache : 프로세스 기반 접근 방식, Ngnix : 이벤트 중심 접근 방식), 동적 컨텐츠 제공 시에는 성능이 비슷하지만 정적 컨텐츠를 제공할 때 Ngnix는 적은 비용으로 효율적인 제공이 가능하게 된다는 점을 들 수 있습니다.</p>
+
+<h3 id="️-apache-vs-nginx">✔️ Apache vs Nginx</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Apache</th>
+      <th style="text-align: center">NginX</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">요청 당 스레드 또는 프로세스가 처리하는 구조</td>
+      <td style="text-align: center">비동기 이벤트 기반으로 요청</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">CPU/메모리 자원 낭비 심함</td>
+      <td style="text-align: center">CPU/메모리 자원 사용률 낮음</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">NginX보다 모듈이 다양</td>
+      <td style="text-align: center">Apache에 비해 다양한 모듈이 없음</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">PHP 모듈 등 직접 적재 가능</td>
+      <td style="text-align: center">많은 접속자들 대응 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">안정성, 확장성, 호환성 우세</td>
+      <td style="text-align: center">성능 우세</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">동적 컨텐츠 단독 처리 가능</td>
+      <td style="text-align: center">동적 컨텐츠 단독 처리 불가능</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>오늘은 Ngnix에 대해 알아보았습니다. Apach를 사용하여 배포해본 경험은 있으니 조만간 Ngnix를 사용한 배포도 해보도록 하겠습니다.</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<ul>
+  <li><a href="https://www.nginx.com/blog/thread-pools-boost-performance-9x/">https://www.nginx.com/blog/thread-pools-boost-performance-9x/</a></li>
+  <li><a href="https://serverguy.com/comparison/apache-vs-nginx/">https://serverguy.com/comparison/apache-vs-nginx/</a></li>
+  <li><a href="https://velog.io/@deannn/Apache%EC%99%80-NginX-%EB%B9%84%EA%B5%90-%EC%B0%A8%EC%9D%B4%EC%A0%90">https://velog.io/@deannn/Apache%EC%99%80-NginX-%EB%B9%84%EA%B5%90-%EC%B0%A8%EC%9D%B4%EC%A0%90</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="개발" /><category term="웹" /><category term="웹개발" /><category term="ngnix" /><summary type="html"><![CDATA[Nhinx / Apache 차이는 무엇일까?]]></summary></entry><entry><title type="html">M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용</title><link href="http://localhost:4000/setting/post58/" rel="alternate" type="text/html" title="M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용" /><published>2022-11-26T00:00:00+09:00</published><updated>2022-11-26T00:00:00+09:00</updated><id>http://localhost:4000/setting/post58</id><content type="html" xml:base="http://localhost:4000/setting/post58/"><![CDATA[<h3 id="️-zsh-syntax-highlighting란">✔️ zsh-syntax-highlighting란?</h3>
 
 <p>터미널 명령어에 하이라이트를 넣어주는 기능입니다.</p>
 
@@ -64,6 +130,48 @@ soruce ~/.zshrc 명령어 까지 입력하면 즉시 적용됩니다.</p>
 <h3 id="️-풀이">✔️ 풀이</h3>
 
 <p>IN을 사용하면 특정 이름만 조회할 수 있습니다. 만약 특정 값이 아닌 경우에만 찾고싶다면 NOT IN을 사용할 수 있습니다.</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (5)</title><link href="http://localhost:4000/uiux/post55/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (5)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post55</id><content type="html" xml:base="http://localhost:4000/uiux/post55/"><![CDATA[<p>ProManage Dashboard - Freebie Light &amp; Dark Themes<br />
+by. <a href="https://dribbble.com/vibeeshkv">vibeesh kv</a></p>
+
+<p><img width="1185" alt="image" src="https://user-images.githubusercontent.com/95404736/203337690-8c700fcc-1c2e-42b5-ab5e-58e6b25d64ef.png" /><br />
+<img width="1190" alt="image" src="https://user-images.githubusercontent.com/95404736/203337836-e4ca600c-2225-4a72-89df-7ae05cfb6c6b.png" /></p>
+
+<h3 id="️-링크">✔️ 링크</h3>
+
+<p><a href="https://dribbble.com/shots/8286525-ProManage-Dashboard-Freebie-Light-Dark-Themes">https://dribbble.com/shots/8286525-ProManage-Dashboard-Freebie-Light-Dark-Themes</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 어린 동물 찾기 (MySQL)</title><link href="http://localhost:4000/codingtest/post54/" rel="alternate" type="text/html" title="[Lv.1] 어린 동물 찾기 (MySQL)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post54</id><content type="html" xml:base="http://localhost:4000/codingtest/post54/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/59037">https://school.programmers.co.kr/learn/courses/30/lessons/59037</a></p>
+
+<h3 id="️-코드">✔️ 코드</h3>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
+<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
+<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">!=</span> <span class="s1">'Aged'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-풀이">✔️ 풀이</h3>
+
+<p>SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
+<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
+<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">&lt;&gt;</span> <span class="s1">'Aged'</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>풀고 나서 알아보니 != 는 &lt;&gt; 로 자동 변환 된다고 하는데 퍼포먼스면에서는 &lt;&gt;를 바로 사용해주는 것이 좋다고 합니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
@@ -436,49 +544,7 @@ Intersection Observer를 쓰기 이전에는 무한스크롤을 구현할 때 �
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="무한스크롤" /><category term="InfiniteScroll" /><category term="리액트" /><summary type="html"><![CDATA[React 무한스크롤 (Infinite Scroll) 구현]]></summary></entry><entry><title type="html">[Lv.1] 어린 동물 찾기 (MySQL)</title><link href="http://localhost:4000/codingtest/post54/" rel="alternate" type="text/html" title="[Lv.1] 어린 동물 찾기 (MySQL)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post54</id><content type="html" xml:base="http://localhost:4000/codingtest/post54/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/59037">https://school.programmers.co.kr/learn/courses/30/lessons/59037</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
-<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
-<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">!=</span> <span class="s1">'Aged'</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다.</p>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span>
-<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
-<span class="k">WHERE</span> <span class="n">INTAKE_CONDITION</span> <span class="o">&lt;&gt;</span> <span class="s1">'Aged'</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>풀고 나서 알아보니 != 는 &lt;&gt; 로 자동 변환 된다고 하는데 퍼포먼스면에서는 &lt;&gt;를 바로 사용해주는 것이 좋다고 합니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (5)</title><link href="http://localhost:4000/uiux/post55/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (5)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post55</id><content type="html" xml:base="http://localhost:4000/uiux/post55/"><![CDATA[<p>ProManage Dashboard - Freebie Light &amp; Dark Themes<br />
-by. <a href="https://dribbble.com/vibeeshkv">vibeesh kv</a></p>
-
-<p><img width="1185" alt="image" src="https://user-images.githubusercontent.com/95404736/203337690-8c700fcc-1c2e-42b5-ab5e-58e6b25d64ef.png" /><br />
-<img width="1190" alt="image" src="https://user-images.githubusercontent.com/95404736/203337836-e4ca600c-2225-4a72-89df-7ae05cfb6c6b.png" /></p>
-
-<h3 id="️-링크">✔️ 링크</h3>
-
-<p><a href="https://dribbble.com/shots/8286525-ProManage-Dashboard-Freebie-Light-Dark-Themes">https://dribbble.com/shots/8286525-ProManage-Dashboard-Freebie-Light-Dark-Themes</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">Webpack 알아보기 &amp;amp; 설치방법</title><link href="http://localhost:4000/web/post53/" rel="alternate" type="text/html" title="Webpack 알아보기 &amp;amp; 설치방법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/web/post53</id><content type="html" xml:base="http://localhost:4000/web/post53/"><![CDATA[<h3 id="️-webpack웹팩-이란">✔️ Webpack(웹팩) 이란?</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="무한스크롤" /><category term="InfiniteScroll" /><category term="리액트" /><summary type="html"><![CDATA[React 무한스크롤 (Infinite Scroll) 구현]]></summary></entry><entry><title type="html">Webpack 알아보기 &amp;amp; 설치방법</title><link href="http://localhost:4000/web/post53/" rel="alternate" type="text/html" title="Webpack 알아보기 &amp;amp; 설치방법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/web/post53</id><content type="html" xml:base="http://localhost:4000/web/post53/"><![CDATA[<h3 id="️-webpack웹팩-이란">✔️ Webpack(웹팩) 이란?</h3>
 
 <p><code class="language-plaintext highlighter-rouge">웹팩</code> 은 오픈 소스 자바스크립트 모듈 번들러로 요즘 프론트엔드 개발에 필수라고 할 수 있는 요소 중 하나인데요. 여러개로 나눠져 있는 파일들을 하나의 js코드로 압축하고 최적화 하는 라이브러리입니다.</p>
 
@@ -702,9 +768,9 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 부족한 금액 계산하기</title><link href="http://localhost:4000/codingtest/post49/" rel="alternate" type="text/html" title="[Lv.1] 부족한 금액 계산하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post49</id><content type="html" xml:base="http://localhost:4000/codingtest/post49/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
 
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/82612">https://school.programmers.co.kr/learn/courses/30/lessons/82612</a></p>
+<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484">https://school.programmers.co.kr/learn/courses/30/lessons/77484</a></p>
 
 <h3 id="️-코드">✔️ 코드</h3>
 
@@ -717,48 +783,29 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 7
 8
 9
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">price</span><span class="p">,</span> <span class="nx">money</span><span class="p">,</span> <span class="nx">count</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">price</span> <span class="o">*</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">lottos</span><span class="p">,</span> <span class="nx">win_nums</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">zeroCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">lowCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">win_nums</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">cur</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="mi">0</span>
+  <span class="p">);</span>
 
-  <span class="nx">answer</span> <span class="o">&gt;</span> <span class="nx">money</span> <span class="p">?</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">=</span> <span class="nx">answer</span> <span class="o">-</span> <span class="nx">money</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span><span class="p">),</span>
+    <span class="nx">lowCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="nx">lowCnt</span><span class="p">,</span>
+  <span class="p">];</span>
   <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h3 id="️-풀이">✔️ 풀이</h3>
 
-<p>이용 횟수 만큼 반복문 돌려주고 더한 값 구한 뒤 money와 비교하여 answer값 return</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">[Lv.1] 없는 숫자 더하기</title><link href="http://localhost:4000/codingtest/post48/" rel="alternate" type="text/html" title="[Lv.1] 없는 숫자 더하기" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post48</id><content type="html" xml:base="http://localhost:4000/codingtest/post48/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/86051">https://school.programmers.co.kr/learn/courses/30/lessons/86051</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">numbers</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">i</span><span class="p">))</span> <span class="nx">answer</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다.</p>
+<p>reduce를 활용해보았습니다. 풀고나서 찾아보니 <code class="language-plaintext highlighter-rouge">Array.includes()</code> 대신 <code class="language-plaintext highlighter-rouge">Set.has()</code> 를 사용하면 시간복잡도가 O(n) 에서 O(1)로 줄어든다고 합니다.
+위 코드에 적용해서 푼 것은 아니지만, 중복값이 없는 배열은 Set으로 바꾸는 좋은 방법이 있다는 것을 알게되었습니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />

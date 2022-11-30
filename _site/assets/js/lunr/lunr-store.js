@@ -346,4 +346,10 @@ var store = [{
         "tags": ["터미널","iTerm2","terminal","zsh-syntax-highlighting"],
         "url": "/setting/post58/",
         "teaser": null
+      },{
+        "title": "Nginx랑 Apache의 차이 알아보기",
+        "excerpt":"✔️ 웹 서버 (Web Server) 웹 서버란 HTTP를 통하여 웹 클라이언트가 요청한 데이터를 제공해주는 (=요청에 응답하는) 프로그램 입니다. 에전에는 웹 서버로 Apache를 많이 사용했지만 최근에는 Nginx를 많이 사용합니다. ✔️ Apache 프로세스 기반 접근 방식으로 하나의 스레드가 아닌 하나의 스레드가 하나의 요청을 처리하는 구조입니다. ✔️ Ngnix 이벤트 중심 접근 방식으로 하나의...","categories": ["Web"],
+        "tags": ["개발","웹","웹개발","ngnix"],
+        "url": "/web/post59/",
+        "teaser": null
       }]
