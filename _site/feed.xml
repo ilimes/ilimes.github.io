@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-30T21:49:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Nginx랑 Apache의 차이 알아보기</title><link href="http://localhost:4000/web/post59/" rel="alternate" type="text/html" title="Nginx랑 Apache의 차이 알아보기" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/web/post59</id><content type="html" xml:base="http://localhost:4000/web/post59/"><![CDATA[<h3 id="️-웹-서버-web-server">✔️ 웹 서버 (Web Server)</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-01T22:13:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Git bash에서 로그인한 계정 변경 방법</title><link href="http://localhost:4000/git/post60/" rel="alternate" type="text/html" title="Git - Git bash에서 로그인한 계정 변경 방법" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/git/post60</id><content type="html" xml:base="http://localhost:4000/git/post60/"><![CDATA[<p>윈도우 환경에서 Git bash 터미널 사용 시 깃허브 계정을 바꾸고 싶은 경우가 종종 있습니다. 그런 경우 간단하게 바꾸는 방법을 알려드리도록 하겠습니다.</p>
+
+<h3 id="️-현재-로그인한-계정-확인-방법">✔️ 현재 로그인한 계정 확인 방법</h3>
+
+<ul>
+  <li>이름 확인</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config user.name
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>이메일 확인</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config user.email
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-로그인-계정-변경하기">✔️ 로그인 계정 변경하기</h3>
+
+<ul>
+  <li>이름 바꾸기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config --global user.name 이름
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li>이메일 바꾸기</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config --global user.email 로그인할 이메일
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-자격증명-변경하기">✔️ 자격증명 변경하기</h3>
+
+<p>로그인 계정 변경을 완료하여도 여전히 계정이 바뀌어 있지 않습니다. 계정을 완전히 바꾸기 위해서는 자격증명을 변경해줘야합니다.</p>
+
+<ol>
+  <li>검색 - 자격 증명 관리자</li>
+  <li>Windows 자격증명 선택</li>
+  <li>하단에 위치한 일반 자격 증명 - 깃허브 관련 항목(git:https://github.com) 찾기</li>
+  <li>우측 화살표 눌러 창 늘리기 - 편집 또는 삭제버튼 누르기</li>
+  <li>사용자 이름과 암호 형태면 변경해주기, token이라면 지워주기</li>
+</ol>
+
+<p>자격증명 지운 상태로 푸쉬를 하게되면 새로 로그인 하라는 화면이 나타나게 됩니다.<br />
+그 때 새로운 계정 or 토큰으로 로그인 하면 정상적으로 사용이 가능합니다.</p>
+
+<h3 id="️-토큰-생성하기">✔️ 토큰 생성하기</h3>
+
+<p>혹시나 새로운 토큰을 생성하는 방법을 잊어버리셨다면 아래 방법대로 따라하시면 됩니다.</p>
+
+<ol>
+  <li>깃허브 Settings - Developer settings</li>
+  <li>Personal access tokens - Generate new token</li>
+  <li>repo 혹은 원하는 항목 선택 후 ‘Generate token’ 클릭</li>
+  <li>토큰이 발급되는데 한 번 밖에 볼 수 없으니 잘 보관해두기</li>
+</ol>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="github" /><category term="깃" /><category term="login" /><category term="계정" /><summary type="html"><![CDATA[Git bash 로그인 계정 변경]]></summary></entry><entry><title type="html">Nginx랑 Apache의 차이 알아보기</title><link href="http://localhost:4000/web/post59/" rel="alternate" type="text/html" title="Nginx랑 Apache의 차이 알아보기" /><published>2022-11-30T00:00:00+09:00</published><updated>2022-11-30T00:00:00+09:00</updated><id>http://localhost:4000/web/post59</id><content type="html" xml:base="http://localhost:4000/web/post59/"><![CDATA[<h3 id="️-웹-서버-web-server">✔️ 웹 서버 (Web Server)</h3>
 
 <p>웹 서버란 HTTP를 통하여 웹 클라이언트가 요청한 데이터를 제공해주는 (=요청에 응답하는) 프로그램 입니다.<br />
 에전에는 웹 서버로 Apache를 많이 사용했지만 최근에는 Nginx를 많이 사용합니다.</p>
@@ -768,45 +834,4 @@ by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">[Lv.1] 로또의 최고 순위와 최저 순위</title><link href="http://localhost:4000/codingtest/post50/" rel="alternate" type="text/html" title="[Lv.1] 로또의 최고 순위와 최저 순위" /><published>2022-11-14T00:00:00+09:00</published><updated>2022-11-14T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post50</id><content type="html" xml:base="http://localhost:4000/codingtest/post50/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/77484">https://school.programmers.co.kr/learn/courses/30/lessons/77484</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">solution</span><span class="p">(</span><span class="nx">lottos</span><span class="p">,</span> <span class="nx">win_nums</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">zeroCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">cur</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">lowCnt</span> <span class="o">=</span> <span class="nx">lottos</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">acc</span> <span class="o">+</span> <span class="p">(</span><span class="nx">win_nums</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">cur</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="mi">0</span>
-  <span class="p">);</span>
-
-  <span class="kd">const</span> <span class="nx">answer</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="p">(</span><span class="nx">lowCnt</span> <span class="o">+</span> <span class="nx">zeroCnt</span><span class="p">),</span>
-    <span class="nx">lowCnt</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">?</span> <span class="mi">6</span> <span class="p">:</span> <span class="mi">7</span> <span class="o">-</span> <span class="nx">lowCnt</span><span class="p">,</span>
-  <span class="p">];</span>
-  <span class="k">return</span> <span class="nx">answer</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>reduce를 활용해보았습니다. 풀고나서 찾아보니 <code class="language-plaintext highlighter-rouge">Array.includes()</code> 대신 <code class="language-plaintext highlighter-rouge">Set.has()</code> 를 사용하면 시간복잡도가 O(n) 에서 O(1)로 줄어든다고 합니다.
-위 코드에 적용해서 푼 것은 아니지만, 중복값이 없는 배열은 Set으로 바꾸는 좋은 방법이 있다는 것을 알게되었습니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry></feed>

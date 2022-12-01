@@ -352,4 +352,10 @@ var store = [{
         "tags": ["개발","웹","웹개발","ngnix"],
         "url": "/web/post59/",
         "teaser": null
+      },{
+        "title": "Git - Git bash에서 로그인한 계정 변경 방법",
+        "excerpt":"윈도우 환경에서 Git bash 터미널 사용 시 깃허브 계정을 바꾸고 싶은 경우가 종종 있습니다. 그런 경우 간단하게 바꾸는 방법을 알려드리도록 하겠습니다. ✔️ 현재 로그인한 계정 확인 방법 이름 확인 1 git config user.name 이메일 확인 1 git config user.email ✔️ 로그인 계정 변경하기 이름 바꾸기 1 git config --global user.name...","categories": ["Git"],
+        "tags": ["github","깃","login","계정"],
+        "url": "/git/post60/",
+        "teaser": null
       }]
