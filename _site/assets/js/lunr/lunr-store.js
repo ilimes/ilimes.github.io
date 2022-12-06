@@ -358,4 +358,10 @@ var store = [{
         "tags": ["github","깃","login","계정"],
         "url": "/git/post60/",
         "teaser": null
+      },{
+        "title": "React Query 알아보기",
+        "excerpt":"✔️ React-Query란? React Query 는 서버에 있던 값을 클라이언트로 가져오거나, 캐싱 또는 동기화 등 일련의 비동기 과정들을 편하게 하는 데 사용되는 리액트 라이브러리 입니다. ✔️ React-Query의 장점 리액트 쿼리를 사용하면 프로젝트 구조가 단순해지고, 프론트엔드 개발시 귀찮을 수 있는 몇가지 일들을 수행해줍니다. 효율적인 캐싱 관리 같은 데이터에 대하여 여러번의 요청이 있을...","categories": ["React"],
+        "tags": ["리액트","리액트쿼리","reactquery"],
+        "url": "/react/post61/",
+        "teaser": null
       }]

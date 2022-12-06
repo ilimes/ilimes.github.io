@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-01T22:13:47+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - Git bash에서 로그인한 계정 변경 방법</title><link href="http://localhost:4000/git/post60/" rel="alternate" type="text/html" title="Git - Git bash에서 로그인한 계정 변경 방법" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/git/post60</id><content type="html" xml:base="http://localhost:4000/git/post60/"><![CDATA[<p>윈도우 환경에서 Git bash 터미널 사용 시 깃허브 계정을 바꾸고 싶은 경우가 종종 있습니다. 그런 경우 간단하게 바꾸는 방법을 알려드리도록 하겠습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-06T21:44:46+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Query 알아보기</title><link href="http://localhost:4000/react/post61/" rel="alternate" type="text/html" title="React Query 알아보기" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/react/post61</id><content type="html" xml:base="http://localhost:4000/react/post61/"><![CDATA[<h3 id="️-react-query란">✔️ React-Query란?</h3>
+
+<p><code class="language-plaintext highlighter-rouge">React Query</code> 는 서버에 있던 값을 클라이언트로 가져오거나, 캐싱 또는 동기화 등 일련의 비동기 과정들을 편하게 하는 데 사용되는 리액트 라이브러리 입니다.</p>
+
+<h3 id="️-react-query의-장점">✔️ React-Query의 장점</h3>
+
+<p>리액트 쿼리를 사용하면 프로젝트 구조가 단순해지고, 프론트엔드 개발시 귀찮을 수 있는 몇가지 일들을 수행해줍니다.</p>
+
+<ul>
+  <li>효율적인 캐싱 관리</li>
+  <li>같은 데이터에 대하여 여러번의 요청이 있을 시 중복을 제거 (옵션으로 중복 호출 허용 시간 조절도 가능)</li>
+  <li>데이터가 오래되었을 경우 알아서 업데이트 해줌</li>
+  <li>페이징 처리 성능 최적화</li>
+  <li>Redux로 비동기 데이터를 관리하는 것 보다 코드 분량이 적음</li>
+</ul>
+
+<h3 id="️-설치하기">✔️ 설치하기</h3>
+
+<p>리액트 쿼리는 npm 또는 yarn으로 손쉽게 설치할 수 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>react-query
+yarn <span class="nb">install </span>react-query
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-react-query-기본-세팅">✔️ React-Query 기본 세팅</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="c1">// src/index.js</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">QueryClientProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">ReactQueryDevtools</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query/devtools</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">();</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">QueryClientProvider</span> <span class="na">client</span><span class="p">=</span><span class="si">{</span><span class="nx">queryClient</span><span class="si">}</span><span class="p">&gt;</span>
+      <span class="si">{</span><span class="cm">/* devtools */</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nc">ReactQueryDevtools</span> <span class="na">initialIsOpen</span><span class="p">=</span><span class="si">{</span><span class="kc">true</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">QueryClientProvider</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
+  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-queries">✔️ Queries</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchTodoList</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">useQuery</code> 의 첫번째 파라미터는 unique key를 입력합니다. 두번째 파라미터는 데이터를 패칭하기 위한 비동기 함수를 넣어줍니다.</li>
+  <li>첫번째 파라미터로 설정한 unique key 는 다른 컴포넌트에서도 해당 키를 사용하여 호출하는 식으로 활용 가능합니다.</li>
+  <li>unique key는 String과 Array를 받습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">useQuery</code> 는 비동기로 작동합니다.</li>
+</ul>
+
+<h4 id="usequery-return-값에-포함된-states">useQuery return 값에 포함된 states</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">isLoading</code> or status === ‘loading’ : 현재 데이터를 요청 중이나 아직 데이터가 없을 경우</li>
+  <li><code class="language-plaintext highlighter-rouge">isError</code> or status === ‘error’: 쿼리에서 에러가 났을 경우</li>
+  <li><code class="language-plaintext highlighter-rouge">isSuccess</code> or status === ‘success’ - 쿼리 요청 성공한 경우</li>
+  <li><code class="language-plaintext highlighter-rouge">isIdle</code> or status === ‘idle’: 이 쿼리는 현재 사용할 수 없을 때 나옴</li>
+  <li><code class="language-plaintext highlighter-rouge">isFetching</code> : 데이터 요청 중일 때는 (내부적으로 리패칭 중 일때도 포함) 항상 True를 리턴한다</li>
+</ul>
+
+<h4 id="usequery-동기적으로-실행">useQuery 동기적으로 실행</h4>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">todoList</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isFetching</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchTodoList</span><span class="p">);</span>
+<span class="kd">const</span> <span class="p">{</span>
+  <span class="na">data</span><span class="p">:</span> <span class="nx">nextTodo</span><span class="p">,</span>
+  <span class="nx">error</span><span class="p">,</span>
+  <span class="nx">isFetching</span><span class="p">,</span>
+<span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">nextTodos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchNextTodoList</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">enabled</span><span class="p">:</span> <span class="o">!!</span><span class="nx">todoList</span><span class="p">,</span> <span class="c1">// true가 되면 fetchNextTodoList를 실행한다</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 <code class="language-plaintext highlighter-rouge">enabled</code> 옵션을 사용하는 경우 useQuery를 사용할 때 동기적으로 사용가능하게 해줍니다.</p>
+
+<h4 id="usequeries">useQueries</h4>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">users</span> <span class="p">})</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">userQueries</span> <span class="o">=</span> <span class="nx">useQueries</span><span class="p">(</span>
+    <span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">],</span>
+        <span class="na">queryFn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">fetchUserById</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">),</span>
+      <span class="p">};</span>
+    <span class="p">})</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="쿼리-무효화-시키기">쿼리 무효화 시키기</h4>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">{</span> <span class="nx">mutate</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useMutation</span><span class="p">(</span><span class="nx">apis</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">onSuccess</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">queryClient</span><span class="p">.</span><span class="nx">invalidateQueries</span><span class="p">(</span><span class="dl">"</span><span class="s2">all</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//invalidateQueries(무효화 시킬 queryKey 이름)</span>
+    <span class="nx">day_input</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="nx">time_input</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 <code class="language-plaintext highlighter-rouge">invalidateQueries</code> 를 사용하게 되면 데이터가 최신으로 변경되었을 때 이전 데이터를 무효화 시킬 수 있습니다.</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<p><a href="https://tanstack.com/query/v4/docs/guides/window-focus-refetching?from=reactQueryV3&amp;original=https://react-query-v3.tanstack.com/guides/window-focus-refetching">https://tanstack.com/query/v4/docs/guides/window-focus-refetching?from=reactQueryV3&amp;original=https://react-query-v3.tanstack.com/guides/window-focus-refetching</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="리액트쿼리" /><category term="reactquery" /><summary type="html"><![CDATA[리액트 쿼리 알아보기]]></summary></entry><entry><title type="html">Git - Git bash에서 로그인한 계정 변경 방법</title><link href="http://localhost:4000/git/post60/" rel="alternate" type="text/html" title="Git - Git bash에서 로그인한 계정 변경 방법" /><published>2022-12-01T00:00:00+09:00</published><updated>2022-12-01T00:00:00+09:00</updated><id>http://localhost:4000/git/post60</id><content type="html" xml:base="http://localhost:4000/git/post60/"><![CDATA[<p>윈도우 환경에서 Git bash 터미널 사용 시 깃허브 계정을 바꾸고 싶은 경우가 종종 있습니다. 그런 경우 간단하게 바꾸는 방법을 알려드리도록 하겠습니다.</p>
 
 <h3 id="️-현재-로그인한-계정-확인-방법">✔️ 현재 로그인한 계정 확인 방법</h3>
 
@@ -610,7 +781,58 @@ Intersection Observer를 쓰기 이전에는 무한스크롤을 구현할 때 �
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="무한스크롤" /><category term="InfiniteScroll" /><category term="리액트" /><summary type="html"><![CDATA[React 무한스크롤 (Infinite Scroll) 구현]]></summary></entry><entry><title type="html">Webpack 알아보기 &amp;amp; 설치방법</title><link href="http://localhost:4000/web/post53/" rel="alternate" type="text/html" title="Webpack 알아보기 &amp;amp; 설치방법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/web/post53</id><content type="html" xml:base="http://localhost:4000/web/post53/"><![CDATA[<h3 id="️-webpack웹팩-이란">✔️ Webpack(웹팩) 이란?</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="무한스크롤" /><category term="InfiniteScroll" /><category term="리액트" /><summary type="html"><![CDATA[React 무한스크롤 (Infinite Scroll) 구현]]></summary></entry><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
+
+<p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
+작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
+
+<h3 id="️-git-stash-사용법">✔️ Git stash 사용법</h3>
+
+<h4 id="git-stash">git stash</h4>
+
+<p>작업 임시 저장, 명령어 사용 시 스택에 새로운 stash가 생성됨</p>
+
+<h4 id="git-stash-list">git stash list</h4>
+
+<p>stash 목록 확인</p>
+
+<h4 id="git-stash-apply">git stash apply</h4>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>git stash apply  // 가장 최근의 stash를 가져오기
+git stash apply [stash명]  // 해당 stash명의 stash 가져오기
+git stash apply --index  // Staged 상태였던 작업들을 다시 Staged상태로 복원
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="git-stash-drop">git stash drop</h4>
+
+<p>stash 제거</p>
+
+<h4 id="git-stash-pop">git stash pop</h4>
+
+<p>apply + drop 같은 느낌, 적용과 동시에 해당 stash를 제거</p>
+
+<h4 id="git-stash-show--p--git-apply--r">git stash show -p | git apply -R</h4>
+
+<p>stash 잘못 적용한 경우 사용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>// 가장 최근의 stash를 사용하여 패치를 만들고 거꾸로 적용
+git stash show -p | git apply -R 
+
+// stash 이름에 해당하는 stash를 이용하여 거꾸로 적용
+git stash show -p [stash 이름] | git apply -R
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry><entry><title type="html">Webpack 알아보기 &amp;amp; 설치방법</title><link href="http://localhost:4000/web/post53/" rel="alternate" type="text/html" title="Webpack 알아보기 &amp;amp; 설치방법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/web/post53</id><content type="html" xml:base="http://localhost:4000/web/post53/"><![CDATA[<h3 id="️-webpack웹팩-이란">✔️ Webpack(웹팩) 이란?</h3>
 
 <p><code class="language-plaintext highlighter-rouge">웹팩</code> 은 오픈 소스 자바스크립트 모듈 번들러로 요즘 프론트엔드 개발에 필수라고 할 수 있는 요소 중 하나인데요. 여러개로 나눠져 있는 파일들을 하나의 js코드로 압축하고 최적화 하는 라이브러리입니다.</p>
 
@@ -772,66 +994,4 @@ npx webpack-cli .src/index.js
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹팩" /><category term="Webpack" /><category term="개발" /><category term="Frontend" /><summary type="html"><![CDATA[오픈 소스 자바스크립트 모듈 번들러 Webpack]]></summary></entry><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
-
-<p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
-작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
-
-<h3 id="️-git-stash-사용법">✔️ Git stash 사용법</h3>
-
-<h4 id="git-stash">git stash</h4>
-
-<p>작업 임시 저장, 명령어 사용 시 스택에 새로운 stash가 생성됨</p>
-
-<h4 id="git-stash-list">git stash list</h4>
-
-<p>stash 목록 확인</p>
-
-<h4 id="git-stash-apply">git stash apply</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>git stash apply  // 가장 최근의 stash를 가져오기
-git stash apply [stash명]  // 해당 stash명의 stash 가져오기
-git stash apply --index  // Staged 상태였던 작업들을 다시 Staged상태로 복원
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="git-stash-drop">git stash drop</h4>
-
-<p>stash 제거</p>
-
-<h4 id="git-stash-pop">git stash pop</h4>
-
-<p>apply + drop 같은 느낌, 적용과 동시에 해당 stash를 제거</p>
-
-<h4 id="git-stash-show--p--git-apply--r">git stash show -p | git apply -R</h4>
-
-<p>stash 잘못 적용한 경우 사용</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre>// 가장 최근의 stash를 사용하여 패치를 만들고 거꾸로 적용
-git stash show -p | git apply -R 
-
-// stash 이름에 해당하는 stash를 이용하여 거꾸로 적용
-git stash show -p [stash 이름] | git apply -R
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (4)</title><link href="http://localhost:4000/uiux/post51/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (4)" /><published>2022-11-15T00:00:00+09:00</published><updated>2022-11-15T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post51</id><content type="html" xml:base="http://localhost:4000/uiux/post51/"><![CDATA[<p>Dashboard<br />
-by. <a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">Dimo.ui</a></p>
-
-<p><img width="1045" alt="image" src="https://user-images.githubusercontent.com/95404736/201929424-043cda83-f50a-40ff-8278-f58e41ba7fd1.png" /></p>
-
-<h3 id="️-링크">✔️ 링크</h3>
-
-<p><a href="https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI">https://dribbble.com/shots/15384601-Ecommerce-Dashboard-UI</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="웹팩" /><category term="Webpack" /><category term="개발" /><category term="Frontend" /><summary type="html"><![CDATA[오픈 소스 자바스크립트 모듈 번들러 Webpack]]></summary></entry></feed>
