@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-07T22:44:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">UI/UX 디자인 공유 (6)</title><link href="http://localhost:4000/uiux/post62/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (6)" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post62</id><content type="html" xml:base="http://localhost:4000/uiux/post62/"><![CDATA[<p>Project Management Dashboard<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-13T22:49:04+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">return과 return false 의 차이?</title><link href="http://localhost:4000/javascript/post63/" rel="alternate" type="text/html" title="return과 return false 의 차이?" /><published>2022-12-13T00:00:00+09:00</published><updated>2022-12-13T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post63</id><content type="html" xml:base="http://localhost:4000/javascript/post63/"><![CDATA[<h3 id="return">return</h3>
+
+<p><code class="language-plaintext highlighter-rouge">return</code> 명령문은 함수 실행을 종료하고, 주어진 값을 함수 호출 지점으로 반환합니다.</p>
+
+<h3 id="return과-return-false의-차이">return과 return false의 차이</h3>
+
+<p>자바스크립트로 개발을 하다보면 return으로 함수의 동작을 멈추는 경우가 종종 있습니다. 일반적으로 그냥 return; 을 사용해서 해당 지점을 끝내는 경우가 많은데 return false; 와는 어떤 차이가 있을지 궁금해졌습니다.</p>
+
+<h4 id="구문">구문</h4>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="k">return</span> <span class="p">[[</span><span class="nx">expression</span><span class="p">]];</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">expression</code> : 반환할 값으로 사용할 표현식. 생략할 경우 undefined를 대신 반환합니다.</p>
+
+<p>우선 위와 같이 return시 표현식을 생략하는 경우에는 undefined를 반환하게 됩니다. 보통 함수는 리턴값을 보고 어떤 값을 가지는지 알게 되는데, return 만 사용하게 되는 경우 의미 전달이 애매해지게 되는데요. return false; 를 사용하게 되면 리턴값이 명시되어 있으므로 명확한 의미 전달과 가독성 향상 측면에서 좋다는 의견이 꽤나 많더라고요.</p>
+
+<p>둘 중 무엇을 사용해도 퍼포먼스 측면에서는 큰 차이가 없지만 명확한 의미전달, 가독성 향상 때문이라도 되도록이면 return false; 사용을 지향해야겠다는 생각이 듭니다.</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/return">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/return</a><br />
+<a href="https://yongblog.tistory.com/entry/onclick-%EC%97%90%EC%84%9C-return-false-%EC%9D%98-%EC%9D%98%EB%AF%B8">https://yongblog.tistory.com/entry/onclick-%EC%97%90%EC%84%9C-return-false-%EC%9D%98-%EC%9D%98%EB%AF%B8</a></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="js" /><category term="return" /><category term="return false" /><category term="자바스크립트" /><summary type="html"><![CDATA[return; return false; 는 어떤 차이가 있을까]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (6)</title><link href="http://localhost:4000/uiux/post62/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (6)" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post62</id><content type="html" xml:base="http://localhost:4000/uiux/post62/"><![CDATA[<p>Project Management Dashboard<br />
 by. <a href="https://dribbble.com/Dedewahidin">Ciptasmara</a></p>
 
 <p><img width="793" alt="image" src="https://user-images.githubusercontent.com/95404736/206194128-71147734-d336-4a8c-bfc7-24af5ce0e8bf.png" /></p>
@@ -792,55 +819,4 @@ by. <a href="https://dribbble.com/vibeeshkv">vibeesh kv</a></p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">Git - Stash 사용법</title><link href="http://localhost:4000/git/post52/" rel="alternate" type="text/html" title="Git - Stash 사용법" /><published>2022-11-17T00:00:00+09:00</published><updated>2022-11-17T00:00:00+09:00</updated><id>http://localhost:4000/git/post52</id><content type="html" xml:base="http://localhost:4000/git/post52/"><![CDATA[<h3 id="️-git-stash란">✔️ Git stash란?</h3>
-
-<p>작업을 하다 보면 브랜치를 변경할 일이 생기곤 합니다. 그런데 만약 브랜치를 변경할 때 작업물이 커밋되어 있지 않다면 변경 시 conflict가 일어나게 됩니다.<br />
-작업이 마무리 되지 않은 상태에서 commit 하지 않고 브랜치를 이동시키고 싶은 경우 stash를 사용하면 잠시 스택에 저장해놓고 다시 가져오는 등의 작업을 할 수 있습니다.</p>
-
-<h3 id="️-git-stash-사용법">✔️ Git stash 사용법</h3>
-
-<h4 id="git-stash">git stash</h4>
-
-<p>작업 임시 저장, 명령어 사용 시 스택에 새로운 stash가 생성됨</p>
-
-<h4 id="git-stash-list">git stash list</h4>
-
-<p>stash 목록 확인</p>
-
-<h4 id="git-stash-apply">git stash apply</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre>git stash apply  // 가장 최근의 stash를 가져오기
-git stash apply [stash명]  // 해당 stash명의 stash 가져오기
-git stash apply --index  // Staged 상태였던 작업들을 다시 Staged상태로 복원
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="git-stash-drop">git stash drop</h4>
-
-<p>stash 제거</p>
-
-<h4 id="git-stash-pop">git stash pop</h4>
-
-<p>apply + drop 같은 느낌, 적용과 동시에 해당 stash를 제거</p>
-
-<h4 id="git-stash-show--p--git-apply--r">git stash show -p | git apply -R</h4>
-
-<p>stash 잘못 적용한 경우 사용</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre>// 가장 최근의 stash를 사용하여 패치를 만들고 거꾸로 적용
-git stash show -p | git apply -R 
-
-// stash 이름에 해당하는 stash를 이용하여 거꾸로 적용
-git stash show -p [stash 이름] | git apply -R
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="stash" /><category term="깃" /><category term="commit" /><category term="커밋" /><summary type="html"><![CDATA[git stash 사용하여 변경 사항 저장 및 꺼내기]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry></feed>

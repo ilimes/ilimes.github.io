@@ -370,4 +370,10 @@ var store = [{
         "tags": ["UI","UX","디자인","웹디자인","Dashboard","대시보드"],
         "url": "/uiux/post62/",
         "teaser": null
+      },{
+        "title": "return과 return false 의 차이?",
+        "excerpt":"return return 명령문은 함수 실행을 종료하고, 주어진 값을 함수 호출 지점으로 반환합니다. return과 return false의 차이 자바스크립트로 개발을 하다보면 return으로 함수의 동작을 멈추는 경우가 종종 있습니다. 일반적으로 그냥 return; 을 사용해서 해당 지점을 끝내는 경우가 많은데 return false; 와는 어떤 차이가 있을지 궁금해졌습니다. 구문 1 return [[expression]]; expression : 반환할...","categories": ["JavaScript"],
+        "tags": ["js","return","return false","자바스크립트"],
+        "url": "/javascript/post63/",
+        "teaser": null
       }]
