@@ -376,4 +376,10 @@ var store = [{
         "tags": ["js","return","return false","자바스크립트"],
         "url": "/javascript/post63/",
         "teaser": null
+      },{
+        "title": "React 상태관리 라이브러리 zustand",
+        "excerpt":"✔️ zustand? 오늘은 리액트 상태관리 라이브러리 중 하나인 zustand를 알아보고자 합니다. 오늘 알아볼 zustand는 직장동료분께서 요즘 많이들 사용하는 라이브러리 중 하나이고 사용하기도 쉽다고 알려주셨는데요. 독일어로 zustand가 상태라고 하더라고요. 과연 zustand는 기존에 사용하던 redux와 비교하여 어떤 차이가 있을지, 사용 방법은 어떤지 알아보도록 하겠습니다. ✔️ zustand의 장점 일단 zustand는 코드가 간결합니다. redux를...","categories": ["React"],
+        "tags": ["리액트","상태관리","zustand"],
+        "url": "/react/post64/",
+        "teaser": null
       }]
