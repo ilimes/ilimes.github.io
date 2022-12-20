@@ -382,4 +382,10 @@ var store = [{
         "tags": ["리액트","상태관리","zustand"],
         "url": "/react/post64/",
         "teaser": null
+      },{
+        "title": "User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)",
+        "excerpt":"크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다. ✔️ UserAgent 문법 1 navigator.userAgent; ✔️ 브라우저 정보 확인 예제 예제 1 2 3 4 5 6 7 8 9 10...","categories": ["JavaScript"],
+        "tags": ["브라우저정보","자바스크립트","UserAgent","Browser"],
+        "url": "/javascript/post65/",
+        "teaser": null
       }]

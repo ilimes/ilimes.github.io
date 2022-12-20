@@ -1,4 +1,187 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-20T21:39:38+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React 상태관리 라이브러리 zustand</title><link href="http://localhost:4000/react/post64/" rel="alternate" type="text/html" title="React 상태관리 라이브러리 zustand" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/react/post64</id><content type="html" xml:base="http://localhost:4000/react/post64/"><![CDATA[<h3 id="️-zustand">✔️ zustand?</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-20T22:06:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
+
+<h3 id="️-useragent-문법">✔️ UserAgent 문법</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-브라우저-정보-확인-예제">✔️ 브라우저 정보 확인 예제</h3>
+
+<h4 id="예제">예제</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+</pre></td><td class="rouge-code"><pre><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="kd">var</span> <span class="nx">txt</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Browser CodeName: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appCodeName</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Browser Name: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appName</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Browser Version: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">appVersion</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Cookies Enabled: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">cookieEnabled</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Browser Language: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">language</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Browser Online: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">onLine</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;Platform: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">platform</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">txt</span> <span class="o">+=</span> <span class="dl">"</span><span class="s2">&lt;p&gt;User-agent header: </span><span class="dl">"</span> <span class="o">+</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&lt;/p&gt;</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">demo</span><span class="dl">"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">txt</span><span class="p">;</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+<span class="c1">//결과</span>
+<span class="nx">Browser</span> <span class="nx">CodeName</span><span class="p">:</span> <span class="nx">Mozilla</span>
+
+<span class="nx">Browser</span> <span class="nx">Name</span><span class="p">:</span> <span class="nx">Netscape</span>
+
+<span class="nx">Browser</span> <span class="nx">Version</span><span class="p">:</span> <span class="mf">5.0</span> <span class="p">(</span><span class="nx">Macintosh</span><span class="p">;</span> <span class="nx">Intel</span> <span class="nx">Mac</span> <span class="nx">OS</span> <span class="nx">X</span> <span class="mi">10</span><span class="nx">_13_3</span><span class="p">)</span> <span class="nx">AppleWebKit</span><span class="o">/</span><span class="mf">537.36</span> <span class="p">(</span><span class="nx">KHTML</span><span class="p">,</span> <span class="nx">like</span> <span class="nx">Gecko</span><span class="p">)</span> <span class="nx">Chrome</span><span class="o">/</span><span class="mf">64.0</span><span class="p">.</span><span class="mf">3282.167</span> <span class="nx">Safari</span><span class="o">/</span><span class="mf">537.36</span>
+
+<span class="nx">Cookies</span> <span class="nx">Enabled</span><span class="p">:</span> <span class="kc">true</span>
+
+<span class="nx">Browser</span> <span class="nx">Language</span><span class="p">:</span> <span class="nx">ko</span>
+
+<span class="nx">Browser</span> <span class="nx">Online</span><span class="p">:</span> <span class="kc">true</span>
+
+<span class="nx">Platform</span><span class="p">:</span> <span class="nx">MacIntel</span>
+
+<span class="nx">User</span><span class="o">-</span><span class="nx">agent</span> <span class="nx">header</span><span class="p">:</span> <span class="nx">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="nx">Macintosh</span><span class="p">;</span> <span class="nx">Intel</span> <span class="nx">Mac</span> <span class="nx">OS</span> <span class="nx">X</span> <span class="mi">10</span><span class="nx">_13_3</span><span class="p">)</span> <span class="nx">AppleWebKit</span><span class="o">/</span><span class="mf">537.36</span> <span class="p">(</span><span class="nx">KHTML</span><span class="p">,</span> <span class="nx">like</span> <span class="nx">Gecko</span><span class="p">)</span> <span class="nx">Chrome</span><span class="o">/</span><span class="mf">64.0</span><span class="p">.</span><span class="mf">3282.167</span> <span class="nx">Safari</span><span class="o">/</span><span class="mf">537.36</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="모바일-디바이스-구분하는-함수">모바일 디바이스 구분하는 함수</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c1">// 모바일 에이전트 구분</span>
+<span class="kd">var</span> <span class="nx">isMobile</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">Android</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Android/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">BlackBerry</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/BlackBerry/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">IOS</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/iPhone|iPad|iPod/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">Opera</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/Opera Mini/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">Windows</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/IEMobile/i</span><span class="p">)</span> <span class="o">==</span> <span class="kc">null</span> <span class="p">?</span> <span class="kc">false</span> <span class="p">:</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="na">any</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">Android</span><span class="p">()</span> <span class="o">||</span> <span class="nx">isMobile</span><span class="p">.</span><span class="nx">BlackBerry</span><span class="p">()</span> <span class="o">||</span> <span class="nx">isMobile</span><span class="p">.</span><span class="nx">IOS</span><span class="p">()</span> <span class="o">||</span> <span class="nx">isMobile</span><span class="p">.</span><span class="nx">Opera</span><span class="p">()</span> <span class="o">||</span> <span class="nx">isMobile</span><span class="p">.</span><span class="nx">Windows</span><span class="p">());</span>
+        <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">Colored</span> <span class="nx">by</span> <span class="nx">Color</span> <span class="nx">Scripter</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="모바일-디바이스-구분-함수-사용">모바일 디바이스 구분 함수 사용</h4>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">any</span><span class="p">())</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">Android</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">IOS</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">BlackBerry</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">Opera</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">isMobile</span><span class="p">.</span><span class="nx">Windows</span><span class="p">())</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//1# : any 함수로 모바일인지 아닌지를 구분</span>
+<span class="c1">//2# ~ : 각 모바일 디바이스를 구분</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="️-크롬인지-아닌지-확인하는-예제">✔️ 크롬인지 아닌지 확인하는 예제</h3>
+
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="rNrNXQO" data-user="ilimes" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/ilimes/pen/rNrNXQO">
+  Untitled</a> by Daegyu Lee (<a href="https://codepen.io/ilimes">@ilimes</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async="" src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<ul>
+  <li><a href="http://cofs.tistory.com/214">http://cofs.tistory.com/214</a></li>
+  <li><a href="https://amagrammer91.tistory.com/48">https://amagrammer91.tistory.com/48</a></li>
+  <li><a href="https://zinee-world.tistory.com/512">https://zinee-world.tistory.com/512</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="브라우저정보" /><category term="자바스크립트" /><category term="UserAgent" /><category term="Browser" /><summary type="html"><![CDATA[User Agent 브라우저 정보 얻기]]></summary></entry><entry><title type="html">React 상태관리 라이브러리 zustand</title><link href="http://localhost:4000/react/post64/" rel="alternate" type="text/html" title="React 상태관리 라이브러리 zustand" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/react/post64</id><content type="html" xml:base="http://localhost:4000/react/post64/"><![CDATA[<h3 id="️-zustand">✔️ zustand?</h3>
 
 <p>오늘은 리액트 상태관리 라이브러리 중 하나인 zustand를 알아보고자 합니다. 오늘 알아볼 zustand는 직장동료분께서 요즘 많이들 사용하는 라이브러리 중 하나이고 사용하기도 쉽다고 알려주셨는데요. 독일어로 zustand가 상태라고 하더라고요. 과연 zustand는 기존에 사용하던 redux와 비교하여 어떤 차이가 있을지, 사용 방법은 어떤지 알아보도록 하겠습니다.</p>
 
@@ -542,376 +725,7 @@ soruce ~/.zshrc 명령어 까지 입력하면 즉시 적용됩니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">Intersection Observer API 활용하여 React에서 무한스크롤 구현하기</title><link href="http://localhost:4000/react/post56/" rel="alternate" type="text/html" title="Intersection Observer API 활용하여 React에서 무한스크롤 구현하기" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/react/post56</id><content type="html" xml:base="http://localhost:4000/react/post56/"><![CDATA[<h3 id="️-infinite-scroll">✔️ Infinite Scroll?</h3>
-
-<p>무한스크롤(Infinite Scroll) 이란 말 그대로 스크롤을 무한으로 할 수 있는 기능을 말합니다. 불러와야 하는 게시글 목록이 많은 경우 무한스크롤을 활용하면 사용자 편의성과 클라이언트 부담을 덜 수 있다는 장점이 있습니다.</p>
-
-<h3 id="️-intersection-observer-api-란">✔️ Intersection Observer API 란?</h3>
-
-<blockquote>
-  <p>Intersection Observer API는 타겟 요소와 상위 요소 또는 최상위 document 의 viewport 사이의 intersection 내의 변화를 비동기적으로 관찰하는 API입니다.</p>
-</blockquote>
-
-<p>MDN에서는 Intersection Observer API를 위와 같이 정의하고 있습니다. 쉽게 말하면 관찰 중인 요소가 사용자가 보고 있는 영역 안에 들어왔는지 알려주는 API라고 할 수 있습니다.</p>
-
-<h4 id="️-options">✔️ Options</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>옵션부에는 root, rootMargin, threshold 3가지가 있습니다.</p>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">root</code> : 타겟 엘리먼트가 보이는지 안보이는지 결정할 뷰포트로 사용되는 엘리먼트 (기본값은 Browser Viewport)</li>
-  <li><code class="language-plaintext highlighter-rouge">rootMargin</code> : root에 정의된 Element가 가진 마진값 (기본값은 0)</li>
-  <li><code class="language-plaintext highlighter-rouge">threshold</code> : 타겟 엘리먼트가 root에 정의된 Element에 얼마나 노출되었을 때 Callback 함수를 실행할지 정의하는 옵션 (기본값은 0)</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">io</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="nx">callback</span><span class="p">,</span> <span class="p">{</span> <span class="na">threshold</span><span class="p">:</span> <span class="mf">0.7</span> <span class="p">});</span>
-<span class="nx">io</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">관찰할</span> <span class="nx">요소</span><span class="p">);</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>예를 들어 관찰하고자 하는 대상이 화면 내 70% 안에 들어왔을 경우 위와 같이 작성할 수 있습니다.</p>
-
-<h4 id="️-콜백함수">✔️ 콜백함수</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">callback</span> <span class="o">=</span> <span class="p">(</span><span class="nx">entries</span><span class="p">,</span> <span class="nx">io</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">entries</span><span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">entry</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="c1">// 화면 안에 요소가 들어왔는지 체크</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">isIntersecting</span><span class="p">)</span> <span class="p">{</span>
-      <span class="c1">// 기존 관찰하던 요소는 더 이상 관찰하지 않음</span>
-      <span class="nx">io</span><span class="p">.</span><span class="nx">unobserve</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-      <span class="c1">// TODO: 새로운 컨텐츠 추가</span>
-      <span class="c1">// TODO: 새로운 컨텐츠의 마지막 요소를 관찰 시작</span>
-    <span class="p">}</span>
-  <span class="p">});</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>콜백 함수는 위와 같이 entries와 io를 매개변수로 갖습니다.<br />
-Intersection Observer를 쓰기 이전에는 무한스크롤을 구현할 때 성능 문제로 인해 <code class="language-plaintext highlighter-rouge">debounce</code> 나 <code class="language-plaintext highlighter-rouge">throttle</code> 과 같은 호출수 제한 최적화 작업이 반드시 이뤄져야 했지만 지금은 필요하지 않습니다.</p>
-
-<h3 id="️-무한스크롤-구현">✔️ 무한스크롤 구현</h3>
-
-<p>이제 본격적으로 무한스크롤 구현 코드를 작성해보도록 하겠습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre><span class="nx">$</span> <span class="nx">npx</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">infinite</span><span class="o">-</span><span class="nx">scroll</span><span class="o">-</span><span class="nx">example</span>
-<span class="nx">$</span> <span class="nx">npm</span> <span class="nx">i</span> <span class="nx">styled</span><span class="o">-</span><span class="nx">components</span> <span class="nx">react</span><span class="o">-</span><span class="nx">loading</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>우선 위와 같은 CRA 명령어를 입력하여 초기 세팅을 하고 styled와 react-loading 라이브러리를 설치해주도록 하겠습니다.</p>
-
-<ul>
-  <li>Item.js</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">ItemWrap</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
-  width: 350px;
-  height: 370px;
-  padding-top: 140px;
-  font-size: 70px;
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  margin: 1rem;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 6px;
-`</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Item</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">number</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">&lt;</span><span class="nc">ItemWrap</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nc">ItemWrap</span><span class="p">&gt;;</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Item</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>Loader.js =&gt; 로딩 스피너 컴포넌트</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactLoading</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-loading</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styled</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">LoaderWrap</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
-  width: 100%;
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-`</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">Loader</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">LoaderWrap</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nc">ReactLoading</span> <span class="na">type</span><span class="p">=</span><span class="s">"spin"</span> <span class="na">color</span><span class="p">=</span><span class="s">"#455560"</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">LoaderWrap</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">Loader</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li>App.js</li>
-</ul>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useEffect</span><span class="p">,</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">styled</span><span class="p">,</span> <span class="p">{</span> <span class="nx">createGlobalStyle</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">styled-components</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Item</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Item</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Loader</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./Loader</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">GlobalStyle</span> <span class="o">=</span> <span class="nx">createGlobalStyle</span><span class="s2">`
-  *, *::before, *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-
-  body {
-    background-color: #f2f5f7;
-  }
-`</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">AppWrap</span> <span class="o">=</span> <span class="nx">styled</span><span class="p">.</span><span class="nx">div</span><span class="s2">`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
-  .Target-Element {
-    width: 100vw;
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
-`</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">target</span><span class="p">,</span> <span class="nx">setTarget</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">isLoaded</span><span class="p">,</span> <span class="nx">setIsLoaded</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">itemLists</span><span class="p">,</span> <span class="nx">setItemLists</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="mi">1</span><span class="p">]);</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">itemLists</span><span class="p">);</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">itemLists</span><span class="p">]);</span>
-
-  <span class="kd">const</span> <span class="nx">getMoreItem</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setIsLoaded</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
-    <span class="k">await</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="mi">1500</span><span class="p">));</span>
-    <span class="kd">let</span> <span class="nx">Items</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
-    <span class="nx">setItemLists</span><span class="p">((</span><span class="nx">itemLists</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">itemLists</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">Items</span><span class="p">));</span>
-    <span class="nx">setIsLoaded</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
-  <span class="p">};</span>
-
-  <span class="kd">const</span> <span class="nx">onIntersect</span> <span class="o">=</span> <span class="k">async</span> <span class="p">([</span><span class="nx">entry</span><span class="p">],</span> <span class="nx">observer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">isIntersecting</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nx">isLoaded</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">observer</span><span class="p">.</span><span class="nx">unobserve</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-      <span class="k">await</span> <span class="nx">getMoreItem</span><span class="p">();</span>
-      <span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
-    <span class="p">}</span>
-  <span class="p">};</span>
-
-  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kd">let</span> <span class="nx">observer</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">IntersectionObserver</span><span class="p">(</span><span class="nx">onIntersect</span><span class="p">,</span> <span class="p">{</span>
-        <span class="na">threshold</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-      <span class="p">});</span>
-      <span class="nx">observer</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="nx">target</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">observer</span> <span class="o">&amp;&amp;</span> <span class="nx">observer</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
-  <span class="p">},</span> <span class="p">[</span><span class="nx">target</span><span class="p">]);</span>
-
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nc">GlobalStyle</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nc">AppWrap</span><span class="p">&gt;</span>
-        <span class="si">{</span><span class="nx">itemLists</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="k">return</span> <span class="p">&lt;</span><span class="nc">Item</span> <span class="na">number</span><span class="p">=</span><span class="si">{</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span> <span class="na">key</span><span class="p">=</span><span class="si">{</span><span class="nx">i</span><span class="si">}</span> <span class="p">/&gt;;</span>
-        <span class="p">})</span><span class="si">}</span>
-        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">ref</span><span class="p">=</span><span class="si">{</span><span class="nx">setTarget</span><span class="si">}</span> <span class="na">className</span><span class="p">=</span><span class="s">"Target-Element"</span><span class="p">&gt;</span>
-          <span class="si">{</span><span class="nx">isLoaded</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">Loader</span> <span class="p">/&gt;</span><span class="si">}</span>
-        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-      <span class="p">&lt;/</span><span class="nc">AppWrap</span><span class="p">&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-적용-화면">✔️ 적용 화면</h3>
-
-<p><img src="https://user-images.githubusercontent.com/95404736/203347423-fa5b0df0-e094-4726-a99a-0f4137145e35.gif" alt="Nov-22-2022 23-59-52" /></p>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<ul>
-  <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API">https://developer.mozilla.org/ko/docs/Web/API/Intersection_Observer_API</a></li>
-  <li><a href="https://velog.io/@yejinh/Intersection-Observer%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0">https://velog.io/@yejinh/Intersection-Observer%EB%A1%9C-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0</a></li>
-  <li><a href="https://velog.io/@jce1407/React-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-Intersection-Observer">https://velog.io/@jce1407/React-%EB%AC%B4%ED%95%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-with-Intersection-Observer</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="무한스크롤" /><category term="InfiniteScroll" /><category term="리액트" /><summary type="html"><![CDATA[React 무한스크롤 (Infinite Scroll) 구현]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (5)</title><link href="http://localhost:4000/uiux/post55/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (5)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post55</id><content type="html" xml:base="http://localhost:4000/uiux/post55/"><![CDATA[<p>ProManage Dashboard - Freebie Light &amp; Dark Themes<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (5)</title><link href="http://localhost:4000/uiux/post55/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (5)" /><published>2022-11-22T00:00:00+09:00</published><updated>2022-11-22T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post55</id><content type="html" xml:base="http://localhost:4000/uiux/post55/"><![CDATA[<p>ProManage Dashboard - Freebie Light &amp; Dark Themes<br />
 by. <a href="https://dribbble.com/vibeeshkv">vibeesh kv</a></p>
 
 <p><img width="1185" alt="image" src="https://user-images.githubusercontent.com/95404736/203337690-8c700fcc-1c2e-42b5-ab5e-58e6b25d64ef.png" /><br />
