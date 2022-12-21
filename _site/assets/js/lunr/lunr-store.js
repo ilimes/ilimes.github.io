@@ -388,4 +388,10 @@ var store = [{
         "tags": ["브라우저정보","자바스크립트","UserAgent","Browser"],
         "url": "/javascript/post65/",
         "teaser": null
+      },{
+        "title": "React Router에서 render와 component 차이",
+        "excerpt":"React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다. 자식으로 렌더링 하기 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 import React from \"react\"; import { BrowserRouter, Link, Route } from \"react-router-dom\"; import PageOne...","categories": ["React"],
+        "tags": ["리액트","router","라우터","render","component"],
+        "url": "/react/post66/",
+        "teaser": null
       }]
