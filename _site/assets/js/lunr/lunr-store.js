@@ -394,4 +394,10 @@ var store = [{
         "tags": ["리액트","router","라우터","render","component"],
         "url": "/react/post66/",
         "teaser": null
+      },{
+        "title": "React Router - useHistory로 경로 설정",
+        "excerpt":"react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다. 일반적인 useHistory 사용 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39...","categories": ["React"],
+        "tags": ["리액트","router","라우터","useHistory","Hooks"],
+        "url": "/react/post67/",
+        "teaser": null
       }]

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-21T21:45:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-12-21T23:04:21+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
 
 <h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
 
@@ -126,7 +126,167 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">React Router - useHistory로 경로 설정</title><link href="http://localhost:4000/react/post67/" rel="alternate" type="text/html" title="React Router - useHistory로 경로 설정" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post67</id><content type="html" xml:base="http://localhost:4000/react/post67/"><![CDATA[<p>react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다.</p>
+
+<h3 id="일반적인-usehistory-사용">일반적인 useHistory 사용</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span>
+  <span class="nx">BrowserRouter</span><span class="p">,</span>
+  <span class="nx">Switch</span><span class="p">,</span>
+  <span class="nx">Route</span><span class="p">,</span>
+  <span class="nx">Redirect</span><span class="p">,</span>
+  <span class="nx">useHistory</span><span class="p">,</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="c1">// App 컴포넌트</span>
+<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+<span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nc">Buttons</span> <span class="p">/&gt;</span>
+      <span class="si">{</span><span class="cm">/* 라우팅 */</span><span class="si">}</span>
+      <span class="p">&lt;</span><span class="nc">Switch</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">exact</span> <span class="na">path</span><span class="p">=</span><span class="s">"/about"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">About</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">exact</span> <span class="na">path</span><span class="p">=</span><span class="s">"/skills"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">Skills</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">exact</span> <span class="na">path</span><span class="p">=</span><span class="s">"/projects"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">Projects</span><span class="si">}</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">Redirect</span> <span class="na">to</span><span class="p">=</span><span class="s">"about"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;/</span><span class="nc">Switch</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">useHistory</span><span class="p">();</span>
+
+<span class="k">return</span> <span class="p">(</span> 
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">/about</span><span class="dl">"</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">/skills</span><span class="dl">"</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Skills<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">/projects</span><span class="dl">"</span><span class="p">)</span><span class="si">}</span><span class="p">&gt;</span>Project<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="c1">// 기타 컴포넌트들</span>
+<span class="kd">const</span> <span class="nx">About</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>This is About Component<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="kd">const</span> <span class="nx">Skills</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>This is Skills Component<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+<span class="kd">const</span> <span class="nx">Projects</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>This is Projects Component<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useHistory</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">useHistory</span><span class="p">();</span>
+
+<span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="dl">"</span><span class="s2">/Next</span><span class="dl">"</span><span class="p">)}</span><span class="si">}</span> <span class="p">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>보통 위와 같은 형태로 history.push()를 사용합니다.</p>
+
+<h3 id="props-넘기기">props 넘기기</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useHistory</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">history</span> <span class="o">=</span> <span class="nx">useHistory</span><span class="p">();</span>
+
+ <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="nx">history</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span>
+   <span class="na">pathname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">/Next</span><span class="dl">"</span><span class="p">,</span>
+   <span class="na">state</span><span class="p">:</span> <span class="p">{</span><span class="na">displays</span><span class="p">:</span> <span class="nx">displays</span><span class="p">}</span>
+  <span class="p">})}</span><span class="si">}</span> <span class="p">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>props를 넘기고 싶은 경우에는 위와 같이 사용할 수 있습니다.</p>
+
+<h3 id="props-받기">props 받기</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useLocation</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">location</span> <span class="o">=</span> <span class="nx">useLocation</span><span class="p">();</span>
+
+<span class="kd">const</span> <span class="nx">item</span> <span class="o">=</span> <span class="nx">location</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">displays</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>props를 받아서 사용하고 싶은 경우에는 위와 같이 useLocation을 사용하여 받으면 됩니다. useLocation은 현재 페이지에 대한 url 정보를 알려주는 Hooks로 url이 바뀔 때마다 새로운 location이 반환됩니다.</p>
+
+<h4 id="uselocation의-내용물">useLocation의 내용물</h4>
+
+<ol>
+  <li>pathname : 현재 경로</li>
+  <li>search: ?부터 나오는 문자열 ex) ?id=1</li>
+  <li>hash : #부터 나오는 문자열 ex) #id=1
+(search와 hash 동시에 사용할 수 있다!)</li>
+  <li>state: 숨겨서 보내는 정보</li>
+  <li>key: 고유한 문자열 키.</li>
+</ol>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<ul>
+  <li><a href="https://byul91oh.tistory.com/467">https://byul91oh.tistory.com/467</a></li>
+  <li><a href="https://velog.io/@duswn38/React-react-router%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99%EC%8B%9C-props-%EB%84%98%EA%B8%B0%EA%B8%B0">https://velog.io/@duswn38/React-react-router%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EC%9D%B4%EB%8F%99%EC%8B%9C-props-%EB%84%98%EA%B8%B0%EA%B8%B0</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="useHistory" /><category term="Hooks" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
 
 <h3 id="️-useragent-문법">✔️ UserAgent 문법</h3>
 
@@ -831,26 +991,4 @@ soruce ~/.zshrc 명령어 까지 입력하면 즉시 적용됩니다.</p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Setting" /><category term="터미널" /><category term="iTerm2" /><category term="terminal" /><category term="zsh-syntax-highlighting" /><summary type="html"><![CDATA[터미널 꾸미기]]></summary></entry><entry><title type="html">[Lv.2] 루시와 엘라 찾기 (MySQL)</title><link href="http://localhost:4000/codingtest/post57/" rel="alternate" type="text/html" title="[Lv.2] 루시와 엘라 찾기 (MySQL)" /><published>2022-11-23T00:00:00+09:00</published><updated>2022-11-23T00:00:00+09:00</updated><id>http://localhost:4000/codingtest/post57</id><content type="html" xml:base="http://localhost:4000/codingtest/post57/"><![CDATA[<h3 id="️-문제">✔️ 문제</h3>
-
-<p><a href="https://school.programmers.co.kr/learn/courses/30/lessons/59046">https://school.programmers.co.kr/learn/courses/30/lessons/59046</a></p>
-
-<h3 id="️-코드">✔️ 코드</h3>
-
-<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre><span class="k">SELECT</span> <span class="n">ANIMAL_ID</span><span class="p">,</span> <span class="n">NAME</span><span class="p">,</span> <span class="n">SEX_UPON_INTAKE</span>
-<span class="k">FROM</span> <span class="n">ANIMAL_INS</span>
-<span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">IN</span> <span class="p">(</span><span class="nv">"Lucy"</span><span class="p">,</span> <span class="nv">"Ella"</span><span class="p">,</span> <span class="nv">"Pickle"</span><span class="p">,</span> <span class="nv">"Rogan"</span><span class="p">,</span> <span class="nv">"Sabrina"</span><span class="p">,</span> <span class="nv">"Mitty"</span><span class="p">)</span>
-<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">ANIMAL_ID</span> <span class="k">ASC</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-풀이">✔️ 풀이</h3>
-
-<p>IN을 사용하면 특정 이름만 조회할 수 있습니다. 만약 특정 값이 아닌 경우에만 찾고싶다면 NOT IN을 사용할 수 있습니다.</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="CodingTest" /><category term="코테" /><category term="알고리즘" /><category term="프로그래머스" /><summary type="html"><![CDATA[프로그래머스]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Setting" /><category term="터미널" /><category term="iTerm2" /><category term="terminal" /><category term="zsh-syntax-highlighting" /><summary type="html"><![CDATA[터미널 꾸미기]]></summary></entry></feed>
