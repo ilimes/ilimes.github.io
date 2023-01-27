@@ -1,5 +1,5 @@
 ---
-title: "문제 해결"
+title: "Problem solving"
 layout: archive
 permalink: categories/issue
 author_profile: true

@@ -1,5 +1,5 @@
 ---
-title: "코딩 테스트"
+title: "Algorithm"
 layout: archive
 permalink: categories/codingTest
 author_profile: true

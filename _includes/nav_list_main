@@ -31,6 +31,13 @@
         <span class="nav__sub-title">FrontEnd</span>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "JavaScript" %}
+                        <li><a href="/categories/javaScript" class="">JavaScript<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "React" %}
                         <li><a href="/categories/react" class="">React<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
@@ -65,14 +72,6 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">JavaScript</span>
-            <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "JavaScript" %}
-                        <li><a href="/categories/javaScript" class="">JavaScript<span class="nav_size">{{category[1].size}}</span></a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
         <span class="nav__sub-title">Design</span>
             <ul>
                 {% for category in site.categories %}
@@ -88,11 +87,11 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">개발</span>
+        <span class="nav__sub-title">Development</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Web" %}
-                        <li><a href="/categories/web" class="">웹 개발<span class="nav_size">{{category[1].size}}</span></a></li>
+                        <li><a href="/categories/web" class="">Web Development<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -106,7 +105,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Issue" %}
-                        <li><a href="/categories/issue" class="">문제 해결<span class="nav_size">{{category[1].size}}</span></a></li>
+                        <li><a href="/categories/issue" class="">Problem solving<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
@@ -124,11 +123,11 @@
                     {% endif %}
                 {% endfor %}
             </ul>
-        <span class="nav__sub-title">코딩 테스트</span>
+        <span class="nav__sub-title">Algorithm</span>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "CodingTest" %}
-                        <li><a href="/categories/codingTest" class="">코딩 테스트<span class="nav_size">{{category[1].size}}</span></a></li>
+                        <li><a href="/categories/codingTest" class="">Algorithm<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

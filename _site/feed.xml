@@ -1,132 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-13T23:33:26+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
-
-<h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="component-사용">component 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">PageOne</span><span class="si">}</span><span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code>의 자식으로 렌더링 하거나 <code class="language-plaintext highlighter-rouge">&lt;Route component&gt;</code>를 활용하여 렌더링 하는 방법 모두 간편하게 이용할 수 있지만 두 방법 모두 props를 사용할 수 없다는 단점이 있고, component를 사용하는 경우는 React.createElement 사용해서 새로운 요소를 계속 만들기 때문에 비효율적입니다. 그래서 최종적으로 가장 권장되는 방법이 바로 아래의 <code class="language-plaintext highlighter-rouge">render</code>를 사용하는 방법이라고 할 수 있습니다.</p>
-
-<h3 id="render-사용">render 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 사용하면 불필요한 컴포넌트 재마운트 없이 쉽게 렌더링 할 수 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">Route</span> 
-  <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> 
-  <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="na">isAuthed</span><span class="p">=</span><span class="s">"{true}"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>props를 전달하고 싶은 경우에는 위 방식으로 사용할 수 있습니다 :)</p>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<ul>
-  <li><a href="https://nyang-in.tistory.com/228">https://nyang-in.tistory.com/228</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">React Router - useHistory로 경로 설정</title><link href="http://localhost:4000/react/post67/" rel="alternate" type="text/html" title="React Router - useHistory로 경로 설정" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post67</id><content type="html" xml:base="http://localhost:4000/react/post67/"><![CDATA[<p>react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:22:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Router - useHistory로 경로 설정</title><link href="http://localhost:4000/react/post67/" rel="alternate" type="text/html" title="React Router - useHistory로 경로 설정" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post67</id><content type="html" xml:base="http://localhost:4000/react/post67/"><![CDATA[<p>react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다.</p>
 
 <h3 id="일반적인-usehistory-사용">일반적인 useHistory 사용</h3>
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -286,7 +158,135 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="useHistory" /><category term="Hooks" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="useHistory" /><category term="Hooks" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
+
+<h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="component-사용">component 사용</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">PageOne</span><span class="si">}</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code>의 자식으로 렌더링 하거나 <code class="language-plaintext highlighter-rouge">&lt;Route component&gt;</code>를 활용하여 렌더링 하는 방법 모두 간편하게 이용할 수 있지만 두 방법 모두 props를 사용할 수 없다는 단점이 있고, component를 사용하는 경우는 React.createElement 사용해서 새로운 요소를 계속 만들기 때문에 비효율적입니다. 그래서 최종적으로 가장 권장되는 방법이 바로 아래의 <code class="language-plaintext highlighter-rouge">render</code>를 사용하는 방법이라고 할 수 있습니다.</p>
+
+<h3 id="render-사용">render 사용</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 사용하면 불필요한 컴포넌트 재마운트 없이 쉽게 렌더링 할 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">Route</span> 
+  <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> 
+  <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="na">isAuthed</span><span class="p">=</span><span class="s">"{true}"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>props를 전달하고 싶은 경우에는 위 방식으로 사용할 수 있습니다 :)</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<ul>
+  <li><a href="https://nyang-in.tistory.com/228">https://nyang-in.tistory.com/228</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
 
 <h3 id="️-useragent-문법">✔️ UserAgent 문법</h3>
 
