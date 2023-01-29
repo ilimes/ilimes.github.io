@@ -1,4 +1,241 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-28T01:22:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Router - useHistory로 경로 설정</title><link href="http://localhost:4000/react/post67/" rel="alternate" type="text/html" title="React Router - useHistory로 경로 설정" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post67</id><content type="html" xml:base="http://localhost:4000/react/post67/"><![CDATA[<p>react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-01-29T22:07:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
+
+<p>시스템의 요구분석 부터 유지보수까지 전 공정을 체계화 한 절차</p>
+
+<ul>
+  <li>폭포수 모델: 가장 오래된 모델, 각 단계를 확실히 마무리 지은 후 다음 단계로 넘어감</li>
+  <li>프로토타이핑 모델: 주요기능을 프로토타입으로 구현해, 고객의 피드백을 반영하여 S/W 만듦</li>
+  <li>나선형 모델: 위험을 최소화하기 위해 점진적으로 시스템 개발</li>
+  <li>반복적 모델: 구축대상을 나누어 병렬적으로 개발 후 통합하거나, 반복적으로 개발</li>
+</ul>
+
+<h3 id="소프트웨어-개발-방법론">소프트웨어 개발 방법론</h3>
+
+<p>소프트웨어 개발의 시작부터 시스템을 사용하지 않는 과정까지의 전 과정을 형상화한 방법론</p>
+
+<ul>
+  <li>구조적 방법론: 전체 시스템을 기능에 따라 나누어 개발하고, 이를 통합하는 방법론
+    <ul>
+      <li>나씨-슈나이더만 차트: 논리의 기술에 중점을 둔 도형식 표현방법</li>
+    </ul>
+  </li>
+  <li>정보공학 방법론: 정보시스템 개발에 필요한 관리 절차와 작업 기법을 체계화한 방법론</li>
+  <li>객체 지향 방법론: ‘객체’라는 기본 단위로 시스템을 분석 및 설계하는 방법론</li>
+  <li>컴포넌트 기반 방법론 (CBD): 컴포넌트를 조립해서 하나의 새로운 응용 프로그램을 작성하는 방법론</li>
+  <li>애자일 방법론: 절차보다는 사람이 중심이 되어 변화에 유연하고 신속하게 적응하면서 효율적인 시스템 개발할 수 있는 신속 적응적 개량 개발 방법론</li>
+  <li>제품 계열 방법론: 특정 제품에 적용하고 싶은 공통된 기능을 정의해 개발하는 방법론, 임베디드 S/W작성에 유용</li>
+</ul>
+
+<h4 id="애자일agile-방법론">애자일(Agile) 방법론</h4>
+
+<ul>
+  <li>XP(eXtreme Programming): 의사소통 개선과 즉각적 피드백으로 스프트웨어 품질을 높이기 위한 방법론
+    <ul>
+      <li>XP 5가지 가치: 용기, 단순성, 의사소통, 피드백, 존중</li>
+    </ul>
+  </li>
+  <li>스크럼(Scrum): 매일 정해진 시간, 장소에서 짤은 시간의 개발을 하는 팀을 위한 프로젝트 관리 중심 방법론</li>
+  <li>린(Lean): 도요타의 린 시스템 품질기법을 소프트웨어 개발 프로세스에 적용해서 낭비 요소를 제거하여 품질을 향상시킨 방법론
+    <ul>
+      <li>Lean 7가지 가치: 낭비제거, 품질 내재화, 지식 창출, 늦은 확정, 빠른 인도, 사람 존중, 전체 최적화</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="객체-지향-분석-방법론">객체 지향 분석 방법론</h4>
+
+<p>객체 지향 분석(OOA) : 사용자의 요구사항을 분석하여 요구된 문제와 관련된 모든 클래스(객체), 속성과 연산, 관계를 정의</p>
+
+<ul>
+  <li>OOSE(Object Oriented Software Engineering): 유스케이스를 모든 모델의 근간으로 활용되는 방법론, 야콥슨 만듦</li>
+  <li>OMT(Object Modeling Technology): 그래픽 표기법을 이용하여 소프트웨어 구성요소를 모델링, 럼바우 만듦
+    <ul>
+      <li>분석 절차: 객체 모델링 → 동적 모델링 → 기능 모델링</li>
+      <li>객체 모델링: 객체들 간의 관계를 정의하여 ER 다이어그램을 만드는 과정까지의 모델링, 객체 다이어그램 활용</li>
+      <li>동적 모델링: 시간의 흐름에 따라 객체들의 동적인 행위를 표현하는 모델링, 상태 다이어그램 활용</li>
+      <li>기능 모델링: 프로세스들의 자료 흐름을 중심으로 처리 과정 표현하는 모델링, 자료 흐름도(DFD) 활용</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="비용-산정-모형-분류">비용 산정 모형 분류</h3>
+
+<ul>
+  <li>하향식 산정방법: 경험이 많은 전문가에게 비용산정 의뢰 또는 전문가와 조정자를 통해 비용산정
+    <ul>
+      <li>전문가 판단</li>
+      <li>델파이 기법: 전문가의 경험적 지식을 통한 문제 해결 및 미래예측을 위한 기법</li>
+    </ul>
+  </li>
+  <li>상향식 산정방법: 세부적인 요구사항과 기능에 따라 필요한 비용 산정
+    <ul>
+      <li>코드 라인 수(LoC: Lines of Code): 원시 코드 라인수의 낙관치, 중간치, 비관치를 측정하여 예측치를 구해 비용산정</li>
+      <li>Man Month: 한 사람이 1개월 동안 할 수 있는 일의 양을 기준으로 비용산정</li>
+      <li>COCOMO 모형: 보헴이 제안한 모형으로 프로그램의 규모에 따라 비용산정
+        <ul>
+          <li>조직형(Organic Mode): 5만(50KDSI)라인 이하</li>
+          <li>반 분리형(Semi-Detached Mode): 30만(300KDSI)라인 이하</li>
+          <li>임베디드형(Embedded Mode): 30만(300KDSI)라인 이상</li>
+        </ul>
+      </li>
+      <li>푸트남(Putnam) 모형: 개발주기의 단계별로 요구할 인력의 분포를 가정하는 방식</li>
+      <li>기능점수(FP) 모형: 소프트웨어 기능을 증대시키는 요인별로 가중치를 부여하여 비용산정</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="비용-산정-자동화-추정-도구">비용 산정 자동화 추정 도구</h4>
+
+<ul>
+  <li>SLIM: Rayleigh-Norden곡선과 Putnam예측 모델을 기초로 하여 개발된 자동화 추정 도구</li>
+  <li>ESTIMACS: 다양한 프로젝트와 개인별 요소를 수용하도록 FP모형을 기초로 하여 개발된 자동화 추정 도구</li>
+</ul>
+
+<h3 id="일정관리-모델">일정관리 모델</h3>
+
+<p>프로젝트가 일정 기한 내에 완료될 수 있도록 관리하는 모델</p>
+
+<ul>
+  <li>주 공정법(CPM): 여러 작업의 수행 순서가 얽혀 있는 프로젝트의 일정을 계산하는 기법
+    <ul>
+      <li>주 공정(Critical Path: 임계 경로): 프로젝트의 시작에서 종료까지 가장 긴 시간이 걸리는 경로</li>
+    </ul>
+  </li>
+  <li>PERT: 일의 순서를 계획적으로 정리하기 위한 수렴 기법. 비관치, 중간치, 낙관치 이용</li>
+  <li>중요 연쇄 프로젝트 관리(CCPM): 주 공정 연쇄법으로 자원제약사항을 고려하여 일정을 작성하는 기법</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="소프트웨어" /><category term="소프트웨어개발방법론" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 소프트웨어 개발 방법론]]></summary></entry><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
+
+<h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span><span class="p">&gt;</span>
+          <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h3 id="component-사용">component 사용</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">PageOne</span><span class="si">}</span><span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code>의 자식으로 렌더링 하거나 <code class="language-plaintext highlighter-rouge">&lt;Route component&gt;</code>를 활용하여 렌더링 하는 방법 모두 간편하게 이용할 수 있지만 두 방법 모두 props를 사용할 수 없다는 단점이 있고, component를 사용하는 경우는 React.createElement 사용해서 새로운 요소를 계속 만들기 때문에 비효율적입니다. 그래서 최종적으로 가장 권장되는 방법이 바로 아래의 <code class="language-plaintext highlighter-rouge">render</code>를 사용하는 방법이라고 할 수 있습니다.</p>
+
+<h3 id="render-사용">render 사용</h3>
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 사용하면 불필요한 컴포넌트 재마운트 없이 쉽게 렌더링 할 수 있습니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">Route</span> 
+  <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> 
+  <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="na">isAuthed</span><span class="p">=</span><span class="s">"{true}"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>props를 전달하고 싶은 경우에는 위 방식으로 사용할 수 있습니다 :)</p>
+
+<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
+
+<ul>
+  <li><a href="https://nyang-in.tistory.com/228">https://nyang-in.tistory.com/228</a></li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">React Router - useHistory로 경로 설정</title><link href="http://localhost:4000/react/post67/" rel="alternate" type="text/html" title="React Router - useHistory로 경로 설정" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post67</id><content type="html" xml:base="http://localhost:4000/react/post67/"><![CDATA[<p>react-router-dom의 useHistory Hooks를 사용하여 경로 설정을 해보도록 하겠습니다.</p>
 
 <h3 id="일반적인-usehistory-사용">일반적인 useHistory 사용</h3>
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -158,135 +395,7 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="useHistory" /><category term="Hooks" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
-
-<h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="component-사용">component 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">PageOne</span><span class="si">}</span><span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code>의 자식으로 렌더링 하거나 <code class="language-plaintext highlighter-rouge">&lt;Route component&gt;</code>를 활용하여 렌더링 하는 방법 모두 간편하게 이용할 수 있지만 두 방법 모두 props를 사용할 수 없다는 단점이 있고, component를 사용하는 경우는 React.createElement 사용해서 새로운 요소를 계속 만들기 때문에 비효율적입니다. 그래서 최종적으로 가장 권장되는 방법이 바로 아래의 <code class="language-plaintext highlighter-rouge">render</code>를 사용하는 방법이라고 할 수 있습니다.</p>
-
-<h3 id="render-사용">render 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 사용하면 불필요한 컴포넌트 재마운트 없이 쉽게 렌더링 할 수 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">Route</span> 
-  <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> 
-  <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="na">isAuthed</span><span class="p">=</span><span class="s">"{true}"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>props를 전달하고 싶은 경우에는 위 방식으로 사용할 수 있습니다 :)</p>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<ul>
-  <li><a href="https://nyang-in.tistory.com/228">https://nyang-in.tistory.com/228</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="useHistory" /><category term="Hooks" /><summary type="html"><![CDATA[render / component]]></summary></entry><entry><title type="html">User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)</title><link href="http://localhost:4000/javascript/post65/" rel="alternate" type="text/html" title="User Agent 브라우저 정보 얻기 (Chrome 인지 아닌지 체크, 모바일 디바이스 구분)" /><published>2022-12-20T00:00:00+09:00</published><updated>2022-12-20T00:00:00+09:00</updated><id>http://localhost:4000/javascript/post65</id><content type="html" xml:base="http://localhost:4000/javascript/post65/"><![CDATA[<p>크롬 브라우저가 아닌 다른 브라우저에서 접속한 경우, 크롬 브라우저 다운로드를 권장하는 배너를 띄우고 싶거나 접속한 디바이스가 모바일 디바이스인지 구분하려면 어떻게 해야할까요? 바로 DOM 객체 Navigator의 userAgent라는 속성을 사용하면 됩니다.</p>
 
 <h3 id="️-useragent-문법">✔️ UserAgent 문법</h3>
 
@@ -944,51 +1053,4 @@ yarn <span class="nb">install </span>react-query
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="개발" /><category term="웹" /><category term="웹개발" /><category term="ngnix" /><summary type="html"><![CDATA[Nhinx / Apache 차이는 무엇일까?]]></summary></entry><entry><title type="html">M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용</title><link href="http://localhost:4000/setting/post58/" rel="alternate" type="text/html" title="M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용" /><published>2022-11-26T00:00:00+09:00</published><updated>2022-11-26T00:00:00+09:00</updated><id>http://localhost:4000/setting/post58</id><content type="html" xml:base="http://localhost:4000/setting/post58/"><![CDATA[<h3 id="️-zsh-syntax-highlighting란">✔️ zsh-syntax-highlighting란?</h3>
-
-<p>터미널 명령어에 하이라이트를 넣어주는 기능입니다.</p>
-
-<h3 id="️-설치방법">✔️ 설치방법</h3>
-
-<ul>
-  <li>brew로 설치</li>
-</ul>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>brew <span class="nb">install </span>zsh-syntax-highlighting
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-zsh-파일-수정">✔️ zsh 파일 수정</h3>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>vi ~/.zshrc
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위 명령어 입력하여 설정 파일을 들어간 후<br />
-i를 눌러 INSERT 모드로 변경하고나서<br />
-하단 코드를 추가해줍니다.</p>
-
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre>📌 M1맥인 경우
-<span class="nb">source</span> /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-📌 인텔맥인 경우
-<span class="nb">source</span> /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-저장하기">✔️ 저장하기</h3>
-
-<p>코드 작성 후 ESC를 누르고 :wq를 입력해줍니다.<br />
-soruce ~/.zshrc 명령어 까지 입력하면 즉시 적용됩니다.</p>
-
-<h3 id="️-적용결과">✔️ 적용결과</h3>
-
-<p><img width="475" alt="image" src="https://user-images.githubusercontent.com/95404736/204058051-2dd5f6cf-e351-48a3-959c-94798a266454.png" /></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Setting" /><category term="터미널" /><category term="iTerm2" /><category term="terminal" /><category term="zsh-syntax-highlighting" /><summary type="html"><![CDATA[터미널 꾸미기]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="개발" /><category term="웹" /><category term="웹개발" /><category term="ngnix" /><summary type="html"><![CDATA[Nhinx / Apache 차이는 무엇일까?]]></summary></entry></feed>

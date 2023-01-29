@@ -72,6 +72,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Docker" %}
+                        <li><a href="/categories/docker" class="">Docker<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">Design</span>
             <ul>
                 {% for category in site.categories %}
@@ -120,6 +127,14 @@
                 {% for category in site.categories %}
                     {% if category[0] == "Setting" %}
                         <li><a href="/categories/setting" class="">Setting<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Certificate</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "InfoProcessing" %}
+                        <li><a href="/categories/infoprocessing" class="">정보처리기사<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
