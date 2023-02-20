@@ -406,4 +406,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","소프트웨어","소프트웨어개발방법론","개발"],
         "url": "/infoprocessing/post68/",
         "teaser": null
+      },{
+        "title": "CH02. 화면 설계",
+        "excerpt":"UI(User Interface) 사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체 UI유형 CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스 GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스 NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스 OUI(Organic User Interface): 현실에 존재하는 모든 사물이...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","화면","화면설계","개발"],
+        "url": "/infoprocessing/post69/",
+        "teaser": null
       }]
