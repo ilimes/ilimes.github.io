@@ -578,3 +578,24 @@ body {
     }
   }
 }
+
+/*
+   Main Title
+   ========================================================================== */
+
+   .main_title {
+    border-radius: 10px; 
+    background-color: $main-title-background-color; 
+    padding: 1.3rem;
+    padding-right: 0; 
+    font-weight: bold; 
+    font-size: 22px;
+    object-fit: fill;
+   }
+
+   .title_img img {
+    width: 208px;
+    height: 83px;
+    float: right;
+    object-fit: cover;
+   }
