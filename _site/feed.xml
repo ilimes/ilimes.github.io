@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-21T22:29:36+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-02-25T23:10:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH04. 통합 구현</title><link href="http://localhost:4000/infoprocessing/post71/" rel="alternate" type="text/html" title="CH04. 통합 구현" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post71</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post71/"><![CDATA[<h3 id="연계-요구사항-분석">연계 요구사항 분석</h3>
+
+<h4 id="연계-요구사항-분석-1">연계 요구사항 분석</h4>
+
+<p>서로 다른 두 시스템 · 장치 · 소프트웨어를 이어주는 중계 역할을 하는 연계 시스템과 관련된 요구사항을 분석하는 과정</p>
+
+<h4 id="연계-요구사항-분석-참고문서">연계 요구사항 분석 참고문서</h4>
+
+<ul>
+  <li>개체(Entitiy) 정의서: 데이터베이스 개념 모델링 단계에서 도출한 개체의 타입과 관련 속성, 식별자 등의 정보를 개괄적으로 명세화한 정의서</li>
+  <li>테이블(Table) 정의서: 논리 및 물리 모델링 과정 설계 산출물</li>
+  <li>인터페이스 명세서: 인터페이스 정의서에 작성한항목을 자세히 작성한 것</li>
+</ul>
+
+<h3 id="연계-메커니즘-구성">연계 메커니즘 구성</h3>
+
+<h4 id="연계-메커니즘">연계 메커니즘</h4>
+
+<p>응용 소프트웨어와 연계 대상 모듈 간의 데이터 연계시 요구사항을 고려한 연계방법과 주기를 설계하기 위한 메커니즘</p>
+
+<ul>
+  <li>기능: 데이터를 생성하여 전송하는 송신 시스템과 송신 데이터를 수신하여 DB에 반영하는 수신 시스템으로 구성</li>
+</ul>
+
+<h4 id="주요-연계-기술">주요 연계 기술</h4>
+
+<ul>
+  <li>직접 연계
+    <ul>
+      <li>DB 링크: 데이터베이스에서 제공하는 DB링크 객체를 이용</li>
+      <li>DB 연결: 수신 시스템의 WAS에서 송신 시스템 DB로 연결하는 DB커넥션 풀을 생성하고 연계 프로그램에서 해당 DB커넥션 풀 명을 이용하여 연결</li>
+      <li>API/Open API: 송신 시스템의 DB에서 데이터를 읽어서 제공하는 애플리케이션 프로그래밍 인터페이스 프로그램</li>
+      <li>JDBC: 수신 시스템의 프로그램에서 JDBC 드라이버를 이용하여 송신 시스템 DB와 연결</li>
+      <li>하이퍼 링크: 현재 페이지에서 다른 부분으로 가거나 전혀 다른 페이지로 이동하게 해주는 속성</li>
+    </ul>
+  </li>
+  <li>간접 연계
+    <ul>
+      <li>연계 솔루션(EAI): 기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션들 간의 정보 전달, 연계, 통합을 가능하게 해주는 솔루션</li>
+      <li>Web Service/ESB: 웹 서비스가 설명된 WSDL과 SOAP 프로토콜을 이용한 시스템 간 연계</li>
+      <li>소켓(Socket): 소켓을 생성하여 포트를 할당하고, 클라이언트의 요청을 연결하여 통신</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="내외부-연계-모듈-구현">내외부 연계 모듈 구현</h3>
+
+<h4 id="eaienterprise-application-intergration">EAI(Enterprise Application Intergration)</h4>
+
+<p>기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션 간의 정보를 전달, 연계 통합이 가능하도록 해주는 솔루션</p>
+
+<ul>
+  <li>미들웨어를 이용하여 비즈니스 로직을 중심으로 기업 내 애플리케이션을 통합 연계</li>
+</ul>
+
+<h4 id="eai-구성요소">EAI 구성요소</h4>
+
+<ul>
+  <li>EAI 플랫폼: 이기종 시스템 간 애플리케이션 상호 운영</li>
+  <li>어댑터: 다양한 애플리케이션을 연결하는 EAI의 핵심 장치로 데이터 입출력 도구</li>
+  <li>브로커: 데이터 포맷과 코드를 변환하는 솔루션</li>
+  <li>메시지 큐: 비동기 메세지를 사용하는 다른 응용 프로그램 사이에서 데이터를 송수신하는 기술</li>
+  <li>비지니스 워크플로우: 미리 정의된 기업의 비즈니스 workflow에 따라 업무를 처리하는 기능</li>
+</ul>
+
+<h4 id="eai-구축-유형">EAI 구축 유형</h4>
+
+<ul>
+  <li>포인트 투 포인트(Point-to-point): 가장 기초적인 애플리케이션 통합방법. 1:1 단순 통합방법</li>
+  <li>허브 앤 스포크(Hub &amp; Spoke): 단일한 접점의 허브 시스템을 통하여 데이터를 젆송하는 중앙 집중식 방식</li>
+  <li>메시지 버스(Message Bus): 애플리케이션 사이 미들웨어를 두어 연계하는 미들웨어 통합 방식</li>
+  <li>하이브리드(Hybrid): 그룹 내는 허브앤 스포크 방식을 사용, 그룹 간에는 메시지 버스 방식을 사용하는 통합 방식</li>
+</ul>
+
+<h4 id="esbenterprise-service-bus">ESB(Enterprise Service Bus)</h4>
+
+<p>기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션들 간을 하나의 시스템으로 관리 운영할 수 있도록 서비스 중심의 통합을 지향하는 아키텍처. 느슨한 결합 방식 지원(서비스 변경이 있어도 연결된 다른 서비스에 영향이 없음)</p>
+
+<ul>
+  <li>미들웨어를 이용하여 서비스 중심으로 서비스를 지원하기 위한 관련시스템과 유기적 연계</li>
+</ul>
+
+<h4 id="esb-구축-유형">ESB 구축 유형</h4>
+
+<p>버스 방식의 분산형 토폴로지 구성</p>
+
+<h4 id="웹-서비스web-service">웹 서비스(Web Service)</h4>
+
+<p>넽워크에 분산된 정보를 서비스 형태로 개방하여 표준화된 방식으로 공유하는 기술. 서비스 지향 아키텍처</p>
+
+<h4 id="웹-서비스-유형">웹 서비스 유형</h4>
+
+<ul>
+  <li>SOAP(Simple Objet Access Protocol): HTTP, HTTPS, SMTP등을 사용하여 XML 기반의 메시지를 네트워크 상태에서 교환하는 프로토콜</li>
+  <li>WSDL(Web Service Description Language): 웹 서비스명, 제공 위치, 메시지 포맷, 프로토콜 정보 등 웹서비스에 대한 상세 정보가 기술된 XML 형식으로 구현되어 있는 언어</li>
+  <li>UDDI(Universal Description, Discovery and Intergration): 웹 서비스에 대한 정보인 WSDL을 등록하고 검색하기 위한 저장소로 공개적으로 접근, 검색이 가능한 레지스트</li>
+</ul>
+
+<h4 id="ipcinter-process-communication">IPC(Inter-Process Communication)</h4>
+
+<p>운영체제에서 프로세스 간 서로 데이터를 주고받기 위한 통신 기술</p>
+
+<h4 id="연계-테스트">연계 테스트</h4>
+
+<p>송신 시스템과 수신 시스템을 연계하였을 경우 데이터의 정합성과 데이터 전송 여부에 대한 테스트</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
 
 <p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
 
@@ -359,12 +467,12 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
   <li>파일 시스템(File System): 파일에 이름을 부여하고 저장이나 검색을 위해 논리적으로 그것들을 어디에 위치시켜야 하는지 등을 정의한 뒤 관리하는 데이터베이스 전 단계의 데이터 관리 방식</li>
   <li>관계형 데이터베이스 시스템(RDBMS): 관계형 모델을 기반
     <ul>
-      <li>종류: Orcle, SQL Server, MySQL, Mari DB 등</li>
+      <li>종류: Oracle, SQL Server, MySQL, MariaDB 등</li>
     </ul>
   </li>
   <li>계층형 데이터베이스 시스템(HDBMS): 데이터를 상하 종속적인 관계로 계층화화여 관리
     <ul>
-      <li>종류: IMS, System2000 등</li>
+      <li>종류: IMS, System 2000 등</li>
     </ul>
   </li>
   <li>네트워크 데이터베이스 관리시스템(NDBMS): 데이터를 네트워크상의 망상 형태로 표현한 데이터 모델
@@ -1223,175 +1331,4 @@ by. <a href="https://dribbble.com/Dedewahidin">Ciptasmara</a></p>
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry><entry><title type="html">React Query 알아보기</title><link href="http://localhost:4000/react/post61/" rel="alternate" type="text/html" title="React Query 알아보기" /><published>2022-12-06T00:00:00+09:00</published><updated>2022-12-06T00:00:00+09:00</updated><id>http://localhost:4000/react/post61</id><content type="html" xml:base="http://localhost:4000/react/post61/"><![CDATA[<h3 id="️-react-query란">✔️ React-Query란?</h3>
-
-<p><code class="language-plaintext highlighter-rouge">React Query</code> 는 서버에 있던 값을 클라이언트로 가져오거나, 캐싱 또는 동기화 등 일련의 비동기 과정들을 편하게 하는 데 사용되는 리액트 라이브러리 입니다.</p>
-
-<h3 id="️-react-query의-장점">✔️ React-Query의 장점</h3>
-
-<p>리액트 쿼리를 사용하면 프로젝트 구조가 단순해지고, 프론트엔드 개발시 귀찮을 수 있는 몇가지 일들을 수행해줍니다.</p>
-
-<ul>
-  <li>효율적인 캐싱 관리</li>
-  <li>같은 데이터에 대하여 여러번의 요청이 있을 시 중복을 제거 (옵션으로 중복 호출 허용 시간 조절도 가능)</li>
-  <li>데이터가 오래되었을 경우 알아서 업데이트 해줌</li>
-  <li>페이징 처리 성능 최적화</li>
-  <li>Redux로 비동기 데이터를 관리하는 것 보다 코드 분량이 적음</li>
-</ul>
-
-<h3 id="️-설치하기">✔️ 설치하기</h3>
-
-<p>리액트 쿼리는 npm 또는 yarn으로 손쉽게 설치할 수 있습니다.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>npm <span class="nb">install </span>react-query
-yarn <span class="nb">install </span>react-query
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-react-query-기본-세팅">✔️ React-Query 기본 세팅</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="c1">// src/index.js</span>
-<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">QueryClient</span><span class="p">,</span> <span class="nx">QueryClientProvider</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">ReactQueryDevtools</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query/devtools</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">queryClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">QueryClient</span><span class="p">();</span>
-
-<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
-  <span class="p">&lt;</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nc">QueryClientProvider</span> <span class="na">client</span><span class="p">=</span><span class="si">{</span><span class="nx">queryClient</span><span class="si">}</span><span class="p">&gt;</span>
-      <span class="si">{</span><span class="cm">/* devtools */</span><span class="si">}</span>
-      <span class="p">&lt;</span><span class="nc">ReactQueryDevtools</span> <span class="na">initialIsOpen</span><span class="p">=</span><span class="si">{</span><span class="kc">true</span><span class="si">}</span> <span class="p">/&gt;</span>
-      <span class="p">&lt;</span><span class="nc">App</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">QueryClientProvider</span><span class="p">&gt;</span>
-  <span class="p">&lt;/</span><span class="nc">React</span><span class="p">.</span><span class="nc">StrictMode</span><span class="p">&gt;,</span>
-  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">"</span><span class="s2">root</span><span class="dl">"</span><span class="p">)</span>
-<span class="p">);</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="️-queries">✔️ Queries</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useQuery</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-query</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">info</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchTodoList</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">useQuery</code> 의 첫번째 파라미터는 unique key를 입력합니다. 두번째 파라미터는 데이터를 패칭하기 위한 비동기 함수를 넣어줍니다.</li>
-  <li>첫번째 파라미터로 설정한 unique key 는 다른 컴포넌트에서도 해당 키를 사용하여 호출하는 식으로 활용 가능합니다.</li>
-  <li>unique key는 String과 Array를 받습니다.</li>
-  <li><code class="language-plaintext highlighter-rouge">useQuery</code> 는 비동기로 작동합니다.</li>
-</ul>
-
-<h4 id="usequery-return-값에-포함된-states">useQuery return 값에 포함된 states</h4>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">isLoading</code> or status === ‘loading’ : 현재 데이터를 요청 중이나 아직 데이터가 없을 경우</li>
-  <li><code class="language-plaintext highlighter-rouge">isError</code> or status === ‘error’: 쿼리에서 에러가 났을 경우</li>
-  <li><code class="language-plaintext highlighter-rouge">isSuccess</code> or status === ‘success’ - 쿼리 요청 성공한 경우</li>
-  <li><code class="language-plaintext highlighter-rouge">isIdle</code> or status === ‘idle’: 이 쿼리는 현재 사용할 수 없을 때 나옴</li>
-  <li><code class="language-plaintext highlighter-rouge">isFetching</code> : 데이터 요청 중일 때는 (내부적으로 리패칭 중 일때도 포함) 항상 True를 리턴한다</li>
-</ul>
-
-<h4 id="usequery-동기적으로-실행">useQuery 동기적으로 실행</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">{</span> <span class="na">data</span><span class="p">:</span> <span class="nx">todoList</span><span class="p">,</span> <span class="nx">error</span><span class="p">,</span> <span class="nx">isFetching</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">todos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchTodoList</span><span class="p">);</span>
-<span class="kd">const</span> <span class="p">{</span>
-  <span class="na">data</span><span class="p">:</span> <span class="nx">nextTodo</span><span class="p">,</span>
-  <span class="nx">error</span><span class="p">,</span>
-  <span class="nx">isFetching</span><span class="p">,</span>
-<span class="p">}</span> <span class="o">=</span> <span class="nx">useQuery</span><span class="p">(</span><span class="dl">"</span><span class="s2">nextTodos</span><span class="dl">"</span><span class="p">,</span> <span class="nx">fetchNextTodoList</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">enabled</span><span class="p">:</span> <span class="o">!!</span><span class="nx">todoList</span><span class="p">,</span> <span class="c1">// true가 되면 fetchNextTodoList를 실행한다</span>
-<span class="p">});</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 <code class="language-plaintext highlighter-rouge">enabled</code> 옵션을 사용하는 경우 useQuery를 사용할 때 동기적으로 사용가능하게 해줍니다.</p>
-
-<h4 id="usequeries">useQueries</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">users</span> <span class="p">})</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">userQueries</span> <span class="o">=</span> <span class="nx">useQueries</span><span class="p">(</span>
-    <span class="nx">users</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="p">{</span>
-        <span class="na">queryKey</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">user</span><span class="dl">"</span><span class="p">,</span> <span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">],</span>
-        <span class="na">queryFn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">fetchUserById</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">id</span><span class="p">),</span>
-      <span class="p">};</span>
-    <span class="p">})</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="쿼리-무효화-시키기">쿼리 무효화 시키기</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">{</span> <span class="nx">mutate</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useMutation</span><span class="p">(</span><span class="nx">apis</span><span class="p">.</span><span class="nx">update</span><span class="p">,</span> <span class="p">{</span>
-  <span class="na">onSuccess</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">queryClient</span><span class="p">.</span><span class="nx">invalidateQueries</span><span class="p">(</span><span class="dl">"</span><span class="s2">all</span><span class="dl">"</span><span class="p">);</span> <span class="c1">//invalidateQueries(무효화 시킬 queryKey 이름)</span>
-    <span class="nx">day_input</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-    <span class="nx">time_input</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
-  <span class="p">},</span>
-<span class="p">});</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 <code class="language-plaintext highlighter-rouge">invalidateQueries</code> 를 사용하게 되면 데이터가 최신으로 변경되었을 때 이전 데이터를 무효화 시킬 수 있습니다.</p>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<p><a href="https://tanstack.com/query/v4/docs/guides/window-focus-refetching?from=reactQueryV3&amp;original=https://react-query-v3.tanstack.com/guides/window-focus-refetching">https://tanstack.com/query/v4/docs/guides/window-focus-refetching?from=reactQueryV3&amp;original=https://react-query-v3.tanstack.com/guides/window-focus-refetching</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="리액트쿼리" /><category term="reactquery" /><summary type="html"><![CDATA[리액트 쿼리 알아보기]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry></feed>
