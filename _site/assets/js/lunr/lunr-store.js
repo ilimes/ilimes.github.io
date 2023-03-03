@@ -424,4 +424,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","통합","통합구현","개발"],
         "url": "/infoprocessing/post71/",
         "teaser": null
+      },{
+        "title": "CH05. 인터페이스 구현",
+        "excerpt":"인터페이스 기능 구현 컴포넌트 명세서 컴포넌트 개요, 부 클래스의 동작, 인터페이스를 통해 외부와 통신하는 명세 인터페이스 명세서 컴포넌트 명세서에 명시된 인터페이스 클래스의 세부적인 조건 및 기능을 명시한 명세서 JSON(Javascript Object Notation) 속성-값 쌍 또는 “키-값 쌍”으로 이루어진 데이터 오브젝트를 전달하기 위해 인간이 읽을 수 있는 테스트를 사용하는 개방형 표준 포맷,...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","인터페이스","인터페이스구현","개발"],
+        "url": "/infoprocessing/post72/",
+        "teaser": null
       }]

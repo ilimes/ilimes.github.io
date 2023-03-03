@@ -1,4 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-03T23:50:32+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH04. 통합 구현</title><link href="http://localhost:4000/infoprocessing/post71/" rel="alternate" type="text/html" title="CH04. 통합 구현" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post71</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post71/"><![CDATA[<h3 id="연계-요구사항-분석">연계 요구사항 분석</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-04T01:29:20+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH05. 인터페이스 구현</title><link href="http://localhost:4000/infoprocessing/post72/" rel="alternate" type="text/html" title="CH05. 인터페이스 구현" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-04T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post72</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post72/"><![CDATA[<h3 id="인터페이스-기능-구현">인터페이스 기능 구현</h3>
+
+<h4 id="컴포넌트-명세서">컴포넌트 명세서</h4>
+
+<p>컴포넌트 개요, 부 클래스의 동작, 인터페이스를 통해 외부와 통신하는 명세</p>
+
+<h4 id="인터페이스-명세서">인터페이스 명세서</h4>
+
+<p>컴포넌트 명세서에 명시된 인터페이스 클래스의 세부적인 조건 및 기능을 명시한 명세서</p>
+
+<h4 id="jsonjavascript-object-notation">JSON(Javascript Object Notation)</h4>
+
+<p>속성-값 쌍 또는 “키-값 쌍”으로 이루어진 데이터 오브젝트를 전달하기 위해 인간이 읽을 수 있는 테스트를 사용하는 개방형 표준 포맷, AJAX에서 많이 사용되고 XML을 대체하는 주요 데이터 포맷</p>
+
+<h4 id="xmlextensible-markup-language">XML(Extensible Markup Language)</h4>
+
+<p>HTML의 단점을 보완한 인터넷 언어로, SGML의 복잡한 단점을 개선한 특수한 목적을 갖는 마크업 언어</p>
+
+<h4 id="ajaxasynchronous-javascript-and-xml">AJAX(Asynchronous Javascript And XML)</h4>
+
+<p>자바스크립트를 사용하여 웹 서버와 클라이언트 간 비동기적으로 XML데이터를 교환하고 조작하는 웹 기술, XMLHttpRequest객체(비동기 통신을 담당하는 JS 객체)를 이용해서 필요한 일부 페이지의 데이터만 로드</p>
+
+<h4 id="restrepresentational-state-transfer">REST(Representational State Transfer)</h4>
+
+<p>웹과 같은 분산 하이퍼미디어 환경에서 자원의 존재/상태 정보를 표준화된 HTTP메서드로 주고받은 웹 아키텍처</p>
+
+<h5 id="rest-메서드">REST 메서드</h5>
+
+<p>HTTP메서드 중 CRUD메서드만 사용 - POST(생성), GET(조회), PUT(수정), DELETE(삭제)</p>
+
+<h4 id="데이터베이스-암호화-알고리즘">데이터베이스 암호화 알고리즘</h4>
+
+<ul>
+  <li>대칭 키 암호화 알고리즘: 암,복호화에 같은 암호 키를 쓰는 알고리즘</li>
+  <li>비대칭 키 암호화 알고리즘: 공개키는 누구나 알 수 있지만, 비밀키는 키 소유자만 알 수 있게 사용하는 알고리즘</li>
+  <li>해시 암호화 알고리즘: 해시값으로 원래 입력값을 찾아낼 수 없는 일방향성의 특성을 가진 알고리즘</li>
+</ul>
+
+<h4 id="중요-인터페이스-데이터의-암호화-전송을-보안-기술">중요 인터페이스 데이터의 암호화 전송을 보안 기술</h4>
+
+<ul>
+  <li>IPSec(IP Security): IP계층(3계층)에서 무결성과 인증을 보장하는 인증 헤더(AH)와 기밀성을 보장하는 암호화(ESP)를 이용하여 양 종단 간(End Point) 구간에 보안 서비스를 제공하는 터널링 프로토콜</li>
+  <li>SSL/TLS: 전송계층(4계층)과 응용계층(7계층) 사이에서 클라이언트와 서버 간의 웹 데이터 암호화(기밀성, 상호 인증 및 전송 시 데이터 무결성을 보장하는 보안 프로토콜</li>
+  <li>S-HTTP(Secure Hupertext Transfer Protocol): 웹상에서 네트워크 트래픽을 암호화하는 주요 방법, 클라이언트와 서버 간에 전송되는 모든 메세지를 암호화하여 전송</li>
+</ul>
+
+<h3 id="인터페이스-구현-검증">인터페이스 구현 검증</h3>
+
+<h4 id="인터페이스-구현-검증-도구">인터페이스 구현 검증 도구</h4>
+
+<ul>
+  <li>xUnit: 자바, C++, .Net 등 다양한 언어를 지원하는 단위테스트 프레임워크</li>
+  <li>STAF: 서비스 호출, 컴포넌트 재사용 등 다양한 환경을 지원하는 테스트 프레임워크</li>
+  <li>FitNesse: 웹 기반 테스트 케이스 설계/실행/결과 확인 등을 지원하는 테스트 프레임워크</li>
+  <li>NTAF: FitNesse(협업기능)+STAF(재사용, 확장성) 통합한 테스트 자동화 프레임워크</li>
+  <li>Selenium: 다양한 브라우저 지원 및 개발언어를 지원하는 웹 애플리케이션 테스트 프레임워크</li>
+  <li>watir: 루비(Ruby)기반 웹 애플리케이션 테스트 프레임워크</li>
+</ul>
+
+<h4 id="인터페이스-감시-도구">인터페이스 감시 도구</h4>
+
+<ul>
+  <li>스카우터(SCOUTER): 애플리케이션에 대한 모니터링 및 DB Agent를 통해 오픈 소스 DB 모니터링 기능, 인터페이스 감시 기능을 제공</li>
+  <li>제니퍼(Jennifer): 애플리케이션의 개발부터 테스트, 오픈, 운영, 안정화까지 전 생애주기 단계 동안 성능을 모니터링하고 분석해주는 APM 소프트웨어</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="인터페이스" /><category term="인터페이스구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 인터페이스 구현]]></summary></entry><entry><title type="html">CH04. 통합 구현</title><link href="http://localhost:4000/infoprocessing/post71/" rel="alternate" type="text/html" title="CH04. 통합 구현" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post71</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post71/"><![CDATA[<h3 id="연계-요구사항-분석">연계 요구사항 분석</h3>
 
 <h4 id="연계-요구사항-분석-1">연계 요구사항 분석</h4>
 
@@ -106,162 +174,7 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
-
-<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
-
-<h4 id="ui유형">UI유형</h4>
-
-<ul>
-  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
-  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
-  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
-  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
-</ul>
-
-<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
-
-<ul>
-  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
-  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
-  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
-  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
-</ul>
-
-<h4 id="ui-설계-지침">UI 설계 지침</h4>
-
-<ul>
-  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
-</ul>
-
-<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
-
-<ul>
-  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
-    <ul>
-      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
-    </ul>
-  </li>
-  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
-    <ul>
-      <li>성숙성, 고장 허용성, 회복성</li>
-    </ul>
-  </li>
-  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
-    <ul>
-      <li>이해성, 학습성, 운용성</li>
-    </ul>
-  </li>
-  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
-    <ul>
-      <li>시간 효율성, 자원 효율성</li>
-    </ul>
-  </li>
-  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
-    <ul>
-      <li>분석성, 변경성, 안정성, 시험성</li>
-    </ul>
-  </li>
-  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
-    <ul>
-      <li>적용성, 설치성, 대체성</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-표준">UI 표준</h4>
-
-<ul>
-  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
-</ul>
-
-<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
-
-<ul>
-  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
-</ul>
-
-<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
-
-<ul>
-  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
-  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
-  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
-  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
-  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
-</ul>
-
-<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
-
-<ul>
-  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
-  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
-  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
-</ul>
-
-<h3 id="ui-설계">UI 설계</h3>
-
-<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
-
-<ul>
-  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
-</ul>
-
-<h5 id="uml-특징">UML 특징</h5>
-
-<ul>
-  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
-</ul>
-
-<h5 id="uml-구성요소">UML 구성요소</h5>
-
-<ul>
-  <li>사물, 관계, 다이어그램</li>
-</ul>
-
-<h5 id="uml다이어그램">UML다이어그램</h5>
-
-<ul>
-  <li>구조적 다이어그램 / 정적 다이어그램
-    <ul>
-      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
-      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
-      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
-      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
-      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
-      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
-    </ul>
-  </li>
-  <li>행위적 다이어그램 / 동적 다이어그램
-    <ul>
-      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
-      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
-      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
-      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
-      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
-      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
-
-<ul>
-  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
-</ul>
-
-<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
-
-<ul>
-  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
-  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
-  <li>UI 디자인 도구: 스케치, Adobe XD</li>
-  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
 
 <h4 id="데이터-모델data-model">데이터 모델(Data Model)</h4>
 
@@ -579,7 +492,162 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
+
+<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
+
+<h4 id="ui유형">UI유형</h4>
+
+<ul>
+  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
+  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
+  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
+  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
+</ul>
+
+<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
+
+<ul>
+  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
+  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
+  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
+  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
+</ul>
+
+<h4 id="ui-설계-지침">UI 설계 지침</h4>
+
+<ul>
+  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
+</ul>
+
+<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
+
+<ul>
+  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
+    <ul>
+      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
+    </ul>
+  </li>
+  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
+    <ul>
+      <li>성숙성, 고장 허용성, 회복성</li>
+    </ul>
+  </li>
+  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
+    <ul>
+      <li>이해성, 학습성, 운용성</li>
+    </ul>
+  </li>
+  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
+    <ul>
+      <li>시간 효율성, 자원 효율성</li>
+    </ul>
+  </li>
+  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
+    <ul>
+      <li>분석성, 변경성, 안정성, 시험성</li>
+    </ul>
+  </li>
+  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
+    <ul>
+      <li>적용성, 설치성, 대체성</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-표준">UI 표준</h4>
+
+<ul>
+  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
+</ul>
+
+<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
+
+<ul>
+  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
+</ul>
+
+<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
+
+<ul>
+  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
+  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
+  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
+  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
+  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
+</ul>
+
+<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
+
+<ul>
+  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
+  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
+  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
+</ul>
+
+<h3 id="ui-설계">UI 설계</h3>
+
+<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
+
+<ul>
+  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
+</ul>
+
+<h5 id="uml-특징">UML 특징</h5>
+
+<ul>
+  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
+</ul>
+
+<h5 id="uml-구성요소">UML 구성요소</h5>
+
+<ul>
+  <li>사물, 관계, 다이어그램</li>
+</ul>
+
+<h5 id="uml다이어그램">UML다이어그램</h5>
+
+<ul>
+  <li>구조적 다이어그램 / 정적 다이어그램
+    <ul>
+      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
+      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
+      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
+      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
+      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
+      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
+    </ul>
+  </li>
+  <li>행위적 다이어그램 / 동적 다이어그램
+    <ul>
+      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
+      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
+      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
+      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
+      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
+      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
+
+<ul>
+  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
+</ul>
+
+<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
+
+<ul>
+  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
+  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
+  <li>UI 디자인 도구: 스케치, Adobe XD</li>
+  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
 
 <p>시스템의 요구분석 부터 유지보수까지 전 공정을 체계화 한 절차</p>
 
@@ -1320,15 +1388,4 @@ Zustand는 Middleware로 Devtools를 지원하고 있어서 Redux Devtools을 �
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="js" /><category term="return" /><category term="return false" /><category term="자바스크립트" /><summary type="html"><![CDATA[return; return false; 는 어떤 차이가 있을까]]></summary></entry><entry><title type="html">UI/UX 디자인 공유 (6)</title><link href="http://localhost:4000/uiux/post62/" rel="alternate" type="text/html" title="UI/UX 디자인 공유 (6)" /><published>2022-12-07T00:00:00+09:00</published><updated>2022-12-07T00:00:00+09:00</updated><id>http://localhost:4000/uiux/post62</id><content type="html" xml:base="http://localhost:4000/uiux/post62/"><![CDATA[<p>Project Management Dashboard<br />
-by. <a href="https://dribbble.com/Dedewahidin">Ciptasmara</a></p>
-
-<p><img width="793" alt="image" src="https://user-images.githubusercontent.com/95404736/206194128-71147734-d336-4a8c-bfc7-24af5ce0e8bf.png" /></p>
-
-<h3 id="️-링크">✔️ 링크</h3>
-
-<p><a href="https://dribbble.com/shots/14417690-Project-Management-Dashboard/">https://dribbble.com/shots/14417690-Project-Management-Dashboard/</a></p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Uiux" /><category term="UI" /><category term="UX" /><category term="디자인" /><category term="웹디자인" /><category term="Dashboard" /><category term="대시보드" /><summary type="html"><![CDATA[디자인 아이디어 공유]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="js" /><category term="return" /><category term="return false" /><category term="자바스크립트" /><summary type="html"><![CDATA[return; return false; 는 어떤 차이가 있을까]]></summary></entry></feed>
