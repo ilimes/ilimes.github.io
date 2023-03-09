@@ -1,4 +1,4 @@
-I"�<h2 id="상태state란-무엇인가">상태(state)란 무엇인가?</h2>
+I"�<h2 id="상태state란-무엇인가">상태(state)란 무엇인가?</h2>
 
 <blockquote>
   <p>리액트 컴포넌트에서 동적인 값을 상태(state) 라고 한다. 리액트 16.8 이전 버전에서는 함수형 컴포넌트에서 상태를 관리할 수 없었지만 16.8 버전 이후 Hooks 라는 기능이 도입되어 함수형 컴포넌트에서도 상태 관리가 가능하게 되었다.</p>
@@ -32,17 +32,17 @@
 22
 </pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">Counter</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nf">Counter</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">number</span><span class="p">,</span> <span class="nx">setNumber</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
   <span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nf">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">};</span>
   <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nf">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
   <span class="p">};</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">number</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">onIncrease</span><span class="si">}</span><span class="p">&gt;</span>+1<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
@@ -61,7 +61,7 @@
 <p>useState를 사용하기 위해서는 가장 먼저 위와 같이 리액트 패키지에서 useState 함수를 불러와야 한다.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="p">[</span><span class="nx">상태</span> <span class="nx">값</span> <span class="nx">저장</span> <span class="nx">변수</span> <span class="p">,</span> <span class="nx">상태값</span> <span class="nx">변경해주는</span> <span class="nx">setter</span> <span class="nx">함수</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="nx">상태</span> <span class="nx">초기</span> <span class="nx">값</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>useState 함수를 호출하면 위처럼 배열을 반환하게 된다.<br />
@@ -74,10 +74,10 @@
 5
 6
 </pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">onIncrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nf">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
 <span class="kd">const</span> <span class="nx">onDecrease</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="nf">setNumber</span><span class="p">(</span><span class="nx">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 

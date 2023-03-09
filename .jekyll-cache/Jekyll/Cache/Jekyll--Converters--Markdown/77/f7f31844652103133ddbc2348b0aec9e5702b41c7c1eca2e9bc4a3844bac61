@@ -1,4 +1,4 @@
-I"c1<h2 id="이벤트event란">이벤트(Event)란?</h2>
+I"f1<h2 id="이벤트event란">이벤트(Event)란?</h2>
 
 <p>이벤트는 사용자가 웹 브라우저에서 <code class="language-plaintext highlighter-rouge">DOM요소</code>들과 상호작용하는 것을 말합니다. (input 요소에 타이핑을 하거나, 버튼을 클릭하는 등..)</p>
 
@@ -31,7 +31,7 @@ EventPractives.js</p>
 8
 9
 </pre></td><td class="rouge-code"><pre> <span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-   <span class="k">return</span> <span class="p">(</span>
+   <span class="nf">return </span><span class="p">(</span>
      <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Event<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -58,7 +58,7 @@ EventPractives.js</p>
 <span class="err"> </span><span class="k">import</span> <span class="nx">EventPractices</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./EventPractices</span><span class="dl">'</span><span class="p">;</span>
 <span class="err"> ​</span>
 <span class="err"> ​</span>
-<span class="err"> </span><span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+<span class="err"> </span><span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
 <span class="err"> </span> <span class="err"> </span>
 <span class="err"> </span> <span class="err"> </span><span class="k">return</span> <span class="p">&lt;</span><span class="nc">EventPractices</span> <span class="p">/&gt;;</span>
 <span class="err"> ​</span>
@@ -85,13 +85,13 @@ EventPractives.js</p>
 14
 15
 </pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>이벤트<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">input</span>
         <span class="na">type</span><span class="p">=</span><span class="s">"text"</span>
         <span class="na">onChange</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
         <span class="p">}</span><span class="si">}</span>
       <span class="p">/&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -141,20 +141,20 @@ input 박스에 위와 같이 입력하면</p>
 </pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
 <span class="kd">const</span> <span class="nx">EventPractices</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">setValue2</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">value2</span><span class="p">,</span> <span class="nx">setValue2</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="dl">""</span><span class="p">);</span>
 
   <span class="kd">const</span> <span class="nx">handleChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">첫 번째 input : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="nx">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">첫 번째 input : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nf">setValue</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
   <span class="p">};</span>
 
   <span class="kd">const</span> <span class="nx">handleChange2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">두 번째 input : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
-    <span class="nx">setValue2</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">두 번째 input : </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nf">setValue2</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
   <span class="p">};</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>이벤트<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
       <span class="p">&lt;&gt;</span>

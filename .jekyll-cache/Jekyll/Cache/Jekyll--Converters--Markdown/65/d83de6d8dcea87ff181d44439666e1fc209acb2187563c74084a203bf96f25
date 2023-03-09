@@ -5,7 +5,7 @@
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">Item001</span><span class="p">:</span><span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nf">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nf">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">Item001</span><span class="p">:</span><span class="mi">1</span><span class="p">}}).</span><span class="nf">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="p">...</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -17,7 +17,7 @@ Node.js MongoDB Driver API 문서를 살펴보니 projection 부분은 아래와
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">projection</span><span class="p">:{</span><span class="na">Item001</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}).</span><span class="nx">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">db</span><span class="p">.</span><span class="nf">collection</span><span class="p">(</span><span class="nx">collection</span><span class="p">).</span><span class="nf">find</span><span class="p">({},</span> <span class="p">{</span><span class="na">projection</span><span class="p">:{</span><span class="na">Item001</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}).</span><span class="nf">toArray</span><span class="p">((</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="p">...</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>

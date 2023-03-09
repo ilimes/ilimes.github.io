@@ -1,4 +1,4 @@
-I"7@<h2 id="axios란">Axios란?</h2>
+I":@<h2 id="axios란">Axios란?</h2>
 
 <p>공식 문서에도 적혀있듯이 Axios는 <strong>Node.js와 브라우저를 위한 Promise 기반 HTTP 클라이언트</strong> 입니다. JavaScript에서 클라이언트와 서버 간 데이터를 주고받기 위해서 사용하는 비동기 HTTP 통신 방법 중에서는 Axios 뿐만 아니라 Ajax, Fetch 등이 있는데요. 제가 앞서 사용해보았던 Ajax는 보통 jQuery를 사용하여 보다 쉽게 요청을 처리 할 수 있지만 Promise 기반의 통신 기술이 아니었습니다. Axios 는 Promise(ES6) 기반 HTTP 통신 라이브러리이며 크로스 브라우징 최적화로 브라우저간 호환성이 뛰어난데요. 설치가 필요하다는 점만 빼면 Fetch 대비 편의성도 좋아서 통상적으로 React나 Vue.js와 같은 프론트 프레임워크를 사용할때는 Axios를 주로 사용합니다.</p>
 
@@ -74,7 +74,7 @@
 5
 6
 7
-</pre></td><td class="rouge-code"><pre><span class="nx">axios</span><span class="p">({</span>
+</pre></td><td class="rouge-code"><pre><span class="nf">axios</span><span class="p">({</span>
   <span class="na">url</span><span class="p">:</span> <span class="dl">'</span><span class="s1">http://localhost:3000</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 통신할 웹문서</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">get</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// 통신 방식</span>
   <span class="na">data</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// 보낼 데이터</span>
@@ -165,14 +165,14 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
-<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">head</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">options</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">put</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">patch</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
+</pre></td><td class="rouge-code"><pre><span class="nx">axios</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">head</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">options</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">config</span><span class="p">])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nf">patch</span><span class="p">(</span><span class="nx">url</span><span class="p">[,</span> <span class="nx">data</span><span class="p">[,</span> <span class="nx">config</span><span class="p">]])</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <h2 id="axios-기본-사용법">Axios 기본 사용법</h2>
@@ -198,21 +198,21 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 15
 16
 17
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">)</span>
 
 <span class="c1">// ID로 사용자 요청</span>
 <span class="nx">axios</span>
-  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user?ID=12345</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user?ID=12345</span><span class="dl">'</span><span class="p">)</span>
   <span class="c1">// 응답(성공)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
   <span class="p">})</span>
   <span class="c1">// 응답(실패)</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+  <span class="p">.</span><span class="nf">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
   <span class="p">})</span>
   <span class="c1">// 응답(항상 실행)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nf">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// ...</span>
   <span class="p">})</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
@@ -229,12 +229,12 @@ httpAgent /  httpsAgent : node.js에서 http나 https를 요청을 할때 사용
 6
 7
 8
-</pre></td><td class="rouge-code"><pre><span class="k">async</span> <span class="kd">function</span> <span class="nx">getUser</span><span class="p">()</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="k">async</span> <span class="kd">function</span> <span class="nf">getUser</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user?ID=12345</span><span class="dl">'</span><span class="p">)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+    <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">axios</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">/user?ID=12345</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+  <span class="p">}</span> <span class="nf">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>

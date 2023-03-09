@@ -430,4 +430,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","인터페이스","인터페이스구현","개발"],
         "url": "/infoprocessing/post72/",
         "teaser": null
+      },{
+        "title": "CH07. SQL 응용",
+        "excerpt":"데이터베이스 기본 트랜잭션(Transaction) 인가받지 않은 사용자로부터 데이터를 보장하기 위해 DBMS가 가져야 하는 특성, 하나의 논리적 기능을 정상적으로 수행하기 위한 작업의 기본 단위 트랜잭션 특성 원자성(Atomicity): 트랜잭션의 연산 전체가 성공 또는 실패되어야 하는 성질 (All or Nothing) 일관성(Consistency): 트랜잭션 수행 전과 트랜잭션 수행 완료 후의 상태가 같아야 하는 성질 격리성(Isolation): 동시에...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","SQL","SQL응용","개발"],
+        "url": "/infoprocessing/post73/",
+        "teaser": null
       }]

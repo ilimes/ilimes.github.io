@@ -11,7 +11,7 @@
 <h3 id="️-usecallback-사용법">✔️ useCallback() 사용법</h3>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">memoizedCallback</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(</span><span class="nx">함수</span><span class="p">,</span> <span class="nx">배열</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">memoizedCallback</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(</span><span class="nx">함수</span><span class="p">,</span> <span class="nx">배열</span><span class="p">);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위와 같이 첫 번째 인자로는 함수가, 두번째 인자로는 배열 형태의 함수 실행 조건이 들어가는데요.<br />
@@ -24,7 +24,7 @@
 <p>기본적으로 위와 같은 함수가 React 컴포넌트 안에 선언이 되어 있다면, 해당 컴포넌트가 렌더링 될 때마다 새롭게 함수를 생성하는데요.</p>
 
 <div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="nx">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">,</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">add</span> <span class="o">=</span> <span class="nf">useCallback</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">,</span> <span class="p">[</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">]);</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
 <p>위 처럼 <code class="language-plaintext highlighter-rouge">useCallback()</code> 을 적용하게되면 x, y의 값이 바뀔 때는 새로운 함수가 선언되어 <code class="language-plaintext highlighter-rouge">add</code> 변수에 할당되고, 바뀌지 않으면 함수를 재사용하게 됩니다.</p>

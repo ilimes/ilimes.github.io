@@ -1,4 +1,4 @@
-I"�<h3 id="️-useref-언제-사용할까">✔️ useRef, 언제 사용할까?</h3>
+I"�<h3 id="️-useref-언제-사용할까">✔️ useRef, 언제 사용할까?</h3>
 
 <p><code class="language-plaintext highlighter-rouge">useRef</code>는 크게 <strong>DOM 요소에 접근</strong>하는 경우, <strong>렌더링을 일으키지 않고 값을 변경</strong>시키는 두 가지 경우에 사용합니다.<br />
 <br />
@@ -25,10 +25,10 @@ Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 <
 12
 13
 </pre></td><td class="rouge-code"><pre><span class="c1">//Ref 객체 생성</span>
-<span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">ref</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">();</span>
 
 <span class="c1">//current -&gt; DOM 가리킴. 아래의 경우는 &lt;input /&gt; 태그 DOM을 가리킨다.</span>
-<span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+<span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nf">focus</span><span class="p">();</span>
 
 <span class="c1">//접근하고 싶은 태그에는 ref 속성을 준다.</span>
 <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
@@ -61,16 +61,16 @@ Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 <
 19
 20
 21
-</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">Sample</span><span class="p">()</span> <span class="p">{</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nf">Sample</span><span class="p">()</span> <span class="p">{</span>
 
-  <span class="kd">const</span> <span class="nx">nameInput</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">nameInput</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">();</span>
 
   <span class="c1">//포커스 잡기</span>
   <span class="kd">const</span> <span class="nx">onFocus</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">focus</span><span class="p">();</span>
+    <span class="nx">nameInput</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nf">focus</span><span class="p">();</span>
   <span class="p">};</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
         <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="p">=</span><span class="s">"lime"</span>
             <span class="na">placeholder</span><span class="p">=</span><span class="s">"focus!!"</span>
@@ -94,7 +94,7 @@ Vanilla JavaScript로 특정 DOM 요소에 접근하고자 하는 경우에는 <
 2
 3
 4
-</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">nextId</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+</pre></td><td class="rouge-code"><pre><span class="kd">const</span> <span class="nx">nextId</span> <span class="o">=</span> <span class="nf">useRef</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 <span class="kd">const</span> <span class="nx">onCreate</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">nextId</span><span class="p">.</span><span class="nx">current</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="p">};</span>

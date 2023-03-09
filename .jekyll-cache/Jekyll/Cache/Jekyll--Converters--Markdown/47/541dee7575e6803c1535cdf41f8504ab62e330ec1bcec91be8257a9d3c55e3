@@ -1,4 +1,4 @@
-I"�4<h3 id="️-파이어베이스-구글-로그인">✔️ 파이어베이스 구글 로그인</h3>
+I"�4<h3 id="️-파이어베이스-구글-로그인">✔️ 파이어베이스 구글 로그인</h3>
 
 <p>요즘 웹서비스에서 대부분 소셜 로그인을 지원하고 있고, 개발을 하다보면 소셜로그인이 필요한 경우가 생깁니다. 파이어베이스를 접하기 전에는 OAuth로 소셜 로그인을 구현할 수 있었지만, 파이어베이스를 사용하면 훨씬 간단하게 구현할 수 있습니다 :)</p>
 
@@ -99,8 +99,8 @@
   <span class="na">appId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span>
 <span class="p">};</span>
 
-<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nx">getAuth</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nf">initializeApp</span><span class="p">(</span><span class="nx">firebaseConfig</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">auth</span> <span class="o">=</span> <span class="nf">getAuth</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
 <span class="k">export</span> <span class="p">{</span> <span class="nx">app</span><span class="p">,</span> <span class="nx">auth</span> <span class="p">};</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 
@@ -148,22 +148,22 @@
 <span class="k">import</span> <span class="p">{</span> <span class="nx">GoogleAuthProvider</span><span class="p">,</span> <span class="nx">signInWithPopup</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">firebase/auth</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">[</span><span class="nx">userData</span><span class="p">,</span> <span class="nx">setUserData</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">userData</span><span class="p">,</span> <span class="nx">setUserData</span><span class="p">]</span> <span class="o">=</span> <span class="nf">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 
-  <span class="kd">function</span> <span class="nx">handleGoogleLogin</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">GoogleAuthProvider</span><span class="p">();</span> <span class="c1">// provider 구글 설정</span>
-    <span class="nx">signInWithPopup</span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="c1">// 팝업창 띄워서 로그인</span>
-      <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">setUserData</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span> <span class="c1">// user data 설정</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// console에 UserCredentialImpl 출력</span>
+  <span class="kd">function</span> <span class="nf">handleGoogleLogin</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">GoogleAuthProvider</span><span class="p">();</span> <span class="c1">// provider 구글 설정</span>
+    <span class="nf">signInWithPopup</span><span class="p">(</span><span class="nx">auth</span><span class="p">,</span> <span class="nx">provider</span><span class="p">)</span> <span class="c1">// 팝업창 띄워서 로그인</span>
+      <span class="p">.</span><span class="nf">then</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nf">setUserData</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">user</span><span class="p">);</span> <span class="c1">// user data 설정</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// console에 UserCredentialImpl 출력</span>
       <span class="p">})</span>
-      <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+      <span class="p">.</span><span class="nf">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
       <span class="p">});</span>
   <span class="p">}</span>
 
-  <span class="k">return</span> <span class="p">(</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>구글 로그인 테스트<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">handleGoogleLogin</span><span class="si">}</span><span class="p">&gt;</span>로그인<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>

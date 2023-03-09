@@ -1,4 +1,4 @@
-I"9<h2 id="ant-design이란">Ant Design이란?</h2>
+I":<h2 id="ant-design이란">Ant Design이란?</h2>
 
 <p>Ant Design은 알리바바 그룹에서 개발한 UI 라이브러리로 리액트와 타입스크립트(Typescript)를 기반으로 제작되었으며 Layout, Button, Grid, Card 등 다양한 컴포넌트를 지원합니다.</p>
 
@@ -61,8 +61,8 @@
 <span class="k">import</span> <span class="p">{</span> <span class="nx">FilterOutlined</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@ant-design/icons</span><span class="dl">"</span><span class="p">;</span>
 <span class="k">import</span> <span class="dl">"</span><span class="s2">./App.css</span><span class="dl">"</span><span class="p">;</span>
 
-<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
+<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nf">return </span><span class="p">(</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"App"</span><span class="p">&gt;</span>
       <span class="p">&lt;&gt;</span>
         <span class="p">&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
