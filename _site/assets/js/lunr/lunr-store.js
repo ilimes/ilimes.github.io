@@ -436,4 +436,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","SQL","SQL응용","개발"],
         "url": "/infoprocessing/post73/",
         "teaser": null
+      },{
+        "title": "CH08. 서버 프로그램 구현",
+        "excerpt":"개발환경 구축 개발 도구 분류 빌드 도구 작성한 코드의 빌드 및 배포를 수행하는 도구 (Ant, Maven, Gradle) 구현 도구 코드의 작성과 디버깅, 수정 등과 같이 작업 시 사용되는 도구 (Eclipse, InteliJ, VS) 테스트 도구 코드의 기능 검증과 전체의 품질을 높이기 위해 사용하는 도구 (xUnit, PMD, Sonar) 형상 관리 도구 산출물에...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","Server","서버","서버프로그램구현","개발"],
+        "url": "/infoprocessing/post74/",
+        "teaser": null
       }]

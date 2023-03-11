@@ -1,4 +1,312 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-11T22:19:54+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH07. SQL 응용</title><link href="http://localhost:4000/infoprocessing/post73/" rel="alternate" type="text/html" title="CH07. SQL 응용" /><published>2023-03-09T00:00:00+09:00</published><updated>2023-03-09T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post73</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post73/"><![CDATA[<h3 id="데이터베이스-기본">데이터베이스 기본</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-11T22:31:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH08. 서버 프로그램 구현</title><link href="http://localhost:4000/infoprocessing/post74/" rel="alternate" type="text/html" title="CH08. 서버 프로그램 구현" /><published>2023-03-11T00:00:00+09:00</published><updated>2023-03-11T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post74</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post74/"><![CDATA[<h3 id="개발환경-구축">개발환경 구축</h3>
+
+<h4 id="개발-도구-분류">개발 도구 분류</h4>
+
+<ul>
+  <li>빌드 도구</li>
+</ul>
+
+<p>작성한 코드의 빌드 및 배포를 수행하는 도구 (Ant, Maven, Gradle)</p>
+
+<ul>
+  <li>구현 도구</li>
+</ul>
+
+<p>코드의 작성과 디버깅, 수정 등과 같이 작업 시 사용되는 도구 (Eclipse, InteliJ, VS)</p>
+
+<ul>
+  <li>테스트 도구</li>
+</ul>
+
+<p>코드의 기능 검증과 전체의 품질을 높이기 위해 사용하는 도구 (xUnit, PMD, Sonar)</p>
+
+<ul>
+  <li>형상 관리 도구</li>
+</ul>
+
+<p>산출물에 대한 버전관리를 위한 도구 (Git, SVN, CVS)</p>
+
+<h4 id="서버-하드웨어-개발환경">서버 하드웨어 개발환경</h4>
+
+<ul>
+  <li>웹 서버</li>
+</ul>
+
+<p>HTTP를 이용한 요청/응답을 처리 (Apache 웹서버, 구글 웹서버)</p>
+
+<ul>
+  <li>웹 애플리케이션 서버(WAS)</li>
+</ul>
+
+<p>동적 콘텐츠를 처리하고 제공하기 위해 사용 (Tomcat, Jeus, Resin)</p>
+
+<ul>
+  <li>데이터베이스 서버</li>
+</ul>
+
+<p>데이터의 수집, 저장을 위한 용도로 사용 (MySql, Oracle, MS-SQL)</p>
+
+<ul>
+  <li>파일 서버: 파일 저장 하드웨어로 물리 저장 장치를 활용한 서버(HDD, SSD)</li>
+</ul>
+
+<h4 id="소프트웨어-개발환경">소프트웨어 개발환경</h4>
+
+<ul>
+  <li>운영체제</li>
+</ul>
+
+<p>사용자 관점에서 편리하고 유용하게 사용하기 위한 소프트웨어</p>
+
+<ul>
+  <li>미들웨어</li>
+</ul>
+
+<p>웹 서버, JVM과 같은 개발 환경의 구성요소로 활용</p>
+
+<ul>
+  <li>DBMS</li>
+</ul>
+
+<p>데이터의 저장 및 활용을 위해 DBMS를 설치</p>
+
+<h4 id="형상-관리configuration-management">형상 관리(Configuration Management)</h4>
+
+<p>소프트웨어 개발을 위한 전체 과정에서 발생하는 모든 항목의 변경 사항을 관리하기 위한 활동</p>
+
+<ul>
+  <li>형상 관리 절차</li>
+</ul>
+
+<p>형상식별(대상정의) → 형상 통제(버전관리) → 형상 감사(무결성) → 형상 기록(보고서)</p>
+
+<h4 id="소프트웨어-형상-관리-도구-유형">소프트웨어 형상 관리 도구 유형</h4>
+
+<ul>
+  <li>공유 폴더 방식</li>
+</ul>
+
+<p>매일 개발이 완료된 파일은 약속된 우치의 공유 폴더에 복사하는 방식 (RCS, SCCS)</p>
+
+<ul>
+  <li>클라이언트/서버 방식</li>
+</ul>
+
+<p>중앙에 버전 관리 시스템을 항시 동작시키는 방식 (CVS, SVN)</p>
+
+<ul>
+  <li>분산 저장소 방식</li>
+</ul>
+
+<p>로컬 저장소와 원격 저장소로 분리되어 분산 저장하는 방식 (Git)</p>
+
+<h4 id="소프트웨어-형상-관리-도구별-특징">소프트웨어 형상 관리 도구별 특징</h4>
+
+<ul>
+  <li>CVS(Concurrent Versions System)</li>
+</ul>
+
+<p>서버와 클라이언트로 구성되어있고, 다수의 인원이 동시에 범용적인 운영체제로 접근 가능한 형상 관리 도구</p>
+
+<ul>
+  <li>SVN(Subversion)</li>
+</ul>
+
+<p>하나의 서버에서 소스를 쉽고 유용하게 관리할 수 있게 도와주는 도구</p>
+
+<ul>
+  <li>RCS(Revision Control System)</li>
+</ul>
+
+<p>소스 파일의 수정을 한 사람만으로 제한하여 다수의 사람이 파일을 수정을 동시에 할 수 없도록 파일 잠금 방식으로 형상을 관리하는 도구</p>
+
+<ul>
+  <li>Bitkeeper</li>
+</ul>
+
+<p>중앙 통제 방식으로 대규모 프로젝트에서 빠른 속도를 내도록 개발된 형상 관리 도구</p>
+
+<ul>
+  <li>Git</li>
+</ul>
+
+<p>속도에 중점을 둔 분산형 버전 관리 시스템, 대형 프로젝트에서 효과적이고 유용함</p>
+
+<ul>
+  <li>Clear Case</li>
+</ul>
+
+<p>복수 서버, 복수 클라이언트 구조, 필요한 서버를 하나씩 추가하여 확장성을 기할 수 있음</p>
+
+<h3 id="공통-모듈-구현">공통 모듈 구현</h3>
+
+<h4 id="모듈module">모듈(Module)</h4>
+
+<p>하나의 완전한 기능을 수행할 수 있는 독립된 실체</p>
+
+<h4 id="모듈화modularity">모듈화(Modularity)</h4>
+
+<p>프로그램 개발 시 생산성과 최적화, 관리에 용이하게 기능 단위로 분할하는 기법</p>
+
+<ul>
+  <li>모듈화 원리: 정보은닉, 분할과 정복, 데이터 추상화, 모듈 독립성</li>
+</ul>
+
+<h4 id="응집도cohesion">응집도(Cohesion)</h4>
+
+<p>모듈의 독립성을 나타내는 정도로, 모듈 내부 구성요소 간 연관 정도</p>
+
+<ul>
+  <li>응집도 유형: 우연적 응집도, 논리적 응집도, 시간적 응집도, 절차적 응집도, 통신적 응집도, 순차적 응집도, 기능적 응집도</li>
+</ul>
+
+<h4 id="결합도coupling">결합도(Coupling)</h4>
+
+<p>외부 모듈과의 연관도 또는 모듈 간의 상호의존성. 모듈간의 관련성을 측정하는 척도</p>
+
+<ul>
+  <li>결합도 유형: 내용 결합도, 공통 결합도, 외부 결합도, 제어 결합도, 스탬프 결합도, 자료 결합도</li>
+</ul>
+
+<p>=&gt; 응집도는 높을수록 좋고, 결합도는 낮을수록 좋다.</p>
+
+<h4 id="공통-모듈-구현-절차-dtovo--sql--dao--service--controller--화면-구현">공통 모듈 구현 절차: DTO/VO → SQL → DAO → Service → Controller → 화면 구현</h4>
+
+<ul>
+  <li>DTO(Data Transfer Object)</li>
+</ul>
+
+<p>프로세스 사이에서 데이터를 전송하는 객체</p>
+
+<ul>
+  <li>VO(Value Object)</li>
+</ul>
+
+<p>고정 클래스를 가지는 객체</p>
+
+<ul>
+  <li>DAO(Data Access Object)</li>
+</ul>
+
+<p>특정 타입의 데이터베이스에 추상 인터페이스를 제공하는 객체</p>
+
+<h4 id="팬인fan-in-및-팬아웃fan-out">팬인(Fan-In) 및 팬아웃(Fan-Out)</h4>
+
+<ul>
+  <li>Fan-In</li>
+</ul>
+
+<p>어떤 모듈을 제어하는 모듈의 수 / 모듈 자신을 기준으로 모듈에 들어오면 팬인</p>
+
+<ul>
+  <li>Fan-Out</li>
+</ul>
+
+<p>어떤 모듈에 의해 제어 되는 모듈의 수 / 모듈 자신을 기준으로 모듈에서 나가면 팬아웃</p>
+
+<ul>
+  <li>시스템 복잡도를 최적화하기 위해 팬인은 높게, 팬아웃은 낮게 설계 해야한다.</li>
+</ul>
+
+<h4 id="공통-모듈-테스트">공통 모듈 테스트</h4>
+
+<p>IDE 도구를 활용하여 개별 공통 모듈에 대한 디버깅을 수행</p>
+
+<ul>
+  <li>통합 개발 환경(IDE: Intergrated Developmnet Enviroment)</li>
+</ul>
+
+<p>개발에 필요한 다양한 틀을 하나의 인터페이스로 통합 하여 제공하는 환경 (도구: Eclipse, VS, Android Studio, IDEA)</p>
+
+<h4 id="공통-모듈-테이스-종류">공통 모듈 테이스 종류</h4>
+
+<ul>
+  <li>화이트박스 테스트</li>
+</ul>
+
+<p>소스 코드를 보면서 테스트 케이스를 다양하게 만들어 테스트</p>
+
+<ul>
+  <li>메서드 기반 테스트</li>
+</ul>
+
+<p>공통 모듈의 외부에 공개된 메서드 기반 테스트</p>
+
+<ul>
+  <li>화면 기반 테스트</li>
+</ul>
+
+<p>화면단위로 단위모듈을 개발 후에 화면에 직접 데이터를 입력하여 테스트</p>
+
+<ul>
+  <li>테스트 드라이버/테스트 스텁 활용 테스트기능을 테스트할 수 있는 화면 또는 하위 모듈이 구현되지 않은 경우
+    <ul>
+      <li>테스트 드라이버(Test Driver): 하위 모듈은 있지만 상위 모듈은 없는 경우 사용</li>
+      <li>테스트 스텁(Test Stub): 상위 모듈은 있지만 하위 모듈은 없는 경우 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="junit">Junit</h4>
+
+<p>자바 프로그래밍 언어용 단위테스트 도구</p>
+
+<h3 id="배치-프로그램-구현">배치 프로그램 구현</h3>
+
+<h4 id="배치-프로그램batch-program">배치 프로그램(Batch Program)</h4>
+
+<p>사용자와의 상호 작용 없이 일련의 작업들을 작업 단위로 묶어 정기적으로 반복 수행하거나 정해진 규칙에 따라 일괄 처리하는 방법</p>
+
+<h4 id="배치-프로그램-유형">배치 프로그램 유형</h4>
+
+<ul>
+  <li>이벤트 배치</li>
+</ul>
+
+<p>사전에 정의해 둔 조건 충족 시 자동으로 실행</p>
+
+<ul>
+  <li>온디맨드 배치</li>
+</ul>
+
+<p>사용자의 명시적 요구가 있을 때마다 실행</p>
+
+<ul>
+  <li>정기 배치</li>
+</ul>
+
+<p>정해진 시검에 정기적으로 실행</p>
+
+<h4 id="배치-스케줄러batch-scheduler">배치 스케줄러(Batch Scheduler)</h4>
+
+<p>일괄 처리(Batch Processing) 작업이 설정된 주기에 맞춰 자동으로 수행되도록 지원하는 도구</p>
+
+<h4 id="배치-스케줄러-종류">배치 스케줄러 종류</h4>
+
+<ul>
+  <li>스프링 배치(Spring Batch)</li>
+</ul>
+
+<p>오픈 소스 프레임워크</p>
+
+<ul>
+  <li>쿼츠 스케줄러(Quartz Scheduler)</li>
+</ul>
+
+<p>수행할 작업과 수행 시간을 관리하는 요소들을 분리하여 일괄 처리 작업에 유연성을 제공(오픈 소스 라이브러리)</p>
+
+<h4 id="corn-표현식">Corn 표현식</h4>
+
+<p>크론 표현식을 통해 배치 수행 시간을 시간 및 주기 등으로 설정</p>
+
+<ul>
+  <li>리눅스/유닉스 크론 표현식: 분, 시간, 일, 월, 요일, 연도</li>
+  <li>쿼츠 크론 표현식: 초, 분, 시간, 일, 월, 요일, 연도</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="Server" /><category term="서버" /><category term="서버프로그램구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 서버 프로그램 구현]]></summary></entry><entry><title type="html">CH07. SQL 응용</title><link href="http://localhost:4000/infoprocessing/post73/" rel="alternate" type="text/html" title="CH07. SQL 응용" /><published>2023-03-09T00:00:00+09:00</published><updated>2023-03-09T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post73</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post73/"><![CDATA[<h3 id="데이터베이스-기본">데이터베이스 기본</h3>
 
 <h4 id="트랜잭션transaction">트랜잭션(Transaction)</h4>
 
@@ -322,7 +630,162 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
+
+<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
+
+<h4 id="ui유형">UI유형</h4>
+
+<ul>
+  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
+  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
+  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
+  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
+</ul>
+
+<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
+
+<ul>
+  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
+  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
+  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
+  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
+</ul>
+
+<h4 id="ui-설계-지침">UI 설계 지침</h4>
+
+<ul>
+  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
+</ul>
+
+<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
+
+<ul>
+  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
+    <ul>
+      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
+    </ul>
+  </li>
+  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
+    <ul>
+      <li>성숙성, 고장 허용성, 회복성</li>
+    </ul>
+  </li>
+  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
+    <ul>
+      <li>이해성, 학습성, 운용성</li>
+    </ul>
+  </li>
+  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
+    <ul>
+      <li>시간 효율성, 자원 효율성</li>
+    </ul>
+  </li>
+  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
+    <ul>
+      <li>분석성, 변경성, 안정성, 시험성</li>
+    </ul>
+  </li>
+  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
+    <ul>
+      <li>적용성, 설치성, 대체성</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-표준">UI 표준</h4>
+
+<ul>
+  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
+</ul>
+
+<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
+
+<ul>
+  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
+</ul>
+
+<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
+
+<ul>
+  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
+  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
+  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
+  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
+  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
+</ul>
+
+<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
+
+<ul>
+  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
+  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
+  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
+</ul>
+
+<h3 id="ui-설계">UI 설계</h3>
+
+<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
+
+<ul>
+  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
+</ul>
+
+<h5 id="uml-특징">UML 특징</h5>
+
+<ul>
+  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
+</ul>
+
+<h5 id="uml-구성요소">UML 구성요소</h5>
+
+<ul>
+  <li>사물, 관계, 다이어그램</li>
+</ul>
+
+<h5 id="uml다이어그램">UML다이어그램</h5>
+
+<ul>
+  <li>구조적 다이어그램 / 정적 다이어그램
+    <ul>
+      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
+      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
+      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
+      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
+      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
+      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
+    </ul>
+  </li>
+  <li>행위적 다이어그램 / 동적 다이어그램
+    <ul>
+      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
+      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
+      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
+      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
+      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
+      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
+
+<ul>
+  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
+</ul>
+
+<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
+
+<ul>
+  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
+  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
+  <li>UI 디자인 도구: 스케치, Adobe XD</li>
+  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
 
 <h4 id="데이터-모델data-model">데이터 모델(Data Model)</h4>
 
@@ -640,162 +1103,7 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
-
-<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
-
-<h4 id="ui유형">UI유형</h4>
-
-<ul>
-  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
-  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
-  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
-  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
-</ul>
-
-<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
-
-<ul>
-  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
-  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
-  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
-  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
-</ul>
-
-<h4 id="ui-설계-지침">UI 설계 지침</h4>
-
-<ul>
-  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
-</ul>
-
-<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
-
-<ul>
-  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
-    <ul>
-      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
-    </ul>
-  </li>
-  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
-    <ul>
-      <li>성숙성, 고장 허용성, 회복성</li>
-    </ul>
-  </li>
-  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
-    <ul>
-      <li>이해성, 학습성, 운용성</li>
-    </ul>
-  </li>
-  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
-    <ul>
-      <li>시간 효율성, 자원 효율성</li>
-    </ul>
-  </li>
-  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
-    <ul>
-      <li>분석성, 변경성, 안정성, 시험성</li>
-    </ul>
-  </li>
-  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
-    <ul>
-      <li>적용성, 설치성, 대체성</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-표준">UI 표준</h4>
-
-<ul>
-  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
-</ul>
-
-<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
-
-<ul>
-  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
-</ul>
-
-<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
-
-<ul>
-  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
-  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
-  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
-  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
-  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
-</ul>
-
-<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
-
-<ul>
-  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
-  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
-  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
-</ul>
-
-<h3 id="ui-설계">UI 설계</h3>
-
-<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
-
-<ul>
-  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
-</ul>
-
-<h5 id="uml-특징">UML 특징</h5>
-
-<ul>
-  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
-</ul>
-
-<h5 id="uml-구성요소">UML 구성요소</h5>
-
-<ul>
-  <li>사물, 관계, 다이어그램</li>
-</ul>
-
-<h5 id="uml다이어그램">UML다이어그램</h5>
-
-<ul>
-  <li>구조적 다이어그램 / 정적 다이어그램
-    <ul>
-      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
-      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
-      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
-      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
-      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
-      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
-    </ul>
-  </li>
-  <li>행위적 다이어그램 / 동적 다이어그램
-    <ul>
-      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
-      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
-      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
-      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
-      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
-      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
-
-<ul>
-  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
-</ul>
-
-<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
-
-<ul>
-  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
-  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
-  <li>UI 디자인 도구: 스케치, Adobe XD</li>
-  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
 
 <p>시스템의 요구분석 부터 유지보수까지 전 공정을 체계화 한 절차</p>
 
@@ -1375,138 +1683,4 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="브라우저정보" /><category term="자바스크립트" /><category term="UserAgent" /><category term="Browser" /><summary type="html"><![CDATA[User Agent 브라우저 정보 얻기]]></summary></entry><entry><title type="html">React 상태관리 라이브러리 zustand</title><link href="http://localhost:4000/react/post64/" rel="alternate" type="text/html" title="React 상태관리 라이브러리 zustand" /><published>2022-12-15T00:00:00+09:00</published><updated>2022-12-15T00:00:00+09:00</updated><id>http://localhost:4000/react/post64</id><content type="html" xml:base="http://localhost:4000/react/post64/"><![CDATA[<h3 id="️-zustand">✔️ zustand?</h3>
-
-<p>오늘은 리액트 상태관리 라이브러리 중 하나인 zustand를 알아보고자 합니다. 오늘 알아볼 zustand는 직장동료분께서 요즘 많이들 사용하는 라이브러리 중 하나이고 사용하기도 쉽다고 알려주셨는데요. 독일어로 zustand가 상태라고 하더라고요. 과연 zustand는 기존에 사용하던 redux와 비교하여 어떤 차이가 있을지, 사용 방법은 어떤지 알아보도록 하겠습니다.</p>
-
-<h3 id="️-zustand의-장점">✔️ zustand의 장점</h3>
-
-<p>일단 zustand는 코드가 간결합니다. redux를 많이들 기피하는 이유 중 하나가 바로 보일러플레이트 코드가 존재한다는 것인데요. 사실 그러한 단점을 보완하기 위해서 Redux Toolkit이 등장하였지만 보일러플레이트가 존재한다는 점은 여전히 변함이 없는데요. zustand는 보일러플레이트가 거의 없다고 봐도 무방할 정도로 코드가 간결합니다.</p>
-
-<h3 id="️-zustand-사용법">✔️ zustand 사용법</h3>
-
-<h4 id="설치하기">설치하기</h4>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>npm install zustand
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="store-생성하기">store 생성하기</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-</pre></td><td class="rouge-code"><pre><span class="c1">// store.js</span>
-
-<span class="k">import</span> <span class="nx">create</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">zustand</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="c1">// create를 이용하여 zustand 불러옴과 동시에 상태와 상태를 변경하는 액션 정의</span>
-<span class="kd">const</span> <span class="nx">useStore</span> <span class="o">=</span> <span class="nf">create</span><span class="p">((</span><span class="kd">set</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
-  <span class="na">bears</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="na">increasePopulation</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">set</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">bears</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">bears</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})),</span>
-  <span class="na">removeAllBears</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">set</span><span class="p">({</span> <span class="na">bears</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}),</span>
-<span class="p">}));</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">useStore</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>초기값은 bears로 선언,
-그 값을 조작하는 increasePopulation(bears를 1씩 증가)과 removeAllBears(bears를 0으로 리셋)를 선언,
-구독할 리스너는 set을 활용하여 관리.</p>
-
-<h4 id="생성한-store-불러와-사용">생성한 store 불러와 사용</h4>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-</pre></td><td class="rouge-code"><pre><span class="c1">// App.js</span>
-
-<span class="k">import</span> <span class="nx">useStore</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">../store.js</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">const</span> <span class="nx">App</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="p">{</span> <span class="nx">bears</span><span class="p">,</span> <span class="nx">increasePopulation</span><span class="p">,</span> <span class="nx">removeAllBears</span> <span class="p">}</span> <span class="o">=</span> <span class="nf">useStore</span><span class="p">(</span>
-    <span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">state</span>
-  <span class="p">);</span>
-
-  <span class="nf">return </span><span class="p">(</span>
-    <span class="p">&lt;&gt;</span>
-      <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">bears</span><span class="si">}</span> around here ...<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">increasePopulation</span><span class="si">}</span><span class="p">&gt;</span>one up<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-      <span class="p">&lt;</span><span class="nt">button</span> <span class="na">onClick</span><span class="p">=</span><span class="si">{</span><span class="nx">removeAllBears</span><span class="si">}</span><span class="p">&gt;</span>remove all<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;/&gt;</span>
-  <span class="p">);</span>
-<span class="p">};</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>생성한 store를 불러와서 간단하게 사용하면 끝입니다 👍
-Zustand는 Middleware로 Devtools를 지원하고 있어서 Redux Devtools을 쉽게 연결하여 사용할 수 있기도 합니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-</pre></td><td class="rouge-code"><pre><span class="c1">// store.js</span>
-
-<span class="k">import</span> <span class="nx">create</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">zustand</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">devtools</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">zustand/middleware</span><span class="dl">"</span><span class="p">;</span> <span class="c1">// ✔️</span>
-
-<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="p">(</span><span class="kd">set</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
-  <span class="na">bears</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-  <span class="na">increasePopulation</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">set</span><span class="p">((</span><span class="nx">state</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span> <span class="na">bears</span><span class="p">:</span> <span class="nx">state</span><span class="p">.</span><span class="nx">bears</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">})),</span>
-  <span class="na">removeAllBears</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">set</span><span class="p">({</span> <span class="na">bears</span><span class="p">:</span> <span class="mi">0</span> <span class="p">}),</span>
-<span class="p">});</span>
-
-<span class="kd">const</span> <span class="nx">useStore</span> <span class="o">=</span> <span class="nf">create</span><span class="p">(</span><span class="nf">devtools</span><span class="p">(</span><span class="nx">store</span><span class="p">));</span> <span class="c1">// ✔️</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">useStore</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 store를 생성하면 개발자 도구에서 store의 상태 확인이 가능합니다. Redux DevTools는 아래 크롬 웹스토어 링크에서 설치할 수 있습니다.</p>
-
-<ul>
-  <li>Redux DevTools : <a href="https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko&amp;refresh=1">https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko&amp;refresh=1</a></li>
-</ul>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<ul>
-  <li><a href="https://github.com/pmndrs/zustand">https://github.com/pmndrs/zustand</a></li>
-  <li><a href="https://codesandbox.io/s/github/pmndrs/zustand/tree/main/examples">https://codesandbox.io/s/github/pmndrs/zustand/tree/main/examples</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="상태관리" /><category term="zustand" /><summary type="html"><![CDATA[zustand 알아보기]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="JavaScript" /><category term="브라우저정보" /><category term="자바스크립트" /><category term="UserAgent" /><category term="Browser" /><summary type="html"><![CDATA[User Agent 브라우저 정보 얻기]]></summary></entry></feed>
