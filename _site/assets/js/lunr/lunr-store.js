@@ -442,4 +442,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","Server","서버","서버프로그램구현","개발"],
         "url": "/infoprocessing/post74/",
         "teaser": null
+      },{
+        "title": "CH09. 소프트웨어 개발 보안 구축",
+        "excerpt":"소프트웨어 개발 보안 설계 SW 개발 보안 소프트웨어 개발 과정에서 지켜야 할 일련의 보안 활동 SW 개발 보안 생명주기: 요구사항 명세 → 설계 → 구현 → 테스트 → 유지보수 SW 개발 보안 3대 요소 기밀성(Confidentiality): 시스템 내의 정보와 자원은 인가된 사용자에게만 접근이 허용 무결성(Integrity): 시스템 내의 정보는 오직 인가된 사용자만...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","software","소프트웨어","보안","개발"],
+        "url": "/infoprocessing/post75/",
+        "teaser": null
       }]
