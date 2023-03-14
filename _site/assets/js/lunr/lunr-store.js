@@ -448,4 +448,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","software","소프트웨어","보안","개발"],
         "url": "/infoprocessing/post75/",
         "teaser": null
+      },{
+        "title": "CH10. 애플리케이션 테스트 관리",
+        "excerpt":"애플리케이션 테스트 케이스 설계 애플리케이션 테스트 애플리케이션에 잠재되어 있는 결함을 찾아내는 일련의 행위 또는 절차 애플리케이션 테스트 원리 완벽한 테스팅은 불가능: 결함을 줄일 수는 있으나, 결함이 없다고 증명할 수 없음 파레토 법칙(Pareto Principle): 20%에 해당하는 코드에서 전체 결함의 80%가 발견된다는 법칙 살충제 패러독스(Pesticide Paradox): 동일한 테스트를 반복하면 더 이상 결함이...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","테스트","애플리케이션","개발"],
+        "url": "/infoprocessing/post76/",
+        "teaser": null
       }]
