@@ -1,4 +1,261 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-14T23:53:14+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH10. 애플리케이션 테스트 관리</title><link href="http://localhost:4000/infoprocessing/post76/" rel="alternate" type="text/html" title="CH10. 애플리케이션 테스트 관리" /><published>2023-03-14T00:00:00+09:00</published><updated>2023-03-14T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post76</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post76/"><![CDATA[<h3 id="애플리케이션-테스트-케이스-설계">애플리케이션 테스트 케이스 설계</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-03-19T19:56:29+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">CH11. 응용 SW 기초 기술 활용</title><link href="http://localhost:4000/infoprocessing/post77/" rel="alternate" type="text/html" title="CH11. 응용 SW 기초 기술 활용" /><published>2023-03-19T00:00:00+09:00</published><updated>2023-03-19T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post77</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post77/"><![CDATA[<h3 id="운영체제의-특징">운영체제의 특징</h3>
+
+<h4 id="운영체제os-operating-system">운영체제(OS: Operating System)</h4>
+
+<p>사용자가 컴퓨터의 하드웨어를 쉽게 사용할 수 있도록 인터페이스를 제공해주는 소프트웨어</p>
+
+<h5 id="운영체제-종류">운영체제 종류</h5>
+
+<p>윈도우즈(Windows), 유닉스(Unix), 리눅스(Linux), 맥(Mac), 안드로이드(Android)</p>
+
+<h4 id="메모리-관리-기법">메모리 관리 기법</h4>
+
+<ul>
+  <li>반입 기법: 메모리 적재 시기 결정(When)</li>
+  <li>배치 기법: 메모리 적재 위치 결정(Where)</li>
+  <li>할당 기법: 메모리 적재 방법 결정(How)</li>
+  <li>교체 기법: 메모리 교체 대상 결정(Who)</li>
+</ul>
+
+<h4 id="메모리-배치-기법">메모리 배치 기법</h4>
+
+<ul>
+  <li>최초 적합(First-fit): 프로세스가 적재될 수 있는 가용 공간 중에서 첫 번째 분할에 할당하는 방식</li>
+  <li>최적 적합(Best fit): 가용 공간 중에서 가장 크기가 비슷한 공간을 선택하여 프로세스를 적재하는 방식</li>
+  <li>최악 접합(Worst-fit): 프로세스의 가용 공간들 중에서 가장 큰 공간에 할당하는 방식</li>
+</ul>
+
+<h4 id="프로세스-상태">프로세스 상태</h4>
+
+<ul>
+  <li>생성(Create) 상태: 사용자에 의해 프로세스가 생성된 상태</li>
+  <li>준비(Ready) 상태: CPU를 할당받을 수 있는 상태</li>
+  <li>실행(Running) 상태: 프로세스가 CPU를 할당받아 동작 중인 상태</li>
+  <li>대기(Waiting) 상태: 프로세스 실행 중 입출력 처리 등으로 인해 CPU를 양도하고 입출력 처리가 완료까지 대기 리스트에서 기다리는 상태</li>
+  <li>완료(Complete) 상태: 프로세스가 CPU를 할당받아 주어진 시간 내에 완전히 수행을 종료한 상태</li>
+</ul>
+
+<h4 id="프로세스-상태-전이">프로세스 상태 전이</h4>
+
+<p><img width="618" alt="image" src="https://user-images.githubusercontent.com/95404736/226170556-97d36ab6-f195-4c78-a98f-20e9b023729f.png" /></p>
+
+<h4 id="프로세스-스케줄링의-유형">프로세스 스케줄링의 유형</h4>
+
+<ul>
+  <li>선점형 스케줄링: 우선순위가 높은 프로세스가 CPU를 점유하는 스케줄링
+    <ul>
+      <li>라운드 로빈(Round Robbin): 프로세스는 같은 크기의 CPU 시간 할당</li>
+      <li>SRT(Shortest Remaining Time First): 가장 짧은 시간이 소요되는 프로세스를 먼저 수행</li>
+      <li>다단계 큐(Multi Level Queue): 여러 개의 큐를 이용하여 상위단계 작업에 의한 하위단계 작업이 선점</li>
+      <li>다단계 피드백 큐(Multi Level Feedback Queue): 큐마다 서로 다른 CPU시간 할당량을 부여, FIFO+라운드 로빈 스케줄링 기법 혼합</li>
+    </ul>
+  </li>
+  <li>비선점형 스케줄링: 한 프로세스가 CPU를 할당 받으면 작업 종료 전까지 다른 프로세스는 CPU점유 불가능한 스케줄링
+    <ul>
+      <li>우선순위(Priority): 프로세스별 우선순위에 따라 CPU 할당</li>
+      <li>기한부(Deadline): 작업들이 명시된 기한 내에 완료되도록 계획</li>
+      <li>FCFS(First Come First Service): 프로세스가 대기 큐에 도착한 순서에 따라 CPU할당=FIFO</li>
+      <li>SJF(Shortest Job First): 가장 짧은 작업부터 수행, 평균 대시 시간 최소화. 기아현상 발생</li>
+      <li>HRN(Highest Response Ratio Next): 대기 중인 프로세스 중 현재 응답률이 가장 높은 것을 선택, 기아현상 최소화 기법</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="가상화virtualization">가상화(Virtualization)</h4>
+
+<p>물리적인 리소스들을 사용자에게 하나로 보이게 하거나, 하나의 물리적인 리소스를 여러 개로 보이게 하는 기술</p>
+
+<h4 id="클라우드-컴퓨팅cloud-computing">클라우드 컴퓨팅(Cloud Computing)</h4>
+
+<p>인터넷을 통해 가상화된 컴퓨터 시스템 리소스 제공</p>
+
+<h4 id="클라우드-컴퓨팅-유형">클라우드 컴퓨팅 유형</h4>
+
+<ul>
+  <li>인프라형 서비스(IaaS: Infrastructure as a Service): 서버, 스토리지 같은 시스템 자원을 클라우드로 제공하는 서비스</li>
+  <li>플랫폼형 서비스(Paas: Platform as a Service): 애플리케이션 개발, 실행, 관리할 수 있게하는 플랫폼을 제공하는 서비스</li>
+  <li>소프트웨어형 서비스(SaaS: Software as a Service): 클라이언트 통해 접속하여 소프트웨어 서비스 형태로 이용하는 서비스</li>
+</ul>
+
+<h3 id="네트워크-계층-구조-파악">네트워크 계층 구조 파악</h3>
+
+<h4 id="네트워크network">네트워크(Network)</h4>
+
+<p>원하는 정보를 원하는 수신자 또는 기기에 정확하게 전송하기 위한 기반 인프라</p>
+
+<ul>
+  <li>광대역 네트워크(WAN): LAN에 비해 전송거리가 넓음</li>
+  <li>근거리 네트워크(LAN): 한 건물 또는 작은 지역 커버</li>
+</ul>
+
+<h4 id="osiopen-system-interconnection-7계층">OSI(Open System Interconnection) 7계층</h4>
+
+<ul>
+  <li>응용 계층(Application Layer): 사용자와 네트워크 간 응용서비스 연결, 데이터 생성</li>
+  <li>표현 계층(Presentation Layer): 데이터 형식 설정, 부호교환, 암/복호화</li>
+  <li>세션 계층(Session Layer): 송수신 간의 논리적인 연결</li>
+  <li>전송 계층(Transport Layer): 송수신 프로세스 간의 연결</li>
+  <li>네트워크 계층(Network Layer): 단말기 간 데이터 전송을 위한 최적화된 경로 제공</li>
+  <li>데이터링크 계층(Data Link Layer): 인접 시스템 간 데이터 전송, 전송 오류 제어</li>
+  <li>물리 계층(Physical Layer): 0과 1의 비트 정보를 회선에 보내기 위한 전기적 신호 변환</li>
+</ul>
+
+<h4 id="프로토콜protocol">프로토콜(Protocol)</h4>
+
+<p>서로 다른 시스템이나 기기들 간의 데이터 교환을 원활히 하기 위한 표준화된 통신규약</p>
+
+<h4 id="프로토콜-기본-3요소">프로토콜 기본 3요소</h4>
+
+<ul>
+  <li>구문(Syntax): 시스템 간의 정보 전송을 위한 데이터 형식, 코딩, 신호 레벨 등의 규적</li>
+  <li>의미(Semantic): 시스템 간의 정보 전송을 위한 제어 정보로 조정과 에러 처리를 위한 규정</li>
+  <li>타이밍(Timing): 시스템 간의 정보 전송을 위한 속도 조절과 순서 관리 규정</li>
+</ul>
+
+<h4 id="네트워크-프로토콜network-protocol">네트워크 프로토콜(Network Protocol)</h4>
+
+<p>컴퓨터나 원거리 통신 장비 사이에서 메시지를 주고받는 양식과 규칙의 체계</p>
+
+<h4 id="데이터-링크-계층-프로토콜">데이터 링크 계층 프로토콜</h4>
+
+<ul>
+  <li>HDLC(High-level Data Link Control): 점대점 방식이나 다중방식 통신에 사용되며, 동기식 비트 중심</li>
+  <li>PPP(Point-to-Point Protocol): 네트워크 분야에서 두 통신 노드 간의 직접적인 연결</li>
+  <li>프레임 릴레이(Frame Relay): 프로토콜 처리를 간략화하여 데이터 처리속도의 향상 및 전송 지연을 감소시킨 고속데이터 전송 기술</li>
+  <li>ATM(Asynchronous Transport Mode): 53바이트 셀 단위로 전달하는 비동기식 시분할 다중화 방식의 패킷형 전송 기술</li>
+</ul>
+
+<h4 id="네트워크-계층-프로토콜">네트워크 계층 프로토콜</h4>
+
+<ul>
+  <li>IP(Internet Protocol): 송수신 간의 패킷 단위로 데이터를 교환하는 네트워크에서 정보를 주고받는 데 사용</li>
+  <li>ARP(Adress Resolution Protocol): IP네트워크상에서 IP주소를 MAC주소(물리주소)로 변환하는 프로토콜</li>
+  <li>RARP(Reverse Address Resolution Protocol): 서버로부터 IP 주소를 요청하기위해 사용하는 프로토콜</li>
+  <li>ICMP(Internet Control Message Protocol): IP 패킷을 처리할 때 발생되는 문제를 알려주는 프로토콜</li>
+  <li>IGMP(Internet Group Managemnet Protocol): 호스트 컴퓨터와 인접 라우터가 멀티캐스트 그룹 멤버십을 구성하는 데 사용하는 통신 프로토콜</li>
+  <li>라우팅 프로토콜(Routing Protocol): 데이터 전송을 위해 최적의 경로를 설정해주는 라우터 간의 상호 통신 프로토콜</li>
+</ul>
+
+<h4 id="ipv4-internet-protocol-version-4">IPv4 (Internet Protocol version 4)</h4>
+
+<p>인터넷에서 사용되는 패킷 교환 네트워크상에서 데이터를 교환하기 위한 32비트 주소체계를 갖는 네트워크 계층 프로토콜</p>
+
+<ul>
+  <li>8비트씩 4부분으로 나뉜 10진수</li>
+  <li>0~255까지 3자리수 표현</li>
+  <li>유니캐스트, 멀티캐스트, 브로드캐스트</li>
+</ul>
+
+<h4 id="ipv4-클래스-분류">IPv4 클래스 분류</h4>
+
+<ul>
+  <li>A클래스: 국가나 대형 통신망에 사용(1~127), 네트워크 사용자에게 부여가 가능한 IP</li>
+  <li>B클래스: 중대형 통신망에 사용(128~191)</li>
+  <li>C클래스: 소규모 통신망에 사용(192~223)</li>
+  <li>D클래스: 멀티캐스트 용도로 예약된 주소(224~239)</li>
+  <li>E클래스: 연구를 위해 예약된 주소(공용 사용 불가)</li>
+</ul>
+
+<h4 id="ipv6-internet-protocol-version-6-ipv4의-주소-부족-문제를-해결하기-위해-개발">IPv6 (Internet Protocol version 6): IPv4의 주소 부족 문제를 해결하기 위해 개발</h4>
+
+<ul>
+  <li>IPv4에 비해 자료 전송속도가 빠름</li>
+  <li>128비트 주소체계</li>
+  <li>16비트씩 8개 부분으로 나눈 16진수</li>
+  <li>유니캐스트, 멀티캐스트, 애니캐스트</li>
+</ul>
+
+<h4 id="ipv4에서-ipv6으로-전환-방법-듀얼-스택-터널링-주소-변환-방식">IPv4에서 IPv6으로 전환 방법: 듀얼 스택, 터널링, 주소 변환 방식</h4>
+
+<h4 id="라우팅-프로토콜">라우팅 프로토콜</h4>
+
+<ul>
+  <li>내부 라우팅 프로토콜(IGP)
+    <ul>
+      <li>RIP(Routing Information Protocol): AS(자율시스템)내에서 사용하는 거리 벡터 알고리즘에 기초하여 개발된 내부 라우팅 프로토콜</li>
+      <li>OSPF(Oepn Shortest Path First): 자신을 기준으로 링크 상태 알고리즘을 적용하여 최단 경로를 찾는 라우팅 프로토콜</li>
+    </ul>
+  </li>
+  <li>외부 라우팅 프로토콜(EGP)
+    <ul>
+      <li>BGP(Border Gateway Protocol): AS상호 간에 경로 정보를 교환하기 위한 라우팅 프로토콜</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol):</h4>
+
+<ul>
+  <li>TCP 특징: 신뢰성 보장, 연결 지향적 특징, 흐름 제어, 혼잡 제어</li>
+</ul>
+
+<h4 id="udpuser-datagram-protocol">UDP(User Datagram Protocol):</h4>
+
+<ul>
+  <li>UDP 특징: 비신뢰성, 순서화되지 않은 데이터그램 서비스 제공, 실시간 응용 및 멀티캐스트 가능, 단순 헤어</li>
+</ul>
+
+<h4 id="표현계층-프로토콜">표현계층 프로토콜</h4>
+
+<ul>
+  <li>JPEG: 이미지를 위해 만들어진 표준 규격</li>
+  <li>MPEG: 멀티미디어(비디오, 오디오)를 위해 만들어진 표준 규격</li>
+</ul>
+
+<h4 id="응용계층-프로토콜">응용계층 프로토콜</h4>
+
+<ul>
+  <li>HTTP(Hyper Text Transfer Protocol): 텍스트 기반의 통신구약, 하이퍼텍스트를 빠르게 교환하기 위한 프로토콜</li>
+  <li>FTP(File Transfer Protocol): TCP/IP를 갖고 서버와 클라이언트 사이의 파일을 전송하기 위한 프로토콜</li>
+  <li>SMTP(Simple Mail Transfer Protocol): 인터넷에서 TCP포트 25번을 사용하여 이메일을 보내기 위해 이용되는 프로토콜</li>
+  <li>POP3(Post Office Protocol Version 3): 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는 데 사용하는 프로토콜</li>
+  <li>IMAP(Internet Messaging Access Protocol): 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는 데 사용하는 프로토콜</li>
+  <li>Telnet: 인터넷이나 로컬 영역에서 네트워크 연결에 사용되는 네트워크 프로토콜</li>
+  <li>SSH(Secure Shell): 서로 연결되어 있는 컴퓨터 간 원격 명령 실행이나 쉘 서비스 등을 수행, Telent보다 강력한 보안 제공</li>
+  <li>SNMP(Simple Network Managemnet Protocol): 라우터나 허브 등 네트워크 장치로부터 정보를 수집 및 관리</li>
+</ul>
+
+<h4 id="패킷-교환-방식packet-switching">패킷 교환 방식(Packet Switching)</h4>
+
+<p>작은 블록의 패킷으로 데이터를 전송하여 데이터를 전송하는 동안만 네트워크 자원을 사용하도록 하는 통신 방식</p>
+
+<ul>
+  <li>활용: 이메일, 메시지</li>
+</ul>
+
+<h4 id="패킷-교환-방식-기술">패킷 교환 방식 기술</h4>
+
+<ul>
+  <li>X.25: 통신을 원하는 두 단말장치가 패킷 교환망을 통해 패킷을 원활히 전달하기 위한 통신 프로토콜</li>
+  <li>프레임 릴레이: ISDN을 사용하기 위한 프로토콜로서 ITU-T에 의해 표준으로 작성</li>
+  <li>ATM(Asynchronous Transfer Mode): 비동기 전송모드, 광대역 전송에 쓰이는 스위칭 기법</li>
+</ul>
+
+<h4 id="서킷-교환-방식circuit-switching">서킷 교환 방식(Circuit Switching)</h4>
+
+<p>네트워크 리스소를 특정 사용층이 독접하도록 하는 통신 방식</p>
+
+<ul>
+  <li>활용: 영상, 비디오</li>
+</ul>
+
+<h4 id="애드-혹-네트워크ad-hoc-network">애드 혹 네트워크(Ad-hoc Network)</h4>
+
+<p>노드들에 의해 자율적으로 구성되는 기반 구조가 없는 네트워크</p>
+
+<h3 id="기본-개발환경-구축하기">기본 개발환경 구축하기</h3>
+
+<h4 id="개발환경-인프라-구성-방식">개발환경 인프라 구성 방식</h4>
+
+<ul>
+  <li>온프레미스(On-Premise) 방식: 외부 인터넷망이 차단된 상태에서 인트라넷망만을 활용하여 개발환경을 구축하는 방식</li>
+  <li>클라우드(Cloud) 방식: 클라우드 공습 서비스를 제공하는 회사들(아마존, 구글, MS 등)의 서비스를 임대하여 개발 환경을 구축하는 방식</li>
+  <li>하이브리드(Hybrid) 방식: 온프레미스와 클라우드 방식을 혼용한 방식</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="응용SW" /><category term="소프트웨어" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 응용 SW 기초 기술 활용]]></summary></entry><entry><title type="html">CH10. 애플리케이션 테스트 관리</title><link href="http://localhost:4000/infoprocessing/post76/" rel="alternate" type="text/html" title="CH10. 애플리케이션 테스트 관리" /><published>2023-03-14T00:00:00+09:00</published><updated>2023-03-14T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post76</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post76/"><![CDATA[<h3 id="애플리케이션-테스트-케이스-설계">애플리케이션 테스트 케이스 설계</h3>
 
 <h4 id="애플리케이션-테스트">애플리케이션 테스트</h4>
 
@@ -1235,162 +1492,7 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
-
-<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
-
-<h4 id="ui유형">UI유형</h4>
-
-<ul>
-  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
-  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
-  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
-  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
-</ul>
-
-<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
-
-<ul>
-  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
-  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
-  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
-  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
-</ul>
-
-<h4 id="ui-설계-지침">UI 설계 지침</h4>
-
-<ul>
-  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
-</ul>
-
-<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
-
-<ul>
-  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
-    <ul>
-      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
-    </ul>
-  </li>
-  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
-    <ul>
-      <li>성숙성, 고장 허용성, 회복성</li>
-    </ul>
-  </li>
-  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
-    <ul>
-      <li>이해성, 학습성, 운용성</li>
-    </ul>
-  </li>
-  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
-    <ul>
-      <li>시간 효율성, 자원 효율성</li>
-    </ul>
-  </li>
-  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
-    <ul>
-      <li>분석성, 변경성, 안정성, 시험성</li>
-    </ul>
-  </li>
-  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
-    <ul>
-      <li>적용성, 설치성, 대체성</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-표준">UI 표준</h4>
-
-<ul>
-  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
-</ul>
-
-<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
-
-<ul>
-  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
-</ul>
-
-<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
-
-<ul>
-  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
-  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
-  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
-  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
-  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
-</ul>
-
-<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
-
-<ul>
-  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
-  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
-  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
-</ul>
-
-<h3 id="ui-설계">UI 설계</h3>
-
-<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
-
-<ul>
-  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
-</ul>
-
-<h5 id="uml-특징">UML 특징</h5>
-
-<ul>
-  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
-</ul>
-
-<h5 id="uml-구성요소">UML 구성요소</h5>
-
-<ul>
-  <li>사물, 관계, 다이어그램</li>
-</ul>
-
-<h5 id="uml다이어그램">UML다이어그램</h5>
-
-<ul>
-  <li>구조적 다이어그램 / 정적 다이어그램
-    <ul>
-      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
-      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
-      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
-      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
-      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
-      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
-    </ul>
-  </li>
-  <li>행위적 다이어그램 / 동적 다이어그램
-    <ul>
-      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
-      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
-      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
-      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
-      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
-      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
-
-<ul>
-  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
-</ul>
-
-<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
-
-<ul>
-  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
-  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
-  <li>UI 디자인 도구: 스케치, Adobe XD</li>
-  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
 
 <h4 id="데이터-모델data-model">데이터 모델(Data Model)</h4>
 
@@ -1708,7 +1810,162 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry><entry><title type="html">CH02. 화면 설계</title><link href="http://localhost:4000/infoprocessing/post69/" rel="alternate" type="text/html" title="CH02. 화면 설계" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post69</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post69/"><![CDATA[<h3 id="uiuser-interface">UI(User Interface)</h3>
+
+<p>사용자와 시스템 사이에서 의사소통 할 수 있도록 고안된 물리적, 가상의 매개체</p>
+
+<h4 id="ui유형">UI유형</h4>
+
+<ul>
+  <li>CLI(Command Line Interface): 명령어를 텍스트로 입력하여 조작하는 사용자 인터페이스</li>
+  <li>GUI(Graphical User Interface): 그래픽 환경을 기반으로 한 마우스나 전자펜을 이용한 사용자 인터페이스</li>
+  <li>NUI(Natural User Interface): 신체 부위를 이용하는 사용자 인터페이스</li>
+  <li>OUI(Organic User Interface): 현실에 존재하는 모든 사물이 입출력장치로 변화할 수 있는 사용자 인터페이스</li>
+</ul>
+
+<h4 id="ui-설계-원칙">UI 설계 원칙</h4>
+
+<ul>
+  <li>직관성: 누구나 쉽게 이해하고, 쉽게 사용할 수 있어야함</li>
+  <li>유효성: 정확하고 완벽하게 사용자의 목표가 달성될 수 있도록 제작</li>
+  <li>학습성: 초보와 숙련자 모두가 쉽게 배우고 사용할 수 있게 제작</li>
+  <li>유연성: 사용자의 요구사항을 최대한 수용하고, 실수를 방지할 수 있도록 제작</li>
+</ul>
+
+<h4 id="ui-설계-지침">UI 설계 지침</h4>
+
+<ul>
+  <li>사용자 중심, 일관성, 단순성, 결과 예측 가능, 가시성, 표준화, 접근성, 명확성, 오류 발생 해결</li>
+</ul>
+
+<h4 id="ui-품질-요구사항isoiec-9126-기반">UI 품질 요구사항(ISO/IEC 9126 기반)</h4>
+
+<ul>
+  <li>기능성: 실제 수행 결과와 품질 요구사항과의 차이를 분석, 시스템 동작을 관찰하기 위한 품질 기준
+    <ul>
+      <li>적절성, 정밀성, 상호 운용성, 보안성, 호환성</li>
+    </ul>
+  </li>
+  <li>신뢰성: 시스템이 일정한 시간 또는 작동되는 시간동안 의도하는 기능을 수행함을 보증하는 품질 기준
+    <ul>
+      <li>성숙성, 고장 허용성, 회복성</li>
+    </ul>
+  </li>
+  <li>사용성: 사용자와 컴퓨터 사이에 발생하는 어떠한 행위를 정확하고 쉽게 인지할 수 있는 품질 기준
+    <ul>
+      <li>이해성, 학습성, 운용성</li>
+    </ul>
+  </li>
+  <li>효율성: 할당된 시간에 한정된 자원으로 얼마나 빨리 처리할 수 있는가에 대한 품질 기준
+    <ul>
+      <li>시간 효율성, 자원 효율성</li>
+    </ul>
+  </li>
+  <li>유지보수성: 요구사항을 개선하고 확장하는 데 있어 얼마나 용이한가에 대한 품질 기준
+    <ul>
+      <li>분석성, 변경성, 안정성, 시험성</li>
+    </ul>
+  </li>
+  <li>이식성: 다른 플랫폼에서도 추가 작업 없이 얼마나 쉽게 적용 가능한가에 대한 품질 기준
+    <ul>
+      <li>적용성, 설치성, 대체성</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-표준">UI 표준</h4>
+
+<ul>
+  <li>디자인 철학과 원칙 기반하에 전체 시스템에 공통으로 적용되는 화면 간 이동, 화면구성 등에 관한 규약</li>
+</ul>
+
+<h4 id="crudcreate-read-update-delete">CRUD(Create, Read, Update, Delete)</h4>
+
+<ul>
+  <li>컴퓨터 소프트웨어가 가지는 기본적인 데이터 처리 기능</li>
+</ul>
+
+<h4 id="ui-개발을-위한-주요-기법">UI 개발을 위한 주요 기법</h4>
+
+<ul>
+  <li>3C 분석: 고객(Customer), 자사(Company), 경쟁사(Competitor)를 비교하고 분석하여 자사를 어떻게 차별화해서 경쟁에서 이길 것인가를 분석하는 기법</li>
+  <li>SWOT 분석: 기업의 내/외부 환경을 분석하여 Strength(강점), Weakness(약점), Opportunity(기회), Treat(위협) 요인을 규정하고 이를 토대로 경영 저냑을 수립하는 방법</li>
+  <li>시나리오 플래닝: 상황 변화를 사전에 예측하고 다양한 시나리오를 설계하여 불확실성을 제거하는 경영 전략 방법</li>
+  <li>사용성 테스트: 사용자가 직접 제품을 사용하면서 시나리오에 맞춰 과제를 수행한 후 질문에 응답하는 테스트</li>
+  <li>워크숍: 특정 문제나 과제에 대한 새로운 지식, 기술, 아이디어, 방법들을 서로 교환하고 검토하는 세미나</li>
+</ul>
+
+<h4 id="ui-화면-설계-구분">UI 화면 설계 구분</h4>
+
+<ul>
+  <li>와이어프레임: 화면 단위의 레이아웃을 설계하는 작업 (ppt, 키노트, 스케치, 일러스트)</li>
+  <li>스토리보드: 서비스 구축을 위한 모든 정보(정책, 프로세스,와이어프레임, 기능 정의 등)가 담겨 있는 설계 산출물 (ppt, 키노트, 스케치)</li>
+  <li>프로토타입: 정적인 화면(와이어프레임, 스토리보드)에 동적 효과를 적용하여 실제 구현된 것처럼 시뮬레이션 할 수 있는 모형. 전체적인 기능을 간략한 형태로 구현한 시제품 (HTML, CSS)</li>
+</ul>
+
+<h3 id="ui-설계">UI 설계</h3>
+
+<h4 id="umlunified-modeling-language">UML(Unified Modeling Language)</h4>
+
+<ul>
+  <li>객체 지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어</li>
+</ul>
+
+<h5 id="uml-특징">UML 특징</h5>
+
+<ul>
+  <li>가시화 언어, 구축 언어, 명세화 언어, 문서화 언어</li>
+</ul>
+
+<h5 id="uml-구성요소">UML 구성요소</h5>
+
+<ul>
+  <li>사물, 관계, 다이어그램</li>
+</ul>
+
+<h5 id="uml다이어그램">UML다이어그램</h5>
+
+<ul>
+  <li>구조적 다이어그램 / 정적 다이어그램
+    <ul>
+      <li>클래스(Class): 클래스의 속성 및 연산과 클래스간 정적인 관계를 표현</li>
+      <li>객체(Object): 클래스에 속한 사물(객체 =인스턴스)를 특정 시점의 객체와 객체 사이의 관계로 표현</li>
+      <li>컴포넌트(Component): 시스템을 구성하는 물리적인 컴포넌트와 그들 사이의 의존 관계 표현</li>
+      <li>배치(Deployment): 컴포넌트 사이의 종속성을 표현하고, 물리적 요소들의 위치를 표현</li>
+      <li>복합체 구조(Composite Structure): 클래스나 컴포넌트가 복합 구조를 갖는 경우 그 내부 구조를 표현</li>
+      <li>패키지(Package): 유스케이스, 클래스 등의 모델 요소들을 그룹화한 패키지들의 관계</li>
+    </ul>
+  </li>
+  <li>행위적 다이어그램 / 동적 다이어그램
+    <ul>
+      <li>유스케이스(Usecase): 시스템이 제공하고 있는 기능 및 그와 관련된 외부 요소를 사용자의 곤점에서 표현</li>
+      <li>시퀀스(Sequence): 객체 간 동적 상호 작용을 시간적 개념을 중심으로 메시지 흐름으로 표현</li>
+      <li>커뮤니케이션(Communication): 동작에 참여하는 객체들이 주고받는 메시지를 표현하고, 객체 간의 연관까지 표현</li>
+      <li>상태(State): 자신이 속한 클래스의 상태 변화 혹은 다른 객체와의 상호 작용에 따라 상태가 어떻게 변화하는지 표현</li>
+      <li>활동(Activity): 객체의 처리 로직이나 조건에 따른 처리의 흐름을 순서대로 표현</li>
+      <li>타이밍(Timing): 객체 상태 변화와 시간 제약을 명시적으로 표현</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="ui-시나리오-문서의-작성요건">UI 시나리오 문서의 작성요건</h4>
+
+<ul>
+  <li>완전성, 일관성, 이해성, 가독성, 추적 용이성, 수정 용이성</li>
+</ul>
+
+<h4 id="ui-설계-도구의-유형">UI 설계 도구의 유형</h4>
+
+<ul>
+  <li>화면 설계 도구: 파워목업, 발사믹목업, 카카오 오븐</li>
+  <li>프로토타이핑 도구: UX핀, 액슈어, 네이버 프로토나우</li>
+  <li>UI 디자인 도구: 스케치, Adobe XD</li>
+  <li>UI 디자인 산출물로 작업하는 프로토타이핑 도구: 인버전, 픽사에이트, 프레이머</li>
+</ul>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="화면" /><category term="화면설계" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 화면 설계]]></summary></entry><entry><title type="html">CH01. 소프트웨어 개발 방법론</title><link href="http://localhost:4000/infoprocessing/post68/" rel="alternate" type="text/html" title="CH01. 소프트웨어 개발 방법론" /><published>2023-01-29T00:00:00+09:00</published><updated>2023-01-29T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post68</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post68/"><![CDATA[<h3 id="소프트웨어-생명주기sdlc">소프트웨어 생명주기(SDLC)</h3>
 
 <p>시스템의 요구분석 부터 유지보수까지 전 공정을 체계화 한 절차</p>
 
@@ -1817,132 +2074,4 @@ ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="소프트웨어" /><category term="소프트웨어개발방법론" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 소프트웨어 개발 방법론]]></summary></entry><entry><title type="html">React Router에서 render와 component 차이</title><link href="http://localhost:4000/react/post66/" rel="alternate" type="text/html" title="React Router에서 render와 component 차이" /><published>2022-12-21T00:00:00+09:00</published><updated>2022-12-21T00:00:00+09:00</updated><id>http://localhost:4000/react/post66</id><content type="html" xml:base="http://localhost:4000/react/post66/"><![CDATA[<p>React에서는 Route를 사용하여 라우팅을 하는 것이 가능합니다. react-router에서 컴포넌트를 렌더링 하는 방법은 3가지가 있습니다.</p>
-
-<h3 id="자식으로-렌더링-하기">자식으로 렌더링 하기</h3>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span><span class="p">&gt;</span>
-          <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span>
-        <span class="p">&lt;/</span><span class="nc">Route</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h3 id="component-사용">component 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">component</span><span class="p">=</span><span class="si">{</span><span class="nx">PageOne</span><span class="si">}</span><span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p><code class="language-plaintext highlighter-rouge">&lt;Route&gt;</code>의 자식으로 렌더링 하거나 <code class="language-plaintext highlighter-rouge">&lt;Route component&gt;</code>를 활용하여 렌더링 하는 방법 모두 간편하게 이용할 수 있지만 두 방법 모두 props를 사용할 수 없다는 단점이 있고, component를 사용하는 경우는 React.createElement 사용해서 새로운 요소를 계속 만들기 때문에 비효율적입니다. 그래서 최종적으로 가장 권장되는 방법이 바로 아래의 <code class="language-plaintext highlighter-rouge">render</code>를 사용하는 방법이라고 할 수 있습니다.</p>
-
-<h3 id="render-사용">render 사용</h3>
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-</pre></td><td class="rouge-code"><pre><span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="p">{</span> <span class="nx">BrowserRouter</span><span class="p">,</span> <span class="nx">Link</span><span class="p">,</span> <span class="nx">Route</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-router-dom</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageOne</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageOne</span><span class="dl">"</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">PageTwo</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./components/PageTwo</span><span class="dl">"</span><span class="p">;</span>
-
-<span class="kd">function</span> <span class="nf">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nf">return </span><span class="p">(</span>
-    <span class="p">&lt;</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-       <span class="p">&lt;</span><span class="nc">Route</span> <span class="na">path</span><span class="p">=</span><span class="s">"/pagetwo"</span> <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageTwo</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-    <span class="p">&lt;/</span><span class="nc">BrowserRouter</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>위와 같이 사용하면 불필요한 컴포넌트 재마운트 없이 쉽게 렌더링 할 수 있습니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">Route</span> 
-  <span class="na">path</span><span class="p">=</span><span class="s">"/pageone"</span> 
-  <span class="na">render</span><span class="p">=</span><span class="si">{</span><span class="nx">props</span> <span class="o">=&gt;</span> <span class="p">&lt;</span><span class="nc">PageOne</span> <span class="si">{</span><span class="p">...</span><span class="nx">props</span><span class="si">}</span> <span class="na">isAuthed</span><span class="p">=</span><span class="s">"{true}"</span> <span class="p">/&gt;</span><span class="si">}</span> <span class="p">/&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>props를 전달하고 싶은 경우에는 위 방식으로 사용할 수 있습니다 :)</p>
-
-<h3 id="️-참고-사이트">✔️ 참고 사이트</h3>
-
-<ul>
-  <li><a href="https://nyang-in.tistory.com/228">https://nyang-in.tistory.com/228</a></li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="React" /><category term="리액트" /><category term="router" /><category term="라우터" /><category term="render" /><category term="component" /><summary type="html"><![CDATA[render / component]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="소프트웨어" /><category term="소프트웨어개발방법론" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 소프트웨어 개발 방법론]]></summary></entry></feed>

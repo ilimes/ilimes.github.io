@@ -454,4 +454,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","테스트","애플리케이션","개발"],
         "url": "/infoprocessing/post76/",
         "teaser": null
+      },{
+        "title": "CH11. 응용 SW 기초 기술 활용",
+        "excerpt":"운영체제의 특징 운영체제(OS: Operating System) 사용자가 컴퓨터의 하드웨어를 쉽게 사용할 수 있도록 인터페이스를 제공해주는 소프트웨어 운영체제 종류 윈도우즈(Windows), 유닉스(Unix), 리눅스(Linux), 맥(Mac), 안드로이드(Android) 메모리 관리 기법 반입 기법: 메모리 적재 시기 결정(When) 배치 기법: 메모리 적재 위치 결정(Where) 할당 기법: 메모리 적재 방법 결정(How) 교체 기법: 메모리 교체 대상 결정(Who) 메모리...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","응용SW","소프트웨어","개발"],
+        "url": "/infoprocessing/post77/",
+        "teaser": null
       }]
