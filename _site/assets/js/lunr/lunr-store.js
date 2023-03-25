@@ -460,4 +460,10 @@ var store = [{
         "tags": ["정보처리기사","정처기","응용SW","소프트웨어","개발"],
         "url": "/infoprocessing/post77/",
         "teaser": null
+      },{
+        "title": "CH12. 제품 소프트웨어 패키징",
+        "excerpt":"제품 소프트웨어 패키징 하기 제품 소프트웨어 패키징(Product Software Packaging) 개발이 완료된 제품 소프트웨어를 고객에게 전달하기 위한 형태로 포장하는 과정 사용자 중심의 모듈 패키징 프로세스: 기능 식별 → 모듈화 → 빌드 진행 → 사용자 환경 분석 → 패키징 적용 시험 → 패키징 변경 개선 릴리즈 노트(Release Note) 고객에게 개발 과정에서 정리된...","categories": ["InfoProcessing"],
+        "tags": ["정보처리기사","정처기","제품","제품소프트웨어패키징","개발"],
+        "url": "/infoprocessing/post78/",
+        "teaser": null
       }]
