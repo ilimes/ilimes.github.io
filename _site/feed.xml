@@ -1,4 +1,129 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-04-29T22:56:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">[Windows] 인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기</title><link href="http://localhost:4000/issue/post79/" rel="alternate" type="text/html" title="[Windows] 인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/issue/post79</id><content type="html" xml:base="http://localhost:4000/issue/post79/"><![CDATA[<p>최근 스프링부트 개발을 인텔리제이로 하고있는데, 맥과 윈도우를 번갈아가면서 사용하고 있습니다.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-05T22:46:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">웹 브라우저 렌더링 종류와 차이점</title><link href="http://localhost:4000/web/post80/" rel="alternate" type="text/html" title="웹 브라우저 렌더링 종류와 차이점" /><published>2023-09-05T00:00:00+09:00</published><updated>2023-09-05T00:00:00+09:00</updated><id>http://localhost:4000/web/post80</id><content type="html" xml:base="http://localhost:4000/web/post80/"><![CDATA[<p>렌더링이란 간단히 말하면 HTML, CSS, javaScript 등 개발자가 작성한 문서가 화면에 표시되는 것이라고 할 수 있는데요. 오늘은 웹 브라우저 렌더링의 종류에 대해서 알아보고, 각각 어떠한 장단점이 있는지 정리해보도록 하겠습니다 😊</p>
+
+<h3 id="렌더링의-종류">렌더링의 종류</h3>
+
+<p>렌더링의 종류는 크게 4가지로 구분할 수 있습니다.</p>
+
+<hr />
+
+<h4 id="서버-사이드-렌더링-ssr">서버 사이드 렌더링 (SSR)</h4>
+
+<p>서버 사이드 렌더링이란 말 그대로 클라이언트가 요청하였을 때 <strong>서버측에서 렌더링</strong>을 해서 보내주는 것을 말합니다.</p>
+
+<h5 id="장점">장점</h5>
+
+<ul>
+  <li>초기 로딩 속도가 빠르다.
+    <ul>
+      <li>해당 첫 페이지에 해당하는 문서만 브라우저에 전달하여 렌더링 하기 때문</li>
+    </ul>
+  </li>
+  <li>자바스크립트 설정이 필요하지 않다.</li>
+  <li>검색 엔진 최적화(SEO - Search Engine Optimization)가 좋다.
+    <ul>
+      <li>SEO란 웹을 크롤링하며 페이지에 컨텐츠 색인을 생성하는 과정</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="단점">단점</h5>
+
+<ul>
+  <li>초기 로딩속도가 빠른만큼 TTV(Time To View)와 TTI(Time to Interact)간 시간 간격이 존재
+    <ul>
+      <li>TTV는 사용자가 웹사이트를 보는 것을 말하고, TTI는 클릭 이벤트와 같은 인터랙션이 가능한 상태</li>
+    </ul>
+  </li>
+  <li>초기 로딩 이후에는 페이지 이동 속도가 다소 느릴 수 있다.
+    <ul>
+      <li>페이지 이동시마다 클라이언트가 서버에게 필요한 데이터를 요청하고, 서버가 응답해주는 방식이기 때문</li>
+    </ul>
+  </li>
+  <li>매번 페이지가 새로고침 되어 사용자 경험이 떨어질 수 있다.</li>
+</ul>
+
+<hr />
+
+<h4 id="클라이언트-사이드-렌더링-csr">클라이언트 사이드 렌더링 (CSR)</h4>
+
+<p>클라이언트 사이드 렌더링은 서버 사이드 렌더링과 반대라고 할 수 있는데, 프로그래밍된 스크립트가 서버가 아닌 <strong>클라이언트(브라우저)</strong>에서 처리되는 것을 말합니다.</p>
+
+<h5 id="장점-1">장점</h5>
+
+<ul>
+  <li>클라이언트에서 많은 것들이 이루어지기 때문에 초기 로딩이 느리지만, 로딩이 완료되고 나면 빠른 동작이 가능</li>
+  <li>서버에 부하가 적음</li>
+</ul>
+
+<h5 id="단점-1">단점</h5>
+
+<ul>
+  <li>검색 엔진 최적화(SEO - Search Engine Optimization)에 대한 보완 작업 필요
+    <ul>
+      <li>검색 엔진 크롤러가 웹사이트에 대한 데이터를 제대로 수집하지 못하는 경우가 발생할 수 있습니다. SEO를 위해서 sitemap 문서 작성과 같은 과정이 필요할 수 있습니다.</li>
+    </ul>
+  </li>
+  <li>보안에 취약</li>
+</ul>
+
+<hr />
+
+<h4 id="정적-사이트-생성-ssg">정적 사이트 생성 (SSG)</h4>
+
+<p>SSG란 Static Site Generation의 약자로 <strong>정적인 페이지</strong>를 생성하는 것을 말합니다.</p>
+
+<h5 id="장점-2">장점</h5>
+
+<ul>
+  <li>초기 로딩이 빠르다</li>
+  <li>자바스크립트 설정이 필요하지 않다.</li>
+  <li>검색 엔진 최적화(SEO - Search Engine Optimization)가 좋다.</li>
+  <li>보안이 좋다</li>
+</ul>
+
+<h5 id="단점-2">단점</h5>
+
+<ul>
+  <li>데이터가 정적이다
+    <ul>
+      <li>블로그와 같이 데이터가 잘 바뀌지 않는 사이트 같은 경우 사용하기 적합하지만, 변화가 자주 이뤄져야 하는 경우에는 적합하지 않음</li>
+    </ul>
+  </li>
+  <li>사용자별로 달라지는 데이터 제공 어려움</li>
+</ul>
+
+<hr />
+
+<h4 id="증분-정적-재생-isr">증분 정적 재생 (ISR)</h4>
+
+<p>ISR이란 Incremental Static Regeneration의 약자로 SSG를 보완하기 위해 정적인 사이트를 서버 측에서 주기적으로 렌더링 하는 것을 말합니다.<br />
+전체적인 원리는 SSG와 동일하고, 설정한 주기만큼 페이지를 계속 다시 만들어줍니다.</p>
+
+<h5 id="장점-3">장점</h5>
+
+<ul>
+  <li>초기 로딩이 빠르다</li>
+  <li>검색 엔진 최적화(SEO - Search Engine Optimization)가 좋다.</li>
+  <li>보안이 좋다</li>
+  <li>주기적으로 데이터가 업데이트 된다</li>
+</ul>
+
+<h5 id="단점-3">단점</h5>
+
+<ul>
+  <li>주기적인 변경이 가능하지만 실시간 데이터가 아니다</li>
+  <li>사용자별로 달라지는 데이터 제공 어려움</li>
+</ul>
+
+<hr />
+
+<p>오늘 이렇게 4가지 웹 브라우저 렌더링 방식에 대해서 알아보았는데요. 각각의 특징이 있기 때문에 상황에 맞게 잘 적용해야겠다는 생각이 들었습니다.</p>
+
+<p>참고로 <code class="language-plaintext highlighter-rouge">Next.js</code> 같은 경우는 성능 좋은 강력한 웹앱을 만들기 위해서 두 개 이상의 렌더링 방법을 사용하는 하이브리드 방식을 지원하고 있습니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Web" /><category term="렌더링" /><category term="SSR" /><category term="CSR" /><category term="SSG" /><category term="ISR" /><summary type="html"><![CDATA[SSR, CSR, SSG, ISR에 대해서 알아보기]]></summary></entry><entry><title type="html">[Windows] 인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기</title><link href="http://localhost:4000/issue/post79/" rel="alternate" type="text/html" title="[Windows] 인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기" /><published>2023-04-29T00:00:00+09:00</published><updated>2023-04-29T00:00:00+09:00</updated><id>http://localhost:4000/issue/post79</id><content type="html" xml:base="http://localhost:4000/issue/post79/"><![CDATA[<p>최근 스프링부트 개발을 인텔리제이로 하고있는데, 맥과 윈도우를 번갈아가면서 사용하고 있습니다.<br />
 맥에서는 별도로 무언가 설정하지 않아도 문제없이 한글로된 콘솔이 잘 찍혔는데, 윈도우에서는 인텔리제이에 별도로 설정을 해놓지 않으면 한글이 깨져서 나오더라고요.<br />
 <br />
 그래서 오늘은 저처럼 인텔리제이 한글 콘솔 문제를 겪고, 해결방법을 찾고 계신 분들을 위해서 간단하게 해결 방법을 소개해드리도록 하겠습니다 :)</p>
@@ -1605,322 +1730,4 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry><entry><title type="html">CH03. 데이터 입출력 구현</title><link href="http://localhost:4000/infoprocessing/post70/" rel="alternate" type="text/html" title="CH03. 데이터 입출력 구현" /><published>2023-02-21T00:00:00+09:00</published><updated>2023-02-21T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post70</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post70/"><![CDATA[<h3 id="논리-데이터-저장소-확인">논리 데이터 저장소 확인</h3>
-
-<h4 id="데이터-모델data-model">데이터 모델(Data Model)</h4>
-
-<ul>
-  <li>현실 세계의 정보를 인간과 컴퓨터가 이해할 수 있도록 추상화하여 표현한 모델</li>
-</ul>
-
-<h4 id="데이터-모델-절차">데이터 모델 절차</h4>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">요구사항 분석</code> → <code class="language-plaintext highlighter-rouge">개념적 설계</code> → <code class="language-plaintext highlighter-rouge">논리적 설계</code> → <code class="language-plaintext highlighter-rouge">물리적 설계</code></li>
-</ul>
-
-<h4 id="논리-데이터-모델링">논리 데이터 모델링</h4>
-
-<ul>
-  <li>업무의 모습을 모델링 표기법으로 형상화하여 사람이 이해하기 쉽게 표현하는 프로세스</li>
-</ul>
-
-<h4 id="논리적-데이터-모델링-종류">논리적 데이터 모델링 종류</h4>
-
-<ul>
-  <li>관계 데이터 모델: 테이블 형태, 1:1, 1:N, N:M</li>
-  <li>계층 데이터 모델: 트리 형태(상하 관계), 1:N</li>
-  <li>네트워크 데이터 모델: 그래프 형태, N:M</li>
-</ul>
-
-<h4 id="관계-대수">관계 대수</h4>
-
-<ul>
-  <li>관계형 데이터베이스에서 원하는 정보와 그 정보를 어떻게 유도하는가를 기술하는 절차적 정형 언어</li>
-</ul>
-
-<h5 id="관계-대수-연산자-종류">관계 대수 연산자 종류</h5>
-
-<ul>
-  <li>일반 집합 연산자
-    <ul>
-      <li>합집합(Union): ∪</li>
-      <li>교집합(Intersection): ∩</li>
-      <li>차집합(Difference): －</li>
-      <li>카티션 프로덕트(CARTESIAN Product): ×</li>
-    </ul>
-  </li>
-  <li>순수 관계 연산자
-    <ul>
-      <li>셀렉트(Select): σ</li>
-      <li>프로젝트(Project): π</li>
-      <li>조인(Join): ⋈</li>
-      <li>디비전(Division): ÷</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="관계-해석">관계 해석</h4>
-
-<ul>
-  <li>튜플 관계해석과 도메인 해석을 하는 비절차적 언어</li>
-</ul>
-
-<h4 id="논리-데이터-모델링-속성">논리 데이터 모델링 속성</h4>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">개체(Entitiy)</code>, <code class="language-plaintext highlighter-rouge">속성(Attributes)</code>, <code class="language-plaintext highlighter-rouge">관계(Relationship)</code></li>
-</ul>
-
-<h4 id="개체-관계e-r-모델">개체-관계(E-R) 모델</h4>
-
-<ul>
-  <li>데이터와 그들간의 관계를 사람이 이해할 수 있는 형태로 표현한 모델</li>
-</ul>
-
-<h4 id="정규화">정규화</h4>
-
-<ul>
-  <li>데이터 모델에서 데이터의 중복성을 제거하여 이상 현상을 방지하고, 데이터의 일관성과 정확성을 유지하기 위해 무손실 분해하는 과정</li>
-</ul>
-
-<h5 id="이상현상anomaly">이상현상(Anomaly)</h5>
-
-<ul>
-  <li>데이터의 중복성으로 인해 릴레이션을 조작할때 발생하는 비합리적 현상
-    <ul>
-      <li>삽입이상: 불필요한 세부정보 입력하는 경우</li>
-      <li>삭제이상: 원치 않는 다른 정보가 같이 삭제되는 경우</li>
-      <li>갱신이상: 특정부분만 수정되어 중복된 값이 모순을 일으키는 경우</li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="정규화-단계">정규화 단계</h5>
-
-<ul>
-  <li>1정규형(1NF): 도메인이 원자값으로 구성</li>
-  <li>2정규형(2NF): 부분함수 종속제거 (완전 함수적 종속을 만족)</li>
-  <li>3정규형(3NF): 이행함수 종속제거</li>
-  <li>보이스-코드 정규형(BCNF): 결정자 후보 키가 아닌 함수 종속 제거</li>
-  <li>4정규형(4NF): 다중 값 종속제거</li>
-  <li>5정규형(5NF): 조인 종속 제거</li>
-</ul>
-
-<h5 id="반정규화de-nomalization">반정규화(De-Nomalization)</h5>
-
-<ul>
-  <li>정규화된 개체, 속성, 관계에 대해 성능향상과 개발운영의 단순화를 위해 중복, 통합, 분리 등을 수행하는 데이터 모델링 기법</li>
-</ul>
-
-<h3 id="물리-데이터-저장소-설계">물리 데이터 저장소 설계</h3>
-
-<h4 id="참조무결성-제약조건">참조무결성 제약조건</h4>
-
-<ul>
-  <li>릴레이션과 릴레이션 사이에 대한 참조의 일관성을 보장하기 위한 조건
-    <ul>
-      <li>제한(Restricted): 다른테이블이 삭제할 테이블을 참조 중이면 제거하지 않는 옵션</li>
-      <li>연쇄(Cascade): 참조하는 테이블까지 연쇄적으로 제거하는 옵션</li>
-      <li>널값(Set Null): 참조되는 리레이션에서 튜플을 삭제하고, 참조하는 튜플들의 외래값에 NULL값을 넣는 옶션. / 만약, NOT NULL 명시시 삭제 연산 거절됨.</li>
-    </ul>
-  </li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-</pre></td><td class="rouge-code"><pre>ALTER TABLE 테이블 ADD
-FOREIGN KEY (외래키)
-REFERENCES 참조테이블(기본키)
-ON DELETE [ RESTRICT | CASCADE | SET NULL ] ;
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<h4 id="인덱스index">인덱스(Index)</h4>
-
-<ul>
-  <li>데이터 레코드를 빠르게 접근하기 위해 ‘키값, 포인터’ 쌍으로 구성되는 데이터 구조
-    <ul>
-      <li>클러스터드 인덱스: 인덱스 키의 순서에 따라 데이터가 정렬되어 저장되는 방식</li>
-      <li>넌클러스터드 인덱스: 인덱스의 키값만 정렬되어 있고 실제 데이터는 정렬되지 않는 방식</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="뷰view">뷰(View)</h4>
-
-<ul>
-  <li>접근이 허용된 자료만을 제한적으로 보여주기 위해 하나 이상의 기본 테이블로 구성된 가상 테이블</li>
-</ul>
-
-<h4 id="클러스터cluster">클러스터(Cluster)</h4>
-
-<ul>
-  <li>데이터 액세스 효율을 향상시키기 위해 동일한 성격의 데이터를 동일한 데이터 블록에 저장하는 물리적 저장 방법. 클러스터의 분포도가 넓을수록 유리하다</li>
-</ul>
-
-<h4 id="파티션partition">파티션(Partition)</h4>
-
-<ul>
-  <li>대용량의 테이블이나 인덱스를 작은 논리적 단위인 파티션으로 나누는 것
-    <ul>
-      <li>범위분할(Range Partitioning): 지정한 열의 값을 기준으로 분할함</li>
-      <li>해시분할(Hash Partitioning): 해시 함수를 적용한 결과 값에 따라 데이터를 분할.</li>
-      <li>리스트분할(List Partitioning): 특정 파티션에 저장 될 데이터에 대한 명시적 제어가 가능한 분할 기법</li>
-      <li>조합분할(Composite Partitioning): 범위,해시,리스트 분할 중 2개의이상의 파티셔닝을 결합하는 방식. 파티션이 너무 클떄 사용</li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="파티션-장점">파티션 장점</h5>
-
-<ul>
-  <li>성능 향상, 가용성 향상, 백업 가능, 경합 감소</li>
-</ul>
-
-<h3 id="데이터베이스-기초-활용하기">데이터베이스 기초 활용하기</h3>
-
-<h4 id="데이터베이스database">데이터베이스(Database)</h4>
-
-<ul>
-  <li>다수의 인원, 시스템 또는 프로그램이 사용할 목적으로 통합하여 관리되는 데이터의 집합</li>
-</ul>
-
-<h4 id="데이터베이스-정의">데이터베이스 정의</h4>
-
-<ul>
-  <li>통합된 데이터: 자료의 중복을 배제한 데이터의 모임</li>
-  <li>저장된 데이터: 저장 매체에 저장된 데이터</li>
-  <li>운영 데이터: 조직의 업무를 수행하는 데 필요한 데이터</li>
-  <li>공용 데이터: 여러 애플리케이션, 시스템들이 공동으로 사용하는 데이터</li>
-</ul>
-
-<h4 id="데이터베이스-특성">데이터베이스 특성</h4>
-
-<ul>
-  <li>실시간 접근성: 쿼리에 대하여 실시간 응답이 가능해야 함</li>
-  <li>계속적인 변화: 새로운 데이터의 삽입, 삭제 갱신 으로 항상 최신의 데이터를 유지</li>
-  <li>동시공용: 다수의 사용자가 동시에 같은 내용의 데이터를 이용할 수 있어야함</li>
-  <li>내용참조: 사용자가 요구하는 데이터 내용으로 데이터를 찾음</li>
-</ul>
-
-<h4 id="데이터베이스-종류">데이터베이스 종류</h4>
-
-<ul>
-  <li>파일 시스템(File System): 파일에 이름을 부여하고 저장이나 검색을 위해 논리적으로 그것들을 어디에 위치시켜야 하는지 등을 정의한 뒤 관리하는 데이터베이스 전 단계의 데이터 관리 방식</li>
-  <li>관계형 데이터베이스 시스템(RDBMS): 관계형 모델을 기반
-    <ul>
-      <li>종류: Oracle, SQL Server, MySQL, MariaDB 등</li>
-    </ul>
-  </li>
-  <li>계층형 데이터베이스 시스템(HDBMS): 데이터를 상하 종속적인 관계로 계층화화여 관리
-    <ul>
-      <li>종류: IMS, System 2000 등</li>
-    </ul>
-  </li>
-  <li>네트워크 데이터베이스 관리시스템(NDBMS): 데이터를 네트워크상의 망상 형태로 표현한 데이터 모델
-    <ul>
-      <li>종류: IDS, IDMS 등</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="dbmsdatabase-management-system">DBMS(Database Management System)</h4>
-
-<ul>
-  <li>데이터 관리의 복잡성을 해결하는 동시에 데이터 추가, 변경, 검색, 삭제 및 백업, 복구, 보안 등의 기능을 지원하는 소프트웨어</li>
-</ul>
-
-<h5 id="dmbs-유형">DMBS 유형</h5>
-
-<ul>
-  <li>키-값(Key-Value) DBMS: Unique 한 키에 하나의 값을 가지고 있는 형태</li>
-  <li>컬럼 기반 데이터 저장(Column Family Data Store) DMBS: Key안에(Column, Value) 조합으로 된 여러개의 필드를 갖는 DBMS</li>
-  <li>문서 저장(Document Store) DBMS: 값(Value)의 데이터 타입이 문서(Documnet)라는 타입을 사용하는 DBMS</li>
-  <li>그래프(Graph) DBMS: 시맨틱 웹과 온톨로지 분야에서 활용되는 그래프로 데이터를 표현하는 DBMS</li>
-</ul>
-
-<h5 id="dbms-특징">DBMS 특징</h5>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">무결성</code>, <code class="language-plaintext highlighter-rouge">일관성</code>, <code class="language-plaintext highlighter-rouge">회복성</code>, <code class="language-plaintext highlighter-rouge">보안성</code>, <code class="language-plaintext highlighter-rouge">효율성</code></li>
-</ul>
-
-<h4 id="빅-테이터big-data">빅 테이터(Big Data)</h4>
-
-<ul>
-  <li>시스템, 서비스, 조직(회사) 등에서 주어진 비용, 시간 내에 처리 가능한 수십 페타바이트(PB) 크기의 비정형 데이터</li>
-</ul>
-
-<h5 id="빅데이터-특성">빅데이터 특성</h5>
-
-<ul>
-  <li>데이터의 양, 데이터의 다양성, 데이터의 속도</li>
-</ul>
-
-<h5 id="빅데이터-수집-저장-처리-기술">빅데이터 수집, 저장, 처리 기술</h5>
-
-<ul>
-  <li>비정형/반정형 데이터 수집: 내/외부 정제되지 않은 데이터를 확보하여 수집 및 전송하는 기술</li>
-  <li>정형 데이터 수집: 내/외부 정제된 대용량 데이터의 수집 및 전송 기술</li>
-  <li>분산데이터 저장/처리: 대용량 파일의 효과적인 부산 저장 및 분산 처리 기술</li>
-  <li>분산데이터 베이스: HDFS 칼럼 기반 데이터베이스로 실시간 랜덤 조회 및 업데이트 가능
-    <ul>
-      <li>HDFS:대용량 데이터의 집합을 처리하는 응용 프로그램에 적합하도록 설계된 하둡 분산 파일 시스템</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="nosqlnot-only-sql">NoSQL(Not Only SQL)</h4>
-
-<ul>
-  <li>데이터 저장에 고정된 테이블 스키마가 필요하지 않고 조인 연산을 사용할 수 없으며, 수평적으로 확장이 가능한 DBMS</li>
-</ul>
-
-<h5 id="nosql-특성">NoSQL 특성</h5>
-
-<ul>
-  <li>Basically Available: 언제든지 데이터 접근 할 수 있는 속성</li>
-  <li>Soft-State: 외부에서 전송된 정보를 통해 결정되는 속성</li>
-  <li>Eventually Consistency: 이관성이 유지되는 속성</li>
-</ul>
-
-<h5 id="nosql-유형">NoSQL 유형</h5>
-
-<ul>
-  <li>Key-Value Store: Unique 한 키에 하나의 값을 가지고 있는 형태</li>
-  <li>Column Family Data Store : Key안에(Column, Value) 조합으로 된 여러개의 필드를 갖는 DB</li>
-  <li>Document Store: 값(Value)의 데이터 타입이 문서(Documnet)라는 타입을 사용하는 DB</li>
-  <li>Graph DBMS: 시맨틱 웹과 온톨로지 분야에서 활용되는 그래프로 데이터를 표현하는 DBMS’
-    <ul>
-      <li>시맨틱 웹: 온톨로지를 활용하여 서비스를 기술하고, 온톨로지의 의미적 상호 운용성을 이용해서 서비스 검색, 조합, 중재 기능을 자동화하는 웹</li>
-      <li>온톨로지: 실세계에 존재하는 모든 개념들과 개념들의 속성, 그리고 개념들간의 관계 정보를 컴퓨터가 이해할 수 있도록 서술해 놓은 지식베이스</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="데이터-마이닝data-minning">데이터 마이닝(Data Minning)</h4>
-
-<ul>
-  <li>대규모로 저장된 데이터 안에서 체계적이고 자동적으로 통계적 규칙이나 패턴을 찾아내는 기술</li>
-</ul>
-
-<h5 id="데이터-마이닝-절차">데이터 마이닝 절차</h5>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">목적 설정</code> → <code class="language-plaintext highlighter-rouge">데이터 준비</code> → <code class="language-plaintext highlighter-rouge">가공</code> → <code class="language-plaintext highlighter-rouge">마이닝 기법 적용</code> → <code class="language-plaintext highlighter-rouge">정보 검증</code></li>
-</ul>
-
-<h5 id="데이터-마이닝-주요-기법">데이터 마이닝 주요 기법</h5>
-
-<ul>
-  <li>분류 규칙: 과거 데이터로를 토대로 새로운 레코드의 결과 값을 예측하는 기법</li>
-  <li>연과 규칙: 데이터 안에 항목들 간의 종속관계를 찾아내는 기법</li>
-  <li>연속 규칙: 연관 규칙에 시간 관련 정보가 포함된 형태의 기법</li>
-  <li>데이터 군집화: 대상 레코드들을 유사한 특성을 지닌 몇 개의 소그룹으로 분할하는 작업</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="데이터" /><category term="데이터입출력구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 데이터 입출력 구현]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry></feed>
