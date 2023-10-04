@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-04T18:03:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-04T18:20:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">React Native - Sticky Header (헤더 고정)</title><link href="http://localhost:4000/reactnative/post82/" rel="alternate" type="text/html" title="React Native - Sticky Header (헤더 고정)" /><published>2023-10-05T00:00:00+09:00</published><updated>2023-10-05T00:00:00+09:00</updated><id>http://localhost:4000/reactnative/post82</id><content type="html" xml:base="http://localhost:4000/reactnative/post82/"><![CDATA[<h3 id="sticky-header-사용법">Sticky Header 사용법</h3>
+
+<p>앱을 만들다보면 스크롤을 내릴때 헤더를 고정하는 Sticky Header를 구현하고 싶을 때가 있는데요. React Native ScrollView에서는 간단히 구현할 수 있습니다.</p>
+
+<p>아래와 같이 스크롤 뷰 속성에 <code class="language-plaintext highlighter-rouge">stickyHeaderIndices</code> 를 추가하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">ScrollView</span> 
+    <span class="na">stickyHeaderIndices</span><span class="p">=</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span> <span class="c1">// 숫자: sticky 속성을 사용할 컴포넌트의 위치</span>
+<span class="p">&gt;</span> 
+   ...
+<span class="p">&lt;/</span><span class="nc">ScrollView</span><span class="p">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예를 들어 1번째 컴포넌트를 고정하고 싶다면 위와 같이 배열 안에 숫자를 <code class="language-plaintext highlighter-rouge">0</code>으로 설정해주면 됩니다.<br />
+만약 <code class="language-plaintext highlighter-rouge">1</code>로 하면 2번째 컴포넌트가 고정됩니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="ReactNative" /><category term="리액트네이티브" /><category term="React" /><category term="RN" /><category term="Sticky" /><category term="stickyHeaderIndices" /><category term="scrollview" /><summary type="html"><![CDATA[리액트 네이티브 Sticky]]></summary></entry><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1589,72 +1612,4 @@ remove the file manually to <span class="k">continue</span><span class="nb">.</s
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="SQL" /><category term="SQL응용" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - SQL 응용]]></summary></entry><entry><title type="html">CH05. 인터페이스 구현</title><link href="http://localhost:4000/infoprocessing/post72/" rel="alternate" type="text/html" title="CH05. 인터페이스 구현" /><published>2023-03-04T00:00:00+09:00</published><updated>2023-03-04T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post72</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post72/"><![CDATA[<h3 id="인터페이스-기능-구현">인터페이스 기능 구현</h3>
-
-<h4 id="컴포넌트-명세서">컴포넌트 명세서</h4>
-
-<p>컴포넌트 개요, 부 클래스의 동작, 인터페이스를 통해 외부와 통신하는 명세</p>
-
-<h4 id="인터페이스-명세서">인터페이스 명세서</h4>
-
-<p>컴포넌트 명세서에 명시된 인터페이스 클래스의 세부적인 조건 및 기능을 명시한 명세서</p>
-
-<h4 id="jsonjavascript-object-notation">JSON(Javascript Object Notation)</h4>
-
-<p>속성-값 쌍 또는 “키-값 쌍”으로 이루어진 데이터 오브젝트를 전달하기 위해 인간이 읽을 수 있는 테스트를 사용하는 개방형 표준 포맷, AJAX에서 많이 사용되고 XML을 대체하는 주요 데이터 포맷</p>
-
-<h4 id="xmlextensible-markup-language">XML(Extensible Markup Language)</h4>
-
-<p>HTML의 단점을 보완한 인터넷 언어로, SGML의 복잡한 단점을 개선한 특수한 목적을 갖는 마크업 언어</p>
-
-<h4 id="ajaxasynchronous-javascript-and-xml">AJAX(Asynchronous Javascript And XML)</h4>
-
-<p>자바스크립트를 사용하여 웹 서버와 클라이언트 간 비동기적으로 XML데이터를 교환하고 조작하는 웹 기술, XMLHttpRequest객체(비동기 통신을 담당하는 JS 객체)를 이용해서 필요한 일부 페이지의 데이터만 로드</p>
-
-<h4 id="restrepresentational-state-transfer">REST(Representational State Transfer)</h4>
-
-<p>웹과 같은 분산 하이퍼미디어 환경에서 자원의 존재/상태 정보를 표준화된 HTTP메서드로 주고받은 웹 아키텍처</p>
-
-<h5 id="rest-메서드">REST 메서드</h5>
-
-<p>HTTP메서드 중 CRUD메서드만 사용 - POST(생성), GET(조회), PUT(수정), DELETE(삭제)</p>
-
-<h4 id="데이터베이스-암호화-알고리즘">데이터베이스 암호화 알고리즘</h4>
-
-<ul>
-  <li>대칭 키 암호화 알고리즘: 암,복호화에 같은 암호 키를 쓰는 알고리즘</li>
-  <li>비대칭 키 암호화 알고리즘: 공개키는 누구나 알 수 있지만, 비밀키는 키 소유자만 알 수 있게 사용하는 알고리즘</li>
-  <li>해시 암호화 알고리즘: 해시값으로 원래 입력값을 찾아낼 수 없는 일방향성의 특성을 가진 알고리즘</li>
-</ul>
-
-<h4 id="중요-인터페이스-데이터의-암호화-전송을-보안-기술">중요 인터페이스 데이터의 암호화 전송을 보안 기술</h4>
-
-<ul>
-  <li>IPSec(IP Security): IP계층(3계층)에서 무결성과 인증을 보장하는 인증 헤더(AH)와 기밀성을 보장하는 암호화(ESP)를 이용하여 양 종단 간(End Point) 구간에 보안 서비스를 제공하는 터널링 프로토콜</li>
-  <li>SSL/TLS: 전송계층(4계층)과 응용계층(7계층) 사이에서 클라이언트와 서버 간의 웹 데이터 암호화(기밀성, 상호 인증 및 전송 시 데이터 무결성을 보장하는 보안 프로토콜</li>
-  <li>S-HTTP(Secure Hupertext Transfer Protocol): 웹상에서 네트워크 트래픽을 암호화하는 주요 방법, 클라이언트와 서버 간에 전송되는 모든 메세지를 암호화하여 전송</li>
-</ul>
-
-<h3 id="인터페이스-구현-검증">인터페이스 구현 검증</h3>
-
-<h4 id="인터페이스-구현-검증-도구">인터페이스 구현 검증 도구</h4>
-
-<ul>
-  <li>xUnit: 자바, C++, .Net 등 다양한 언어를 지원하는 단위테스트 프레임워크</li>
-  <li>STAF: 서비스 호출, 컴포넌트 재사용 등 다양한 환경을 지원하는 테스트 프레임워크</li>
-  <li>FitNesse: 웹 기반 테스트 케이스 설계/실행/결과 확인 등을 지원하는 테스트 프레임워크</li>
-  <li>NTAF: FitNesse(협업기능)+STAF(재사용, 확장성) 통합한 테스트 자동화 프레임워크</li>
-  <li>Selenium: 다양한 브라우저 지원 및 개발언어를 지원하는 웹 애플리케이션 테스트 프레임워크</li>
-  <li>watir: 루비(Ruby)기반 웹 애플리케이션 테스트 프레임워크</li>
-</ul>
-
-<h4 id="인터페이스-감시-도구">인터페이스 감시 도구</h4>
-
-<ul>
-  <li>스카우터(SCOUTER): 애플리케이션에 대한 모니터링 및 DB Agent를 통해 오픈 소스 DB 모니터링 기능, 인터페이스 감시 기능을 제공</li>
-  <li>제니퍼(Jennifer): 애플리케이션의 개발부터 테스트, 오픈, 운영, 안정화까지 전 생애주기 단계 동안 성능을 모니터링하고 분석해주는 APM 소프트웨어</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="인터페이스" /><category term="인터페이스구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 인터페이스 구현]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="SQL" /><category term="SQL응용" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - SQL 응용]]></summary></entry></feed>

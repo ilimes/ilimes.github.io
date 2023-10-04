@@ -43,6 +43,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "ReactNative" %}
+                        <li><a href="/categories/reactNative" class="">React Native<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">BackEnd</span>
             <ul>
                 {% for category in site.categories %}

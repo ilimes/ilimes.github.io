@@ -484,4 +484,10 @@ var store = [{
         "tags": ["github","Git","깃","에러해결","fatal"],
         "url": "/git/post81/",
         "teaser": null
+      },{
+        "title": "React Native - Sticky Header (헤더 고정)",
+        "excerpt":"Sticky Header 사용법 앱을 만들다보면 스크롤을 내릴때 헤더를 고정하는 Sticky Header를 구현하고 싶을 때가 있는데요. React Native ScrollView에서는 간단히 구현할 수 있습니다. 아래와 같이 스크롤 뷰 속성에 stickyHeaderIndices 를 추가하면 됩니다. 1 2 3 4 5 &lt;ScrollView stickyHeaderIndices={[0]} // 숫자: sticky 속성을 사용할 컴포넌트의 위치 &gt; ... &lt;/ScrollView&gt; 예를 들어...","categories": ["ReactNative"],
+        "tags": ["리액트네이티브","React","RN","Sticky","stickyHeaderIndices","scrollview"],
+        "url": "/reactnative/post82/",
+        "teaser": null
       }]
