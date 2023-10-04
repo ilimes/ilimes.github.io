@@ -1,4 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-09-05T22:46:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">웹 브라우저 렌더링 종류와 차이점</title><link href="http://localhost:4000/web/post80/" rel="alternate" type="text/html" title="웹 브라우저 렌더링 종류와 차이점" /><published>2023-09-05T00:00:00+09:00</published><updated>2023-09-05T00:00:00+09:00</updated><id>http://localhost:4000/web/post80</id><content type="html" xml:base="http://localhost:4000/web/post80/"><![CDATA[<p>렌더링이란 간단히 말하면 HTML, CSS, javaScript 등 개발자가 작성한 문서가 화면에 표시되는 것이라고 할 수 있는데요. 오늘은 웹 브라우저 렌더링의 종류에 대해서 알아보고, 각각 어떠한 장단점이 있는지 정리해보도록 하겠습니다 😊</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-04T18:03:12+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>git add <span class="nb">.</span>
+fatal: Unable to create <span class="s1">'디렉토리/.git/index.lock'</span>: File exists.
+
+Another git process seems to be running <span class="k">in </span>this repository, e.g.
+an editor opened by <span class="s1">'git commit'</span><span class="nb">.</span> Please make sure all processes
+are terminated <span class="k">then </span>try again. If it still fails, a git process
+may have crashed <span class="k">in </span>this repository earlier:
+remove the file manually to <span class="k">continue</span><span class="nb">.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>git add .로 파일을 올리고자 할 때 갑자기 위와 같은 에러가 나는 경우가 있습니다.
+이유는 <code class="language-plaintext highlighter-rouge">.git 디렉토리에 index.lock 파일이 존재하기 때문</code> 입니다.</p>
+
+<h3 id="해결-방법">해결 방법</h3>
+
+<p>해결 방법은 매우 간단합니다.</p>
+
+<p>특정 Git 프로세스가 동작중일 때 다른 Git 프로세스가 실행되는 것을 막기 위해서 index.lock 이라는 파일이 생기는 것인데 의도해서 생성한 것이 아니라면 삭제해주면 됩니다. 폴더에서 직접 index.lock 파일을 삭제하거나, 아래 명령어를 입력하여 해결할 수 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-f</span> .git/index.lock
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="github" /><category term="Git" /><category term="깃" /><category term="에러해결" /><category term="fatal" /><summary type="html"><![CDATA[Git 에러 해결 방법]]></summary></entry><entry><title type="html">웹 브라우저 렌더링 종류와 차이점</title><link href="http://localhost:4000/web/post80/" rel="alternate" type="text/html" title="웹 브라우저 렌더링 종류와 차이점" /><published>2023-09-05T00:00:00+09:00</published><updated>2023-09-05T00:00:00+09:00</updated><id>http://localhost:4000/web/post80</id><content type="html" xml:base="http://localhost:4000/web/post80/"><![CDATA[<p>렌더링이란 간단히 말하면 HTML, CSS, javaScript 등 개발자가 작성한 문서가 화면에 표시되는 것이라고 할 수 있는데요. 오늘은 웹 브라우저 렌더링의 종류에 대해서 알아보고, 각각 어떠한 장단점이 있는지 정리해보도록 하겠습니다 😊</p>
 
 <h3 id="렌더링의-종류">렌더링의 종류</h3>
 
@@ -1622,112 +1657,4 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="인터페이스" /><category term="인터페이스구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 인터페이스 구현]]></summary></entry><entry><title type="html">CH04. 통합 구현</title><link href="http://localhost:4000/infoprocessing/post71/" rel="alternate" type="text/html" title="CH04. 통합 구현" /><published>2023-02-25T00:00:00+09:00</published><updated>2023-02-25T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post71</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post71/"><![CDATA[<h3 id="연계-요구사항-분석">연계 요구사항 분석</h3>
-
-<h4 id="연계-요구사항-분석-1">연계 요구사항 분석</h4>
-
-<p>서로 다른 두 시스템 · 장치 · 소프트웨어를 이어주는 중계 역할을 하는 연계 시스템과 관련된 요구사항을 분석하는 과정</p>
-
-<h4 id="연계-요구사항-분석-참고문서">연계 요구사항 분석 참고문서</h4>
-
-<ul>
-  <li>개체(Entitiy) 정의서: 데이터베이스 개념 모델링 단계에서 도출한 개체의 타입과 관련 속성, 식별자 등의 정보를 개괄적으로 명세화한 정의서</li>
-  <li>테이블(Table) 정의서: 논리 및 물리 모델링 과정 설계 산출물</li>
-  <li>인터페이스 명세서: 인터페이스 정의서에 작성한항목을 자세히 작성한 것</li>
-</ul>
-
-<h3 id="연계-메커니즘-구성">연계 메커니즘 구성</h3>
-
-<h4 id="연계-메커니즘">연계 메커니즘</h4>
-
-<p>응용 소프트웨어와 연계 대상 모듈 간의 데이터 연계시 요구사항을 고려한 연계방법과 주기를 설계하기 위한 메커니즘</p>
-
-<ul>
-  <li>기능: 데이터를 생성하여 전송하는 송신 시스템과 송신 데이터를 수신하여 DB에 반영하는 수신 시스템으로 구성</li>
-</ul>
-
-<h4 id="주요-연계-기술">주요 연계 기술</h4>
-
-<ul>
-  <li>직접 연계
-    <ul>
-      <li>DB 링크: 데이터베이스에서 제공하는 DB링크 객체를 이용</li>
-      <li>DB 연결: 수신 시스템의 WAS에서 송신 시스템 DB로 연결하는 DB커넥션 풀을 생성하고 연계 프로그램에서 해당 DB커넥션 풀 명을 이용하여 연결</li>
-      <li>API/Open API: 송신 시스템의 DB에서 데이터를 읽어서 제공하는 애플리케이션 프로그래밍 인터페이스 프로그램</li>
-      <li>JDBC: 수신 시스템의 프로그램에서 JDBC 드라이버를 이용하여 송신 시스템 DB와 연결</li>
-      <li>하이퍼 링크: 현재 페이지에서 다른 부분으로 가거나 전혀 다른 페이지로 이동하게 해주는 속성</li>
-    </ul>
-  </li>
-  <li>간접 연계
-    <ul>
-      <li>연계 솔루션(EAI): 기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션들 간의 정보 전달, 연계, 통합을 가능하게 해주는 솔루션</li>
-      <li>Web Service/ESB: 웹 서비스가 설명된 WSDL과 SOAP 프로토콜을 이용한 시스템 간 연계</li>
-      <li>소켓(Socket): 소켓을 생성하여 포트를 할당하고, 클라이언트의 요청을 연결하여 통신</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="내외부-연계-모듈-구현">내외부 연계 모듈 구현</h3>
-
-<h4 id="eaienterprise-application-intergration">EAI(Enterprise Application Intergration)</h4>
-
-<p>기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션 간의 정보를 전달, 연계 통합이 가능하도록 해주는 솔루션</p>
-
-<ul>
-  <li>미들웨어를 이용하여 비즈니스 로직을 중심으로 기업 내 애플리케이션을 통합 연계</li>
-</ul>
-
-<h4 id="eai-구성요소">EAI 구성요소</h4>
-
-<ul>
-  <li>EAI 플랫폼: 이기종 시스템 간 애플리케이션 상호 운영</li>
-  <li>어댑터: 다양한 애플리케이션을 연결하는 EAI의 핵심 장치로 데이터 입출력 도구</li>
-  <li>브로커: 데이터 포맷과 코드를 변환하는 솔루션</li>
-  <li>메시지 큐: 비동기 메세지를 사용하는 다른 응용 프로그램 사이에서 데이터를 송수신하는 기술</li>
-  <li>비지니스 워크플로우: 미리 정의된 기업의 비즈니스 workflow에 따라 업무를 처리하는 기능</li>
-</ul>
-
-<h4 id="eai-구축-유형">EAI 구축 유형</h4>
-
-<ul>
-  <li>포인트 투 포인트(Point-to-point): 가장 기초적인 애플리케이션 통합방법. 1:1 단순 통합방법</li>
-  <li>허브 앤 스포크(Hub &amp; Spoke): 단일한 접점의 허브 시스템을 통하여 데이터를 젆송하는 중앙 집중식 방식</li>
-  <li>메시지 버스(Message Bus): 애플리케이션 사이 미들웨어를 두어 연계하는 미들웨어 통합 방식</li>
-  <li>하이브리드(Hybrid): 그룹 내는 허브앤 스포크 방식을 사용, 그룹 간에는 메시지 버스 방식을 사용하는 통합 방식</li>
-</ul>
-
-<h4 id="esbenterprise-service-bus">ESB(Enterprise Service Bus)</h4>
-
-<p>기업에서 운영되는 서로 다른 플랫폼 및 애플리케이션들 간을 하나의 시스템으로 관리 운영할 수 있도록 서비스 중심의 통합을 지향하는 아키텍처. 느슨한 결합 방식 지원(서비스 변경이 있어도 연결된 다른 서비스에 영향이 없음)</p>
-
-<ul>
-  <li>미들웨어를 이용하여 서비스 중심으로 서비스를 지원하기 위한 관련시스템과 유기적 연계</li>
-</ul>
-
-<h4 id="esb-구축-유형">ESB 구축 유형</h4>
-
-<p>버스 방식의 분산형 토폴로지 구성</p>
-
-<h4 id="웹-서비스web-service">웹 서비스(Web Service)</h4>
-
-<p>넽워크에 분산된 정보를 서비스 형태로 개방하여 표준화된 방식으로 공유하는 기술. 서비스 지향 아키텍처</p>
-
-<h4 id="웹-서비스-유형">웹 서비스 유형</h4>
-
-<ul>
-  <li>SOAP(Simple Objet Access Protocol): HTTP, HTTPS, SMTP등을 사용하여 XML 기반의 메시지를 네트워크 상태에서 교환하는 프로토콜</li>
-  <li>WSDL(Web Service Description Language): 웹 서비스명, 제공 위치, 메시지 포맷, 프로토콜 정보 등 웹서비스에 대한 상세 정보가 기술된 XML 형식으로 구현되어 있는 언어</li>
-  <li>UDDI(Universal Description, Discovery and Intergration): 웹 서비스에 대한 정보인 WSDL을 등록하고 검색하기 위한 저장소로 공개적으로 접근, 검색이 가능한 레지스트</li>
-</ul>
-
-<h4 id="ipcinter-process-communication">IPC(Inter-Process Communication)</h4>
-
-<p>운영체제에서 프로세스 간 서로 데이터를 주고받기 위한 통신 기술</p>
-
-<h4 id="연계-테스트">연계 테스트</h4>
-
-<p>송신 시스템과 수신 시스템을 연계하였을 경우 데이터의 정합성과 데이터 전송 여부에 대한 테스트</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="통합" /><category term="통합구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 통합 구현]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="인터페이스" /><category term="인터페이스구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 인터페이스 구현]]></summary></entry></feed>

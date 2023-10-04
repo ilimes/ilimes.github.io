@@ -478,4 +478,10 @@ var store = [{
         "tags": ["렌더링","SSR","CSR","SSG","ISR"],
         "url": "/web/post80/",
         "teaser": null
+      },{
+        "title": "Git - fatal: Unable to create '~~/.git/index.lock': File exists. 에러 해결",
+        "excerpt":"문제 상황 1 2 3 4 5 6 7 8 $ git add . fatal: Unable to create '디렉토리/.git/index.lock': File exists. Another git process seems to be running in this repository, e.g. an editor opened by 'git commit'. Please make sure all processes are terminated then try again. If it...","categories": ["Git"],
+        "tags": ["github","Git","깃","에러해결","fatal"],
+        "url": "/git/post81/",
+        "teaser": null
       }]
