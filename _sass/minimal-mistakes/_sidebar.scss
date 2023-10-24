@@ -377,8 +377,10 @@
 }
 
 .nav__sub-title {
-  border-bottom: 1px solid #5f6365;
+  // border-bottom: 1px solid #5f6365;
   // width: 90%;
+  border-image: linear-gradient(to right, #5f6365 0%, #fff 100%);
+  border-image-slice: 1;
   margin-right: 20px;
 }
 
