@@ -1,5 +1,5 @@
 ---
-title: Hi all! I'm LIME 👋
+title: Hello, I'm Daegyu Lee! 👋
 layout: single
 permalink: /about/
 author_profile: true
@@ -9,32 +9,29 @@ author_profile: true
 {% assign author = site.data.authors[author] | default: author %}
 
 <div itemscope itemtype="https://schema.org/Person" class="h-card">
-
-<span>🔨 Tech Stack</span>
-
- <div style="margin: 10px 0 20px 0;">
-     <div style="margin: 5px 0 5px 0;">
-         <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
-         <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
-         <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
-         <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white">
-         <img src="https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white">
-         <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
-     </div>
-     <div style="margin: 5px 0 5px 0;">
-         <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white"/>
-         <img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white"/>
-         <img src="https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white"/>
-         <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white"/>
-         <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white">
-     </div>
-     <div style="margin: 5px 0 5px 0;">
-         <img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white">
-         <img src="https://img.shields.io/badge/adobe%20photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobe%20photoshop&logoColor=white">
-         <img src="https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white">
-         <img src="https://img.shields.io/badge/Adobe%20Premiere%20Pro-9999FF.svg?style=for-the-badge&logo=Adobe%20Premiere%20Pro&logoColor=white">
-     </div>
- </div>
+  <div style="margin-bottom: 20px;">
+    <div style="margin-bottom: 10px; font-weight: bold;">✨ Tech Stack</div>
+    <div>
+        <a><img src="https://img.shields.io/badge/Javascript-000000?style=flat-square&logo=javascript&logoColor=#F7DF1E"/></a>
+        <a><img src="https://img.shields.io/badge/TypeScript-000000?style=flat-square&logo=Typescript&logoColor=#3178C6"/></a>
+        <a><img src="https://img.shields.io/badge/React-000000?style=flat-square&logo=React&logoColor=#61DAFB"/></a>
+        <a><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=#8ED500"/></a>
+        <a><img src="https://img.shields.io/badge/ReactQuery-000000?style=flat-square&logo=ReactQuery&logoColor=#3178C6"/></a>
+        <a><img src="https://img.shields.io/badge/NoesJS-000000?style=flat-square&logo=Node.JS&logoColor=#61DAFB"/></a>
+        <a><img src="https://img.shields.io/badge/Spring-000000?style=flat-square&logo=Spring&logoColor=#61DAFB"/></a>
+        <a><img src="https://img.shields.io/badge/HTML5-000000?style=flat-square&logo=HTML5&logoColor=#61DAFB"/></a>
+        <a><img src="https://img.shields.io/badge/CSS3-000000?style=flat-square&logo=CSS3&logoColor=#1572B6"/></a>
+    </div>
+    <div style="margin: 10px 0; font-weight: bold;">🔨 Tools</div>
+    <div>
+        <a><img alt="Git" src="https://img.shields.io/badge/Git-000000?logo=Git&logoColor=white" /></a>
+        <a><img alt="GitHub" src="https://img.shields.io/badge/Github-000000?logo=GitHub&logoColor=white" /></a>
+        <a><img alt="Visual Studio Code" src="https://img.shields.io/badge/Visual%20Studio%20Code-000000?logo=visual-studio-code&logoColor=0078d7" /></a>
+        <a><img alt="Photoshop" src="https://img.shields.io/badge/Photoshop-000000?logo=Adobe-Photoshop&logoColor=0078d7"/></a>
+        <a><img alt="Figma" src="https://img.shields.io/badge/Figma-000000?logo=Figma&logoColor=pink" /></a>
+        <a><img alt="Notion" src="https://img.shields.io/badge/Notion-000000?logo=Notion&logoColor=white" /></a>
+    </div>
+  </div>
 
   <div class="author__urls-wrapper">
     <ul class="author__urls social-icons">
