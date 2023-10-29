@@ -490,4 +490,10 @@ var store = [{
         "tags": ["리액트네이티브","React","RN","Sticky","stickyHeaderIndices","scrollview"],
         "url": "/reactnative/post82/",
         "teaser": null
+      },{
+        "title": "MySQL/MariaDB WITH RECURSIVE 재귀 쿼리",
+        "excerpt":"오늘은 프로그래머스 문제를 풀다가 처음 알게된 문법이 있어서 공유해보고자 합니다. 바로 WITH RECURSIVE 라는 재귀 쿼리입니다. WITH RECURSIVE WITH RECURSIVE 의 기본 구조는 아래와 같습니다. 1 2 3 4 WITH RECURSIVE 테이블명 AS( SELECT 초기값 AS 컬럼별명1 UNION ALL SELECT 컬럼별명1 계산식 FROM 테이블명 WHERE 제어문 WITH RECURSIVE 는 아래와...","categories": ["MariaDB"],
+        "tags": ["데이터베이스","DB","MariaDB","WITH RECURSIVE"],
+        "url": "/mariadb/post83/",
+        "teaser": null
       }]

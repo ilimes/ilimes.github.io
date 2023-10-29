@@ -1,4 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-25T21:52:35+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-29T11:50:41+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">MySQL/MariaDB WITH RECURSIVE 재귀 쿼리</title><link href="http://localhost:4000/mariadb/post83/" rel="alternate" type="text/html" title="MySQL/MariaDB WITH RECURSIVE 재귀 쿼리" /><published>2023-10-29T00:00:00+09:00</published><updated>2023-10-29T00:00:00+09:00</updated><id>http://localhost:4000/mariadb/post83</id><content type="html" xml:base="http://localhost:4000/mariadb/post83/"><![CDATA[<p>오늘은 프로그래머스 문제를 풀다가 처음 알게된 문법이 있어서 공유해보고자 합니다. 바로 <code class="language-plaintext highlighter-rouge">WITH RECURSIVE</code> 라는 재귀 쿼리입니다.</p>
+
+<h3 id="with-recursive">WITH RECURSIVE</h3>
+
+<p><code class="language-plaintext highlighter-rouge">WITH RECURSIVE</code> 의 기본 구조는 아래와 같습니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="k">WITH</span> <span class="k">RECURSIVE</span> <span class="err">테이블명</span> <span class="k">AS</span><span class="p">(</span>
+<span class="k">SELECT</span> <span class="err">초기값</span> <span class="k">AS</span> <span class="err">컬럼별명</span><span class="mi">1</span>
+<span class="k">UNION</span> <span class="k">ALL</span>
+<span class="k">SELECT</span> <span class="err">컬럼별명</span><span class="mi">1</span> <span class="err">계산식</span> <span class="k">FROM</span> <span class="err">테이블명</span> <span class="k">WHERE</span> <span class="err">제어문</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">WITH RECURSIVE</code> 는 아래와 같이 WITH와 RECURSIVE로 나눌 수 있습니다.</p>
+
+<h3 id="with">WITH</h3>
+
+<ul>
+  <li><strong>CTE</strong>(common table expression)을 생성하는 문법</li>
+  <li><strong>CTE</strong>란 해당 SQL문 내에서만 존재하는, 즉 메모리 상에 가상의 테이블을 저장할 때 사용된다.</li>
+</ul>
+
+<h3 id="recursive">RECURSIVE</h3>
+
+<ul>
+  <li>서브쿼리에서 스스로를 참조하는 <strong>CTE</strong></li>
+  <li>가상의 테이블을 생성하면서 자신의 값을 참조하여 결정할 때 사용</li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<p>1부터 5까지 출력하는 예시입니다.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="k">WITH</span> <span class="k">RECURSIVE</span> <span class="n">d</span> 
+<span class="k">AS</span> <span class="p">(</span>
+    <span class="k">select</span> <span class="mi">1</span> <span class="k">as</span> <span class="n">n</span>
+    <span class="k">union</span> <span class="k">all</span>
+    <span class="k">select</span>
+        <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">from</span> <span class="n">d</span>
+    <span class="k">where</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">5</span>
+<span class="p">)</span>
+
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">d</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h4 id="출력-결과">출력 결과</h4>
+
+<p><img src="https://github.com/ilimes/ilimes.github.io/assets/95404736/709c02cc-9718-4d98-a498-6892f8949dc0" alt="image" /></p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MariaDB" /><category term="데이터베이스" /><category term="DB" /><category term="MariaDB" /><category term="WITH RECURSIVE" /><summary type="html"><![CDATA[MySQL/MariaDB WITH RECURSIVE]]></summary></entry><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -1464,152 +1530,4 @@ remove the file manually to <span class="k">continue</span><span class="nb">.</s
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="Server" /><category term="서버" /><category term="서버프로그램구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 서버 프로그램 구현]]></summary></entry><entry><title type="html">CH07. SQL 응용</title><link href="http://localhost:4000/infoprocessing/post73/" rel="alternate" type="text/html" title="CH07. SQL 응용" /><published>2023-03-09T00:00:00+09:00</published><updated>2023-03-09T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post73</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post73/"><![CDATA[<h3 id="데이터베이스-기본">데이터베이스 기본</h3>
-
-<h4 id="트랜잭션transaction">트랜잭션(Transaction)</h4>
-
-<p>인가받지 않은 사용자로부터 데이터를 보장하기 위해 DBMS가 가져야 하는 특성, 하나의 논리적 기능을 정상적으로 수행하기 위한 작업의 기본 단위</p>
-
-<h5 id="트랜잭션-특성">트랜잭션 특성</h5>
-
-<ul>
-  <li>원자성(Atomicity): 트랜잭션의 연산 전체가 성공 또는 실패되어야 하는 성질 (All or Nothing)</li>
-  <li>일관성(Consistency): 트랜잭션 수행 전과 트랜잭션 수행 완료 후의 상태가 같아야 하는 성질</li>
-  <li>격리성(Isolation): 동시에 실행되는 트랜잭션들이 서로 영향을 미치지 않어야 한다는 성질</li>
-  <li>영속성(Durability): 성공이 완료된 트랜잭션의 결과는 영속적으로 데이터베이스에 저장되어야 하는 성질</li>
-</ul>
-
-<h5 id="트랜잭션-제어어tcl-transaction-control-language">트랜잭션 제어어(TCL, Transaction Control Language)</h5>
-
-<p>트랜잭션의 결과를 허용하거나 취소하는 목적으로 사용되는 언어</p>
-
-<ul>
-  <li>TCL 명령어
-    <ul>
-      <li>COMMIT: 트랜잭션을 메모리에 영구적으로 저장하는명령어</li>
-      <li>ROLLBACK: 트랜잭션 내역의 저장을 무효화시키는 명령어</li>
-      <li>CHECKPOINT(SAVEPOINT): ROLLBACK을 위한 시점을 지정하는 명령어</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="데이터-정의어ddl-data-definition-language">데이터 정의어(DDL: Data Definition Language)</h4>
-
-<p>DB를 구축하거나 수정할 목적으로 사용하는 언어</p>
-
-<h4 id="ddl-대상">DDL 대상</h4>
-
-<ul>
-  <li>도메인(Domain): 하나의 속성이 가질 수 있는 원자값들의 집합</li>
-  <li>스키마(Schema): 데이터베이스의 구조, 제약조건 등의 정보를 담고 있는 기본적인 구조
-    <ul>
-      <li>외부 스키마, 개념 스키마, 내부 스키마</li>
-    </ul>
-  </li>
-  <li>테이블(Table): 데이터 저장 공간</li>
-  <li>뷰(View): 하나 이상의 물리 테이블에서 유도되는 가상의 테이블</li>
-  <li>인덱스(Index): 검색을 빠르게 하기 위한 데이터 구조
-    <ul>
-      <li>인덱스 종류
-        <ul>
-          <li>순서 인덱스(Ordered Index): 데이터가 정렬된 순서로 생성되는 인덱스</li>
-          <li>해시 인덱스(Hash Index): 해시 함수에 의해 직접 데이터에 키 값으로 접근하는 인덱스</li>
-          <li>비트맵 인덱스(Bitmap Index): bit 값인 0 또는 1로 변호나하여 인덱스 키로 사용하는 인덱스</li>
-          <li>함수기반 인덱스(Functional Index): 수식이나 함수를 적용하여 만든 인덱스</li>
-          <li>단일 인덱스(Single Index): 하나의 컬럼으로만 구성한 인덱스</li>
-          <li>결합 인덱스(Concatenated Index): 두 개 이상의 컬럼으로 구성한 인덱스</li>
-          <li>클러스터드 인덱스(Clustered Index): 인덱스 키의 순서에 따라 데이터가 정렬되어 저장되는 방식 (검색 빠름)</li>
-          <li>넌클러스터드 인덱스(Non-Clustered Index): 인덱스의 키 값만 정렬되어 있고 실제 데이터는 정렬되지 않는 방식 (데이터 삽입, 삭제 시 데이터 재정렬해야함)</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<h5 id="ddl-명령어">DDL 명령어</h5>
-
-<p>CREATE(생성), ALTER(수정), DROP(삭제)</p>
-
-<ul>
-  <li>CASCADE: 제거할 요소를 참조하는 다른 모든 개체를 함께 제거</li>
-  <li>RESTRICT: 다른 개체가 제거할 요소를 참조중일 떄는 제거를 취소</li>
-</ul>
-
-<h5 id="데이터-조작어dml-data-manipulation-language">데이터 조작어(DML: Data Manipulation Language)</h5>
-
-<p>저장된 데이터를 실질적으로 관리하는데 사용되는 언어</p>
-
-<ul>
-  <li>DML 유형: SELECT(조회), INSERT(삽입), UPDATE(수정), DELETE(삭제)</li>
-</ul>
-
-<h5 id="데이터-제어어dcl-data-control-language">데이터 제어어(DCL: Data Control Language)</h5>
-
-<p>데이터의 보안, 무결성, 회복, 병행 제어등을 정의하는데 사용하는 언어</p>
-
-<ul>
-  <li>DCL 유형
-    <ul>
-      <li>GRANT: 사용 권한 부여</li>
-      <li>REVOKE: 사용 권한 취소</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="응용-sql-작성하기">응용 SQL 작성하기</h3>
-
-<h4 id="데이터-분석-함수-종류">데이터 분석 함수 종류</h4>
-
-<ul>
-  <li>집계 함수: 여러 행 또는 테이블 전체 행으로부터 하나의 결괏값을 반환하는 함수</li>
-  <li>그룹 함수: 소그룸 간의 소계 및 중계 등의 중간 합계 분석 데이터를 산출하는 함수</li>
-  <li>윈도 함수: 데이터베이스를 사용한 오라인 부석 처리 용도로 사용하기 위해서 표준 SQL에 추가된 기능</li>
-</ul>
-
-<h3 id="절차형-sql-활용하기">절차형 SQL 활용하기</h3>
-
-<h4 id="절차형-sqlprocedural-sql">절차형 SQL(Procedural SQL)</h4>
-
-<p>SQL언어에서도 절차 지향적인 프로그램이 가능하도록 하는 트랜잭션 언어</p>
-
-<h5 id="절차형-sql-종류">절차형 SQL 종류</h5>
-
-<ul>
-  <li>프로시저(Procedure): 일련의 쿼리들을 마치 하나의 함수처럼 실행하기 위한 커리의 집합</li>
-  <li>사용자 정의 함수(User-Defined FUnction): SQL 처리를 수행하고, 수행 결과를 단일 값으로 반환할 수 있는 절차형 SQL</li>
-  <li>트리거(Trriger): 데이터베이스 시스템에서 삽입, 갱신, 삭제 등의 이벤트가 발생할 때마다 관련 작업이 자동으로 수행되는 절차형 SQL</li>
-</ul>
-
-<h3 id="데이터-조작-프로시저-최적화">데이터 조작 프로시저 최적화</h3>
-
-<p>쿼리 성능 개선: 최소의 시간으로 우너하는 결과를 얻도록 프로시저를 수정하는 작업</p>
-
-<h4 id="sql-성능-개선-절차">SQL 성능 개선 절차</h4>
-
-<p>문제있는 SQL식별 → 옵티마이저 통계확인 → SQL문 재구성 → 인덱스 재구성 → 실행계획 유지관리</p>
-
-<h4 id="옵티마이저optimizer">옵티마이저(Optimizer)</h4>
-
-<p>SQL이 가장 효율적으로 수행되도록 최적의 경로를 찾아 주는 모듈</p>
-
-<ul>
-  <li>옵티마이저 유형
-    <ul>
-      <li>규칙기반 옵티마이저(RBO): 사전에 정의해둔 규칙에 의거하여 경로를 찾는 규칙 기반 옵티마이저</li>
-      <li>비용기반 옵티마이저(CBO): 각 DBMS마다 고유의 알고리즘에 따라 산출되는 비용으로 최적의 경로를 찾는 비용기반 옵티마이저</li>
-    </ul>
-  </li>
-</ul>
-
-<h4 id="힌트hint">힌트(Hint)</h4>
-
-<p>실행하려는 SQL문에 사전에 정보를 주어서 SQL문 실행에 빠른 결과를 가져오는 효과를 만드는 문법</p>
-
-<ul>
-  <li>옵티마이저의 실행 계획을 원하는 대로 변경할 수 있게 한다.</li>
-  <li>옵티마이저는 명시적인 힌트를 통해 실행 계획을 변경한다.</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="SQL" /><category term="SQL응용" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - SQL 응용]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="Server" /><category term="서버" /><category term="서버프로그램구현" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 서버 프로그램 구현]]></summary></entry></feed>
