@@ -492,8 +492,14 @@ var store = [{
         "teaser": null
       },{
         "title": "MySQL/MariaDB WITH RECURSIVE 재귀 쿼리",
-        "excerpt":"오늘은 프로그래머스 문제를 풀다가 처음 알게된 문법이 있어서 공유해보고자 합니다. 바로 WITH RECURSIVE 라는 재귀 쿼리입니다. WITH RECURSIVE WITH RECURSIVE 의 기본 구조는 아래와 같습니다. 1 2 3 4 WITH RECURSIVE 테이블명 AS( SELECT 초기값 AS 컬럼별명1 UNION ALL SELECT 컬럼별명1 계산식 FROM 테이블명 WHERE 제어문 WITH RECURSIVE 는 아래와...","categories": ["MariaDB"],
+        "excerpt":"오늘은 프로그래머스 문제를 풀다가 처음 알게된 문법이 있어서 공유해보고자 합니다. 바로 WITH RECURSIVE 라는 재귀 쿼리입니다. WITH RECURSIVE WITH RECURSIVE 의 기본 구조는 아래와 같습니다. 1 2 3 4 5 WITH RECURSIVE 테이블명 AS( SELECT 초기값 AS 컬럼별명1 UNION ALL SELECT 컬럼별명1 계산식 FROM 테이블명 WHERE 제어문 ) WITH RECURSIVE...","categories": ["MariaDB"],
         "tags": ["데이터베이스","DB","MariaDB","WITH RECURSIVE"],
         "url": "/mariadb/post83/",
+        "teaser": null
+      },{
+        "title": "NVM default 노드 버전 변경 하는 방법",
+        "excerpt":"오늘은 nvm에서 기본(default) 노드 버전을 변경하는 방법을 간단하게 소개해드리도록 하겠습니다 :) nvm list 확인 1 $ nvm list 우선 nvm list 명령어를 입력하여 현재 default 노드 버전이 무엇인지 확인합니다. 현재 저의 default 노드 버전은 v14.15.5로 되어있습니다. v18.17.0 으로 변경해보도록 하겠습니다. default 버전 변경 1 $ nvm alias default 18.17.0 default...","categories": ["Setting"],
+        "tags": ["NVM","default","nvm default","node.js","node"],
+        "url": "/setting/post84/",
         "teaser": null
       }]
