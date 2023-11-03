@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-10-31T14:02:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">NVM default 노드 버전 변경 하는 방법</title><link href="http://localhost:4000/setting/post84/" rel="alternate" type="text/html" title="NVM default 노드 버전 변경 하는 방법" /><published>2023-10-31T00:00:00+09:00</published><updated>2023-10-31T00:00:00+09:00</updated><id>http://localhost:4000/setting/post84</id><content type="html" xml:base="http://localhost:4000/setting/post84/"><![CDATA[<p>오늘은 nvm에서 기본(default) 노드 버전을 변경하는 방법을 간단하게 소개해드리도록 하겠습니다 :)</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-11-03T23:52:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">NVM default 노드 버전 변경 하는 방법</title><link href="http://localhost:4000/setting/post84/" rel="alternate" type="text/html" title="NVM default 노드 버전 변경 하는 방법" /><published>2023-10-31T00:00:00+09:00</published><updated>2023-10-31T00:00:00+09:00</updated><id>http://localhost:4000/setting/post84</id><content type="html" xml:base="http://localhost:4000/setting/post84/"><![CDATA[<p>오늘은 nvm에서 기본(default) 노드 버전을 변경하는 방법을 간단하게 소개해드리도록 하겠습니다 :)</p>
 
 <h3 id="nvm-list-확인">nvm list 확인</h3>
 
@@ -95,7 +95,30 @@
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MariaDB" /><category term="데이터베이스" /><category term="DB" /><category term="MariaDB" /><category term="WITH RECURSIVE" /><summary type="html"><![CDATA[MySQL/MariaDB WITH RECURSIVE]]></summary></entry><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="MariaDB" /><category term="데이터베이스" /><category term="DB" /><category term="MariaDB" /><category term="WITH RECURSIVE" /><summary type="html"><![CDATA[MySQL/MariaDB WITH RECURSIVE]]></summary></entry><entry><title type="html">React Native - Sticky Header (헤더 고정)</title><link href="http://localhost:4000/reactnative/post82/" rel="alternate" type="text/html" title="React Native - Sticky Header (헤더 고정)" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/reactnative/post82</id><content type="html" xml:base="http://localhost:4000/reactnative/post82/"><![CDATA[<h3 id="sticky-header-사용법">Sticky Header 사용법</h3>
+
+<p>앱을 만들다보면 스크롤을 내릴때 헤더를 고정하는 Sticky Header를 구현하고 싶을 때가 있는데요. React Native ScrollView에서는 간단히 구현할 수 있습니다.</p>
+
+<p>아래와 같이 스크롤 뷰 속성에 <code class="language-plaintext highlighter-rouge">stickyHeaderIndices</code> 를 추가하면 됩니다.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">ScrollView</span> 
+    <span class="na">stickyHeaderIndices</span><span class="p">=</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span> <span class="c1">// 숫자: sticky 속성을 사용할 컴포넌트의 위치</span>
+<span class="p">&gt;</span> 
+   ...
+<span class="p">&lt;/</span><span class="nc">ScrollView</span><span class="p">&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>예를 들어 1번째 컴포넌트를 고정하고 싶다면 위와 같이 배열 안에 숫자를 <code class="language-plaintext highlighter-rouge">0</code>으로 설정해주면 됩니다.<br />
+만약 <code class="language-plaintext highlighter-rouge">1</code>로 하면 2번째 컴포넌트가 고정됩니다 :)</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="ReactNative" /><category term="리액트네이티브" /><category term="React" /><category term="RN" /><category term="Sticky" /><category term="stickyHeaderIndices" /><category term="scrollview" /><summary type="html"><![CDATA[리액트 네이티브 Sticky]]></summary></entry><entry><title type="html">Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결</title><link href="http://localhost:4000/git/post81/" rel="alternate" type="text/html" title="Git - fatal: Unable to create ‘~~/.git/index.lock’: File exists. 에러 해결" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/git/post81</id><content type="html" xml:base="http://localhost:4000/git/post81/"><![CDATA[<h3 id="문제-상황">문제 상황</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -130,30 +153,7 @@ remove the file manually to <span class="k">continue</span><span class="nb">.</s
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="github" /><category term="Git" /><category term="깃" /><category term="에러해결" /><category term="fatal" /><summary type="html"><![CDATA[Git 에러 해결 방법]]></summary></entry><entry><title type="html">React Native - Sticky Header (헤더 고정)</title><link href="http://localhost:4000/reactnative/post82/" rel="alternate" type="text/html" title="React Native - Sticky Header (헤더 고정)" /><published>2023-10-04T00:00:00+09:00</published><updated>2023-10-04T00:00:00+09:00</updated><id>http://localhost:4000/reactnative/post82</id><content type="html" xml:base="http://localhost:4000/reactnative/post82/"><![CDATA[<h3 id="sticky-header-사용법">Sticky Header 사용법</h3>
-
-<p>앱을 만들다보면 스크롤을 내릴때 헤더를 고정하는 Sticky Header를 구현하고 싶을 때가 있는데요. React Native ScrollView에서는 간단히 구현할 수 있습니다.</p>
-
-<p>아래와 같이 스크롤 뷰 속성에 <code class="language-plaintext highlighter-rouge">stickyHeaderIndices</code> 를 추가하면 됩니다.</p>
-
-<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">ScrollView</span> 
-    <span class="na">stickyHeaderIndices</span><span class="p">=</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span> <span class="c1">// 숫자: sticky 속성을 사용할 컴포넌트의 위치</span>
-<span class="p">&gt;</span> 
-   ...
-<span class="p">&lt;/</span><span class="nc">ScrollView</span><span class="p">&gt;</span>
-</pre></td></tr></tbody></table></code></pre></div></div>
-
-<p>예를 들어 1번째 컴포넌트를 고정하고 싶다면 위와 같이 배열 안에 숫자를 <code class="language-plaintext highlighter-rouge">0</code>으로 설정해주면 됩니다.<br />
-만약 <code class="language-plaintext highlighter-rouge">1</code>로 하면 2번째 컴포넌트가 고정됩니다 :)</p>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="ReactNative" /><category term="리액트네이티브" /><category term="React" /><category term="RN" /><category term="Sticky" /><category term="stickyHeaderIndices" /><category term="scrollview" /><summary type="html"><![CDATA[리액트 네이티브 Sticky]]></summary></entry><entry><title type="html">웹 브라우저 렌더링 종류와 차이점</title><link href="http://localhost:4000/web/post80/" rel="alternate" type="text/html" title="웹 브라우저 렌더링 종류와 차이점" /><published>2023-09-05T00:00:00+09:00</published><updated>2023-09-05T00:00:00+09:00</updated><id>http://localhost:4000/web/post80</id><content type="html" xml:base="http://localhost:4000/web/post80/"><![CDATA[<p>렌더링이란 간단히 말하면 HTML, CSS, javaScript 등 개발자가 작성한 문서가 화면에 표시되는 것이라고 할 수 있는데요. 오늘은 웹 브라우저 렌더링의 종류에 대해서 알아보고, 각각 어떠한 장단점이 있는지 정리해보도록 하겠습니다 😊</p>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Git" /><category term="github" /><category term="Git" /><category term="깃" /><category term="에러해결" /><category term="fatal" /><summary type="html"><![CDATA[Git 에러 해결 방법]]></summary></entry><entry><title type="html">웹 브라우저 렌더링 종류와 차이점</title><link href="http://localhost:4000/web/post80/" rel="alternate" type="text/html" title="웹 브라우저 렌더링 종류와 차이점" /><published>2023-09-05T00:00:00+09:00</published><updated>2023-09-05T00:00:00+09:00</updated><id>http://localhost:4000/web/post80</id><content type="html" xml:base="http://localhost:4000/web/post80/"><![CDATA[<p>렌더링이란 간단히 말하면 HTML, CSS, javaScript 등 개발자가 작성한 문서가 화면에 표시되는 것이라고 할 수 있는데요. 오늘은 웹 브라우저 렌더링의 종류에 대해서 알아보고, 각각 어떠한 장단점이 있는지 정리해보도록 하겠습니다 😊</p>
 
 <h3 id="렌더링의-종류">렌더링의 종류</h3>
 
