@@ -17,7 +17,7 @@ author_profile: true
         <a><img src="https://img.shields.io/badge/React-000000?style=flat-square&logo=React&logoColor=#61DAFB"/></a>
         <a><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=#8ED500"/></a>
         <a><img src="https://img.shields.io/badge/ReactQuery-000000?style=flat-square&logo=ReactQuery&logoColor=#3178C6"/></a>
-        <a><img src="https://img.shields.io/badge/NoesJS-000000?style=flat-square&logo=Node.JS&logoColor=#61DAFB"/></a>
+        <a><img src="https://img.shields.io/badge/NodeJS-000000?style=flat-square&logo=Node.JS&logoColor=#61DAFB"/></a>
         <a><img src="https://img.shields.io/badge/Spring-000000?style=flat-square&logo=Spring&logoColor=#61DAFB"/></a>
         <a><img src="https://img.shields.io/badge/HTML5-000000?style=flat-square&logo=HTML5&logoColor=#61DAFB"/></a>
         <a><img src="https://img.shields.io/badge/CSS3-000000?style=flat-square&logo=CSS3&logoColor=#1572B6"/></a>
