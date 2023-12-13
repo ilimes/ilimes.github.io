@@ -282,7 +282,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.1] 없는 숫자 더하기",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/86051 ✔️ 코드 1 2 3 4 5 6 7 function solution(numbers) { let answer = 0; for (let i = 0; i &lt; 10; i++) { if (!numbers.includes(i)) answer += i; } return answer; } ✔️ 풀이 0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다....","categories": ["Programmers"],
+        "excerpt":"문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/86051 문제 설명 0부터 9까지의 숫자 중 일부가 들어있는 정수 배열 numbers가 매개변수로 주어집니다. numbers에서 찾을 수 없는 0부터 9까지의 숫자를 모두 찾아 더한 수를 return 하도록 solution 함수를 완성해주세요. 제한사항 1 ≤ numbers의 길이 ≤ 9 0 ≤ numbers의 모든 원소 ≤ 9 numbers의 모든 원소는 서로...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
         "url": "/programmers/post48/",
         "teaser": null
