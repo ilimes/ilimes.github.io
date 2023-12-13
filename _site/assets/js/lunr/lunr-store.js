@@ -270,7 +270,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.1] 나머지가 1이 되는 수 찾기",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/87389 ✔️ 코드 1 2 3 4 5 6 7 function solution(n) { for (let i = 0; i &lt; n; i++) { if (n % i === 1) { return i; } } } ✔️ 풀이 단순하게 for 반복문을 사용하여 해결 🔔포스팅 공지 개인 공부 기록용 블로그...","categories": ["Programmers"],
+        "excerpt":"문제 링크: https://school.programmers.co.kr/learn/courses/30/lessons/87389 문제 설명 자연수 n이 매개변수로 주어집니다. n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를 return 하도록 solution 함수를 완성해주세요. 답이 항상 존재함은 증명될 수 있습니다. 제한사항 3 ≤ n ≤ 1,000,000 입출력 예 n result 10 3 12 11 코드 1 2 3 4...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
         "url": "/programmers/post46/",
         "teaser": null
