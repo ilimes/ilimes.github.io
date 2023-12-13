@@ -148,8 +148,15 @@
         <span class="nav__sub-title">Algorithm</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "CodingTest" %}
-                        <li><a href="/categories/codingTest" class="">Algorithm<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% if category[0] == "Programmers" %}
+                        <li><a href="/categories/programmers" class="">Programmers<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Algorithm" %}
+                        <li><a href="/categories/algorithm" class="">Algorithm<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

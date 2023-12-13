@@ -270,9 +270,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.1] 나머지가 1이 되는 수 찾기",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/87389 ✔️ 코드 1 2 3 4 5 6 7 function solution(n) { for (let i = 0; i &lt; n; i++) { if (n % i === 1) { return i; } } } ✔️ 풀이 단순하게 for 반복문을 사용하여 해결 🔔포스팅 공지 개인 공부 기록용 블로그...","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/87389 ✔️ 코드 1 2 3 4 5 6 7 function solution(n) { for (let i = 0; i &lt; n; i++) { if (n % i === 1) { return i; } } } ✔️ 풀이 단순하게 for 반복문을 사용하여 해결 🔔포스팅 공지 개인 공부 기록용 블로그...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post46/",
+        "url": "/programmers/post46/",
         "teaser": null
       },{
         "title": "리액트 차트 라이브러리 Recharts 사용법",
@@ -282,21 +282,21 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.1] 없는 숫자 더하기",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/86051 ✔️ 코드 1 2 3 4 5 6 7 function solution(numbers) { let answer = 0; for (let i = 0; i &lt; 10; i++) { if (!numbers.includes(i)) answer += i; } return answer; } ✔️ 풀이 0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다....","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/86051 ✔️ 코드 1 2 3 4 5 6 7 function solution(numbers) { let answer = 0; for (let i = 0; i &lt; 10; i++) { if (!numbers.includes(i)) answer += i; } return answer; } ✔️ 풀이 0부터 9까지 반복하면서 includes로 값 있는지 확인하고 없으면 answer에 더해주었습니다....","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post48/",
+        "url": "/programmers/post48/",
         "teaser": null
       },{
         "title": "[Lv.1] 부족한 금액 계산하기",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/82612 ✔️ 코드 1 2 3 4 5 6 7 8 9 function solution(price, money, count) { let answer = 0; for (let i = 1; i &lt; count + 1; i++) { answer += price * i; } answer &gt; money ? (answer = answer - money)...","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/82612 ✔️ 코드 1 2 3 4 5 6 7 8 9 function solution(price, money, count) { let answer = 0; for (let i = 1; i &lt; count + 1; i++) { answer += price * i; } answer &gt; money ? (answer = answer - money)...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post49/",
+        "url": "/programmers/post49/",
         "teaser": null
       },{
         "title": "[Lv.1] 로또의 최고 순위와 최저 순위",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/77484 ✔️ 코드 1 2 3 4 5 6 7 8 9 10 11 12 13 function solution(lottos, win_nums) { const zeroCnt = lottos.reduce((acc, cur) =&gt; acc + (cur === 0 &amp;&amp; 1), 0); const lowCnt = lottos.reduce( (acc, cur) =&gt; acc + (win_nums.includes(cur) &amp;&amp; 1), 0 );...","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/77484 ✔️ 코드 1 2 3 4 5 6 7 8 9 10 11 12 13 function solution(lottos, win_nums) { const zeroCnt = lottos.reduce((acc, cur) =&gt; acc + (cur === 0 &amp;&amp; 1), 0); const lowCnt = lottos.reduce( (acc, cur) =&gt; acc + (win_nums.includes(cur) &amp;&amp; 1), 0 );...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post50/",
+        "url": "/programmers/post50/",
         "teaser": null
       },{
         "title": "UI/UX 디자인 공유 (4)",
@@ -318,9 +318,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.1] 어린 동물 찾기 (MySQL)",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59037 ✔️ 코드 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION != 'Aged' ✔️ 풀이 SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다. 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION &lt;&gt; 'Aged' 풀고 나서 알아보니...","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59037 ✔️ 코드 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION != 'Aged' ✔️ 풀이 SELECT를 사용하여 ANIMAL_ID, NAME 두 컬럼을 ANIMAL_INS 테이블에서 조회하고 WHERE 절에서 Aged가 아닌 조건을 걸어주면 됩니다. 1 2 3 SELECT ANIMAL_ID, NAME FROM ANIMAL_INS WHERE INTAKE_CONDITION &lt;&gt; 'Aged' 풀고 나서 알아보니...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post54/",
+        "url": "/programmers/post54/",
         "teaser": null
       },{
         "title": "UI/UX 디자인 공유 (5)",
@@ -336,9 +336,9 @@ var store = [{
         "teaser": null
       },{
         "title": "[Lv.2] 루시와 엘라 찾기 (MySQL)",
-        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59046 ✔️ 코드 1 2 3 4 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS WHERE NAME IN (\"Lucy\", \"Ella\", \"Pickle\", \"Rogan\", \"Sabrina\", \"Mitty\") ORDER BY ANIMAL_ID ASC ✔️ 풀이 IN을 사용하면 특정 이름만 조회할 수 있습니다. 만약 특정 값이 아닌 경우에만 찾고싶다면 NOT IN을 사용할 수 있습니다. 🔔포스팅 공지...","categories": ["CodingTest"],
+        "excerpt":"✔️ 문제 https://school.programmers.co.kr/learn/courses/30/lessons/59046 ✔️ 코드 1 2 3 4 SELECT ANIMAL_ID, NAME, SEX_UPON_INTAKE FROM ANIMAL_INS WHERE NAME IN (\"Lucy\", \"Ella\", \"Pickle\", \"Rogan\", \"Sabrina\", \"Mitty\") ORDER BY ANIMAL_ID ASC ✔️ 풀이 IN을 사용하면 특정 이름만 조회할 수 있습니다. 만약 특정 값이 아닌 경우에만 찾고싶다면 NOT IN을 사용할 수 있습니다. 🔔포스팅 공지...","categories": ["Programmers"],
         "tags": ["코테","알고리즘","프로그래머스"],
-        "url": "/codingtest/post57/",
+        "url": "/programmers/post57/",
         "teaser": null
       },{
         "title": "M1맥 iTerm2 터미널 꾸미기: zsh-syntax-highlighting 적용",
@@ -501,5 +501,11 @@ var store = [{
         "excerpt":"오늘은 nvm에서 기본(default) 노드 버전을 변경하는 방법을 간단하게 소개해드리도록 하겠습니다 :) nvm list 확인 1 $ nvm list 우선 nvm list 명령어를 입력하여 현재 default 노드 버전이 무엇인지 확인합니다. 현재 저의 default 노드 버전은 v14.15.5로 되어있습니다. v18.17.0 으로 변경해보도록 하겠습니다. default 버전 변경 1 $ nvm alias default 18.17.0 default...","categories": ["Setting"],
         "tags": ["NVM","default","nvm default","node.js","node"],
         "url": "/setting/post84/",
+        "teaser": null
+      },{
+        "title": "스택(Stack)이란 무엇일까?",
+        "excerpt":"이번 포스팅에서는 스택(Stack)이 무엇인지에 대해 간단하게 정리해보고자 합니다 :) 스택(Stack)이란? 스택이란 말 그대로 쌓아놓은 더미를 뜻합니다. 스택은 프링글스 통을 떠올리면 쉽게 이해할 수 있는데요. 프링글스 통에 든 과자 내용물은 제조공정 상에서 주입이 될 것이고, 처음에 담기는 과자는 가장 아래쪽에 위치하게 될 것입니다. 결국 프링글스 과자를 구입하여 뜯은 뒤 가장 먼저...","categories": ["Algorithm"],
+        "tags": ["Algorithm","자료구조","스택","Stack"],
+        "url": "/algorithm/post85/",
         "teaser": null
       }]
