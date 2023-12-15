@@ -508,4 +508,10 @@ var store = [{
         "tags": ["Algorithm","자료구조","스택","Stack"],
         "url": "/algorithm/post85/",
         "teaser": null
+      },{
+        "title": "Linux: Ubuntu 20.04 우분투 시간대(timezone) 설정/변경 방법",
+        "excerpt":"이번 포스팅에서는 우분투 시간대를 변경하는 방법을 알려드리고자 합니다. 본 내용은 우분투 20.04 환경에서 진행하였습니다 :) 현재 설정된 시간대 확인 현재 설정된 시간대는 timedatectl 명령어로 확인할 수 있습니다. 1 2 3 4 5 6 7 8 ubuntu@instance:~$ timedatectl Local time: Fri 2023-12-15 15:25:33 UTC Universal time: Fri 2023-12-15 15:25:33 UTC RTC...","categories": ["Linux"],
+        "tags": ["우분투","ubuntu","리눅스","linux","Timezone","타임존"],
+        "url": "/linux/post86/",
+        "teaser": null
       }]

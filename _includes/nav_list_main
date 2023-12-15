@@ -118,6 +118,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "Linux" %}
+                        <li><a href="/categories/linux" class="">Linux<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "Issue" %}
                         <li><a href="/categories/issue" class="">Problem solving<span class="nav_size">{{category[1].size}}</span></a></li>
                     {% endif %}
