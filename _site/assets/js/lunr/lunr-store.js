@@ -514,4 +514,10 @@ var store = [{
         "tags": ["우분투","ubuntu","리눅스","linux","Timezone","타임존"],
         "url": "/linux/post86/",
         "teaser": null
+      },{
+        "title": "Github Actions를 활용한 CI/CD 구축 (OCI & SSH)",
+        "excerpt":"오늘은 진행하고 있는 사이드 프로젝트에 Github Actions를 활용하여 CI/CD 구축을 해보았습니다. CD/CD를 구축할 수 있는 툴은 무료버전 또는 기업용 유료버전으로 나뉘어져 있습니다. 오늘 활용하고자 하는 Github Actions 외에도 종류가 굉장히 다양 (Jenkins, CircleCI, TravisCI 등) 한데, 아무래도 Github Actions가 설치나 큰 세팅 없이 간단히 활용할 수 있어서 괜찮은 듯 싶어...","categories": ["DevOps"],
+        "tags": ["Github Actions","OCI","CI/CD","배포자동화"],
+        "url": "/devops/post87/",
+        "teaser": null
       }]

@@ -144,6 +144,13 @@
                     {% endif %}
                 {% endfor %}
             </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "DevOps" %}
+                        <li><a href="/categories/devOps" class="">DevOps<span class="nav_size">{{category[1].size}}</span></a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
         <span class="nav__sub-title">Certificate</span>
             <ul>
                 {% for category in site.categories %}
