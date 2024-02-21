@@ -1,4 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-21T21:30:43+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Github Actions를 활용한 CI/CD 구축 (OCI &amp;amp; SSH)</title><link href="http://localhost:4000/devops/post87/" rel="alternate" type="text/html" title="Github Actions를 활용한 CI/CD 구축 (OCI &amp;amp; SSH)" /><published>2024-02-21T00:00:00+09:00</published><updated>2024-02-21T00:00:00+09:00</updated><id>http://localhost:4000/devops/post87</id><content type="html" xml:base="http://localhost:4000/devops/post87/"><![CDATA[<p>오늘은 진행하고 있는 사이드 프로젝트에 Github Actions를 활용하여 CI/CD 구축을 해보았습니다.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-02-21T22:15:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)</title><link href="http://localhost:4000/blog/post88/" rel="alternate" type="text/html" title="Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)" /><published>2024-02-22T00:00:00+09:00</published><updated>2024-02-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/post88</id><content type="html" xml:base="http://localhost:4000/blog/post88/"><![CDATA[<p>오늘은 블로그 글 작성중 불편했던 경험이 하나 있어서 기록해두려고 합니다.<br />
+저처럼 Jekyll을 이용해서 만든 깃허브 블로그에 포스팅을 하려면 마크다운 문법을 사용하곤 합니다.</p>
+
+<p>최근에 Github Actions 관련 게시물을 쓰다가 yml 스크립트 예시를 작성하는 경우가 있었는데요.<br />
+ <code class="language-plaintext highlighter-rouge">{{ }}</code>  와  <code class="language-plaintext highlighter-rouge">{% %}</code>  같은 문구를 표현하려고 하는데 나오지가 않는 문제가 있더라고요.</p>
+
+<p>위와 같은 문구를 그대로 표현하고자 한다면 아래와 같이 liquid 문법의 raw 태그를 사용해줘야 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>{% raw %} {{ example }} {% endraw %}
+{% raw %} {% example %} {% endraw %}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>위와 같이 작성하면 raw 태그로 감싸진 부분이 예외 처리됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>{{ example }}
+{% example %}
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>그래서 위 결과 처럼 나오게 됩니다 😊</p>
+
+<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
+개인 공부 기록용 블로그 입니다.<br />
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="블로그" /><category term="github" /><category term="escape liquid template" /><summary type="html"><![CDATA[Github Actions를 활용하여 배포자동화 구축]]></summary></entry><entry><title type="html">Github Actions를 활용한 CI/CD 구축 (OCI &amp;amp; SSH)</title><link href="http://localhost:4000/devops/post87/" rel="alternate" type="text/html" title="Github Actions를 활용한 CI/CD 구축 (OCI &amp;amp; SSH)" /><published>2024-02-21T00:00:00+09:00</published><updated>2024-02-21T00:00:00+09:00</updated><id>http://localhost:4000/devops/post87</id><content type="html" xml:base="http://localhost:4000/devops/post87/"><![CDATA[<p>오늘은 진행하고 있는 사이드 프로젝트에 Github Actions를 활용하여 CI/CD 구축을 해보았습니다.<br />
 CD/CD를 구축할 수 있는 툴은 무료버전 또는 기업용 유료버전으로 나뉘어져 있습니다. 오늘 활용하고자 하는 Github Actions 외에도 종류가 굉장히 다양 (Jenkins, CircleCI, TravisCI 등) 한데, 아무래도 Github Actions가 설치나 큰 세팅 없이 간단히 활용할 수 있어서 괜찮은 듯 싶어 이렇게 시도해보았습니다.</p>
 
 <h3 id="기존-배포-방식">기존 배포 방식</h3>
@@ -573,93 +599,4 @@ remove the file manually to <span class="k">continue</span><span class="nb">.</s
 
 <p class="notice--success">🔔<strong>포스팅 공지</strong><br />
 개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="인텔리제이" /><category term="IntelliJ" /><category term="한글" /><category term="한글깨짐" /><summary type="html"><![CDATA[인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기]]></summary></entry><entry><title type="html">CH12. 제품 소프트웨어 패키징</title><link href="http://localhost:4000/infoprocessing/post78/" rel="alternate" type="text/html" title="CH12. 제품 소프트웨어 패키징" /><published>2023-03-25T00:00:00+09:00</published><updated>2023-03-25T00:00:00+09:00</updated><id>http://localhost:4000/infoprocessing/post78</id><content type="html" xml:base="http://localhost:4000/infoprocessing/post78/"><![CDATA[<h3 id="제품-소프트웨어-패키징-하기">제품 소프트웨어 패키징 하기</h3>
-
-<h4 id="제품-소프트웨어-패키징product-software-packaging">제품 소프트웨어 패키징(Product Software Packaging)</h4>
-
-<p>개발이 완료된 제품 소프트웨어를 고객에게 전달하기 위한 형태로 포장하는 과정</p>
-
-<ul>
-  <li>사용자 중심의 모듈 패키징 프로세스: 기능 식별 → 모듈화 → 빌드 진행 → 사용자 환경 분석 → 패키징 적용 시험 → 패키징 변경 개선</li>
-</ul>
-
-<h4 id="릴리즈-노트release-note">릴리즈 노트(Release Note)</h4>
-
-<p>고객에게 개발 과정에서 정리된 제품의 릴리즈 정보를 제공하는 문서</p>
-
-<ul>
-  <li>릴리즈 노트 작성 프로세스: 모듈 식별 → 릴리즈 정보 확인 → 릴리즈 노트 개요 작성 → 영향도 체크 → 정식 릴리즈 노트 작성 → 추가 개선 항목 식별</li>
-</ul>
-
-<h4 id="제품-소프트웨어-패키징-도구">제품 소프트웨어 패키징 도구</h4>
-
-<p>배포를 위한 패키징 시에 디지털 콘텐츠의 지적 재산권을 보호하고 관리하는 기능 제공하며, 안전한 유통과 배포를 보장하는 도구</p>
-
-<h4 id="패키징-도구-활용-시-고려-사항">패키징 도구 활용 시 고려 사항</h4>
-
-<ul>
-  <li>암호화/보안 고려: 내부 콘텐츠에 대한 암호화 및 보안 고려</li>
-  <li>이기종 연동을 고려: 이기종 콘테츠 및 단말기 간 DRM 연동 고려</li>
-  <li>사용자 편의성 고려: 사용자 입장에서 문제를 고려하여 최대한 효율적으로 적용</li>
-  <li>적합한 암호화 알고리즘 적용: 제품 소프트웨어 종류에 맞는 알고리즘을 선택하여 배포 시 범용성에 지장이 없도록 고려</li>
-</ul>
-
-<h4 id="저작권copyright">저작권(Copyright)</h4>
-
-<p>창작물인 저작물에 대한 배타적 독점적 권리로 타인의 침해를 받지 않을 고유한 권한</p>
-
-<h4 id="디지털-저작권-관리drm-digital-right-management">디지털 저작권 관리(DRM: Digital Right Management)</h4>
-
-<p>저작권자가 배포한 디지털 콘텐츠가 저작권자가 의도한 용도로만 사용되도록 디지털 콘텐츠 관리 및 보호 기술</p>
-
-<h4 id="디지털-저작권-관리drm-구성요소">디지털 저작권 관리(DRM) 구성요소</h4>
-
-<ul>
-  <li>콘텐츠 제공자(Content Provider): 콘텐츠를 제공하는 저작권자</li>
-  <li>콘텐츠 소비자(Content Customer): 콘텐츠를 구매하여 사용하는 주체</li>
-  <li>콘텐츠 분배자(Contents Distributor): 암호화된 콘텐츠를 유통하는 곳이나 사람</li>
-  <li>클리어링 하우스(Clearing House): 저작권에 대한 사용 권한, 라이선스 발급, 암호화된 키 관리, 사용량에 따른 결제 관리 등을 수행하는 곳</li>
-  <li>DRM 콘텐츠(DRM Content): 서비스하고자 하는 암호화된 콘텐츠, 콘텐츠와 관련된 메타데이터, 콘텐츠 사용정보를 패키징하여 구성된 콘텐츠</li>
-  <li>패키저(Packager): 콘텐츠를 메타데이터와 함꼐 배포 가능한 단위로 묶은 도구</li>
-  <li>DRM 컨트롤러(DRM Controller): 배포된 디지털 콘텐츠의 이용 권한을 통제</li>
-  <li>보안 컨테이너(Security Contatiner): 원본 콘텐츠를 안전하게 유통하기 위한 전자적 보안장치</li>
-</ul>
-
-<h4 id="패키징-도구-구성-세부-기술">패키징 도구 구성 세부 기술</h4>
-
-<ul>
-  <li>암호화: 콘텐츠 및 라이선스를 암호화하고 전자 서명을 할 수 있는 기술</li>
-  <li>키 관리: 콘텐츠를 암호화한 키에 대한 저장 및 분배 기술</li>
-  <li>암호화 파일 생성: 콘텐츠 암호화된 콘텐츠로 생성하기 위한 기술</li>
-  <li>식별 기술: 콘텐츠에 대한 식별 체계 표현 기술</li>
-  <li>저작권 표현: 라이선스의 내용 표현 기술</li>
-  <li>정책 관리: 라이선스 발급 및 사용에 대한 정책 표현 및 관리 기술</li>
-  <li>크랙방지: 크랙에 의한 콘텐츠 사용 방지 기술</li>
-  <li>인증: 라이선스 발급 및 사용의 기준이 되는 사용자 인증 기술</li>
-</ul>
-
-<h3 id="제품-소프트웨어-매뉴얼-작성-및-버전-등록">제품 소프트웨어 매뉴얼 작성 및 버전 등록</h3>
-
-<h4 id="제품-소프트웨어-매뉴얼">제품 소프트웨어 매뉴얼</h4>
-
-<p>사용자 측면에서 패키징 이후 설치, 제품 소프트웨어를 사용하는 데 필요한 주요 내용을 기록한 문서</p>
-
-<h4 id="제품-소프트웨어-사용자-매뉴얼">제품 소프트웨어 사용자 매뉴얼</h4>
-
-<p>사용자가 소프트웨어 사용에 필요한 내용을 포함한 문서</p>
-
-<h4 id="제품-소프트웨어-배포본">제품 소프트웨어 배포본</h4>
-
-<p>사용자가 사용하기 편하도록 배포 정보를 포함하여 개발된 컴포넌트 또는 패키지가 제품화된 형태</p>
-
-<h4 id="백업-유형">백업 유형</h4>
-
-<ul>
-  <li>전체 백업(Full Backup): 백업받고자 하는 데이터 전체에 대한 백업을 하는 방식</li>
-  <li>차등 백업(Differential Backup): 마지막 전체 백업 이후 변경된 모든 데이터를 백업하는 방식</li>
-  <li>증분 백업(Incremental Backup): 정해진 시간을 기준으로 그 이후에 변경된 파일만을 백업하는 방식</li>
-</ul>
-
-<p class="notice--success">🔔<strong>포스팅 공지</strong><br />
-개인 공부 기록용 블로그 입니다.<br />
-잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="InfoProcessing" /><category term="정보처리기사" /><category term="정처기" /><category term="제품" /><category term="제품소프트웨어패키징" /><category term="개발" /><summary type="html"><![CDATA[정보처리기사 - 제품 소프트웨어 패키징]]></summary></entry></feed>
+잘못된 부분이 있을 시 메일이나 댓글로 지적해주시면 감사드리겠습니다 :)</p>]]></content><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><category term="Issue" /><category term="인텔리제이" /><category term="IntelliJ" /><category term="한글" /><category term="한글깨짐" /><summary type="html"><![CDATA[인텔리제이(IntelliJ) 콘솔 한글 깨짐 수정하기]]></summary></entry></feed>

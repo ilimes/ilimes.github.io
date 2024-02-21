@@ -520,4 +520,10 @@ var store = [{
         "tags": ["Github Actions","OCI","CI/CD","배포자동화"],
         "url": "/devops/post87/",
         "teaser": null
+      },{
+        "title": "Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)",
+        "excerpt":"오늘은 블로그 글 작성중 불편했던 경험이 하나 있어서 기록해두려고 합니다. 저처럼 Jekyll을 이용해서 만든 깃허브 블로그에 포스팅을 하려면 마크다운 문법을 사용하곤 합니다. 최근에 Github Actions 관련 게시물을 쓰다가 yml 스크립트 예시를 작성하는 경우가 있었는데요. {{ }} 와 {% %} 같은 문구를 표현하려고 하는데 나오지가 않는 문제가 있더라고요. 위와 같은 문구를...","categories": ["Blog"],
+        "tags": ["Blog","jekyll","블로그","github","escape liquid template"],
+        "url": "/blog/post88/",
+        "teaser": null
       }]
