@@ -129,6 +129,45 @@
     margin: 0 0 4px;
     font-size: 0.6em;
   }
+  .list-item-body {
+    margin-top: 2em;
+
+    .archive__item-teaser_list {
+      border-radius: 16px !important;
+      border: 0.5px solid #e4e4e4;
+      overflow: hidden;
+    }
+    @media screen and (min-width: 600px) {
+      .archive__item-teaser_list {
+        position: relative;
+        border-radius: $border-radius;
+        overflow: hidden;
+        margin-right: 0.8em;
+        display: inline;
+        justify-content: center;
+        float : left;
+        margin-bottom: 5px;
+        width: 150px;
+        height: 110px;
+        text-align: center;
+        vertical-align: middle;
+  
+        img {
+          object-fit: cover;
+          height: 105% !important;
+        }
+  
+        // @include breakpoint($small) {
+        //   // min-height: 80px;
+        //   background-size: contain; //비율 강제 고정
+        // }
+  
+        // @include breakpoint($medium) {
+        //   background-size: contain; //비율 강제 고정
+        // }
+      }
+    }
+  }
 }
 
 /*
@@ -229,7 +268,8 @@
     }
 
     @include breakpoint($medium) {
-      max-height: 120px;
+      max-height: 150px;
+      margin-bottom: 15px;
     }
   }
 }

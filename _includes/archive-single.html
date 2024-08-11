@@ -17,21 +17,30 @@
         <img src="{{ teaser | relative_url }}" alt="">
       </div>
     {% endif %}
-    <h4 class="archive__item-title no_toc" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+    <div class="list-item-body">
+      {% if include.type == "list" and teaser %}
+      <div class="archive__item-teaser_list">
+        <img src="{{ teaser | relative_url }}" alt="">
+      </div>
       {% endif %}
-    </h4>
-    {% include page__meta.html type=include.type %}
-    {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</div>{% endif %}
-    <!-- {% if post.excerpt %}<span style="background: #eef2f6; padding: 6px; font-size: 12px; font-weight: bold;">{{ post.categories }}</span>{% endif %} -->
-    <div style="margin-bottom: 30px;">
-      <span style="font-size: 13px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m.%d" }}</span>
-      {% if site.category_archive.type and post.categories[0] and site.tag_archive.type and post.tags[0] %}
-      {%- include post__taxonomy.html -%}
-      {% endif %}
+      <div>
+        <h4 class="archive__item-title no_toc" itemprop="headline">
+          {% if post.link %}
+            <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+          {% else %}
+            <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
+          {% endif %}
+        </h4>
+        {% include page__meta.html type=include.type %}
+        {% if post.excerpt %}<div class="archive__item-excerpt" itemprop="description" style="margin-bottom: 5px;">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</div>{% endif %}
+        <!-- {% if post.excerpt %}<span style="background: #eef2f6; padding: 6px; font-size: 12px; font-weight: bold;">{{ post.categories }}</span>{% endif %} -->
+        <div style="margin-bottom: 30px;">
+          <span style="font-size: 13px;"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"> </i>{{ post.date | date: " %Y.%m.%d" }}</span>
+          {% if site.category_archive.type and post.categories[0] and site.tag_archive.type and post.tags[0] %}
+          {%- include post__taxonomy.html -%}
+          {% endif %}
+        </div>
+      </div>
     </div>
   </article>
 </div>
