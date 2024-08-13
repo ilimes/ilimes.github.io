@@ -136,6 +136,9 @@
       border-radius: 16px !important;
       border: 0.5px solid #e4e4e4;
       overflow: hidden;
+      img {
+        min-width: 100%;
+      }
     }
     @media screen and (min-width: 600px) {
       .archive__item-teaser_list {
@@ -264,10 +267,12 @@
 
   .archive__item-teaser {
     @include breakpoint($small) {
+      border-radius: 12px;
       max-height: 200px;
     }
 
     @include breakpoint($medium) {
+      border-radius: 12px;
       max-height: 150px;
       margin-bottom: 15px;
     }

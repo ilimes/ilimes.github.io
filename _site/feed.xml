@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-11T15:09:53+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)</title><link href="http://localhost:4000/blog/post88/" rel="alternate" type="text/html" title="Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)" /><published>2024-02-22T00:00:00+09:00</published><updated>2024-02-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/post88</id><content type="html" xml:base="http://localhost:4000/blog/post88/"><![CDATA[<p>오늘은 블로그 글 작성중 불편했던 경험이 하나 있어서 기록해두려고 합니다.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-13T23:47:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">ilimes</title><subtitle>**공부하고 기록하는** 블로그</subtitle><author><name>LIME</name><email>ilimes1307@gmail.com</email></author><entry><title type="html">Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)</title><link href="http://localhost:4000/blog/post88/" rel="alternate" type="text/html" title="Jekyll 블로그 글 작성시 {{ }}나 {% %} 같은 jekyll 문법 표현하기 (escape liquid template)" /><published>2024-02-22T00:00:00+09:00</published><updated>2024-02-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/post88</id><content type="html" xml:base="http://localhost:4000/blog/post88/"><![CDATA[<p>오늘은 블로그 글 작성중 불편했던 경험이 하나 있어서 기록해두려고 합니다.<br />
 저처럼 Jekyll을 이용해서 만든 깃허브 블로그에 포스팅을 하려면 마크다운 문법을 사용하곤 합니다.</p>
 
 <p>최근에 Github Actions 관련 게시물을 쓰다가 yml 스크립트 예시를 작성하는 경우가 있었는데요.<br />
@@ -373,7 +373,7 @@ Pop 연산은 스택이 비어있지 않을 때 까지 연산을 수행하며, �
 9
 10
 11
-</pre></td><td class="rouge-code"><pre><span class="k">WITH</span> <span class="k">RECURSIVE</span> <span class="n">d</span> 
+</pre></td><td class="rouge-code"><pre><span class="k">WITH</span> <span class="k">RECURSIVE</span> <span class="n">d</span>
 <span class="k">AS</span> <span class="p">(</span>
     <span class="k">select</span> <span class="mi">1</span> <span class="k">as</span> <span class="n">n</span>
     <span class="k">union</span> <span class="k">all</span>
@@ -438,10 +438,10 @@ remove the file manually to <span class="k">continue</span><span class="nb">.</s
 3
 4
 5
-</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">ScrollView</span> 
-    <span class="na">stickyHeaderIndices</span><span class="p">=</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span> <span class="c1">// 숫자: sticky 속성을 사용할 컴포넌트의 위치</span>
-<span class="p">&gt;</span> 
-   ...
+</pre></td><td class="rouge-code"><pre><span class="p">&lt;</span><span class="nc">ScrollView</span>
+  <span class="na">stickyHeaderIndices</span><span class="p">=</span><span class="si">{</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span> <span class="c1">// 숫자: sticky 속성을 사용할 컴포넌트의 위치</span>
+<span class="p">&gt;</span>
+  ...
 <span class="p">&lt;/</span><span class="nc">ScrollView</span><span class="p">&gt;</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
 

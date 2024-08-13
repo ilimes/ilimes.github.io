@@ -489,13 +489,13 @@ var store = [{
         "excerpt":"Sticky Header 사용법 앱을 만들다보면 스크롤을 내릴때 헤더를 고정하는 Sticky Header를 구현하고 싶을 때가 있는데요. React Native ScrollView에서는 간단히 구현할 수 있습니다. 아래와 같이 스크롤 뷰 속성에 stickyHeaderIndices 를 추가하면 됩니다. 1 2 3 4 5 &lt;ScrollView stickyHeaderIndices={[0]} // 숫자: sticky 속성을 사용할 컴포넌트의 위치 &gt; ... &lt;/ScrollView&gt; 예를 들어...","categories": ["ReactNative"],
         "tags": ["리액트네이티브","React","RN","Sticky","stickyHeaderIndices","scrollview"],
         "url": "/reactnative/post82/",
-        "teaser": "/assets/images/500x300.png"
+        "teaser": "https://github.com/user-attachments/assets/85527290-9600-4d6d-8a28-b03a762c6f84"
       },{
         "title": "MySQL/MariaDB WITH RECURSIVE 재귀 쿼리",
         "excerpt":"오늘은 프로그래머스 문제를 풀다가 처음 알게된 문법이 있어서 공유해보고자 합니다. 바로 WITH RECURSIVE 라는 재귀 쿼리입니다. WITH RECURSIVE WITH RECURSIVE 의 기본 구조는 아래와 같습니다. 1 2 3 4 5 WITH RECURSIVE 테이블명 AS( SELECT 초기값 AS 컬럼별명1 UNION ALL SELECT 컬럼별명1 계산식 FROM 테이블명 WHERE 제어문 ) WITH RECURSIVE...","categories": ["MariaDB"],
         "tags": ["데이터베이스","DB","MariaDB","WITH RECURSIVE"],
         "url": "/mariadb/post83/",
-        "teaser": "/assets/images/500x300.png"
+        "teaser": "https://github.com/user-attachments/assets/5175f421-38a8-487f-837a-87a29c93132f"
       },{
         "title": "NVM default 노드 버전 변경 하는 방법",
         "excerpt":"오늘은 nvm에서 기본(default) 노드 버전을 변경하는 방법을 간단하게 소개해드리도록 하겠습니다 :) nvm list 확인 1 $ nvm list 우선 nvm list 명령어를 입력하여 현재 default 노드 버전이 무엇인지 확인합니다. 현재 저의 default 노드 버전은 v14.15.5로 되어있습니다. v18.17.0 으로 변경해보도록 하겠습니다. default 버전 변경 1 $ nvm alias default 18.17.0 default...","categories": ["Setting"],
@@ -525,5 +525,5 @@ var store = [{
         "excerpt":"오늘은 블로그 글 작성중 불편했던 경험이 하나 있어서 기록해두려고 합니다. 저처럼 Jekyll을 이용해서 만든 깃허브 블로그에 포스팅을 하려면 마크다운 문법을 사용하곤 합니다. 최근에 Github Actions 관련 게시물을 쓰다가 yml 스크립트 예시를 작성하는 경우가 있었는데요. {{ }} 와 {% %} 같은 문구를 표현하려고 하는데 나오지가 않는 문제가 있더라고요. 위와 같은 문구를...","categories": ["Blog"],
         "tags": ["Blog","jekyll","블로그","github","escape liquid template"],
         "url": "/blog/post88/",
-        "teaser": "/assets/images/500x300.png"
+        "teaser": "https://github.com/user-attachments/assets/688895ad-fc64-4694-9809-4a96efcff96c"
       }]
